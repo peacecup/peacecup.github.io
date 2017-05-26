@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[上传项目到github“]]></title>
+    <url>%2F2017%2F05%2F26%2F%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%88%B0github%2F</url>
+    <content type="text"><![CDATA[要上传项目到github需要以下几个步骤1、有或者新建一个github账户 2、创建一个和本地对应的仓库 3、本地安装git一路默认即可4、生成ssh key cd ~/.ssh 进入目录–》ls查看是否已有ssh key–》没有则新建 ssh-keygen -t rsa -C “754416804@qq.com”—&gt;不使用密码创建–》id_rsa.pub里面就是ssh key 5、到github网站关联自己的ssh key 到setting里进入ssh KEys–》增加ssh key–》填入自己的ssh key 保存 6、执行git命令，初始化空间，绑定远程仓库、添加提交代码、推送代码到远程仓库 git init –》git add . –》 git commit -m “” –》git remote add orign “你的git项目地址”–》git push -u orgin master 7、ok可以看到已经添加成功]]></content>
+      <categories>
+        <category>github</category>
+        <category>上传项目</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hello]]></title>
+    <url>%2F2017%2F05%2F26%2Fhello%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>日志</category>
+        <category>二级目录</category>
+      </categories>
+      <tags>
+        <tag>demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F05%2F26%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
