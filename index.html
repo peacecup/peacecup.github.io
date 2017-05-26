@@ -68,6 +68,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-上传项目到github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/26/上传项目到github/" class="article-date">
+  <time datetime="2017-05-26T03:34:42.000Z" itemprop="datePublished">2017-05-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/github/">github</a>►<a class="article-category-link" href="/categories/github/上传项目/">上传项目</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/26/上传项目到github/">上传项目到github“</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要上传项目到github需要以下几个步骤<br>1、有或者新建一个github账户</p>
+<p>2、创建一个和本地对应的仓库</p>
+<p>3、本地安装git<br>一路默认即可<br>4、生成ssh key</p>
+<p>cd ~/.ssh 进入目录–》ls查看是否已有ssh key–》没有则新建 ssh-keygen -t rsa -C “754416804@qq.com”—&gt;不使用密码创建–》id_rsa.pub里面就是ssh key</p>
+<p>5、到github网站关联自己的ssh key</p>
+<p>到setting里进入ssh KEys–》增加ssh key–》填入自己的ssh key 保存</p>
+<p>6、执行git命令，初始化空间，绑定远程仓库、添加提交代码、推送代码到远程仓库</p>
+<p>git init –》git add . –》 git commit -m “” –》git remote add orign  “你的git项目地址”–》git push -u  orgin master</p>
+<p>7、ok<br>可以看到已经添加成功</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://peacecup.github.io/2017/05/26/上传项目到github/" data-id="cj35ascv40001h4qtem7duja4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/05/26/hello/" class="article-date">
@@ -98,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://peacecup.github.io/2017/05/26/hello/" data-id="cj35a7lty0000l4qttsw1iiz4" class="article-share-link">Share</a>
+      <a data-url="https://peacecup.github.io/2017/05/26/hello/" data-id="cj35ascv70002h4qtafihcedu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://peacecup.github.io/2017/05/26/hello-world/" data-id="cj35a5dcx0000j8qt27g106ja" class="article-share-link">Share</a>
+      <a data-url="https://peacecup.github.io/2017/05/26/hello-world/" data-id="cj35ascuy0000h4qt16pdn66m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +211,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/日志/二级目录/">二级目录</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/github/">github</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/github/上传项目/">上传项目</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志/">日志</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/日志/二级目录/">二级目录</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -188,6 +237,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/05/26/上传项目到github/">上传项目到github“</a>
+          </li>
         
           <li>
             <a href="/2017/05/26/hello/">hello</a>
