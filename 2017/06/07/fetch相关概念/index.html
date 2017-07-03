@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="打开新世界的大门">
-<meta property="og:type" content="website">
+<meta name="description" content="前言&amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相">
+<meta property="og:type" content="article">
 <meta property="og:title" content="长夜">
-<meta property="og:url" content="https://peacecup.github.io/tags/axios/index.html">
+<meta property="og:url" content="https://peacecup.github.io/2017/06/07/fetch相关概念/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="打开新世界的大门">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相">
+<meta property="og:updated_time" content="2017-06-07T02:25:42.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="长夜">
-<meta name="twitter:description" content="打开新世界的大门">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/tags/axios/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/06/07/fetch相关概念/"/>
 
 
 
 
 
-  <title> 标签: axios | 长夜 </title>
+  <title>  | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-right  ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -316,46 +317,161 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        axios
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/07/fetch相关概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈宁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T09:49:36+08:00">
+                2017-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗<br>&emsp;&emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相比Promise和asyns/await来说不够友好、不符合长期以爱w3c关注分离的原则。因此，w3c发布了fecth标准，用来取代旧有的ajax。<br>&emsp;&emsp;其实浏览器请求天生就是异步操作，长久以来，一直都在致力于简化、规范化这个过程。jQuery的ajax方法，es6的Promise，es7的asyns/await、以及大量的前端框架，像angular-resource，axios等等。<br>&emsp;&emsp;但是w3c这个行为像是在搞事呀，ECMA组织发布了es6、es7中都包含有异步操作的内容，也都很强大，它在promise的基础上封装一个fetch出来有些瞎操心。不过从另一个角度来说，ajax以前也是w3c负责发布的标准，做这个改进也合情合理，但是fech像替换掉ajax甚至jquery的ajax，我并不看好。</p>
+<h3 id="fetch-API"><a href="#fetch-API" class="headerlink" title="fetch API"></a>fetch API</h3><p>fetch的API主要体现在它的接口实现上，分为以下几个接口，GolbalFetch、Body、Request、Response、Headers，其他的接口暂时不准备学习。</p>
+<h5 id="GolbalFetch"><a href="#GolbalFetch" class="headerlink" title="GolbalFetch"></a>GolbalFetch</h5><p>这个接口提供了fetch（）方法，window实现了这个接口，因此可以直接使用window.fetch()来请求资源，fetch()接受一个Request接口对象，或者一个URL。  </p>
+<pre><code>var URL = &apos;https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=your_api_key&amp;format=json&amp;nojsoncallback=1&amp;tags=penguins&apos;;
+function fetchDemo() {
+    fetch(URL).then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        insertPhotos(json);
+    });
+} 
+fetchDemo();
+</code></pre><h5 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h5>
+      
+    </div>
 
-      <h1 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/06/02/axios笔记/" itemprop="url">
-              
-                <span itemprop="name">axios随笔</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-02T15:59:59+08:00"
-              content="2017-06-02" >
-          06-02
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/05/javascript数据类型/" rel="next" title="JS typeof总结---6种数据类型">
+                <i class="fa fa-chevron-left"></i> JS typeof总结---6种数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +479,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -382,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -465,6 +594,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fetch-API"><span class="nav-number">2.</span> <span class="nav-text">fetch API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GolbalFetch"><span class="nav-number">2.0.1.</span> <span class="nav-text">GolbalFetch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Request"><span class="nav-number">2.0.2.</span> <span class="nav-text">Request</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,6 +722,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

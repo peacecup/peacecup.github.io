@@ -94,7 +94,7 @@
 <meta property="og:url" content="https://peacecup.github.io/2017/06/05/javascript数据类型/index.html">
 <meta property="og:site_name" content="长夜">
 <meta property="og:description" content="前言&amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeo">
-<meta property="og:updated_time" content="2017-06-05T10:17:11.559Z">
+<meta property="og:updated_time" content="2017-06-06T09:51:56.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS typeof总结---6种数据类型">
 <meta name="twitter:description" content="前言&amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeo">
@@ -454,6 +454,7 @@ b == undefined // true
 //这个最过分
 a == b //true，竟然是true，但是也引发出了一个大的猜想：在变量还没有被赋予实际值的时候，所有变量的值都是一样的，不一样的只有类型
 </code></pre><p>这两个值还真的是相等的，每次看到这里肯定就已经绕进去了。。。。这两个基本属性在搞什么呀，乱七八糟，莫名其妙。<br>非要总结一下规则的话,可以说，这两种基本类型是一样的，一样的值；Undefined和Null就像两条线，两条一模一样的线，但是他们依然是不同的线。<br>他们的不同就在于类型的不同，在于意义的不同，undefiend是未初始化的值，null是空的对象指针</p>
+<h4 id="3、Boolean"><a href="#3、Boolean" class="headerlink" title="3、Boolean"></a>3、Boolean</h4><p>&emsp;Boolean是ECMAScript中的布尔类型，有两个值：true和false，并且，这两个值区分大小写<br>Boolean()可以转换其他类型为Boolean类型，在进行if（）判断时，就是默认调用了Boolean（）方法</p>
 
       
     </div>
@@ -505,6 +506,10 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/07/fetch相关概念/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -576,7 +581,7 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -653,7 +658,7 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js五种基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">js五种基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Undefined"><span class="nav-number">2.1.</span> <span class="nav-text">1、Undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"><span class="nav-number">2.1.1.</span> <span class="nav-text">在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"><span class="nav-number">2.1.2.</span> <span class="nav-text">在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"><span class="nav-number">2.1.3.</span> <span class="nav-text">因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Null"><span class="nav-number">2.2.</span> <span class="nav-text">2、Null</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"><span class="nav-number">2.2.1.</span> <span class="nav-text">在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js五种基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">js五种基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Undefined"><span class="nav-number">2.1.</span> <span class="nav-text">1、Undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"><span class="nav-number">2.1.1.</span> <span class="nav-text">在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"><span class="nav-number">2.1.2.</span> <span class="nav-text">在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"><span class="nav-number">2.1.3.</span> <span class="nav-text">因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Null"><span class="nav-number">2.2.</span> <span class="nav-text">2、Null</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"><span class="nav-number">2.2.1.</span> <span class="nav-text">在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Boolean"><span class="nav-number">2.3.</span> <span class="nav-text">3、Boolean</span></a></li></ol></li></ol></div>
             
 
           </div>
