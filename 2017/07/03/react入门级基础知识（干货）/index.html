@@ -1,0 +1,965 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="###react入门级教程（一） ####1、前言react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成，而vue配置项要多很多，语法也相对多很多，这">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react入门级知识点整理">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/03/react入门级基础知识（干货）/index.html">
+<meta property="og:site_name" content="长夜">
+<meta property="og:description" content="###react入门级教程（一） ####1、前言react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成，而vue配置项要多很多，语法也相对多很多，这">
+<meta property="og:updated_time" content="2017-07-04T07:12:06.942Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react入门级知识点整理">
+<meta name="twitter:description" content="###react入门级教程（一） ####1、前言react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成，而vue配置项要多很多，语法也相对多很多，这">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/03/react入门级基础知识（干货）/"/>
+
+
+
+
+
+  <title> react入门级知识点整理 | 长夜 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">长夜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I Want More！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/03/react入门级基础知识（干货）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈宁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react入门级知识点整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T17:17:50+08:00">
+                2017-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###react入门级教程（一）</p>
+<p>####1、前言<br>react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。<br>react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成<br>，而vue配置项要多很多，语法也相对多很多，这也是为什么我近期准备啃react的原因，对于es6的高度依赖对开发人员的成长更有好处，能学到更多东西。<br>写这个教程，最大的目的是巩固自己的基础，其次是希望能帮助到一些和我一样的初学者。</p>
+<p>####2、create-react-app<br>一个工程化的兼容性强的前端开发环境自己配置对于初学者来说是非常艰难的，需要配置es6环境，配置基于node的服务器，配置打包工具，配置模块化，<br>配置css3、html5支持，等等。对初学者，这会是一个很难受的过程，去年年初，我自己在不知道vue-cli的情况下研读了github上别人的项目，对着一堆<br>代码研究了好几天才搞明白，究竟在干嘛，还是在知道了vue-cli以后才知道是自动生成的代码，而不是自己写的，很难受。<br>因此，学习这些框架在不进行进一步webpack配置的情况下，完全可以直接用自动化工具来初始化一个项目，而不需要自己来搭建，vue项目使用vue-cli，<br>react项目使用create-react-app。使用npm安装create-react-app：</p>
+<pre><code>npm install create-react-app -g   //建议全局安装
+</code></pre><p>create-react-app构建了一个完善的开发环境，包括热替换等。 </p>
+<pre><code>//创建一个项目
+create-react-app 项目名称
+//初始化项目
+npm install
+//运行项目
+npm start
+</code></pre><p>执行上面代码就可以初始化并且运行项目，会得到一个demo页面，这里就不截图了。src下的index是react项目的入口文件，其他的是组件。</p>
+<p>####3、react基础语法<br>其实之前也做了好几次整理，但是还是容易变得模糊，不精准，只能说好记性不如烂笔头，这里主要对对react部分来说明语法，react-dom暂且放一放<br>这里会提到以下几个类和方法：react、Component、jsx、render、props。<br>下面是一个简单的react组件  </p>
+<pre><code>import React,{Component} from &apos;react&apos;; //从react导入React相关环境以及组件环境
+var root = document.querySelector(&quot;app&quot;);//拿到页面的根元素。
+render(&lt;div&gt;haha&lt;/div&gt;,root);// 组件的render渲染方法，把虚拟的div组件绑定到root上
+</code></pre><p>其实上面三行代码已经包含了react的精髓内容，react更多的是一种基于数据的新的开发思维模式。<br>第一行代码，在单页应用spa里依赖react的环境，这个环境有很多内容，这里只依赖了Component，一个组件相关的类<br>第二行代码，获取要挂载的根节点<br>第三行代码，创建一个虚拟DOM，也就是<div>haha</div>,然后把这个虚拟DOM挂载到根节点上,<br>react的精髓就在于创建虚拟DOM，挂载以后生成真实的DOM，用数据驱动虚拟DOM进行变化，虚拟DOM的变化反映到挂载的真实DOM上。<br>react的目的就是更小耦合度的划分功能模块成组件，一个功能或者几个功能划分成一个组件，组件的通信来完成复杂功能。</p>
+<p>####4、创建组件的两种方式<br>通过reactDOm来创建的方式并不被官方推介。</p>
+<p>#####a、创建无状态组件<br>由react开创的组件化的模式在于转换操作DOM为操作数据，以前我们习惯于使用jquery操作DOM来做页面逻辑操作，react的思路是利用操作数据来改变虚拟DOM然后更新真实DOM，比如一个表单验证，使用jquery是操作DOM来获取表单元素的值，然后对值进行校验，然后再一次操作提示部分的DOM进行复制，使用react的思路是创建一个虚拟的DOM表单，直接进行表单数据验证，将验证结果反应到反应到数据上，然后根据数据重绘表单界面。jquery是一个工具，运用jquery是一个横向的单点的过程，只关心自己择器操作的DOM，而不关心使用场景。而使用react是一个纵向的连续的过程<br>一个react组件本身就是可以持续改变，多个组件通过父子关系，兄弟关系，在横向和纵向上可以组合拉伸。一个用户操作在jquery里只是一个普通的操作DOM改变界面，在react里却是能看到一条线，一条由用户操作引起的数据流向的线。更重要的一点是，react组件是可以积累的，是可复用的。<br>会到第一种创建组件的方式：无状态组件。一个组件的状态就是它的数据，数据变化，组件就会重新绘制，无状态组件就是没有自己状态的组件，这种组件不在少数，只展示信息的组件，它不需要有属于自己的数据，他只负责展示，用户操作的组件，一个button只代表一个用户点击操作，它于它的父组件不可分割，也不需要有自己的数据。我们通过函数式的写法来创建组件：  </p>
+<pre><code>ShowMessage.jsx
+import React from &apos;react&apos;;
+const ShowMessage = () =&gt; {
+    return(
+        &lt;div&gt;nihao&lt;/div&gt;
+    )
+}
+export default ShowMessage;
+</code></pre><p>() =&gt; {}箭头函数式es6的写法，用来固定this指向,简写function，它等于 function(){},<br>import和export是es6模块化的东西。上面这个组件就是一个没有自己状态的组件，但是它没有意义，一个静态div的组件是没有意义的，使它有意义的是他的父组件，它没有自己的数据，但是可以有父组件的数据，父组件传递数据给子组件的方式是通过属性，然后在子组件里通过props来获取数据.  </p>
+<pre><code>parent.jsx
+
+import showMessage from &apos;showMessage.jsx&apos;;
+import React,{Component} from &quot;react&quot;;
+
+class Parent extends Component{
+    state = {
+        message：&quot;hello&quot;
+    }
+    render(){
+        return(
+            &lt;ShowMessage message={message}/&gt;
+        )
+    }
+}
+export default Parent;
+</code></pre><p>这里使用属性的方式把message赋值给ShowMessage子组件。  {message}是jsx的语法，jsx是一个<br>js的扩充语言，它的写法于html一样，在读取编译的时候，会使用creatElement函数来根据标签创建js对象，{message}是在jsx里插入变量的写法。</p>
+<pre><code>ShowMessage.jsx
+import React from &quot;react&quot;;
+const ShowMessage = (props) =&gt; {
+    return(
+        &lt;div&gt;{props.message}&lt;/div&gt;
+    )
+}
+export default ShowMessage;
+</code></pre><p>在子组件里通过props来接受父组件的数据,包括给子组件绑定事件，如下  </p>
+<pre><code>&lt;ShowMessage message={message} method={this.method}/&gt;
+
+ShowMessage.jsx
+import React from &quot;react&quot;;
+const ShowMessage = (props) =&gt; {
+    return(
+        &lt;div onClick={props.method}&gt;{props.message}&lt;/div&gt;
+    )
+}
+export default ShowMessage;
+</code></pre><p>#####b、创建有状态的组件<br>上面的Parent组件其实就是有状态的组件  </p>
+<pre><code>parent.jsx
+
+import showMessage from &apos;showMessage.jsx&apos;;
+import React,{Component} from &quot;react&quot;;
+
+class Parent extends Component{
+    state = {
+        message：&quot;hello&quot;
+    }
+    render(){
+        return(
+            &lt;ShowMessage message={message}/&gt;
+        )
+    }
+}
+export default Parent;
+</code></pre><p>class是es6创建类的关键字，于创建一个函数其实差别不大；extends是es6进行继承的写法，es5必须通过原型链将圆形赋值给被继承对象的实例才能完成继承，es6简化了这个部分，现在只需要使用extends就可以完成继承，当然也可以使用supper函数。<br>Component是react里的组件相关的类，render是Component提供的渲染函数，用来渲染组件。<br>一个组件有了自己的状态就可以做很多事情了，要牢记的一点是：组件的数据发生改变就会调用render函数重新绘制组件，组件的数据包括自己状态state和来自父组件的数据props。<br>比如做一个提交功能，包含提交按钮，一个提示信息，提交时还要禁止点击  </p>
+<pre><code>Button.jsx
+import React from &quot;react&quot;;
+const Button = (props) =&gt; {
+    const {children, loading, submit} = props;
+    return (
+        &lt;button onClick={submit} disabled={loading?&apos;disabled&apos;:null&gt;
+            {loading &amp;&amp; &lt;i className=&quot;loading&quot;&gt;&lt;/i&gt;}
+            {children}
+            }
+        &lt;/button&gt;
+    )
+}
+export default Button;
+</code></pre><p>这个提交按钮Button组件没有自己的状态，只有父组件传递的提交函数，子元素，是否loadind。<br>className是为了和class关键字区分开，className表示css类名，const { … } = props是es<br>6解析结构的写法</p>
+<pre><code>Dialog.jsx
+import React from &quot;react&quot;;
+const Dialog = () =&gt; {
+    const {message, close} = props;
+    return(
+        &lt;div className=&quot;dialog-backdrop&quot;&gt;
+        &lt;div className=&quot;dialog-container&quot;&gt;
+            &lt;div className=&quot;dialog-header&quot;&gt;提示&lt;/div&gt;
+            &lt;div className=&quot;dialog-body&quot;&gt;{ message }&lt;/div&gt;
+            &lt;div className=&quot;dialog-footer&quot;&gt;
+                &lt;button className=&quot;btn&quot; onClick={ close }&gt;确定&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    )
+}
+</code></pre><p>这个弹出框组件接受父组件的消息和关闭函数  </p>
+<pre><code>App.jsx
+import React, { Component} from &quot;react&quot;;
+import Button from &quot;Button.jsx&quot;;
+class App extends Component{
+    state = {
+        message: &quot;&quot;,
+        loading: false,
+        dialog: false
+    }
+    submit = () =&gt; {
+        this.setState({
+            loading: true
+        })
+        setTimeout( () =&gt; {
+            const res = Math.random(1);
+            if(res &lt; 0.5){
+                this.setState({
+                    message: &quot;提交成功&quot;,
+                    dialog: true
+                })
+            }else{
+                this.setState({
+                    message: &quot;提交成功&quot;,
+                    dialog: true
+                })
+            }
+            this.setState({
+                    loading: false
+            })
+        })
+    }
+    close = () =&gt; {
+        this.setState({
+            dialog: false,
+        })
+    }
+    render(){
+        const {loading, message, dialog} = this.state;
+        return (
+            &lt;div className=&quot;app-wrap&quot;&gt;
+                &lt;Button submit={this.submit} loading={loading}&gt;提交&lt;/Button&gt;
+                {dialog &amp;&amp; &lt;Dialog message={message} close={this.close}/&gt;}
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre><p>这个由三个组件组成的提交功能的组合组件中数据的流向从上到下，从用户点击开始，点击改变了父组件状态，组件状态改变了子组件的props。</p>
+<p>####5、react组件的声明周期钩子<br>任何流程和事物都有一个生命周期，react的声明周期有三种：挂载前后、更新前后、销毁前<br>挂载前后：componentWillMount（）、componentDidMount（）  </p>
+<p>更新前：  </p>
+<ul>
+<li>componentWillReceiveProps接收到一个新的props时，在重新render之前调用</li>
+<li>shouldComponentUpdate 接收到一个新的state或者props时，在重新render之前调用</li>
+<li>componentWillUpdate 接收到一个新的state或者props时，在重新render之前调用</li>
+</ul>
+<p>更新后：</p>
+<ul>
+<li>componentDidUpdate 组件完成更新之后调用</li>
+</ul>
+<p>销毁前：  </p>
+<ul>
+<li>componentWillUnmount</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/07/fetch相关概念/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="陈宁" />
+          <p class="site-author-name" itemprop="name">陈宁</p>
+           
+              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈宁</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
