@@ -12,9 +12,15 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title><![CDATA[DOM新API fetch]]></title>
     <url>%2F2017%2F06%2F07%2Ffetch%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%2F</url>
     <content type="text"><![CDATA[前言&emsp;&emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&emsp;&emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相比Promise和asyns/await来说不够友好、不符合长期以爱w3c关注分离的原则。因此，w3c发布了fecth标准，用来取代旧有的ajax。&emsp;&emsp;其实浏览器请求天生就是异步操作，长久以来，一直都在致力于简化、规范化这个过程。jQuery的ajax方法，es6的Promise，es7的asyns/await、以及大量的前端框架，像angular-resource，axios等等。&emsp;&emsp;但是w3c这个行为像是在搞事呀，ECMA组织发布了es6、es7中都包含有异步操作的内容，也都很强大，它在promise的基础上封装一个fetch出来有些瞎操心。不过从另一个角度来说，ajax以前也是w3c负责发布的标准，做这个改进也合情合理，但是fech像替换掉ajax甚至jquery的ajax，我并不看好。 fetch APIfetch的API主要体现在它的接口实现上，分为以下几个接口，GolbalFetch、Body、Request、Response、Headers，其他的接口暂时不准备学习。 GolbalFetch这个接口提供了fetch（）方法，window实现了这个接口，因此可以直接使用window.fetch()来请求资源，fetch()接受一个Request接口对象，或者一个URL。 var URL = &apos;https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=your_api_key&amp;format=json&amp;nojsoncallback=1&amp;tags=penguins&apos;; function fetchDemo() { fetch(URL).then(function(response) { return response.json(); }).then(function(json) { insertPhotos(json); }); } fetchDemo(); Request]]></content>
+      <categories>
+        <category>js基础</category>
+      </categories>
+      <tags>
+        <tag>js基础</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[JS typeof总结---6种数据类型]]></title>
