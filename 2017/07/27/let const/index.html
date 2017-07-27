@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js基础," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="前言&amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相">
-<meta name="keywords" content="js基础">
+<meta name="description" content="前言&amp;nbsp;&amp;nbsp;尝试在不查看文档的情况下写出es6知识点的相关内容，遇到没记清楚的再查阅才能加深记忆力，好记性不如烂笔头   let/const几个重要特性 没有变量提升 暂时性死区 不允许重复声明 全局声明的变量不再挂载到window上  &amp;nbsp;&amp;nbsp;理解没有变量提升，要先回顾变量提升的概念。js作为词法作用域的语言，js的作用域是在代码执行的时候确认的，代码执行的环境会">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM新API fetch">
-<meta property="og:url" content="https://peacecup.github.io/2017/06/07/fetch相关概念/index.html">
+<meta property="og:title" content="es6知识梳理">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/27/let const/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="前言&amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相">
-<meta property="og:updated_time" content="2017-07-04T07:14:08.904Z">
+<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;尝试在不查看文档的情况下写出es6知识点的相关内容，遇到没记清楚的再查阅才能加深记忆力，好记性不如烂笔头   let/const几个重要特性 没有变量提升 暂时性死区 不允许重复声明 全局声明的变量不再挂载到window上  &amp;nbsp;&amp;nbsp;理解没有变量提升，要先回顾变量提升的概念。js作为词法作用域的语言，js的作用域是在代码执行的时候确认的，代码执行的环境会">
+<meta property="og:updated_time" content="2017-07-27T06:34:41.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM新API fetch">
-<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗&amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相">
+<meta name="twitter:title" content="es6知识梳理">
+<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;尝试在不查看文档的情况下写出es6知识点的相关内容，遇到没记清楚的再查阅才能加深记忆力，好记性不如烂笔头   let/const几个重要特性 没有变量提升 暂时性死区 不允许重复声明 全局声明的变量不再挂载到window上  &amp;nbsp;&amp;nbsp;理解没有变量提升，要先回顾变量提升的概念。js作为词法作用域的语言，js的作用域是在代码执行的时候确认的，代码执行的环境会">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/06/07/fetch相关概念/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/27/let const/"/>
 
 
 
 
 
-  <title> DOM新API fetch | 长夜 </title>
+  <title> es6知识梳理 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/07/fetch相关概念/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/27/let const/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                DOM新API fetch
+                es6知识梳理
               
             
           </h1>
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T09:49:36+08:00">
-                2017-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T14:34:42+08:00">
+                2017-07-27
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js基础/" itemprop="url" rel="index">
-                    <span itemprop="name">js基础</span>
+                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                    <span itemprop="name">es6知识梳理</span>
                   </a>
                 </span>
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/07/fetch相关概念/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/27/let const/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/07/fetch相关概念/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/27/let const/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,19 +433,26 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗<br>&emsp;&emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相比Promise和asyns/await来说不够友好、不符合长期以爱w3c关注分离的原则。因此，w3c发布了fecth标准，用来取代旧有的ajax。<br>&emsp;&emsp;其实浏览器请求天生就是异步操作，长久以来，一直都在致力于简化、规范化这个过程。jQuery的ajax方法，es6的Promise，es7的asyns/await、以及大量的前端框架，像angular-resource，axios等等。<br>&emsp;&emsp;但是w3c这个行为像是在搞事呀，ECMA组织发布了es6、es7中都包含有异步操作的内容，也都很强大，它在promise的基础上封装一个fetch出来有些瞎操心。不过从另一个角度来说，ajax以前也是w3c负责发布的标准，做这个改进也合情合理，但是fech像替换掉ajax甚至jquery的ajax，我并不看好。</p>
-<h3 id="fetch-API"><a href="#fetch-API" class="headerlink" title="fetch API"></a>fetch API</h3><p>fetch的API主要体现在它的接口实现上，分为以下几个接口，GolbalFetch、Body、Request、Response、Headers，其他的接口暂时不准备学习。</p>
-<h5 id="GolbalFetch"><a href="#GolbalFetch" class="headerlink" title="GolbalFetch"></a>GolbalFetch</h5><p>这个接口提供了fetch（）方法，window实现了这个接口，因此可以直接使用window.fetch()来请求资源，fetch()接受一个Request接口对象，或者一个URL。  </p>
-<pre><code>var URL = &apos;https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=your_api_key&amp;format=json&amp;nojsoncallback=1&amp;tags=penguins&apos;;
-function fetchDemo() {
-    fetch(URL).then(function(response) {
-        return response.json();
-    }).then(function(json) {
-        insertPhotos(json);
-    });
-} 
-fetchDemo();
-</code></pre><h5 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h5>
+        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>&nbsp;&nbsp;尝试在不查看文档的情况下写出es6知识点的相关内容，遇到没记清楚的再查阅才能加深记忆力，好记性不如烂笔头  </p>
+<h5 id="let-const几个重要特性"><a href="#let-const几个重要特性" class="headerlink" title="let/const几个重要特性"></a>let/const几个重要特性</h5><ul>
+<li>没有变量提升</li>
+<li>暂时性死区</li>
+<li>不允许重复声明</li>
+<li>全局声明的变量不再挂载到window上</li>
+</ul>
+<p>&nbsp;&nbsp;理解没有变量提升，要先回顾变量提升的概念。js作为词法作用域的语言，js的作用域是在代码执行的时候确认的，代码执行的环境会有一个对应的执行上下文，每次进入一个执行环境都会创建一个执行上下文，执行上下文在创建阶段会做三件事。  </p>
+<ol>
+<li>确认作用域</li>
+<li>创建变量对象</li>
+<li>确认this指向</li>
+</ol>
+<p>&nbsp;&nbsp;变量提升就发生在创建变量对象时，创建变量对象要做2件事。第一，查找var变量声明，不包括let和const声明，在变量对象里生成对应变量名称的属性，重名的声明会被覆盖。第二，查找函数声明，生成对应函数名的指针对象指向函数的堆内存空间存放位置，重名的函数不会生效。  </p>
+<p>&nbsp;&nbsp;在代码开始执行的时候，执行上下文就会进入执行阶段，变量对象就会变成活动对象，并且根据执行进度对活动对象里的提前声明的对象赋值。<br>&nbsp;&nbsp;由此可以知道为什么let、const没有变量提升，因为，在进行变量提升的时候没有对let、const的变量声明进行提升。  </p>
+<p>&nbsp;&nbsp;暂时性死区的概念其实和没有变量提升是一个意思，在let、const变量还没有声明的时候，在对应的作用域内使用它会直接导致报错，对于let、const变量而言，{}就是它们在还没有被声明时的死区。所以我认为阮一峰的es6入门在这一块的讲述是重复且有误导性的，没有变量提升其实是暂时性死区的原理，而不应该把两者都作为特性来说明。  </p>
+<p>&nbsp;&nbsp;关于不允许重复声明这一条特性，在原理上确实不好理解，目前我只能理解成语法糖，语法规定了就是这样，不过从这条语法糖的意义上倒是可以看出js视图纠正之前变量声明过于灵活的问题，我一直无法理解可以重复声明同名变量还不回报错到底有什么意义，除了不会报错以外，在使用上完全可能破坏代码，降低代码质量。<br>&nbsp;&nbsp;let、const声明的变量不再挂载到Window上野同样是为了规范变量声明，js不再默认允许随意的创建全局变量。  </p>
+<p>&nbsp;&nbsp;声明let、const变量导致的块级作用域不难理解，只要在{}内声明了let、const变量，{}就会成为一个es5里不支持的块级作用域。  </p>
+<p>&nbsp;&nbsp;难以理解的是es6规定了在{}里声明的函数也会导致会计作用域，不需要其他声明，函数就会被绑定到这个作用域里。其实这让人很难理解，es6并没有摒弃es5的内容，执行上下文依然会创建，那么块级作用域又是如何在原理上实现的呢，如何检测、创建、绑定一个块级作用域？</p>
+<h4 id="问题：如何检测、创建、绑定一个块级作用域？"><a href="#问题：如何检测、创建、绑定一个块级作用域？" class="headerlink" title="问题：如何检测、创建、绑定一个块级作用域？"></a>问题：如何检测、创建、绑定一个块级作用域？</h4>
       
     </div>
 
@@ -474,7 +481,7 @@ fetchDemo();
       
         <div class="post-tags">
           
-            <a href="/tags/js基础/" rel="tag"># js基础</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
         </div>
       
@@ -487,8 +494,8 @@ fetchDemo();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/05/javascript数据类型/" rel="next" title="JS typeof总结---6种数据类型">
-                <i class="fa fa-chevron-left"></i> JS typeof总结---6种数据类型
+              <a href="/2017/07/03/react入门级基础知识（干货）/" rel="next" title="react入门级教程（一）">
+                <i class="fa fa-chevron-left"></i> react入门级教程（一）
               </a>
             
           </div>
@@ -496,10 +503,6 @@ fetchDemo();
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/03/react入门级基础知识（干货）/" rel="prev" title="react入门级教程（一）">
-                react入门级教程（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -678,7 +681,7 @@ fetchDemo();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fetch-API"><span class="nav-number">2.</span> <span class="nav-text">fetch API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GolbalFetch"><span class="nav-number">2.0.1.</span> <span class="nav-text">GolbalFetch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Request"><span class="nav-number">2.0.2.</span> <span class="nav-text">Request</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#let-const几个重要特性"><span class="nav-number">2.</span> <span class="nav-text">let/const几个重要特性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题：如何检测、创建、绑定一个块级作用域？"><span class="nav-number"></span> <span class="nav-text">问题：如何检测、创建、绑定一个块级作用域？</span></a></div>
             
 
           </div>
@@ -820,9 +823,9 @@ fetchDemo();
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/06/07/fetch相关概念/';
-          this.page.identifier = '2017/06/07/fetch相关概念/';
-          this.page.title = 'DOM新API fetch';
+          this.page.url = 'https://peacecup.github.io/2017/07/27/let const/';
+          this.page.identifier = '2017/07/27/let const/';
+          this.page.title = 'es6知识梳理';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
