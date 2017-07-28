@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="前言&amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeo">
-<meta name="keywords" content="js">
+<meta name="description" content="前言&amp;nbsp;&amp;nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性&amp;nbsp;&amp;nbsp;es6在字符串上增加了的新特性有一下面这几种特性。    对unicode字符的进一步支持 includes()、startsWith()、endsWith()函数用来增强indexOf()能力 repeat()、padStart()、padEnd()函数用来充填字符串 字">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS typeof总结---6种数据类型">
-<meta property="og:url" content="https://peacecup.github.io/2017/06/05/javascript数据类型/index.html">
+<meta property="og:title" content="es6字符串扩展">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="前言&amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeo">
-<meta property="og:updated_time" content="2017-07-07T06:04:22.339Z">
+<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性&amp;nbsp;&amp;nbsp;es6在字符串上增加了的新特性有一下面这几种特性。    对unicode字符的进一步支持 includes()、startsWith()、endsWith()函数用来增强indexOf()能力 repeat()、padStart()、padEnd()函数用来充填字符串 字">
+<meta property="og:updated_time" content="2017-07-28T07:11:53.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS typeof总结---6种数据类型">
-<meta name="twitter:description" content="前言&amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeo">
+<meta name="twitter:title" content="es6字符串扩展">
+<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性&amp;nbsp;&amp;nbsp;es6在字符串上增加了的新特性有一下面这几种特性。    对unicode字符的进一步支持 includes()、startsWith()、endsWith()函数用来增强indexOf()能力 repeat()、padStart()、padEnd()函数用来充填字符串 字">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/06/05/javascript数据类型/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/"/>
 
 
 
 
 
-  <title> JS typeof总结---6种数据类型 | 长夜 </title>
+  <title> es6字符串扩展 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/05/javascript数据类型/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                JS typeof总结---6种数据类型
+                es6字符串扩展
               
             
           </h1>
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-05T17:07:30+08:00">
-                2017-06-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T11:24:12+08:00">
+                2017-07-03
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js基础/" itemprop="url" rel="index">
-                    <span itemprop="name">js基础</span>
+                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                    <span itemprop="name">es6知识梳理</span>
                   </a>
                 </span>
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/05/javascript数据类型/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/03/es6总结/es6字符串扩展/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/05/javascript数据类型/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/03/es6总结/es6字符串扩展/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,53 +433,15 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？<br>js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeof会返回7种值。</p>
-<h3 id="js五种基本数据类型"><a href="#js五种基本数据类型" class="headerlink" title="js五种基本数据类型"></a>js五种基本数据类型</h3><p>js有5种基本数据类型undefined、null、boolean、string、number，下面一一说明:  </p>
-<h4 id="1、Undefined"><a href="#1、Undefined" class="headerlink" title="1、Undefined"></a>1、Undefined</h4><p>Undefined作为基本类型的意义，意如其名，未定义,Undefined作为变量的基本类型，是针对变量来说的，因此默认变量已经存在。  </p>
-<h5 id="在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"><a href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend" class="headerlink" title="在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"></a>在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</h5><h5 id="在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"><a href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量" class="headerlink" title="在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"></a>在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</h5><pre><code>var a;
-a == undefined// true
-typeof a//&apos;undefined&apos;
-</code></pre><p>我们考虑的是：什么样的变量 typeof会返回‘undefined’<br>按照上面的定义，未初始化的变量会返回undefined；还有一种特殊情况也会返回undefined，那就是未声明变量  </p>
-<pre><code>typeof b//&apos;undefined&apos;
-b == &apos;undefined&apos; // 会报错
-</code></pre><p>这里我们要分清楚三个概念:</p>
-<ul>
-<li>变量是否已定义</li>
-<li>变量类型</li>
-<li>变量的值  </li>
-</ul>
-<p>再结合typeof就不难理解为什么只有未初始化的变量值为undefined，而未定义和未初始化的变量数据类型都为Undefined。未定义的变量本来就不存在，把他归为Undefined变量只是为了更好的区分。</p>
-<h5 id="因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"><a href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在" class="headerlink" title="因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"></a>因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</h5><h4 id="2、Null"><a href="#2、Null" class="headerlink" title="2、Null"></a>2、Null</h4><p>&emsp;Null和Undefined类似，表示为空，但是在js里，为空是什么意思呢？  </p>
-<h5 id="在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"><a href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针" class="headerlink" title="在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"></a>在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</h5><pre><code>var a = null;
-typeof a //&apos;object&apos;
-typeof null // &apos;object&apos;
-</code></pre><p>也就是说null表示一个没有指向的对象指针，这样我们就可以理解了。</p>
-<p>这样看来，null和undefined其实并没有太大的区别，赋值一个空的对象指针null和赋值一个undefined，看起来没有区别，而且实际上  </p>
-<pre><code>null == undefined// true
-undefined == null//true
-</code></pre><p>更过分的是：  </p>
-<pre><code>var a = null;
-a == undefined // true
-var b;
-b == undefined // true
-//这个最过分
-a == b //true，竟然是true，但是也引发出了一个大的猜想：在变量还没有被赋予实际值的时候，所有变量的值都是一样的，不一样的只有类型
-</code></pre><p>这两个值还真的是相等的，每次看到这里肯定就已经绕进去了。。。。这两个基本属性在搞什么呀，乱七八糟，莫名其妙。<br>非要总结一下规则的话,可以说，这两种基本类型是一样的，一样的值；Undefined和Null就像两条线，两条一模一样的线，但是他们依然是不同的线。<br>他们的不同就在于类型的不同，在于意义的不同，undefiend是未初始化的值，null是空的对象指针。<br>ECMAScript引入这个undefined的最主要目的就是为了与空对象指针null做区分</p>
-<h4 id="3、Boolean"><a href="#3、Boolean" class="headerlink" title="3、Boolean"></a>3、Boolean</h4><p>&emsp;Boolean是ECMAScript中的布尔类型，有两个值：true和false，并且，这两个值区分大小写<br>Boolean()可以转换其他类型为Boolean类型，在进行if（）判断时，就是默认调用了Boolean（）方法。  </p>
-<ul>
-<li>数据类型          true                        false</li>
-<li>Boolean          true                        false</li>
-<li>Strung        非空字符串                     空字符串</li>
-<li>Number   任何非0数字（包括无穷大）             0和NaN</li>
-<li>Object        任何Object                      null、</li>
-<li>Undefined      不试用                         undefined</li>
-</ul>
-<h4 id="4、Number"><a href="#4、Number" class="headerlink" title="4、Number"></a>4、Number</h4><p>ECMAScript是基于IEEE754数值格式的，由于IEEE754的通病，浮点数会有四舍五入的毛病，0.1+0.2并不等于0.3，而是等于0.30000000000000004，所以不要确定浮点数的值。<br>Number可以通过8进制、十进制、十六进制来表示，十进制和往常一样  </p>
-<ul>
-<li>八进制，首位数字为0,078表示八进制的78,十进制的64，</li>
-<li>十六进制，首尾字符为0x，0x9表示十六进制的9，A~E表示11~15。</li>
-</ul>
-<p>数值范围上来说，Number有一个上下线，一旦超过了上线就会变成Infinity，超过下线就会变成-Infinity。<br>而一个本来应该返回数值的数结果却没有返回数值，这个时候就会返回NaN，比如0/0就会返回NaN。NaN与任何值都不相等，包括它自身，它只是一个代表意义，表示不是数字。可以用isNaN来判断是否不是数字  </p>
+        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>&nbsp;&nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。</p>
+<h5 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h5><p>&nbsp;&nbsp;es6在字符串上增加了的新特性有一下面这几种特性。  </p>
+<ol>
+<li>对unicode字符的进一步支持</li>
+<li>includes()、startsWith()、endsWith()函数用来增强indexOf()能力</li>
+<li>repeat()、padStart()、padEnd()函数用来充填字符串</li>
+<li>字符串模板和标签模板<h6 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h6>&nbsp;&nbsp;unicode的部分没能深入进去了解，javasccript内部使用utf-16来存储，首先unicode是一种能囊括全世界的文字符号的一种编码方式，每一个字符都有一个码点，而utf-8以及gbk以及utf-16等都是针对unicode的进一步汉字转码。<br>&nbsp;&nbsp;es5的汉字字符串很有可能并不只是占有一个32位的utf-16字符，很可能会超过32位，这个时候就会用两个utf-16码点来表示字符串，此时，length就会变成2，哪怕只是一个汉字，这是有问题的，es6扩充了一系列函数来解决这个问题。  </li>
+</ol>
+<h6 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h6><p>&nbsp;&nbsp;字符串的重点扩展在于字符串模板，字符串模板简化了使用js拼写html内容，在模板内使用${}就可以嵌入变量，在以前只能通过jquery的tmpl等类似的插件才能实现。<br>&nbsp;&nbsp;而在字符串模板上进一步的标签模板则可以简化或者说扩充一种编写函数的新方式，标签模板作为参数传给函数，函数接受到的参数会有两部分，第一部分是字符串模板的静态部分被${}分隔开，以数组的方式传入，第二部分就是${}部分的内容，作为单个的参数传入。<br>&nbsp;&nbsp;标签模板有两个强大的作用，一个是过滤HTML字符串，可以过滤掉一些不合法的内容，一个是用来做国际化，可以把需要国际化的部分使用${}变量表示，然后使用国际化转义来重新写入字符串</p>
 
       
     </div>
@@ -509,7 +471,7 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
         </div>
       
@@ -522,8 +484,8 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/02/axios笔记/" rel="next" title="axios随笔">
-                <i class="fa fa-chevron-left"></i> axios随笔
+              <a href="/2017/07/02/解构赋值/" rel="next" title="解构赋值">
+                <i class="fa fa-chevron-left"></i> 解构赋值
               </a>
             
           </div>
@@ -532,8 +494,8 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/07/fetch相关概念/" rel="prev" title="DOM新API fetch">
-                DOM新API fetch <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/03/react入门级基础知识（干货）/" rel="prev" title="react入门级教程（一）">
+                react入门级教程（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -713,7 +675,7 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js五种基本数据类型"><span class="nav-number">2.</span> <span class="nav-text">js五种基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Undefined"><span class="nav-number">2.1.</span> <span class="nav-text">1、Undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"><span class="nav-number">2.1.1.</span> <span class="nav-text">在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"><span class="nav-number">2.1.2.</span> <span class="nav-text">在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"><span class="nav-number">2.1.3.</span> <span class="nav-text">因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Null"><span class="nav-number">2.2.</span> <span class="nav-text">2、Null</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"><span class="nav-number">2.2.1.</span> <span class="nav-text">在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Boolean"><span class="nav-number">2.3.</span> <span class="nav-text">3、Boolean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Number"><span class="nav-number">2.4.</span> <span class="nav-text">4、Number</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新特性"><span class="nav-number">2.</span> <span class="nav-text">新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#unicode"><span class="nav-number">2.1.</span> <span class="nav-text">unicode</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#字符串模板"><span class="nav-number">2.2.</span> <span class="nav-text">字符串模板</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -855,9 +817,9 @@ a == b //true，竟然是true，但是也引发出了一个大的猜想：在变
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/06/05/javascript数据类型/';
-          this.page.identifier = '2017/06/05/javascript数据类型/';
-          this.page.title = 'JS typeof总结---6种数据类型';
+          this.page.url = 'https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/';
+          this.page.identifier = '2017/07/03/es6总结/es6字符串扩展/';
+          this.page.title = 'es6字符串扩展';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
