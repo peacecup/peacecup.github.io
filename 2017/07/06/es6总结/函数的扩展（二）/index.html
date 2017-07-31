@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="markDown," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-<meta name="keywords" content="markDown">
+<meta name="description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markDown写法">
-<meta property="og:url" content="https://peacecup.github.io/2017/05/26/markDown写法/index.html">
+<meta property="og:title" content="es6函数扩展（二）">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-<meta property="og:updated_time" content="2017-06-05T09:28:43.383Z">
+<meta property="og:description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
+<meta property="og:updated_time" content="2017-07-31T08:09:52.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markDown写法">
-<meta name="twitter:description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
+<meta name="twitter:title" content="es6函数扩展（二）">
+<meta name="twitter:description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/05/26/markDown写法/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/"/>
 
 
 
 
 
-  <title> markDown写法 | 长夜 </title>
+  <title> es6函数扩展（二） | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/05/26/markDown写法/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                markDown写法
+                es6函数扩展（二）
               
             
           </h1>
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:11:39+08:00">
-                2017-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T19:32:47+08:00">
+                2017-07-06
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markDown/" itemprop="url" rel="index">
-                    <span itemprop="name">markDown</span>
+                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                    <span itemprop="name">es6知识梳理</span>
                   </a>
                 </span>
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/26/markDown写法/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/06/es6总结/函数的扩展（二）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/26/markDown写法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/06/es6总结/函数的扩展（二）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,53 +433,29 @@
       
 
       
-        <h1 id="markDown写法"><a href="#markDown写法" class="headerlink" title="markDown写法"></a>markDown写法</h1><h3 id="1、定义标题文本写法"><a href="#1、定义标题文本写法" class="headerlink" title="1、定义标题文本写法"></a>1、定义标题文本写法</h3><p>直接写和按一下tab’写是有区别的、#的个数指定字体大小</p>
-<pre><code>按tab,然后直接写就是正文文本
-</code></pre><h3 id="2、有序列表和无序列表"><a href="#2、有序列表和无序列表" class="headerlink" title="2、有序列表和无序列表"></a>2、有序列表和无序列表</h3><h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><pre><code>1. DASDASD
-2. DASDASD
-3. DASDASFD
-</code></pre><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-<h3 id="3、使用”-gt-”来进行引用"><a href="#3、使用”-gt-”来进行引用" class="headerlink" title="3、使用”&gt;”来进行引用"></a>3、使用”&gt;”来进行引用</h3><blockquote>
-<p>你好，引用的字体会是灰白色</p>
-</blockquote>
-<h3 id="4、图片链接"><a href="#4、图片链接" class="headerlink" title="4、图片链接"></a>4、图片链接</h3><pre><code>博客中添加图片我们可以使用图床获取图片的URL，
-可以去这个网址http://jiantuku.com/#/
-图片的写法是![]()
-![nihao](http://dadasd/adasd/sdasd,jpg)
-</code></pre><h3 id="5、粗体斜体"><a href="#5、粗体斜体" class="headerlink" title="5、粗体斜体"></a>5、粗体斜体</h3><p>使用<strong> </strong>就是粗体，使用一个<em> </em>就是一斜体<br><strong>你好</strong>  <em>你好</em></p>
-<h3 id="6、生成表格"><a href="#6、生成表格" class="headerlink" title="6、生成表格"></a>6、生成表格</h3><table>
-<thead>
-<tr>
-<th>Tables</th>
-<th style="text-align:center">Are</th>
-<th style="text-align:right">Cool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col 3 is</td>
-<td style="text-align:center">right-aligned</td>
-<td style="text-align:right">$1600</td>
-</tr>
-<tr>
-<td>col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:right">$12</td>
-</tr>
-<tr>
-<td>zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:right">$1</td>
-</tr>
-</tbody>
-</table>
-<p>使用这样的语法 “| Tables        | Are           | Cool  |<br>| ————- |:————-:| —–:|<br>| col 3 is      | right-aligned | $1600 |<br>| col 2 is      | centered      |   $12 |<br>| zebra stripes | are neat      |    $1 |”</p>
-<h3 id="7、代码块"><a href="#7、代码块" class="headerlink" title="7、代码块"></a>7、代码块</h3><p>使用”`“来包裹<br><code>var a = &quot;name&quot;;
-var b = &quot;cv&quot;;</code></p>
+        <h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>箭头函数大大的简化了函数的写法，：  </p>
+<pre><code>var a = x =&gt; x*x;
+</code></pre><p>箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：  </p>
+<ol>
+<li>没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用</li>
+<li>如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来</li>
+<li>箭头函数的函数体按照传统函数的写法使用{}括起来是永远没有错的，</li>
+<li>如果函数体不只有一行代码，则需要使用{}括起来</li>
+</ol>
+<p>箭头函数的特性：</p>
+<ol>
+<li>箭头函数在创建执行上下文的时候有两个特性，确认this指向时直接指向上层函数的this，创建变量对象的时候回跳过arguments对象的创建。因此，箭头函数会绑定this对象，并且，无法使用arguments对象。 </li>
+<li>不能使用new关键字，箭头函数没有构造函数</li>
+<li>不能使用yield命令，箭头函数不能用作generator函数。</li>
+</ol>
+<h4 id="函数绑定"><a href="#函数绑定" class="headerlink" title="函数绑定"></a>函数绑定</h4><p>就像箭头函数强行绑定了this一样，es7有了一条用来绑定函数的关键字提案天，而且babel也支持转化。<br>es7使用::来作为绑定obj1::obj2.sayName()会将sayName函数绑定到obj1对象上。虽然没有看出来到底有啥用，不过确实要好写一些。</p>
+<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4><p>&nbsp;&nbsp;在函数的return语句里直接返回函数叫做尾调用，而被返回的函数在没有使用父函数的和参数变量有关的变量的情况下，呗返回函数会替换掉父函数的函数调用栈的情况叫做尾调用优化。<br>这种情况下可以极大的减少内存消耗，因此要尽量高些递归变量的写法，做到尾调用优化。  </p>
+<pre><code>function factorial(n, total) {
+    if (n === 1) return total;
+    return factorial(n - 1, n * total);
+} 
+factorial(5, 1) // 120
+</code></pre><p>目前es6支持尾调用优化，这将去掉一些不必要的闭包内存消耗。</p>
 
       
     </div>
@@ -509,7 +485,7 @@ var b = &quot;cv&quot;;</code></p>
       
         <div class="post-tags">
           
-            <a href="/tags/markDown/" rel="tag"># markDown</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
         </div>
       
@@ -522,8 +498,8 @@ var b = &quot;cv&quot;;</code></p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/26/上传项目到github/" rel="next" title="上传项目到github“">
-                <i class="fa fa-chevron-left"></i> 上传项目到github“
+              <a href="/2017/07/05/es6总结/函数的扩展（一）/" rel="next" title="es6函数扩展（一）">
+                <i class="fa fa-chevron-left"></i> es6函数扩展（一）
               </a>
             
           </div>
@@ -531,10 +507,6 @@ var b = &quot;cv&quot;;</code></p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/01/无标题Markdown/" rel="prev" title="个人总结">
-                个人总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -713,7 +685,7 @@ var b = &quot;cv&quot;;</code></p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markDown写法"><span class="nav-number">1.</span> <span class="nav-text">markDown写法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、定义标题文本写法"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、定义标题文本写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、有序列表和无序列表"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、有序列表和无序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有序列表"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无序列表"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">无序列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、使用”-gt-”来进行引用"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、使用”>”来进行引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、图片链接"><span class="nav-number">1.0.4.</span> <span class="nav-text">4、图片链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、粗体斜体"><span class="nav-number">1.0.5.</span> <span class="nav-text">5、粗体斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、生成表格"><span class="nav-number">1.0.6.</span> <span class="nav-text">6、生成表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、代码块"><span class="nav-number">1.0.7.</span> <span class="nav-text">7、代码块</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数绑定"><span class="nav-number">2.</span> <span class="nav-text">函数绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尾调用优化"><span class="nav-number">3.</span> <span class="nav-text">尾调用优化</span></a></li></ol></div>
             
 
           </div>
@@ -855,9 +827,9 @@ var b = &quot;cv&quot;;</code></p>
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/05/26/markDown写法/';
-          this.page.identifier = '2017/05/26/markDown写法/';
-          this.page.title = 'markDown写法';
+          this.page.url = 'https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/';
+          this.page.identifier = '2017/07/06/es6总结/函数的扩展（二）/';
+          this.page.title = 'es6函数扩展（二）';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
