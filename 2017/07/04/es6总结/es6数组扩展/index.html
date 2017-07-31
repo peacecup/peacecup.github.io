@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="前言&amp;nbsp;&amp;nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性&amp;nbsp;&amp;nbsp;es6在字符串上增加了的新特性有一下面这几种特性。    对unicode字符的进一步支持 includes()、startsWith()、endsWith()函数用来增强indexOf()能力 repeat()、padStart()、padEnd()函数用来充填字符串 字">
+<meta name="description" content="前言&amp;nbsp;&amp;nbsp;数组不管在那个语言里都是很重要的一种数据类型，数组的使用广泛让怎么合理高效率的使用它成为一个问题，我目前遇到的问题主要集中两个部分：    空间、时间复杂度：滥用数组，动不动就新建数组，针对存储列表类数据向来是直接使用数组来操作。也不怎么考虑事件复杂度，大多数时候会做多层遍历，结合起来很容易写出低质量的代码， 数组复制，在需要复制数组数据的时候面对复杂数据类型，有些复制">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6字符串扩展">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/index.html">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/04/es6总结/es6数组扩展/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性&amp;nbsp;&amp;nbsp;es6在字符串上增加了的新特性有一下面这几种特性。    对unicode字符的进一步支持 includes()、startsWith()、endsWith()函数用来增强indexOf()能力 repeat()、padStart()、padEnd()函数用来充填字符串 字">
-<meta property="og:updated_time" content="2017-07-28T07:11:53.806Z">
+<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;数组不管在那个语言里都是很重要的一种数据类型，数组的使用广泛让怎么合理高效率的使用它成为一个问题，我目前遇到的问题主要集中两个部分：    空间、时间复杂度：滥用数组，动不动就新建数组，针对存储列表类数据向来是直接使用数组来操作。也不怎么考虑事件复杂度，大多数时候会做多层遍历，结合起来很容易写出低质量的代码， 数组复制，在需要复制数组数据的时候面对复杂数据类型，有些复制">
+<meta property="og:updated_time" content="2017-07-31T05:54:14.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6字符串扩展">
-<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性&amp;nbsp;&amp;nbsp;es6在字符串上增加了的新特性有一下面这几种特性。    对unicode字符的进一步支持 includes()、startsWith()、endsWith()函数用来增强indexOf()能力 repeat()、padStart()、padEnd()函数用来充填字符串 字">
+<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;数组不管在那个语言里都是很重要的一种数据类型，数组的使用广泛让怎么合理高效率的使用它成为一个问题，我目前遇到的问题主要集中两个部分：    空间、时间复杂度：滥用数组，动不动就新建数组，针对存储列表类数据向来是直接使用数组来操作。也不怎么考虑事件复杂度，大多数时候会做多层遍历，结合起来很容易写出低质量的代码， 数组复制，在需要复制数组数据的时候面对复杂数据类型，有些复制">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/04/es6总结/es6数组扩展/"/>
 
 
 
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/04/es6总结/es6数组扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T11:24:12+08:00">
-                2017-07-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T09:03:52+08:00">
+                2017-07-04
               </time>
             
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/03/es6总结/es6字符串扩展/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/04/es6总结/es6数组扩展/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/03/es6总结/es6字符串扩展/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/04/es6总结/es6数组扩展/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,15 +433,25 @@
       
 
       
-        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>&nbsp;&nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。</p>
-<h5 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h5><p>&nbsp;&nbsp;es6在字符串上增加了的新特性有一下面这几种特性。  </p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;数组不管在那个语言里都是很重要的一种数据类型，数组的使用广泛让怎么合理高效率的使用它成为一个问题，我目前遇到的问题主要集中两个部分：  </p>
 <ol>
-<li>对unicode字符的进一步支持</li>
-<li>includes()、startsWith()、endsWith()函数用来增强indexOf()能力</li>
-<li>repeat()、padStart()、padEnd()函数用来充填字符串</li>
-<li>字符串模板和标签模板<h6 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h6>&nbsp;&nbsp;unicode的部分没能深入进去了解，javasccript内部使用utf-16来存储，首先unicode是一种能囊括全世界的文字符号的一种编码方式，每一个字符都有一个码点，而utf-8以及gbk以及utf-16等都是针对unicode的进一步汉字转码。<br>&nbsp;&nbsp;es5的汉字字符串很有可能并不只是占有一个32位的utf-16字符，很可能会超过32位，这个时候就会用两个utf-16码点来表示字符串，此时，length就会变成2，哪怕只是一个汉字，这是有问题的，es6扩充了一系列函数来解决这个问题。  </li>
+<li>空间、时间复杂度：滥用数组，动不动就新建数组，针对存储列表类数据向来是直接使用数组来操作。也不怎么考虑事件复杂度，大多数时候会做多层遍历，结合起来很容易写出低质量的代码，</li>
+<li>数组复制，在需要复制数组数据的时候面对复杂数据类型，有些复制做起来完全是无效的，或者就是增大空间复杂度。</li>
 </ol>
-<h6 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h6><p>&nbsp;&nbsp;字符串的重点扩展在于字符串模板，字符串模板简化了使用js拼写html内容，在模板内使用${}就可以嵌入变量，在以前只能通过jquery的tmpl等类似的插件才能实现。<br>&nbsp;&nbsp;而在字符串模板上进一步的标签模板则可以简化或者说扩充一种编写函数的新方式，标签模板作为参数传给函数，函数接受到的参数会有两部分，第一部分是字符串模板的静态部分被${}分隔开，以数组的方式传入，第二部分就是${}部分的内容，作为单个的参数传入。<br>&nbsp;&nbsp;标签模板有两个强大的作用，一个是过滤HTML字符串，可以过滤掉一些不合法的内容，一个是用来做国际化，可以把需要国际化的部分使用${}变量表示，然后使用国际化转义来重新写入字符串</p>
+<p>&nbsp;&nbsp;我的编码经历来说，一段处理业务逻辑的代码很少有不用到数组或者说json这种这些数据结构的，对于数组、对象、json这些数据类型的操作要考虑清楚再动手敲代码  </p>
+<p>&nbsp;&nbsp;es6对数组的扩展一定程度上解决了一些问题</p>
+<h4 id="新的扩展"><a href="#新的扩展" class="headerlink" title="新的扩展"></a>新的扩展</h4><p>&nbsp;&nbsp;新的扩展主要集中于数组的生成、复制，填充，查找，遍历上</p>
+<ol>
+<li>生成：<ul>
+<li>Array.from()：可以将所有可遍历的类似数组的对象转化为数组，也就是有有iterable遍历接口的对象，进一步可以理解为只要是有length属性就可以转化，但是不是数值的length会被转化为空的数组[]。这样在这些类似数组的对象就可以使用数组遍历方法进行遍历，例如arguments对象，它并不是一个数组，不可以使用foreach等方法。</li>
+<li>Array.of():扩展了数组的构造函数</li>
+</ul>
+</li>
+<li>复制：原先的数组可以使用concat、slicee函数来进行赋复制</li>
+<li>填充：es5原有一个splice函数可以进行删除和新增，es6扩充了一个copyWith函数来将数组的某一个连续元素赋值到另一个位置。还有fill（）函数可用来填充数组</li>
+<li>查找：es6扩充了find（）和findIndex（）函数来查找数组元素，includes（）函数可以用来判断数组是否包含某个元素</li>
+<li>遍历，es6中，实现了iterable接口的对象都可以使用新的遍历函数进行遍历：entries（）和value（），结合keys()作为三个遍历函数。  关于遍历还有一个要注意的问题就是，传统的遍历方法，every、some、map、forEach在遍历时都会一定程度上忽略空的数组元素，map会直接返回一个空元素，而es6扩展的数组方法在生成数组时就会将空元素解析为undefined，并且在使用for。。。of遍历时也会遍历undefined元素</li>
+</ol>
 
       
     </div>
@@ -484,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/02/解构赋值/" rel="next" title="解构赋值">
-                <i class="fa fa-chevron-left"></i> 解构赋值
+              <a href="/2017/07/03/react入门级基础知识（干货）/" rel="next" title="react入门级教程（一）">
+                <i class="fa fa-chevron-left"></i> react入门级教程（一）
               </a>
             
           </div>
@@ -493,10 +503,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/03/react入门级基础知识（干货）/" rel="prev" title="react入门级教程（一）">
-                react入门级教程（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -675,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新特性"><span class="nav-number">2.</span> <span class="nav-text">新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#unicode"><span class="nav-number">2.1.</span> <span class="nav-text">unicode</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#字符串模板"><span class="nav-number">2.2.</span> <span class="nav-text">字符串模板</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新的扩展"><span class="nav-number">2.</span> <span class="nav-text">新的扩展</span></a></li></ol></div>
             
 
           </div>
@@ -817,8 +823,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/';
-          this.page.identifier = '2017/07/03/es6总结/es6字符串扩展/';
+          this.page.url = 'https://peacecup.github.io/2017/07/04/es6总结/es6数组扩展/';
+          this.page.identifier = '2017/07/04/es6总结/es6数组扩展/';
           this.page.title = 'es6字符串扩展';
         };
         var d = document, s = d.createElement('script');
