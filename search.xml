@@ -12,6 +12,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[es6对象扩展]]></title>
+    <url>%2F2017%2F07%2F06%2Fes6%E6%80%BB%E7%BB%93%2Fes6%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95%2F</url>
+    <content type="text"><![CDATA[基础回顾&nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。 对象的属性和分为数据属性和访问器属性。 数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Object.getOwnPropertyDescriptor()、定义属性特性的函数Object.defineProperty()和Object.defineProperties() 一旦一个属性已经修改了configurable特性，被设定为false不可配置以后，就不能再次被修改除value外的其他属性了。 创建对象的发展历史：工厂模式-》构造函数模式-》原型模式-》组合使用构造函数和原型模式-》动态圆形模式-》计生/稳妥构造函数模式 原型、prototype属性、对象实例实例、构造函数、proto属性之间的关系：对象的prototype指向对象的原型，对象的实例的proto属性指向对象的原型，原型的constructor属性指向对象的构造函数。 函数的继承就是利用了原型链的原理，将对象的实例的原型赋值为被继承函数。 这些对象的知识点看起来不多，但是每一条都展开确实还是要花费好一些时间。只是，原型相关的知识现在越来越用不到了，不论是继承还是封装对象，es6里都进行了扩展。有时候真觉得花的这么些时间来理解吃透原型究竟有多少用。 属性的简写&nbsp;&nbsp;es6支持对属性名进行简写，就像解构里的模式一样，可以使用模式简写的方式来简写对象属性，对于属性方法，也可以省略掉function关键字。确实是很好用的简写方式，节省了大量冗余代码。 Object.is()函数&nbsp;&nbsp;传统的判断上是否相等函数有一定的漏洞，比如-0不等于+0，NaN等于NaN，但是其实正确结果是相反的，es6使用了新的算法来进行全等判断，比===更加有效。 Object.assign()函数&nbsp;&nbsp;Object.assign(target,source)函数会将source对象中的所有可枚举属性复制到target对象中，并且会覆盖同名的对象。&nbsp;&nbsp;这个对象复制的方法并不是深复制，在面对可枚举属性是对象的时候，只是进行了浅复制，复制了引用地址。对于这一点要格外小心 属性的遍历&nbsp;&nbsp;属性石头可被遍历和它的enumerable属性有关，若是enumerable属性为false不可被枚举，此时使用for in就不能遍历该对象，这里在总结列举一下遍历对象的方式： for in：会遍历出自身的可枚举属性以及继承的可枚举属性 for of：会遍历出所有自身的可枚举属性 Object.keys()/values()/entries()：自身的可枚举属性 JSON.stringify()：只会串行化自身的可枚举属性 Object.assign()：可枚举的自身属性 Reflect.enumerate()：和for in 一样 对象扩展运算符&nbsp;&nbsp;也可以对对象使用扩展运算符 … 。有下面两种用法。 解构赋值的时候使用…进行扩展 复制对象]]></content>
+      <categories>
+        <category>es6知识梳理</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于js递归的一个问题]]></title>
+    <url>%2F2017%2F07%2F05%2Fes6%E6%80%BB%E7%BB%93%2F%E5%85%B3%E4%BA%8Ejs%E9%80%92%E5%BD%92%E7%9A%84%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[发现的两个递归问题之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下： var isSquare = function(n){ function square(index = 0,n){ var res = index*index; if(res === n){ return true; }else if(res &gt; n){ return false; } index++; return square(index,n) //这里如果不用return来调用递归就得不到正常的返回值。 } return square(0,n); } 这里有一个小细节，在递归时如果想要递归结果返回某个值，那么在递归调用函数的时候必须使用return，很好理解，被调用的时候返回的只是一个数值，并没有在外层函数中返回。 内存溢出递归很容易导致内存溢出，上面的代码在n足够大的时候就会导致内存溢出，原因在于每次递归函数调用都会创建执行上下文，而js线程被分配的栈空间是有限的，每个执行上下文window分配为1M，在浏览器不支持尾调用优化的情况下，递归数量次数一旦过多就会内存溢出 在没有尾调用优化的情况下应该少用递归，尽量少用for循环。]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[es6函数扩展（一）]]></title>
     <url>%2F2017%2F07%2F05%2Fes6%E6%80%BB%E7%BB%93%2F%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[函数默认值&nbsp;&nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过 y = y||&apos;dadasd&apos; 这样的方法，而es6支持了函数默认值。&nbsp;&nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值 函数默认值和结构赋值结合使用&nbsp;&nbsp;函数默认值可以和解构赋值结合使用，需要弄清楚的规则只有一条： 1. 函数接受到参数的时候先判断参数是否是undefined，如果是，触发默认值，如果不是，则由传入参数进行解构赋值 2. 进行解构赋值的时候，如果解构得到的结果是undefined，则对被赋值对象赋予默认值 函数默认值的位置&nbsp;&nbsp;函数的默认值只有在末尾的时候可以省略不谢，这时默认会传入undefined，而默认值如果不在末尾则不能省略不写，如果实在不能复制，也要传入一个undefined。 length属性失效&nbsp;&nbsp;length会在读取到默认参数时失效。 在没有默认参数时，函数的length属性会得到函数参数的个数 在有默认参数时，函数的length属性会从设置默认参数的参数位置开始失效。 默认参数的作用域&nbsp;&nbsp;函数的默认参数也有作用域。这里的作用域单凭函数代码很难判断： let x = 1; function f(y = x) { var x = 2;// let x =2 结果一样 console.log(y); } f()//1 在思考了这个例子以后我得出了一个结论： 默认参数作用域和传统作用域一样，先是函数作用域，然后是外部作用域。 但是这个结论的理解对js原理要有一定的理解，首先，什么是作用域？ 作用域是一套规则，创建执行上下文的时候就会创造作用域，js是词法作用域。 它规定了查找变量的路径和方式，也就是先在自己内部找，找不到再去外部找 默认参数在进行变量查找的时候就会按照作用域规则进行查找然后要理解，默认参数的运行时机，它是什么时候运行，什么时候完成赋值？ 参数定义于赋值站在创建变量对象的第一步完成，前面提到过，先完成arguments 对象的创建与赋值，然后针对var和函数声明进行提前声明。 然而在默认参数进行赋值的时候函数内部的变量和函数其实还没有被初始化。 因此其实默认参数的作用域是不包括自己的， 狭义上可以这么理解 所以最后得到结论，默认参数的变量赋值是不参考内部作用域的。内部作用域找不到非参数变量，像y=x这种赋值，x只能去外部作用域找。 一个问题，let究竟有没有变量提升？在知乎上看到这个专栏，虽然对使用let没有影响，但对理解它有帮助，let也是有变量提升的，只是这个变量提升与我们传统的理解有些不同，我们熟悉的是声明提升，也就是把函数声明提升，还有一种提升是创建提升，在let变量没有被声明提升这是肯定的，但是js对它进行了创建提升，一个变量是先被创建，然后被声明，let声明只有创建提升，没有变量提升，所以在重复声明let的时候，可以提前报错错误，is already been decleared，js不允许重复创建，但是它允许重复声明。可能莫名其妙看到这里的人已经乱了。。。。。但是我不准备花时间把这个不重要的深度知识点详细说一遍，想看的可以自己去看知乎的这篇专栏吧https://zhuanlan.zhihu.com/p/28140450 rest参数写法 …&nbsp;&nbsp;es6支持使用rest参数的方式来获取多余的参数，rest会将参数扩展成一个数组，可以不再使用arguments对象，但是rest参数不能放在参数中间，只能坐在最后一个 扩展运算符 …&nbsp;&nbsp;rest参数和扩展运算符在形式上是一样的，但是作用完全相反，扩展运算符是用来将数组或者类似数组的具有iterable接口的对象转换成单个的元素。扩展运算符使用场景很多，可以扩展字符串成为数组改进apply，可以改进apply函数参数的写法，可以和解构结合使用获取数组内容。 name属性&nbsp;&nbsp;函数的name属性指向函数的名称。 对于函数声明的函数对象，name指向函数名，对于对象字面量声明的匿名函数，es5中name属性为空的字符串‘’，而es6中为对象名。 bind函数绑定使用的函数的名称前面都要加上bound。]]></content>

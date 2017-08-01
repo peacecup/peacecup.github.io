@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
+<meta name="description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
 <meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="es6函数扩展（二）">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/index.html">
+<meta property="og:title" content="es6对象扩展">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/06/es6总结/es6对象扩展/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
-<meta property="og:updated_time" content="2017-07-31T08:09:52.559Z">
+<meta property="og:description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
+<meta property="og:updated_time" content="2017-08-01T06:42:19.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6函数扩展（二）">
-<meta name="twitter:description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
+<meta name="twitter:title" content="es6对象扩展">
+<meta name="twitter:description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/06/es6总结/es6对象扩展/"/>
 
 
 
 
 
-  <title> es6函数扩展（二） | 长夜 </title>
+  <title> es6对象扩展 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/06/es6总结/es6对象扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                es6函数扩展（二）
+                es6对象扩展
               
             
           </h1>
@@ -364,7 +364,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T19:32:47+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T13:57:13+08:00">
                 2017-07-06
               </time>
             
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/06/es6总结/函数的扩展（二）/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/06/es6总结/es6对象扩展/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/06/es6总结/函数的扩展（二）/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/06/es6总结/es6对象扩展/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,29 +433,35 @@
       
 
       
-        <h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>箭头函数大大的简化了函数的写法，：  </p>
-<pre><code>var a = x =&gt; x*x;
-</code></pre><p>箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：  </p>
+        <h4 id="基础回顾"><a href="#基础回顾" class="headerlink" title="基础回顾"></a>基础回顾</h4><p>&nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。  </p>
 <ol>
-<li>没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用</li>
-<li>如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来</li>
-<li>箭头函数的函数体按照传统函数的写法使用{}括起来是永远没有错的，</li>
-<li>如果函数体不只有一行代码，则需要使用{}括起来</li>
+<li>对象的属性和分为数据属性和访问器属性。 </li>
+<li>数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）</li>
+<li>访问器特性有get、set、configurable、enumerable</li>
+<li>获取特性的函数Object.getOwnPropertyDescriptor()、定义属性特性的函数Object.defineProperty()和Object.defineProperties()</li>
+<li>一旦一个属性已经修改了configurable特性，被设定为false不可配置以后，就不能再次被修改除value外的其他属性了。</li>
+<li>创建对象的发展历史：工厂模式-》构造函数模式-》原型模式-》组合使用构造函数和原型模式-》动态圆形模式-》计生/稳妥构造函数模式</li>
+<li>原型、prototype属性、对象实例实例、构造函数、<strong>proto</strong>属性之间的关系：对象的prototype指向对象的原型，对象的实例的<strong>proto</strong>属性指向对象的原型，原型的constructor属性指向对象的构造函数。</li>
+<li>函数的继承就是利用了原型链的原理，将对象的实例的原型赋值为被继承函数。</li>
 </ol>
-<p>箭头函数的特性：</p>
+<p>这些对象的知识点看起来不多，但是每一条都展开确实还是要花费好一些时间。只是，原型相关的知识现在越来越用不到了，不论是继承还是封装对象，es6里都进行了扩展。有时候真觉得花的这么些时间来理解吃透原型究竟有多少用。</p>
+<h4 id="属性的简写"><a href="#属性的简写" class="headerlink" title="属性的简写"></a>属性的简写</h4><p>&nbsp;&nbsp;es6支持对属性名进行简写，就像解构里的模式一样，可以使用模式简写的方式来简写对象属性，对于属性方法，也可以省略掉function关键字。确实是很好用的简写方式，节省了大量冗余代码。</p>
+<h4 id="Object-is-函数"><a href="#Object-is-函数" class="headerlink" title="Object.is()函数"></a>Object.is()函数</h4><p>&nbsp;&nbsp;传统的判断上是否相等函数有一定的漏洞，比如-0不等于+0，NaN等于NaN，但是其实正确结果是相反的，es6使用了新的算法来进行全等判断，比===更加有效。</p>
+<h4 id="Object-assign-函数"><a href="#Object-assign-函数" class="headerlink" title="Object.assign()函数"></a>Object.assign()函数</h4><p>&nbsp;&nbsp;Object.assign(target,source)函数会将source对象中的所有可枚举属性复制到target对象中，并且会覆盖同名的对象。<br>&nbsp;&nbsp;这个对象复制的方法并不是深复制，在面对可枚举属性是对象的时候，只是进行了浅复制，复制了引用地址。对于这一点要格外小心</p>
+<h4 id="属性的遍历"><a href="#属性的遍历" class="headerlink" title="属性的遍历"></a>属性的遍历</h4><p>&nbsp;&nbsp;属性石头可被遍历和它的enumerable属性有关，若是enumerable属性为false不可被枚举，此时使用for in就不能遍历该对象，这里在总结列举一下遍历对象的方式：  </p>
 <ol>
-<li>箭头函数在创建执行上下文的时候有两个特性，确认this指向时直接指向上层函数的this，创建变量对象的时候回跳过arguments对象的创建。因此，箭头函数会绑定this对象，并且，无法使用arguments对象。 </li>
-<li>不能使用new关键字，箭头函数没有构造函数</li>
-<li>不能使用yield命令，箭头函数不能用作generator函数。</li>
+<li>for in：会遍历出自身的可枚举属性以及继承的可枚举属性</li>
+<li>for of：会遍历出所有自身的可枚举属性</li>
+<li>Object.keys()/values()/entries()：自身的可枚举属性</li>
+<li>JSON.stringify()：只会串行化自身的可枚举属性</li>
+<li>Object.assign()：可枚举的自身属性</li>
+<li>Reflect.enumerate()：和for in 一样</li>
 </ol>
-<h4 id="函数绑定"><a href="#函数绑定" class="headerlink" title="函数绑定"></a>函数绑定</h4><p>就像箭头函数强行绑定了this一样，es7有了一条用来绑定函数的关键字提案天，而且babel也支持转化。<br>es7使用::来作为绑定obj1::obj2.sayName()会将sayName函数绑定到obj1对象上。虽然没有看出来到底有啥用，不过确实要好写一些。</p>
-<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4><p>&nbsp;&nbsp;在函数的return语句里直接返回函数叫做尾调用，而被返回的函数在没有使用父函数的和参数变量有关的变量的情况下，呗返回函数会替换掉父函数的函数调用栈的情况叫做尾调用优化。<br>这种情况下可以极大的减少内存消耗，因此要尽量高些递归变量的写法，做到尾调用优化。  </p>
-<pre><code>function factorial(n, total) {
-    if (n === 1) return total;
-    return factorial(n - 1, n * total);
-} 
-factorial(5, 1) // 120
-</code></pre><p>目前es6支持尾调用优化，这将去掉一些不必要的闭包内存消耗。</p>
+<h4 id="对象扩展运算符"><a href="#对象扩展运算符" class="headerlink" title="对象扩展运算符"></a>对象扩展运算符</h4><p>&nbsp;&nbsp;也可以对对象使用扩展运算符 … 。有下面两种用法。</p>
+<ol>
+<li>解构赋值的时候使用…进行扩展</li>
+<li>复制对象</li>
+</ol>
 
       
     </div>
@@ -498,8 +504,8 @@ factorial(5, 1) // 120
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/06/es6总结/es6对象扩展/" rel="next" title="es6对象扩展">
-                <i class="fa fa-chevron-left"></i> es6对象扩展
+              <a href="/2017/07/05/es6总结/关于js递归的一个问题/" rel="next" title="关于js递归的一个问题">
+                <i class="fa fa-chevron-left"></i> 关于js递归的一个问题
               </a>
             
           </div>
@@ -507,6 +513,10 @@ factorial(5, 1) // 120
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/06/es6总结/函数的扩展（二）/" rel="prev" title="es6函数扩展（二）">
+                es6函数扩展（二） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -685,7 +695,7 @@ factorial(5, 1) // 120
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数绑定"><span class="nav-number">2.</span> <span class="nav-text">函数绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尾调用优化"><span class="nav-number">3.</span> <span class="nav-text">尾调用优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础回顾"><span class="nav-number">1.</span> <span class="nav-text">基础回顾</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的简写"><span class="nav-number">2.</span> <span class="nav-text">属性的简写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-is-函数"><span class="nav-number">3.</span> <span class="nav-text">Object.is()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-assign-函数"><span class="nav-number">4.</span> <span class="nav-text">Object.assign()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的遍历"><span class="nav-number">5.</span> <span class="nav-text">属性的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象扩展运算符"><span class="nav-number">6.</span> <span class="nav-text">对象扩展运算符</span></a></li></ol></div>
             
 
           </div>
@@ -827,9 +837,9 @@ factorial(5, 1) // 120
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/';
-          this.page.identifier = '2017/07/06/es6总结/函数的扩展（二）/';
-          this.page.title = 'es6函数扩展（二）';
+          this.page.url = 'https://peacecup.github.io/2017/07/06/es6总结/es6对象扩展/';
+          this.page.identifier = '2017/07/06/es6总结/es6对象扩展/';
+          this.page.title = 'es6对象扩展';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
