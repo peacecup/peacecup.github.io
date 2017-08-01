@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="es6," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="发现的两个递归问题之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：   var isSquare = function(n){     function square(index = 0,n){         var res = index*index;         if(res ===">
-<meta name="keywords" content="javascript">
+<meta name="description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于js递归的一个问题">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/05/es6总结/关于js递归的一个问题/index.html">
+<meta property="og:title" content="es6对象扩展">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="发现的两个递归问题之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：   var isSquare = function(n){     function square(index = 0,n){         var res = index*index;         if(res ===">
-<meta property="og:updated_time" content="2017-08-01T05:57:29.298Z">
+<meta property="og:description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
+<meta property="og:updated_time" content="2017-08-01T06:53:55.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于js递归的一个问题">
-<meta name="twitter:description" content="发现的两个递归问题之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：   var isSquare = function(n){     function square(index = 0,n){         var res = index*index;         if(res ===">
+<meta name="twitter:title" content="es6对象扩展">
+<meta name="twitter:description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/05/es6总结/关于js递归的一个问题/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/"/>
 
 
 
 
 
-  <title> 关于js递归的一个问题 | 长夜 </title>
+  <title> es6对象扩展 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/05/es6总结/关于js递归的一个问题/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                关于js递归的一个问题
+                es6对象扩展
               
             
           </h1>
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T18:23:07+08:00">
-                2017-07-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T13:57:13+08:00">
+                2017-07-08
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                    <span itemprop="name">es6知识梳理</span>
                   </a>
                 </span>
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/05/es6总结/关于js递归的一个问题/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/08/es6总结/es6对象扩展/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/05/es6总结/关于js递归的一个问题/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/08/es6总结/es6对象扩展/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,23 +433,36 @@
       
 
       
-        <h4 id="发现的两个递归问题"><a href="#发现的两个递归问题" class="headerlink" title="发现的两个递归问题"></a>发现的两个递归问题</h4><p>之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：  </p>
-<pre><code>var isSquare = function(n){
-    function square(index = 0,n){
-        var res = index*index;
-        if(res === n){
-            return true;
-        }else if(res &gt; n){
-            return false;
-        }
-        index++;
-        return square(index,n) //这里如果不用return来调用递归就得不到正常的返回值。
-    }
-    return  square(0,n);
-}
-</code></pre><p>这里有一个小细节，在递归时如果想要递归结果返回某个值，那么在递归调用函数的时候必须使用return，很好理解，被调用的时候返回的只是一个数值，并没有在外层函数中返回。</p>
-<h4 id="内存溢出"><a href="#内存溢出" class="headerlink" title="内存溢出"></a>内存溢出</h4><p>递归很容易导致内存溢出，上面的代码在n足够大的时候就会导致内存溢出，原因在于每次递归函数调用都会创建执行上下文，而js线程被分配的栈空间是有限的，每个执行上下文window分配为1M，在浏览器不支持尾调用优化的情况下，递归数量次数一旦过多就会内存溢出</p>
-<h4 id="在没有尾调用优化的情况下应该少用递归，尽量少用for循环。"><a href="#在没有尾调用优化的情况下应该少用递归，尽量少用for循环。" class="headerlink" title="在没有尾调用优化的情况下应该少用递归，尽量少用for循环。"></a>在没有尾调用优化的情况下应该少用递归，尽量少用for循环。</h4>
+        <h4 id="基础回顾"><a href="#基础回顾" class="headerlink" title="基础回顾"></a>基础回顾</h4><p>&nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。  </p>
+<ol>
+<li>对象的属性和分为数据属性和访问器属性。 </li>
+<li>数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）</li>
+<li>访问器特性有get、set、configurable、enumerable</li>
+<li>获取特性的函数Object.getOwnPropertyDescriptor()、定义属性特性的函数Object.defineProperty()和Object.defineProperties()</li>
+<li>一旦一个属性已经修改了configurable特性，被设定为false不可配置以后，就不能再次被修改除value外的其他属性了。</li>
+<li>创建对象的发展历史：工厂模式-》构造函数模式-》原型模式-》组合使用构造函数和原型模式-》动态圆形模式-》计生/稳妥构造函数模式</li>
+<li>原型、prototype属性、对象实例实例、构造函数、<strong>proto</strong>属性之间的关系：对象的prototype指向对象的原型，对象的实例的<strong>proto</strong>属性指向对象的原型，原型的constructor属性指向对象的构造函数。</li>
+<li>函数的继承就是利用了原型链的原理，将对象的实例的原型赋值为被继承函数。</li>
+</ol>
+<p>这些对象的知识点看起来不多，但是每一条都展开确实还是要花费好一些时间。只是，原型相关的知识现在越来越用不到了，不论是继承还是封装对象，es6里都进行了扩展。有时候真觉得花的这么些时间来理解吃透原型究竟有多少用。</p>
+<h4 id="属性的简写"><a href="#属性的简写" class="headerlink" title="属性的简写"></a>属性的简写</h4><p>&nbsp;&nbsp;es6支持对属性名进行简写，就像解构里的模式一样，可以使用模式简写的方式来简写对象属性，对于属性方法，也可以省略掉function关键字。确实是很好用的简写方式，节省了大量冗余代码。</p>
+<h4 id="Object-is-函数"><a href="#Object-is-函数" class="headerlink" title="Object.is()函数"></a>Object.is()函数</h4><p>&nbsp;&nbsp;传统的判断上是否相等函数有一定的漏洞，比如-0不等于+0，NaN等于NaN，但是其实正确结果是相反的，es6使用了新的算法来进行全等判断，比===更加有效。</p>
+<h4 id="Object-assign-函数"><a href="#Object-assign-函数" class="headerlink" title="Object.assign()函数"></a>Object.assign()函数</h4><p>&nbsp;&nbsp;Object.assign(target,source)函数会将source对象中的所有可枚举属性复制到target对象中，并且会覆盖同名的对象。<br>&nbsp;&nbsp;这个对象复制的方法并不是深复制，在面对可枚举属性是对象的时候，只是进行了浅复制，复制了引用地址。对于这一点要格外小心</p>
+<h4 id="属性的遍历"><a href="#属性的遍历" class="headerlink" title="属性的遍历"></a>属性的遍历</h4><p>&nbsp;&nbsp;属性石头可被遍历和它的enumerable属性有关，若是enumerable属性为false不可被枚举，此时使用for in就不能遍历该对象，这里在总结列举一下遍历对象的方式：  </p>
+<ol>
+<li>for in：会遍历出自身的可枚举属性以及继承的可枚举属性</li>
+<li>for of：会遍历出所有自身的可枚举属性</li>
+<li>Object.keys()/values()/entries()：自身的可枚举属性</li>
+<li>JSON.stringify()：只会串行化自身的可枚举属性</li>
+<li>Object.assign()：可枚举的自身属性</li>
+<li>Reflect.enumerate()：和for in 一样</li>
+</ol>
+<h4 id="对象扩展运算符"><a href="#对象扩展运算符" class="headerlink" title="对象扩展运算符"></a>对象扩展运算符</h4><p>&nbsp;&nbsp;也可以对对象使用扩展运算符 … 。有下面两种用法。</p>
+<ol>
+<li>解构赋值的时候使用…进行扩展</li>
+<li>复制对象</li>
+</ol>
+
       
     </div>
 
@@ -478,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
         </div>
       
@@ -491,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/05/es6总结/函数的扩展（一）/" rel="next" title="es6函数扩展（一）">
-                <i class="fa fa-chevron-left"></i> es6函数扩展（一）
+              <a href="/2017/07/07/es6总结/关于js递归的一个问题/" rel="next" title="关于js递归的一个问题">
+                <i class="fa fa-chevron-left"></i> 关于js递归的一个问题
               </a>
             
           </div>
@@ -500,10 +513,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/06/es6总结/es6对象扩展/" rel="prev" title="es6对象扩展">
-                es6对象扩展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#发现的两个递归问题"><span class="nav-number">1.</span> <span class="nav-text">发现的两个递归问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存溢出"><span class="nav-number">2.</span> <span class="nav-text">内存溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在没有尾调用优化的情况下应该少用递归，尽量少用for循环。"><span class="nav-number">3.</span> <span class="nav-text">在没有尾调用优化的情况下应该少用递归，尽量少用for循环。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础回顾"><span class="nav-number">1.</span> <span class="nav-text">基础回顾</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的简写"><span class="nav-number">2.</span> <span class="nav-text">属性的简写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-is-函数"><span class="nav-number">3.</span> <span class="nav-text">Object.is()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-assign-函数"><span class="nav-number">4.</span> <span class="nav-text">Object.assign()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的遍历"><span class="nav-number">5.</span> <span class="nav-text">属性的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象扩展运算符"><span class="nav-number">6.</span> <span class="nav-text">对象扩展运算符</span></a></li></ol></div>
             
 
           </div>
@@ -824,9 +833,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/05/es6总结/关于js递归的一个问题/';
-          this.page.identifier = '2017/07/05/es6总结/关于js递归的一个问题/';
-          this.page.title = '关于js递归的一个问题';
+          this.page.url = 'https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/';
+          this.page.identifier = '2017/07/08/es6总结/es6对象扩展/';
+          this.page.title = 'es6对象扩展';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
