@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="markDown," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-<meta name="keywords" content="markDown">
+<meta name="description" content="事件循环的另一种解释 jsvascript是单线程高级脚本语言，每个线程拥有唯一的一个事件循环。  jsvascript代码在执行过程中，除了通过函数调用栈来解决函数执行顺序外，还依靠任务队列来搞定另外一些代码的执行顺序。  一个线程中，函数调用栈是唯一的，事件循环是唯一的，任务队列可以有多个。 任务队列又分为mocro-tasks（宏任务）和（micro-tasks）微任务，在最新的标准中也被称">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markDown写法">
-<meta property="og:url" content="https://peacecup.github.io/2017/05/26/markDown写法/index.html">
+<meta property="og:title" content="js事件循环机制（一）">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/09/s的事件循环机制（v8）（二）/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-<meta property="og:updated_time" content="2017-06-05T09:28:43.383Z">
+<meta property="og:description" content="事件循环的另一种解释 jsvascript是单线程高级脚本语言，每个线程拥有唯一的一个事件循环。  jsvascript代码在执行过程中，除了通过函数调用栈来解决函数执行顺序外，还依靠任务队列来搞定另外一些代码的执行顺序。  一个线程中，函数调用栈是唯一的，事件循环是唯一的，任务队列可以有多个。 任务队列又分为mocro-tasks（宏任务）和（micro-tasks）微任务，在最新的标准中也被称">
+<meta property="og:updated_time" content="2017-08-02T08:03:06.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markDown写法">
-<meta name="twitter:description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
+<meta name="twitter:title" content="js事件循环机制（一）">
+<meta name="twitter:description" content="事件循环的另一种解释 jsvascript是单线程高级脚本语言，每个线程拥有唯一的一个事件循环。  jsvascript代码在执行过程中，除了通过函数调用栈来解决函数执行顺序外，还依靠任务队列来搞定另外一些代码的执行顺序。  一个线程中，函数调用栈是唯一的，事件循环是唯一的，任务队列可以有多个。 任务队列又分为mocro-tasks（宏任务）和（micro-tasks）微任务，在最新的标准中也被称">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/05/26/markDown写法/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/09/s的事件循环机制（v8）（二）/"/>
 
 
 
 
 
-  <title> markDown写法 | 长夜 </title>
+  <title> js事件循环机制（一） | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/05/26/markDown写法/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/09/s的事件循环机制（v8）（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                markDown写法
+                js事件循环机制（一）
               
             
           </h1>
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:11:39+08:00">
-                2017-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T16:03:25+08:00">
+                2017-07-09
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markDown/" itemprop="url" rel="index">
-                    <span itemprop="name">markDown</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/26/markDown写法/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/09/s的事件循环机制（v8）（二）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/26/markDown写法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/09/s的事件循环机制（v8）（二）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,53 +433,22 @@
       
 
       
-        <h1 id="markDown写法"><a href="#markDown写法" class="headerlink" title="markDown写法"></a>markDown写法</h1><h3 id="1、定义标题文本写法"><a href="#1、定义标题文本写法" class="headerlink" title="1、定义标题文本写法"></a>1、定义标题文本写法</h3><p>直接写和按一下tab’写是有区别的、#的个数指定字体大小</p>
-<pre><code>按tab,然后直接写就是正文文本
-</code></pre><h3 id="2、有序列表和无序列表"><a href="#2、有序列表和无序列表" class="headerlink" title="2、有序列表和无序列表"></a>2、有序列表和无序列表</h3><h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><pre><code>1. DASDASD
-2. DASDASD
-3. DASDASFD
-</code></pre><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-<h3 id="3、使用”-gt-”来进行引用"><a href="#3、使用”-gt-”来进行引用" class="headerlink" title="3、使用”&gt;”来进行引用"></a>3、使用”&gt;”来进行引用</h3><blockquote>
-<p>你好，引用的字体会是灰白色</p>
-</blockquote>
-<h3 id="4、图片链接"><a href="#4、图片链接" class="headerlink" title="4、图片链接"></a>4、图片链接</h3><pre><code>博客中添加图片我们可以使用图床获取图片的URL，
-可以去这个网址http://jiantuku.com/#/
-图片的写法是![]()
-![nihao](http://dadasd/adasd/sdasd,jpg)
-</code></pre><h3 id="5、粗体斜体"><a href="#5、粗体斜体" class="headerlink" title="5、粗体斜体"></a>5、粗体斜体</h3><p>使用<strong> </strong>就是粗体，使用一个<em> </em>就是一斜体<br><strong>你好</strong>  <em>你好</em></p>
-<h3 id="6、生成表格"><a href="#6、生成表格" class="headerlink" title="6、生成表格"></a>6、生成表格</h3><table>
-<thead>
-<tr>
-<th>Tables</th>
-<th style="text-align:center">Are</th>
-<th style="text-align:right">Cool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col 3 is</td>
-<td style="text-align:center">right-aligned</td>
-<td style="text-align:right">$1600</td>
-</tr>
-<tr>
-<td>col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:right">$12</td>
-</tr>
-<tr>
-<td>zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:right">$1</td>
-</tr>
-</tbody>
-</table>
-<p>使用这样的语法 “| Tables        | Are           | Cool  |<br>| ————- |:————-:| —–:|<br>| col 3 is      | right-aligned | $1600 |<br>| col 2 is      | centered      |   $12 |<br>| zebra stripes | are neat      |    $1 |”</p>
-<h3 id="7、代码块"><a href="#7、代码块" class="headerlink" title="7、代码块"></a>7、代码块</h3><p>使用”`“来包裹<br><code>var a = &quot;name&quot;;
-var b = &quot;cv&quot;;</code></p>
+        <h4 id="事件循环的另一种解释"><a href="#事件循环的另一种解释" class="headerlink" title="事件循环的另一种解释"></a>事件循环的另一种解释</h4><ol>
+<li><p>jsvascript是单线程高级脚本语言，每个线程拥有唯一的一个事件循环。</p>
+</li>
+<li><p>jsvascript代码在执行过程中，除了通过函数调用栈来解决函数执行顺序外，还依靠任务队列来搞定另外一些代码的执行顺序。</p>
+</li>
+<li>一个线程中，函数调用栈是唯一的，事件循环是唯一的，任务队列可以有多个。</li>
+<li>任务队列又分为mocro-tasks（宏任务）和（micro-tasks）微任务，在最新的标准中也被称为tasks和jobs</li>
+<li>宏任务mocro-tasks包括srcipt（整体代码）、setTimeout、 setInterval、 setImmediate、I/O、UI renering（页面渲染）。</li>
+<li>微任务micro-tasks包括process.nextTrick、Promise、Mutation Observer（HTML5新特性）以及其他DOM事件</li>
+<li>setTimeout、Promise、DOM事件等被称为任务源，而进入任务队列的是他们指定的具体执行的任务。<br>setTimeout作为一个任务分发器，这个函数是会立即执行的，而他所要分发的任务是它的第一个参数，才会延迟执行。</li>
+<li>来自不同任务源的任务会进入不同的任务队列，setTimeout和setInterval是同一个任务源。</li>
+<li>不同任务源的执行有先后顺序。<br>宏任务：script &gt; setTimeout/setInterval &gt; setImmediate &gt;I/O &gt; UI rendering.<br>微任务：process.nextTrick() &gt; Promise &gt;DOM事件</li>
+<li>事件循环的顺序决定了javascript代码的执行顺序，事件循环从宏任务script开始执行，执行过程中遇到任务源就会分发对应的任务到任务队列，script全局代码运行完毕并退出函数调用栈，然后执行所有的微任务micro-tasks，第一次循环结束。第二次循环从宏任务开始，根据宏任务队列的先后顺序，执行完一条任务队列后执行，执行所有的微任务micro-tasks，然后回到宏任务执行下一个宏任务队列，之后执行所有的微任务队列事件，循环直到所有任务队列都为空，此时第二次事件循环结束。</li>
+</ol>
+<p>这里不准备结合例子展开了。</p>
+<h4 id="setTimeout定时函数的原理依然摸不清楚"><a href="#setTimeout定时函数的原理依然摸不清楚" class="headerlink" title="setTimeout定时函数的原理依然摸不清楚"></a>setTimeout定时函数的原理依然摸不清楚</h4><p>但是有一点可以肯定：定时器函数是在定时时间结束后才将定时器函数放入宏队列。<br>所以就当是运行setTimeout函数的时候先休眠延迟时间，然后把回调事件发送到事件队列。</p>
 
       
     </div>
@@ -509,7 +478,7 @@ var b = &quot;cv&quot;;</code></p>
       
         <div class="post-tags">
           
-            <a href="/tags/markDown/" rel="tag"># markDown</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -522,8 +491,8 @@ var b = &quot;cv&quot;;</code></p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/26/上传项目到github/" rel="next" title="上传项目到github“">
-                <i class="fa fa-chevron-left"></i> 上传项目到github“
+              <a href="/2017/07/09/js的事件循环机制（v8）（一）/" rel="next" title="js事件循环机制（一）">
+                <i class="fa fa-chevron-left"></i> js事件循环机制（一）
               </a>
             
           </div>
@@ -531,10 +500,6 @@ var b = &quot;cv&quot;;</code></p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/01/无标题Markdown/" rel="prev" title="个人总结">
-                个人总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -713,7 +678,7 @@ var b = &quot;cv&quot;;</code></p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markDown写法"><span class="nav-number">1.</span> <span class="nav-text">markDown写法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、定义标题文本写法"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、定义标题文本写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、有序列表和无序列表"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、有序列表和无序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有序列表"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无序列表"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">无序列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、使用”-gt-”来进行引用"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、使用”>”来进行引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、图片链接"><span class="nav-number">1.0.4.</span> <span class="nav-text">4、图片链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、粗体斜体"><span class="nav-number">1.0.5.</span> <span class="nav-text">5、粗体斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、生成表格"><span class="nav-number">1.0.6.</span> <span class="nav-text">6、生成表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、代码块"><span class="nav-number">1.0.7.</span> <span class="nav-text">7、代码块</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件循环的另一种解释"><span class="nav-number">1.</span> <span class="nav-text">事件循环的另一种解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setTimeout定时函数的原理依然摸不清楚"><span class="nav-number">2.</span> <span class="nav-text">setTimeout定时函数的原理依然摸不清楚</span></a></li></ol></div>
             
 
           </div>
@@ -855,9 +820,9 @@ var b = &quot;cv&quot;;</code></p>
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/05/26/markDown写法/';
-          this.page.identifier = '2017/05/26/markDown写法/';
-          this.page.title = 'markDown写法';
+          this.page.url = 'https://peacecup.github.io/2017/07/09/s的事件循环机制（v8）（二）/';
+          this.page.identifier = '2017/07/09/s的事件循环机制（v8）（二）/';
+          this.page.title = 'js事件循环机制（一）';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
