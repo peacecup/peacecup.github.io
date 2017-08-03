@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="es6," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
-<meta name="keywords" content="es6">
+<meta name="description" content="前言&amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突 Symbol是es新的基础类型之一&amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefined、Null、">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="es6-函数扩展（二）">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/index.html">
+<meta property="og:title" content="es6-Symbol">
+<meta property="og:url" content="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/index.html">
 <meta property="og:site_name" content="长夜">
-<meta property="og:description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
-<meta property="og:updated_time" content="2017-08-03T07:52:06.989Z">
+<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突 Symbol是es新的基础类型之一&amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefined、Null、">
+<meta property="og:updated_time" content="2017-08-03T07:52:37.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6-函数扩展（二）">
-<meta name="twitter:description" content="箭头函数箭头函数大大的简化了函数的写法，：   var a = x =&amp;gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：    没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来 箭头函数的函数体按照传统函数的写法使用{}括">
+<meta name="twitter:title" content="es6-Symbol">
+<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突 Symbol是es新的基础类型之一&amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefined、Null、">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/"/>
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/"/>
 
 
 
 
 
-  <title> es6-函数扩展（二） | 长夜 </title>
+  <title> es6-Symbol | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -328,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -349,7 +349,7 @@
             
             
               
-                es6-函数扩展（二）
+                es6-Symbol
               
             
           </h1>
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T19:32:47+08:00">
-                2017-07-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T14:51:42+08:00">
+                2017-07-09
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
-                    <span itemprop="name">es6知识梳理</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -405,9 +405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/06/es6总结/函数的扩展（二）/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/09/es6总结/es6-Symbol/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/06/es6总结/函数的扩展（二）/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/09/es6总结/es6-Symbol/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -433,29 +433,48 @@
       
 
       
-        <h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>箭头函数大大的简化了函数的写法，：  </p>
-<pre><code>var a = x =&gt; x*x;
-</code></pre><p>箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：  </p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突</p>
+<h4 id="Symbol是es新的基础类型之一"><a href="#Symbol是es新的基础类型之一" class="headerlink" title="Symbol是es新的基础类型之一"></a>Symbol是es新的基础类型之一</h4><p>&nbsp;&nbsp;以前es有5种基本类型，Undefined、Null、String、Number、Boolean，一种复杂类型Object。<br>&nbsp;&nbsp;现在引入了新的基础类型Symbol。  </p>
+<pre><code>var a = Symbol();
+typeof(a) // symbol
+</code></pre><p>&nbsp;&nbsp;typeof也有了新的返回值。这里有另一个知识点，以前typeof不管面对什么对象都会有返回值，不会报错，未定义的变量会返回undefined。但是在es6里，typeof在面对未声明的let对象的时候，会直接报错。</p>
+<h4 id="Symbol的使用"><a href="#Symbol的使用" class="headerlink" title="Symbol的使用"></a>Symbol的使用</h4><p><strong>创建Symbol对象</strong><br>&nbsp;&nbsp;Symbol是用来创建对象的唯一属性的，由于Symbol是基础类型的不是复杂类型，因此不能使用new关键字来创建，而是直接使用构造函数创建。  </p>
+<pre><code>var s = {
+    size: 0
+};
+var name = Symbol(&apos;cn&apos;);
+s[name] = 1;
+
+console.log(s)   //[ size: 0, Symbol(cn): 1 ]
+console.log(s.size) // 0
+console.log(s.notExist) // undefined
+console.log(s[name])  // 1
+console.log(s.name)// undefined
+
+for(var ele in s){
+    console.log(ele)
+}
+// size
+var a = Object.getOwnPropertySymbols(s);
+console.log(a); // [Symbol(cn)]
+
+
+var des = Object.getOwnProperyDescriptor(s,name)
+console.log(des) // {value: 1, writable: true, enumerable: true, configurable: true}
+</code></pre><p>&nbsp;&nbsp;上面的代码说明了Symbol的用法。  </p>
 <ol>
-<li>没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用</li>
-<li>如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来</li>
-<li>箭头函数的函数体按照传统函数的写法使用{}括起来是永远没有错的，</li>
-<li>如果函数体不只有一行代码，则需要使用{}括起来</li>
+<li><p>Symbol是基本类型，创建对象的时候使用Symbol()，而不是new Symbol()</p>
+</li>
+<li><p>Symbol(“test”)构造函数的参数是Symbol的key，可以填入任意值，但是一般也要求填入有意义的，如果填入一个对象就会变成Symbol([object Object]),key其实是调用了toString()方法。</p>
+</li>
+<li>使用[]将Symbol值作为属性添加给对象，也是用[]来访问，不能使用“.”,点号是普通访问方法。</li>
+<li>普通的遍历方法遍历不到Symbol属性，需要使用特殊的函数Object.getOwnPropertyDescriptor()来获取。</li>
+<li>通过查看Symbol属性的特性，发现枚举属性enumerable为true，这证明，不可被遍历的实现机制并不是利用了属性的枚举特性。</li>
 </ol>
-<p>箭头函数的特性：</p>
-<ol>
-<li>箭头函数在创建执行上下文的时候有两个特性，确认this指向时直接指向上层函数的this，创建变量对象的时候回跳过arguments对象的创建。因此，箭头函数会绑定this对象，并且，无法使用arguments对象。 </li>
-<li>不能使用new关键字，箭头函数没有构造函数</li>
-<li>不能使用yield命令，箭头函数不能用作generator函数。</li>
-</ol>
-<h4 id="函数绑定"><a href="#函数绑定" class="headerlink" title="函数绑定"></a>函数绑定</h4><p>就像箭头函数强行绑定了this一样，es7有了一条用来绑定函数的关键字提案天，而且babel也支持转化。<br>es7使用::来作为绑定obj1::obj2.sayName()会将sayName函数绑定到obj1对象上。虽然没有看出来到底有啥用，不过确实要好写一些。</p>
-<h4 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4><p>&nbsp;&nbsp;在函数的return语句里直接返回函数叫做尾调用，而被返回的函数在没有使用父函数的和参数变量有关的变量的情况下，呗返回函数会替换掉父函数的函数调用栈的情况叫做尾调用优化。<br>这种情况下可以极大的减少内存消耗，因此要尽量高些递归变量的写法，做到尾调用优化。  </p>
-<pre><code>function factorial(n, total) {
-    if (n === 1) return total;
-    return factorial(n - 1, n * total);
-} 
-factorial(5, 1) // 120
-</code></pre><p>目前es6支持尾调用优化，这将去掉一些不必要的闭包内存消耗。</p>
+<h4 id="Symbol的登记"><a href="#Symbol的登记" class="headerlink" title="Symbol的登记"></a>Symbol的登记</h4><p>&nbsp;&nbsp;Symbol其实是一个登记策略，在当前环境中登记一个值，每次调用构造函数就会登记一个值。<br>&nbsp;&nbsp;但是有时候并不需要每次都登记同一个值，因此有了两个相关的函数。<br><strong>Symbol.for()</strong><br>&nbsp;&nbsp;Symbol.for(key)函数会查找当前环境是否登记了给定key的Symbol值，没有则会登记并且调用构造函数创建一个新的Symbol值，有则返回这个Symbol值。</p>
+<p><strong>Symbol.keyFor()</strong><br>Symbol.for(key)函数会查找当前环境是否登记了给定key的Symbol值，没有则会返回undefined，有则返回这个Symbol值。  </p>
+<p>&nbsp;&nbsp;symbol值是否登记和是否有Simbol值是两个不冲突的概念。</p>
+<h4 id="Symbol内置了一堆Symbol值，"><a href="#Symbol内置了一堆Symbol值，" class="headerlink" title="Symbol内置了一堆Symbol值，"></a>Symbol内置了一堆Symbol值，</h4><p>&nbsp;&nbsp;es6在某些功能的实现中，使用了这些内置的值。这些值用到了再去记忆吧。</p>
 
       
     </div>
@@ -485,7 +504,7 @@ factorial(5, 1) // 120
       
         <div class="post-tags">
           
-            <a href="/tags/es6/" rel="tag"># es6</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -498,8 +517,8 @@ factorial(5, 1) // 120
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/05/es6总结/函数的扩展（一）/" rel="next" title="es6-函数扩展（一）">
-                <i class="fa fa-chevron-left"></i> es6-函数扩展（一）
+              <a href="/2017/07/08/es6总结/es6对象扩展/" rel="next" title="es6-对象扩展">
+                <i class="fa fa-chevron-left"></i> es6-对象扩展
               </a>
             
           </div>
@@ -508,8 +527,8 @@ factorial(5, 1) // 120
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/07/es6总结/关于js递归的一个问题/" rel="prev" title="关于js递归的一个问题">
-                关于js递归的一个问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/09/js的事件循环机制（v8）（一）/" rel="prev" title="js事件循环机制（一）">
+                js事件循环机制（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -689,7 +708,7 @@ factorial(5, 1) // 120
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数绑定"><span class="nav-number">2.</span> <span class="nav-text">函数绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尾调用优化"><span class="nav-number">3.</span> <span class="nav-text">尾调用优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol是es新的基础类型之一"><span class="nav-number">2.</span> <span class="nav-text">Symbol是es新的基础类型之一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的使用"><span class="nav-number">3.</span> <span class="nav-text">Symbol的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的登记"><span class="nav-number">4.</span> <span class="nav-text">Symbol的登记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol内置了一堆Symbol值，"><span class="nav-number">5.</span> <span class="nav-text">Symbol内置了一堆Symbol值，</span></a></li></ol></div>
             
 
           </div>
@@ -831,9 +850,9 @@ factorial(5, 1) // 120
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/';
-          this.page.identifier = '2017/07/06/es6总结/函数的扩展（二）/';
-          this.page.title = 'es6-函数扩展（二）';
+          this.page.url = 'https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/';
+          this.page.identifier = '2017/07/09/es6总结/es6-Symbol/';
+          this.page.title = 'es6-Symbol';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://cn.disqus.com/embed.js';
