@@ -6,9 +6,9 @@
     <content type="text"><![CDATA[title: 事件委托和jq事件委托date: 2017-8-11 14:34:42categories: 前端问题梳理tags: 前端 事件委托 事件委托的概念要从js事件模型说起，js事件模型现代主流浏览器实现的都是DOM2级的时间模型，分为三个阶段： 事件捕获 处于事件 事件冒泡 事件委托的原理就是基于此。 由于事件捕获和冒泡的机制，点击在子元素上的事件，先在父元素进行捕获，然后到达子元素然后进行冒泡，冒泡到父元素。 这样，父元素就可以代理子元素的事件，通过event.target（子元素目标）和event.currentTraget（父元素目标）可以区分和获取父子元素进行DOM操作。这么写可以很好的优化事件。 jq事件委托jq1.7以下使用live、delagate方法来绑定事件委托，jQuery1.7以上的同一采用on方法来绑定事件委托。 jqueryObject.on(&apos;click&apos;,&quot;p&quot;,handle) //将所有p元素的点击事件委托到jqueryObject上。 $(&quot;#div&quot;).on(&apos;click&apos;,&quot;span&quot;,function(){}); //将id为div的元素中的span的click事件委托到div上。 需要注意的是，focus和blur等少数事件不支持冒泡，不通过冒泡传递，因此不能使用事件委托。 使用相同形式的off函数来移除绑定的事件。]]></content>
   </entry>
   <entry>
-    <title><![CDATA[js DOM事件模型]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%20%20DOM%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。 浏览器事件在js事件循环中处于微任务队列micro-tasks的末尾，回顾一下事件循环任务队列相关知识点。 一个js线程有一个函数执行栈站、一个事件循环、多个任务队列 任务队列分为宏任务队列mxcro-tasks和微任务队列micro-tasks 宏任务的先后顺序：script（栈运行代码）&gt;setTimeout/setInteval &gt;setImmediate(nodejs)&gt;I/O&gt;UI Rendering。 微任务的先后顺序：process.nextTrick&gt;promise&gt;DOM事件。 事件循环从script开始运行，之后运行所有微任务，第一次循环结束，第二次循环按照宏任务队列的顺序执行，执行完一条宏任务队列，就去执行所有微任务，然后又回头按照顺序执行宏任务队列，然后执行微任务，这个过程持续进行直到清空宏任务和微任务队列，第二次循环结束。 结合实践循环，DOM事件在微任务队列中的DOM实践队列中。具体执行顺序应该是： 事件被触发 浏览器监听器监听到事件 将相应事件放置到DOM任务队列中 事件循环执行到DOM微任务队列的时候执行这个相应事件。 事件捕获和事件冒泡在DOM0级事件的年代，由于标准的不同意，浏览器厂商有了两种不同的DOM事件标准，一个叫事件捕获，就是从最外层元素开始捕获事件，然后执行，然后向下捕获然后执行，然后向下捕获然后执行。IE采用了事件冒泡，从最下层开始先执行，然后向上冒泡，然后执行，然后冒泡。 两种思路没有谁是谁非。但是IE最后赢了，因为DOM0级事件的依然以事件冒泡的方式存在于浏览器中，而其他浏览器选择了支持DOM2.0的标准。 DOM0级规定使用on+’type’的方式来绑定事件，注意，此时IE9以下是不支持这一套的，它使用的另一套实现事件冒泡的机制。 DOM2.0划分由ie9开始，IE8以上的浏览器以及其他浏览器都支持DOM2.0的事件模型标准。 DOM2.0规定，同时使用事件捕获和事件冒泡，一个DOM2.0事件分为三个阶段： 事件捕获 处于事件 事件冒泡 DOM2规定使用addEventListener和removeEventListener来绑定和删除事件，使用第三个参数来规定在哪一个阶段进行时间执行。 IE9以前的事件机制IE9以前采用attachEvent()和detachEvent()来绑定和注销事件。和DOM0级一样，都是默认在冒泡阶段进行事件执行。现在也支持 IE9以后的事件机制IE9以后按照DOM2.0的规范进行事件模型，前面有说明 IE中的event对象IE中的event对象和在DOM中不一样，在DOM中event是作为参数传递进事件执行函数，但是在IE中，event同时还作为window的对象存在，并且会在每次事件响应的时候刷新window.event。 在DOM中使用stopPropagation来阻止冒泡，使用preventDefault来阻止默认事件，使用event.target来获取事件目标。 在IE中使用event.returnValue = false来阻止默认事件，使用event.SrcElement来获取目标事件]]></content>
+    <title><![CDATA[js Error详解]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%20Error%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[不重要JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。 Errorjs错误类的基础是Error对象。构造函数里没有定义任何内容，Error实例被抛出以后，就只会有一个报错，事实上一旦报错就会直接从函数调用栈中被弹出，事件循环不会继续运行这个任务。 Error.prototype原型上定义了三个属性： constructor：构造函数 message：错误信息 name：错误名 当然不同的浏览器厂商也为此做了不同的额外属性：对于 Microsoft，微软为IE扩充了： discription：错误描述 ，和message差不多 number：错误码 Mozilla这个为了终身对抗IE的组织也为fireFox扩充了一大堆内容 filename：错误文件名 lineNumber：行号 columnNumber：列号 stact：错误的堆栈 toSource()和toString() 其他错误类在Error类的基础上，通过继承又封装了6个其他的错误构造函数。 EvalErroreval执行环境产生的错误。与eval（）有关。 InternalError这是个不标准的API，用来返回JS引擎内部的一些错误，比如递归太多等。 RangeError数值或者变量超出了它的范围。 ReferenceError引用错误，无效引用等 SyntaxError在解析代码的过程中发生的语法错误。 其实就是语法错误。eval代码的解析执行也会导致语法错误。 TypeError变量的类型不是预期类型时就会发生这个错误。 URIError在调用encodeURI或者decodeURI时发生的错误，URI处理错误 错误类的继承方式6大错误类是按照原型链继承的方式来实现继承的。]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
@@ -17,9 +17,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js无阻塞加载]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%E6%97%A0%E9%98%BB%E5%A1%9E%E5%8A%A0%E8%BD%BD%2F</url>
-    <content type="text"><![CDATA[js异步加载问题？js无阻赛加载包括js下载和js编译执行两个部分。解决方案： 使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？ 使用动态创建Script标签的方式，同步加载，同步执行。具体依赖webkit，Geaco等支持的load函数，以及IE支持的onreadystate状态。异步下载：被当成DOM进行处理，直接开始下载，不阻塞后续执行；异步执行：本质上，下载脚本以后会形成一个下载完成的异步任务，在下载完成以后会立刻被推入宏任务队列，然后根据进入队列的先后顺序进行执行，是先下载完的先执行。 使用ajax动态获取填充，缺点在于被同源策略限制。 使用其他的基于上面方法的库，别人已经封装好了，可以直接拿来用]]></content>
+    <title><![CDATA[浏览器内核]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%2F</url>
+    <content type="text"><![CDATA[浏览器内核浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。 五大浏览器内核 Trident,也就是IE内核，捆绑在微软的windows中，腾讯的QQ浏览器、360浏览器等也是采用的IE内核，trident。 Gecko，代表作是火狐浏览器，Gecko是开源的。 Webkit，开源项目。chrome以前采用过chrome，以及Opera。 Presto，曾经是Opero浏览器的内核，但是opero在13年加入了谷歌阵营，所以弃用了。 Blink，谷歌和opera开发的浏览器，现在谷歌仍在使用。]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
@@ -50,20 +50,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[CSS 流体特性和BFC]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2FCSS%20%20BFC%2F</url>
-    <content type="text"><![CDATA[块状元素的流体特性html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin padding border等特性影响，也就是说流体特性是针对于盒模型的content部分进行的。 BFC–块级格式化上下文BFC元素的特点是：不管内部元素怎么翻江倒海，外部的相邻元素纹丝未动，不会影响到外部元素。 一个普通块级元素要变成BFC元素需要满足下面的某一个条件： overflow属性设定为 auto、scroll、hidden。 float属性不为none。 display属性为table-cell、 table-caption、inline-block中的一个。 position属性不是relative或者static。 一旦满足了任意一个情况，就会具有BFC属性。]]></content>
-      <categories>
-        <category>前端问题梳理</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[js Error详解]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%20Error%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[不重要JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。 Errorjs错误类的基础是Error对象。构造函数里没有定义任何内容，Error实例被抛出以后，就只会有一个报错，事实上一旦报错就会直接从函数调用栈中被弹出，事件循环不会继续运行这个任务。 Error.prototype原型上定义了三个属性： constructor：构造函数 message：错误信息 name：错误名 当然不同的浏览器厂商也为此做了不同的额外属性：对于 Microsoft，微软为IE扩充了： discription：错误描述 ，和message差不多 number：错误码 Mozilla这个为了终身对抗IE的组织也为fireFox扩充了一大堆内容 filename：错误文件名 lineNumber：行号 columnNumber：列号 stact：错误的堆栈 toSource()和toString() 其他错误类在Error类的基础上，通过继承又封装了6个其他的错误构造函数。 EvalErroreval执行环境产生的错误。与eval（）有关。 InternalError这是个不标准的API，用来返回JS引擎内部的一些错误，比如递归太多等。 RangeError数值或者变量超出了它的范围。 ReferenceError引用错误，无效引用等 SyntaxError在解析代码的过程中发生的语法错误。 其实就是语法错误。eval代码的解析执行也会导致语法错误。 TypeError变量的类型不是预期类型时就会发生这个错误。 URIError在调用encodeURI或者decodeURI时发生的错误，URI处理错误 错误类的继承方式6大错误类是按照原型链继承的方式来实现继承的。]]></content>
+    <title><![CDATA[js无阻塞加载]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%E6%97%A0%E9%98%BB%E5%A1%9E%E5%8A%A0%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[js异步加载问题？js无阻赛加载包括js下载和js编译执行两个部分。解决方案： 使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？ 使用动态创建Script标签的方式，同步加载，同步执行。具体依赖webkit，Geaco等支持的load函数，以及IE支持的onreadystate状态。异步下载：被当成DOM进行处理，直接开始下载，不阻塞后续执行；异步执行：本质上，下载脚本以后会形成一个下载完成的异步任务，在下载完成以后会立刻被推入宏任务队列，然后根据进入队列的先后顺序进行执行，是先下载完的先执行。 使用ajax动态获取填充，缺点在于被同源策略限制。 使用其他的基于上面方法的库，别人已经封装好了，可以直接拿来用]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
@@ -83,9 +72,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[浏览器内核]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%2F</url>
-    <content type="text"><![CDATA[浏览器内核浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。 五大浏览器内核 Trident,也就是IE内核，捆绑在微软的windows中，腾讯的QQ浏览器、360浏览器等也是采用的IE内核，trident。 Gecko，代表作是火狐浏览器，Gecko是开源的。 Webkit，开源项目。chrome以前采用过chrome，以及Opera。 Presto，曾经是Opero浏览器的内核，但是opero在13年加入了谷歌阵营，所以弃用了。 Blink，谷歌和opera开发的浏览器，现在谷歌仍在使用。]]></content>
+    <title><![CDATA[CSS 流体特性和BFC]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2FCSS%20%20BFC%2F</url>
+    <content type="text"><![CDATA[块状元素的流体特性html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin padding border等特性影响，也就是说流体特性是针对于盒模型的content部分进行的。 BFC–块级格式化上下文BFC元素的特点是：不管内部元素怎么翻江倒海，外部的相邻元素纹丝未动，不会影响到外部元素。 一个普通块级元素要变成BFC元素需要满足下面的某一个条件： overflow属性设定为 auto、scroll、hidden。 float属性不为none。 display属性为table-cell、 table-caption、inline-block中的一个。 position属性不是relative或者static。 一旦满足了任意一个情况，就会具有BFC属性。]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
@@ -97,6 +86,17 @@
     <title><![CDATA[javascript的attributes和property的异同]]></title>
     <url>%2F2017%2F08%2F11%2Fproblems%2Fjavascript%E7%9A%84attributes%E5%92%8Cproperty%E7%9A%84%E5%BC%82%E5%90%8C%2F</url>
     <content type="text"><![CDATA[javascript中attributes和property的异同?property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM Element元素的时候就会自动创建在元素上，这些就是property。 attributes是用来保存元素的属性的，任何属性包括自定义属性都会在attributes中存储，attributes本质上是一个NodeNamedMap，一个类似于数组的解构，里面的属性元素为Attr结构，是一个次一级的节点对象。 两者只是在概念上有一些重叠，但是实际上，两者没有任何关系，改变任意一方都不会对对方有什么影响。 对应在jquery上，有attr和prop两个方法，这两者对应于attributes和property。老版本的DOM，可能是DOM2或者DOM3，把property设定为了attributes的一个子集，但是现在，经过测试，完全没有这回事，应该是已经修改过。]]></content>
+      <categories>
+        <category>前端问题梳理</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js DOM事件模型]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%20%20DOM%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。 浏览器事件在js事件循环中处于微任务队列micro-tasks的末尾，回顾一下事件循环任务队列相关知识点。 一个js线程有一个函数执行栈站、一个事件循环、多个任务队列 任务队列分为宏任务队列mxcro-tasks和微任务队列micro-tasks 宏任务的先后顺序：script（栈运行代码）&gt;setTimeout/setInteval &gt;setImmediate(nodejs)&gt;I/O&gt;UI Rendering。 微任务的先后顺序：process.nextTrick&gt;promise&gt;DOM事件。 事件循环从script开始运行，之后运行所有微任务，第一次循环结束，第二次循环按照宏任务队列的顺序执行，执行完一条宏任务队列，就去执行所有微任务，然后又回头按照顺序执行宏任务队列，然后执行微任务，这个过程持续进行直到清空宏任务和微任务队列，第二次循环结束。 结合实践循环，DOM事件在微任务队列中的DOM实践队列中。具体执行顺序应该是： 事件被触发 浏览器监听器监听到事件 将相应事件放置到DOM任务队列中 事件循环执行到DOM微任务队列的时候执行这个相应事件。 事件捕获和事件冒泡在DOM0级事件的年代，由于标准的不同意，浏览器厂商有了两种不同的DOM事件标准，一个叫事件捕获，就是从最外层元素开始捕获事件，然后执行，然后向下捕获然后执行，然后向下捕获然后执行。IE采用了事件冒泡，从最下层开始先执行，然后向上冒泡，然后执行，然后冒泡。 两种思路没有谁是谁非。但是IE最后赢了，因为DOM0级事件的依然以事件冒泡的方式存在于浏览器中，而其他浏览器选择了支持DOM2.0的标准。 DOM0级规定使用on+’type’的方式来绑定事件，注意，此时IE9以下是不支持这一套的，它使用的另一套实现事件冒泡的机制。 DOM2.0划分由ie9开始，IE8以上的浏览器以及其他浏览器都支持DOM2.0的事件模型标准。 DOM2.0规定，同时使用事件捕获和事件冒泡，一个DOM2.0事件分为三个阶段： 事件捕获 处于事件 事件冒泡 DOM2规定使用addEventListener和removeEventListener来绑定和删除事件，使用第三个参数来规定在哪一个阶段进行时间执行。 IE9以前的事件机制IE9以前采用attachEvent()和detachEvent()来绑定和注销事件。和DOM0级一样，都是默认在冒泡阶段进行事件执行。现在也支持 IE9以后的事件机制IE9以后按照DOM2.0的规范进行事件模型，前面有说明 IE中的event对象IE中的event对象和在DOM中不一样，在DOM中event是作为参数传递进事件执行函数，但是在IE中，event同时还作为window的对象存在，并且会在每次事件响应的时候刷新window.event。 在DOM中使用stopPropagation来阻止冒泡，使用preventDefault来阻止默认事件，使用event.target来获取事件目标。 在IE中使用event.returnValue = false来阻止默认事件，使用event.SrcElement来获取目标事件]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>

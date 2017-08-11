@@ -367,7 +367,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:25:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:42:18+08:00">
                 2017-08-11
               </time>
             
@@ -476,7 +476,7 @@ title: 事件委托和jq事件委托date: 2017-8-11 14:34:42categories:
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js Error详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -498,8 +498,8 @@ title: 事件委托和jq事件委托date: 2017-8-11 14:34:42categories:
             
               
                 
-                <a class="post-title-link" href="/2017/08/11/problems/js  DOM事件模型/" itemprop="url">
-                  js  DOM事件模型
+                <a class="post-title-link" href="/2017/08/11/problems/js Error详解/" itemprop="url">
+                  js Error详解
                 </a>
               
             
@@ -556,9 +556,9 @@ title: 事件委托和jq事件委托date: 2017-8-11 14:34:42categories:
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/11/problems/js  DOM事件模型/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/11/problems/js Error详解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/problems/js  DOM事件模型/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/11/problems/js Error详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -586,12 +586,12 @@ title: 事件委托和jq事件委托date: 2017-8-11 14:34:42categories:
       
         
           
-          IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。
-DOM事件浏览器事件模型是按照
+          不重要JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。
+Errorjs错误类的基础是Error对象。构造函数里没有定
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/11/problems/js  DOM事件模型/#more" rel="contents">
+            <a class="btn" href="/2017/08/11/problems/js Error详解/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -637,7 +637,7 @@ DOM事件浏览器事件模型是按照
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js无阻塞加载/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/浏览器内核/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -659,8 +659,8 @@ DOM事件浏览器事件模型是按照
             
               
                 
-                <a class="post-title-link" href="/2017/08/11/problems/js无阻塞加载/" itemprop="url">
-                  js无阻塞加载
+                <a class="post-title-link" href="/2017/08/11/problems/浏览器内核/" itemprop="url">
+                  浏览器内核
                 </a>
               
             
@@ -717,9 +717,9 @@ DOM事件浏览器事件模型是按照
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/11/problems/js无阻塞加载/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/11/problems/浏览器内核/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/problems/js无阻塞加载/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/11/problems/浏览器内核/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -747,14 +747,14 @@ DOM事件浏览器事件模型是按照
       
         
           
-          js异步加载问题？js无阻赛加载包括js下载和js编译执行两个部分。解决方案：  
-
-使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？
-使用动态创建Script标签的方式，同步加
+          浏览器内核浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。
+由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。
+五大浏览器内核
+Trident,也就是IE内核，捆绑在微软的windows
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/11/problems/js无阻塞加载/#more" rel="contents">
+            <a class="btn" href="/2017/08/11/problems/浏览器内核/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1129,7 +1129,7 @@ es5的继承方式原型链原型链是实现继承的主要手段，首先是
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/CSS  BFC/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js无阻塞加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -1151,8 +1151,8 @@ es5的继承方式原型链原型链是实现继承的主要手段，首先是
             
               
                 
-                <a class="post-title-link" href="/2017/08/11/problems/CSS  BFC/" itemprop="url">
-                  CSS  流体特性和BFC
+                <a class="post-title-link" href="/2017/08/11/problems/js无阻塞加载/" itemprop="url">
+                  js无阻塞加载
                 </a>
               
             
@@ -1209,9 +1209,9 @@ es5的继承方式原型链原型链是实现继承的主要手段，首先是
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/11/problems/CSS  BFC/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/11/problems/js无阻塞加载/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/problems/CSS  BFC/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/11/problems/js无阻塞加载/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1239,174 +1239,14 @@ es5的继承方式原型链原型链是实现继承的主要手段，首先是
       
         
           
-          块状元素的流体特性html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。
-流体特性会被margin padding border等特性影响，也就是说流体特性是针对于盒模型的content部分进行的。
-BFC–块级格式化上下文BFC元素的
+          js异步加载问题？js无阻赛加载包括js下载和js编译执行两个部分。解决方案：  
+
+使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？
+使用动态创建Script标签的方式，同步加
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/11/problems/CSS  BFC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js Error详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/problems/js Error详解/" itemprop="url">
-                  js Error详解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                    <span itemprop="name">前端问题梳理</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/11/problems/js Error详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/problems/js Error详解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          不重要JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。
-Errorjs错误类的基础是Error对象。构造函数里没有定
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/11/problems/js Error详解/#more" rel="contents">
+            <a class="btn" href="/2017/08/11/problems/js无阻塞加载/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1612,7 +1452,7 @@ Errorjs错误类的基础是Error对象。构造函数里没有定
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/浏览器内核/">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/CSS  BFC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈宁">
@@ -1634,8 +1474,8 @@ Errorjs错误类的基础是Error对象。构造函数里没有定
             
               
                 
-                <a class="post-title-link" href="/2017/08/11/problems/浏览器内核/" itemprop="url">
-                  浏览器内核
+                <a class="post-title-link" href="/2017/08/11/problems/CSS  BFC/" itemprop="url">
+                  CSS  流体特性和BFC
                 </a>
               
             
@@ -1692,9 +1532,9 @@ Errorjs错误类的基础是Error对象。构造函数里没有定
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/11/problems/浏览器内核/#comments" itemprop="discussionUrl">
+                <a href="/2017/08/11/problems/CSS  BFC/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/problems/浏览器内核/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/08/11/problems/CSS  BFC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1722,14 +1562,13 @@ Errorjs错误类的基础是Error对象。构造函数里没有定
       
         
           
-          浏览器内核浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。
-由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。
-五大浏览器内核
-Trident,也就是IE内核，捆绑在微软的windows
+          块状元素的流体特性html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。
+流体特性会被margin padding border等特性影响，也就是说流体特性是针对于盒模型的content部分进行的。
+BFC–块级格式化上下文BFC元素的
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/11/problems/浏览器内核/#more" rel="contents">
+            <a class="btn" href="/2017/08/11/problems/CSS  BFC/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1890,6 +1729,167 @@ Trident,也就是IE内核，捆绑在微软的windows
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/08/11/problems/javascript的attributes和property的异同/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈宁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/problems/js  DOM事件模型/" itemprop="url">
+                  js  DOM事件模型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
+                    <span itemprop="name">前端问题梳理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/11/problems/js  DOM事件模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/11/problems/js  DOM事件模型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。
+DOM事件浏览器事件模型是按照
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/problems/js  DOM事件模型/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
