@@ -1,894 +1,611 @@
 <!doctype html>
 
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
   <meta name="keywords" content="总结," />
 
-
-
-
-
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
+  <meta name="description" content="前言 最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我.    个人问题 长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂. 这或许就是">
+  <meta name="keywords" content="总结">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="个人总结">
+  <meta property="og:url" content="https://peacecup.github.io/2017/06/01/无标题Markdown/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="前言 最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我.    个人问题 长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂. 这或许就是">
+  <meta property="og:updated_time" content="2017-06-01T08:46:14.963Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="个人总结">
+  <meta name="twitter:description" content="前言 最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我.    个人问题 长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂. 这或许就是">
 
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
 
+  </script>
 
-
-
-<meta name="description" content="前言最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我. 个人问题长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂. 这或许就是我谋求前端的原因">
-<meta name="keywords" content="总结">
-<meta property="og:type" content="article">
-<meta property="og:title" content="个人总结">
-<meta property="og:url" content="https://peacecup.github.io/2017/06/01/无标题Markdown/index.html">
-<meta property="og:site_name" content="长夜">
-<meta property="og:description" content="前言最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我. 个人问题长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂. 这或许就是我谋求前端的原因">
-<meta property="og:updated_time" content="2017-06-01T08:46:14.963Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人总结">
-<meta name="twitter:description" content="前言最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我. 个人问题长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂. 这或许就是我谋求前端的原因">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/06/01/无标题Markdown/"/>
-
-
-
-
+  <link rel="canonical" href="https://peacecup.github.io/2017/06/01/无标题Markdown/" />
 
   <title> 个人总结 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
   <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">长夜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">I Want More！</p>
-      
-  </div>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+            <p class="site-subtitle">I Want More！</p>
 
-<nav class="site-nav">
-  
+          </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+        <nav class="site-nav">
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
+            <div id="posts" class="posts-expand">
 
-  
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/01/无标题Markdown/">
 
-  
-  
-  
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/01/无标题Markdown/">
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
+                <header class="post-header">
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
+                  <h1 class="post-title" itemprop="name headline">
 
-    
-      <header class="post-header">
+                    个人总结
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                个人总结
-              
-            
-          </h1>
-        
+                  </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T16:45:42+08:00">
-                2017-06-01
-              </time>
-            
+                  <div class="post-meta">
+                    <span class="post-time">
 
-            
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-            
-          </span>
+                      <span class="post-meta-item-text">发表于</span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人总结/" itemprop="url" rel="index">
-                    <span itemprop="name">个人总结</span>
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T16:45:42+08:00">
+                        2017-06-01
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/个人总结/" itemprop="url" rel="index">
+                          <span itemprop="name">个人总结</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/01/无标题Markdown/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/01/无标题Markdown/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h3 id="前言">
+                    <a href="#前言" class="headerlink" title="前言"></a>前言</h3>
+                  <p>最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我.</p>
+                  <h3 id="个人问题">
+                    <a href="#个人问题" class="headerlink" title="个人问题"></a>个人问题</h3>
+                  <p>长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂.</p>
+                  <p>这或许就是我谋求前端的原因之一吧，在前端技术的学习上我确实下了功夫，但是缺点也很明显，重心太多偏向js。</p>
+                  <p>或许也是因为js是我技术的启蒙吧，大学阶段那么多的实习，从第一次读写文件MFC展示实习失败开始就一直没正真入门，但是js接纳了我，我第一次聚精会神写一份代码，站在图书馆一呆一天也是因为js。工作以后第一次的任务也是一份js编程的工作，DAP4，借助esayui我使用js完成了一个项目，当时的代码我都保留了起来，虽然现在看起来已经难以入目了，但是这引领了我进入了编程的世界。</p>
+                  <p>后端java的缺点在于基础不扎实，代码都写过了，但是却不明白代码的运行规则。</p>
+                  <p>前端的问题有两部分，基础上，对于js的编程自己还算满意，但是对于css和html标签的掌握不够。框架上，我只熟悉常用的框架，vue，react，webpack，scss，node，express，我只具备基础架构能力，自己也不能判断我是否具有框架的全局把控力。缺乏经验，大量缺乏经验，其实我也算是参与了三个成熟软件产品的研发，但是没有做到业务积累，没有培养自己的建模能力。很失败的一件事情，大学出来以后全部重心都放置在填补以前的空缺上了，没有对参与的项目进行非技术总结，没有细分业务需求的形成。</p>
+                  <h3 id="想法">
+                    <a href="#想法" class="headerlink" title="想法"></a>想法</h3>
+                  <p>面对基础的缺失，依然只能通过技术积累，通过看学习来积累，面对眼界，思维方式的缺失，却要自己多想多钻研。</p>
+                  <ol>
+                    <li>多看文档博客，一点点补充缺失，特别是新特性，java8，css3，es6.</li>
+                    <li>全方面理解web应用开发架构，明白每个模块，每个阶段用到了哪些技术，选取其中最流行最优秀的一个进行研究学习。</li>
+                    <li>
+                      <p>在真正理解了系统架构的基础上理解业务需求，加强建模能力。</p>
+                      <p>路漫漫其修远兮，吾将上下而求索。</p>
+                    </li>
+                  </ol>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-tags">
+
+                    <a href="/tags/总结/" rel="tag"># 总结</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/05/26/markDown写法/" rel="next" title="markDown写法">
+                        <i class="fa fa-chevron-left"></i> markDown写法
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/06/02/axios笔记/" rel="prev" title="axios随笔">
+                        axios随笔
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
+
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
                   </a>
                 </span>
 
-                
-                
-              
-            </span>
-          
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
 
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/01/无标题Markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/01/无标题Markdown/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我.</p>
-<h3 id="个人问题"><a href="#个人问题" class="headerlink" title="个人问题"></a>个人问题</h3><p>长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，spring也没有完全的好好看一遍，数据库sql更是不行，在后台开发这一块水得一塔糊涂.</p>
-<p>这或许就是我谋求前端的原因之一吧，在前端技术的学习上我确实下了功夫，但是缺点也很明显，重心太多偏向js。</p>
-<p>或许也是因为js是我技术的启蒙吧，大学阶段那么多的实习，从第一次读写文件MFC展示实习失败开始就一直没正真入门，但是js接纳了我，我第一次聚精会神写一份代码，站在图书馆一呆一天也是因为js。工作以后第一次的任务也是一份js编程的工作，DAP4，借助esayui我使用js完成了一个项目，当时的代码我都保留了起来，虽然现在看起来已经难以入目了，但是这引领了我进入了编程的世界。</p>
-<p>后端java的缺点在于基础不扎实，代码都写过了，但是却不明白代码的运行规则。</p>
-<p>前端的问题有两部分，基础上，对于js的编程自己还算满意，但是对于css和html标签的掌握不够。框架上，我只熟悉常用的框架，vue，react，webpack，scss，node，express，我只具备基础架构能力，自己也不能判断我是否具有框架的全局把控力。缺乏经验，大量缺乏经验，其实我也算是参与了三个成熟软件产品的研发，但是没有做到业务积累，没有培养自己的建模能力。很失败的一件事情，大学出来以后全部重心都放置在填补以前的空缺上了，没有对参与的项目进行非技术总结，没有细分业务需求的形成。</p>
-<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>面对基础的缺失，依然只能通过技术积累，通过看学习来积累，面对眼界，思维方式的缺失，却要自己多想多钻研。</p>
-<ol>
-<li>多看文档博客，一点点补充缺失，特别是新特性，java8，css3，es6.</li>
-<li>全方面理解web应用开发架构，明白每个模块，每个阶段用到了哪些技术，选取其中最流行最优秀的一个进行研究学习。</li>
-<li><p>在真正理解了系统架构的基础上理解业务需求，加强建模能力。</p>
-<p>路漫漫其修远兮，吾将上下而求索。</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/总结/" rel="tag"># 总结</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/26/markDown写法/" rel="next" title="markDown写法">
-                <i class="fa fa-chevron-left"></i> markDown写法
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/02/axios笔记/" rel="prev" title="axios随笔">
-                axios随笔 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="陈宁" />
-          <p class="site-author-name" itemprop="name">陈宁</p>
-           
-              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-                  
                     <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
+                    知乎
+                  </a>
+                </span>
 
-        
-        
+              </div>
 
-        
+            </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
 
-      </section>
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#前言">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          前言</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#个人问题">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          个人问题</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#想法">
+                        <span class="nav-number">3.</span>
+                        <span class="nav-text">
+                          想法</span>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人问题"><span class="nav-number">2.</span> <span class="nav-text">个人问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#想法"><span class="nav-number">3.</span> <span class="nav-text">想法</span></a></li></ol></div>
-            
+              </div>
+            </section>
+            <!--/noindex-->
 
           </div>
-        </section>
-      <!--/noindex-->
-      
+        </aside>
 
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">陈宁</span>
-</div>
+        <div class="copyright">
 
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-
-        
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
 
-  
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
   <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
   <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
-
-
-  
-  
-
-  
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
 
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url = 'https://peacecup.github.io/2017/06/01/无标题Markdown/';
+      this.page.identifier = '2017/06/01/无标题Markdown/';
+      this.page.title = '个人总结';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
 
-  
+  </script>
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/06/01/无标题Markdown/';
-          this.page.identifier = '2017/06/01/无标题Markdown/';
-          this.page.title = '个人总结';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://cn.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
   <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-  
-  
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
 
   <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
+
 </html>

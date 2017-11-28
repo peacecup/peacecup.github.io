@@ -22,21 +22,21 @@
 
   <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
-  <meta name="keywords" content="es6," />
+  <meta name="keywords" content="mock," />
 
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
-  <meta name="description" content="箭头函数 箭头函数大大的简化了函数的写法，：  var a = x =&amp;gt; x*x;  箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：     没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用   如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来   箭头函数的函数体按照传统函">
-  <meta name="keywords" content="es6">
+  <meta name="description" content="MOCK mock的字面意思就叫模拟，mock技术就是用来模拟前端请求的后端返回。之前有使用过mock.js这个模块，但是在涉及list数据的情况下不是很好用。   本项目里使用了lowdb技术，Low-DB技术是一个基于Lo-Dash中间件的技术，他不依赖于nosql数据库。是一种纯json文本的数据库技术。    LowDB lowdb技术是一个基于lodash的小型数据库技术，在熟悉l">
+  <meta name="keywords" content="mock">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="es6-函数扩展（二）">
-  <meta property="og:url" content="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/index.html">
+  <meta property="og:title" content="万达监控预警项目前端框架整理（er）----开发阶段MOCK server">
+  <meta property="og:url" content="https://peacecup.github.io/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/index.html">
   <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="箭头函数 箭头函数大大的简化了函数的写法，：  var a = x =&amp;gt; x*x;  箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：     没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用   如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来   箭头函数的函数体按照传统函">
-  <meta property="og:updated_time" content="2017-08-03T07:52:06.990Z">
+  <meta property="og:description" content="MOCK mock的字面意思就叫模拟，mock技术就是用来模拟前端请求的后端返回。之前有使用过mock.js这个模块，但是在涉及list数据的情况下不是很好用。   本项目里使用了lowdb技术，Low-DB技术是一个基于Lo-Dash中间件的技术，他不依赖于nosql数据库。是一种纯json文本的数据库技术。    LowDB lowdb技术是一个基于lodash的小型数据库技术，在熟悉l">
+  <meta property="og:updated_time" content="2017-11-28T02:25:33.535Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="es6-函数扩展（二）">
-  <meta name="twitter:description" content="箭头函数 箭头函数大大的简化了函数的写法，：  var a = x =&amp;gt; x*x;  箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：     没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用   如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来   箭头函数的函数体按照传统函">
+  <meta name="twitter:title" content="万达监控预警项目前端框架整理（er）----开发阶段MOCK server">
+  <meta name="twitter:description" content="MOCK mock的字面意思就叫模拟，mock技术就是用来模拟前端请求的后端返回。之前有使用过mock.js这个模块，但是在涉及list数据的情况下不是很好用。   本项目里使用了lowdb技术，Low-DB技术是一个基于Lo-Dash中间件的技术，他不依赖于nosql数据库。是一种纯json文本的数据库技术。    LowDB lowdb技术是一个基于lodash的小型数据库技术，在熟悉l">
 
   <script type="text/javascript" id="hexo.configurations">
     var NexT = window.NexT || {};
@@ -74,10 +74,10 @@
 
   </script>
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/"
+  <link rel="canonical" href="https://peacecup.github.io/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/"
   />
 
-  <title> es6-函数扩展（二） | 长夜 </title>
+  <title> 万达监控预警项目前端框架整理（er）----开发阶段MOCK server | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -222,7 +222,7 @@
             <div id="posts" class="posts-expand">
 
               <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">
 
                 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                   <meta itemprop="name" content="陈宁">
@@ -238,7 +238,7 @@
 
                   <h1 class="post-title" itemprop="name headline">
 
-                    es6-函数扩展（二）
+                    万达监控预警项目前端框架整理（er）----开发阶段MOCK server
 
                   </h1>
 
@@ -251,8 +251,8 @@
 
                       <span class="post-meta-item-text">发表于</span>
 
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T19:32:47+08:00">
-                        2017-07-06
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T11:34:42+08:00">
+                        2017-11-28
                       </time>
 
                     </span>
@@ -268,8 +268,8 @@
                       <span class="post-meta-item-text">分类于</span>
 
                       <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
-                          <span itemprop="name">es6知识梳理</span>
+                        <a href="/categories/前端框架/" itemprop="url" rel="index">
+                          <span itemprop="name">前端框架</span>
                         </a>
                       </span>
 
@@ -280,8 +280,8 @@
                       <span class="post-meta-item-icon">
                         <i class="fa fa-comment-o"></i>
                       </span>
-                      <a href="/2017/07/06/es6总结/函数的扩展（二）/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/06/es6总结/函数的扩展（二）/"
+                      <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/"
                                                                                                         itemprop="commentCount"></span>
                       </a>
                     </span>
@@ -291,40 +291,147 @@
 
                 <div class="post-body" itemprop="articleBody">
 
-                  <h4 id="箭头函数">
-                    <a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4>
-                  <p>箭头函数大大的简化了函数的写法，： </p>
-                  <pre><code>var a = x =&gt; x*x;
+                  <h3 id="MOCK">
+                    <a href="#MOCK" class="headerlink" title="MOCK"></a>MOCK</h3>
+                  <p>mock的字面意思就叫模拟，mock技术就是用来模拟前端请求的后端返回。之前有使用过mock.js这个模块，但是在涉及list数据的情况下不是很好用。
+                    <br>本项目里使用了lowdb技术，Low-DB技术是一个基于Lo-Dash中间件的技术，他不依赖于nosql数据库。是一种纯json文本的数据库技术。</p>
+                  <h3 id="LowDB">
+                    <a href="#LowDB" class="headerlink" title="LowDB"></a>LowDB</h3>
+                  <p>lowdb技术是一个基于lodash的小型数据库技术，在熟悉lodash用法的基础上，使用lowdb将毫无压力。
+                    <br>具体的用法忘记了可以去npm查找这个模块看一看，用法大致想下面的代码一样： </p>
+                  <pre><code>const low = require(&apos;lowdb&apos;);
+const FileSync = require(&quot;lowdb/adapters/FileSync&quot;);
+
+const adapters = FileSync(&quot;mock.json&quot;);
+;+
+const db = low(adapters);
+/------到这里，lowdb已经被搭建起来了---------/
+
+//写入基础数据
+db.defaults({persons:[],master:{}}).write()；
+//写入数组
+db.get(&apos;persons&apos;).push({name:&apos;clg&apos;}).write();
+db.set(&apos;master.title&apos;,&apos;sb&apos;).write();
+//这里的get、push、set都是lodash的函数，使用lodash函数最后接一个write就可以改写数据库
 </code></pre>
-                  <p>箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则： </p>
-                  <ol>
-                    <li>没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用</li>
-                    <li>如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来</li>
-                    <li>箭头函数的函数体按照传统函数的写法使用{}括起来是永远没有错的，</li>
-                    <li>如果函数体不只有一行代码，则需要使用{}括起来</li>
-                  </ol>
-                  <p>箭头函数的特性：</p>
-                  <ol>
-                    <li>箭头函数在创建执行上下文的时候有两个特性，确认this指向时直接指向上层函数的this，创建变量对象的时候回跳过arguments对象的创建。因此，箭头函数会绑定this对象，并且，无法使用arguments对象。
-                    </li>
-                    <li>不能使用new关键字，箭头函数没有构造函数</li>
-                    <li>不能使用yield命令，箭头函数不能用作generator函数。</li>
-                  </ol>
-                  <h4 id="函数绑定">
-                    <a href="#函数绑定" class="headerlink" title="函数绑定"></a>函数绑定</h4>
-                  <p>就像箭头函数强行绑定了this一样，es7有了一条用来绑定函数的关键字提案天，而且babel也支持转化。
-                    <br>es7使用::来作为绑定obj1::obj2.sayName()会将sayName函数绑定到obj1对象上。虽然没有看出来到底有啥用，不过确实要好写一些。</p>
-                  <h4 id="尾调用优化">
-                    <a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h4>
-                  <p>&nbsp;&nbsp;在函数的return语句里直接返回函数叫做尾调用，而被返回的函数在没有使用父函数的和参数变量有关的变量的情况下，呗返回函数会替换掉父函数的函数调用栈的情况叫做尾调用优化。
-                    <br>这种情况下可以极大的减少内存消耗，因此要尽量高些递归变量的写法，做到尾调用优化。 </p>
-                  <pre><code>function factorial(n, total) {
-    if (n === 1) return total;
-    return factorial(n - 1, n * total);
-} 
-factorial(5, 1) // 120
+                  <h3 id="结合express使用">
+                    <a href="#结合express使用" class="headerlink" title="结合express使用"></a>结合express使用</h3>
+                  <p>lowdb结合express使用可以完美模拟后端，通过遍历所有可能的接口，利用express构建中间件拦截对应的请求，在请求中使用lowdb进行数据操作，然后返回数据结果。只要写好了sql格式，任何请求都可以模拟。
+                    <br>本项目也采用了express+lowdb来实现模拟后台。代码如下</p>
+                  <pre><code>function mockData() {
+    const tables = [
+        &apos;Entitymanager&apos;,
+        &apos;Entityfield&apos;,
+        &apos;Menu&apos;,
+        &apos;ModuleEditor&apos;,
+        &apos;I18n&apos;,
+        &apos;App&apos;,
+    ];
+    //init db
+    var dbs = {};
+    //初始化db中数据种类
+    _.forEach(tables, (t) =&gt; _.assign(dbs, {[t]: []}))
+    db.defaults(dbs).write();
+    db.defaults().forEach((m, v) =&gt; {
+        tables.push(v);
+    }).value();
+    //init uri
+    try {
+        tables.map(t =&gt; {
+            log(`init ${t}`);
+            //封装get方法
+            app.use(&apos;/mock/&apos; + t.toLowerCase() + &apos;/:id&apos;, function (req, res) {
+                log(&quot;req.params.id=&quot; + req.params.id);
+                if (req.method === &apos;GET&apos;) {
+                    const post = db.get(t)
+                        .find({id: _.parseInt(req.params.id)})
+                        .value()
+                    res.send(success(post))
+                }
+            });
+            //封装list方法
+            app.use(&apos;/mock/&apos; + t.toLowerCase(), function (req, res) {
+                if (req.method === &apos;GET&apos;) {
+                    //从请求参数中解构出参数
+                    let {sortOrder, limit, offset, sortField} = req.query;
+                    //除了这些参数以外的其他参数
+                    let condition = _.omit(req.query, [&apos;sortOrder&apos;, &apos;limit&apos;,    &apos;offset&apos;, &apos;sortField&apos;])
+                    //获取数据集--包含数据的lodash对象
+                    let value = db.get(t);
+                    let total = 0;
+                    //condition有内容
+                    if (_.keys(condition).length != 0) {
+                        log(&apos;condition:&apos;, JSON.stringify(condition))
+                        condition = _.mapValues(condition, function (m) {
+                            var reg = /^[0-9]*$/;
+                            if (reg.test(m))
+                                return m * 1;
+                            else
+                                return m;
+                        });
+                        condition = _.omit(condition,&apos;lang&apos;)
+                        value = value.filter(condition)
+                    }
+                    total = value.size();
+                    //排序
+                    if (sortField) {
+                        log(&apos;sortBy:&apos;, sortField)
+                        value = value.sortBy(sortField)
+                    }
+                    if (sortOrder &amp;&amp; (sortOrder === &apos;ascend&apos; || sortOrder ===   &apos;asc&apos;)) {
+                        log(&apos;sortOrder:&apos;, sortOrder);
+                        value = value.reverse()
+                    }
+                    if (limit &amp;&amp; offset) {
+                        log(&apos;limit:&apos;, limit)
+                        value = value.slice((offset - 1) * limit, offset *  limit);
+                        res.send(success({
+                            offset: _.parseInt(offset),
+                            total: total,
+                            list: value.value()
+                        }))
+                    } else {
+                        res.send(success(value.value()))
+                    }
+                    //封装  post方法
+                } else if (req.method === &apos;POST&apos;) {
+                    db.get(t)
+                        .push(req.body)
+                        .last()
+                        .assign({id: Date.now()})
+                        .write()
+                        .then(post =&gt; res.send(success(post)))&apos;&apos;
+                } else if (req.method === &apos;PUT&apos;) {
+                    db.get(t)
+                        .find({id: req.body.id})
+                        .assign(req.body)
+                        .write()
+                        .then(post =&gt; res.send(success(post)))
+                } else if (req.method === &apos;DELETE&apos;) {
+                    if (!req.body.id) {
+                        res.send(fail(&apos;not find id!&apos;))
+                    } else if (_.isNumber(req.body.id)) {
+                        db.get(t)
+                            .remove({id: req.body.id})
+                            .write()
+                            .then(post =&gt; res.send(success(post)))
+                    } else if (req.body.id === &apos;all&apos;) {
+                        db.get(t).remove(() =&gt; 1 === 1).write().then(post =&gt;    res.send(success(post)))
+                    } else {
+                        let ids = req.body.id.split(&quot;,&quot;);
+                        db.get(t).remove((m) =&gt; {
+                            return ids.indexOf(m.id + &quot;&quot;) &gt; -1;
+                        }).write().then(post =&gt; res.send(success(post)))
+                    }
+                }
+            });
+        });
+    } catch (e) {
+        console.error(e);
+    }
+}
 </code></pre>
-                  <p>目前es6支持尾调用优化，这将去掉一些不必要的闭包内存消耗。</p>
+                  <p>使用express+lowdb几乎可以完美模拟任何需要，而且开发迅速，可以前后端开发并行进行，是很有意义的技术。而且使用lowdb学习成本并不高，文档很全面。</p>
 
                 </div>
 
@@ -344,15 +451,15 @@ factorial(5, 1) // 120
 
                   <div class="post-tags">
 
-                    <a href="/tags/es6/" rel="tag"># es6</a>
+                    <a href="/tags/mock/" rel="tag"># mock</a>
 
                   </div>
 
                   <div class="post-nav">
                     <div class="post-nav-next post-nav-item">
 
-                      <a href="/2017/07/05/es6总结/函数的扩展（一）/" rel="next" title="es6-函数扩展（一）">
-                        <i class="fa fa-chevron-left"></i> es6-函数扩展（一）
+                      <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/" rel="next" title="万达监控预警项目前端框架整理（一）----webpack相关“">
+                        <i class="fa fa-chevron-left"></i> 万达监控预警项目前端框架整理（一）----webpack相关“
                       </a>
 
                     </div>
@@ -361,8 +468,8 @@ factorial(5, 1) // 120
 
                     <div class="post-nav-prev post-nav-item">
 
-                      <a href="/2017/07/07/es6总结/关于js递归的一个问题/" rel="prev" title="关于js递归的一个问题">
-                        关于js递归的一个问题
+                      <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/" rel="prev" title="万达监控预警项目前端框架整理（三）----项目入口文件">
+                        万达监控预警项目前端框架整理（三）----项目入口文件
                         <i class="fa fa-chevron-right"></i>
                       </a>
 
@@ -500,25 +607,25 @@ factorial(5, 1) // 120
 
                 <div class="post-toc-content">
                   <ol class="nav">
-                    <li class="nav-item nav-level-4">
-                      <a class="nav-link" href="#箭头函数">
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#MOCK">
                         <span class="nav-number">1.</span>
                         <span class="nav-text">
-                          箭头函数</span>
+                          MOCK</span>
                       </a>
                     </li>
-                    <li class="nav-item nav-level-4">
-                      <a class="nav-link" href="#函数绑定">
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#LowDB">
                         <span class="nav-number">2.</span>
                         <span class="nav-text">
-                          函数绑定</span>
+                          LowDB</span>
                       </a>
                     </li>
-                    <li class="nav-item nav-level-4">
-                      <a class="nav-link" href="#尾调用优化">
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#结合express使用">
                         <span class="nav-number">3.</span>
                         <span class="nav-text">
-                          尾调用优化</span>
+                          结合express使用</span>
                       </a>
                     </li>
                   </ol>
@@ -602,9 +709,10 @@ factorial(5, 1) // 120
 
   <script type="text/javascript">
     var disqus_config = function() {
-      this.page.url = 'https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/';
-      this.page.identifier = '2017/07/06/es6总结/函数的扩展（二）/';
-      this.page.title = 'es6-函数扩展（二）';
+      this.page.url =
+        'https://peacecup.github.io/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/';
+      this.page.identifier = '2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/';
+      this.page.title = '万达监控预警项目前端框架整理（er）----开发阶段MOCK server';
     };
     var d = document,
       s = d.createElement('script');

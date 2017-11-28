@@ -1,445 +1,314 @@
 <!doctype html>
 
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
   <meta name="keywords" content="javascript," />
 
-
-
-
-
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突    Symbol是es新的基础类型之一 &amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefin">
+  <meta name="keywords" content="javascript">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="es6-Symbol">
+  <meta property="og:url" content="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突    Symbol是es新的基础类型之一 &amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefin">
+  <meta property="og:updated_time" content="2017-08-03T07:52:37.656Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="es6-Symbol">
+  <meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突    Symbol是es新的基础类型之一 &amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefin">
 
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
 
+  </script>
 
-
-
-<meta name="description" content="前言&amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突 Symbol是es新的基础类型之一&amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefined、Null、">
-<meta name="keywords" content="javascript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="es6-Symbol">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/index.html">
-<meta property="og:site_name" content="长夜">
-<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突 Symbol是es新的基础类型之一&amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefined、Null、">
-<meta property="og:updated_time" content="2017-08-03T07:52:37.656Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6-Symbol">
-<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突 Symbol是es新的基础类型之一&amp;nbsp;&amp;nbsp;以前es有5种基本类型，Undefined、Null、">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/"/>
-
-
-
-
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/"
+  />
 
   <title> es6-Symbol | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
   <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">长夜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">I Want More！</p>
-      
-  </div>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+            <p class="site-subtitle">I Want More！</p>
 
-<nav class="site-nav">
-  
+          </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+        <nav class="site-nav">
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
+            <div id="posts" class="posts-expand">
 
-  
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                es6-Symbol
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T14:51:42+08:00">
-                2017-07-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
                 </span>
 
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
                 </span>
-                <a href="/2017/07/09/es6总结/es6-Symbol/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/09/es6总结/es6-Symbol/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
 
-          
-          
+                <header class="post-header">
 
-          
+                  <h1 class="post-title" itemprop="name headline">
 
-          
+                    es6-Symbol
 
-          
+                  </h1>
 
-        </div>
-      </header>
-    
+                  <div class="post-meta">
+                    <span class="post-time">
 
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-    <div class="post-body" itemprop="articleBody">
+                      <span class="post-meta-item-text">发表于</span>
 
-      
-      
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T14:51:42+08:00">
+                        2017-07-09
+                      </time>
 
-      
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突</p>
-<h4 id="Symbol是es新的基础类型之一"><a href="#Symbol是es新的基础类型之一" class="headerlink" title="Symbol是es新的基础类型之一"></a>Symbol是es新的基础类型之一</h4><p>&nbsp;&nbsp;以前es有5种基本类型，Undefined、Null、String、Number、Boolean，一种复杂类型Object。<br>&nbsp;&nbsp;现在引入了新的基础类型Symbol。  </p>
-<pre><code>var a = Symbol();
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/javascript/" itemprop="url" rel="index">
+                          <span itemprop="name">javascript</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/09/es6总结/es6-Symbol/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/09/es6总结/es6-Symbol/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h4 id="前言">
+                    <a href="#前言" class="headerlink" title="前言"></a>前言</h4>
+                  <p>&nbsp;&nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突</p>
+                  <h4 id="Symbol是es新的基础类型之一">
+                    <a href="#Symbol是es新的基础类型之一" class="headerlink" title="Symbol是es新的基础类型之一"></a>Symbol是es新的基础类型之一</h4>
+                  <p>&nbsp;&nbsp;以前es有5种基本类型，Undefined、Null、String、Number、Boolean，一种复杂类型Object。
+                    <br>&nbsp;&nbsp;现在引入了新的基础类型Symbol。 </p>
+                  <pre><code>var a = Symbol();
 typeof(a) // symbol
-</code></pre><p>&nbsp;&nbsp;typeof也有了新的返回值。这里有另一个知识点，以前typeof不管面对什么对象都会有返回值，不会报错，未定义的变量会返回undefined。但是在es6里，typeof在面对未声明的let对象的时候，会直接报错。</p>
-<h4 id="Symbol的使用"><a href="#Symbol的使用" class="headerlink" title="Symbol的使用"></a>Symbol的使用</h4><p><strong>创建Symbol对象</strong><br>&nbsp;&nbsp;Symbol是用来创建对象的唯一属性的，由于Symbol是基础类型的不是复杂类型，因此不能使用new关键字来创建，而是直接使用构造函数创建。  </p>
-<pre><code>var s = {
+</code></pre>
+                  <p>&nbsp;&nbsp;typeof也有了新的返回值。这里有另一个知识点，以前typeof不管面对什么对象都会有返回值，不会报错，未定义的变量会返回undefined。但是在es6里，typeof在面对未声明的let对象的时候，会直接报错。</p>
+                  <h4 id="Symbol的使用">
+                    <a href="#Symbol的使用" class="headerlink" title="Symbol的使用"></a>Symbol的使用</h4>
+                  <p>
+                    <strong>创建Symbol对象</strong>
+                    <br>&nbsp;&nbsp;Symbol是用来创建对象的唯一属性的，由于Symbol是基础类型的不是复杂类型，因此不能使用new关键字来创建，而是直接使用构造函数创建。
+                  </p>
+                  <pre><code>var s = {
     size: 0
 };
 var name = Symbol(&apos;cn&apos;);
@@ -461,462 +330,346 @@ console.log(a); // [Symbol(cn)]
 
 var des = Object.getOwnProperyDescriptor(s,name)
 console.log(des) // {value: 1, writable: true, enumerable: true, configurable: true}
-</code></pre><p>&nbsp;&nbsp;上面的代码说明了Symbol的用法。  </p>
-<ol>
-<li><p>Symbol是基本类型，创建对象的时候使用Symbol()，而不是new Symbol()</p>
-</li>
-<li><p>Symbol(“test”)构造函数的参数是Symbol的key，可以填入任意值，但是一般也要求填入有意义的，如果填入一个对象就会变成Symbol([object Object]),key其实是调用了toString()方法。</p>
-</li>
-<li>使用[]将Symbol值作为属性添加给对象，也是用[]来访问，不能使用“.”,点号是普通访问方法。</li>
-<li>普通的遍历方法遍历不到Symbol属性，需要使用特殊的函数Object.getOwnPropertyDescriptor()来获取。</li>
-<li>通过查看Symbol属性的特性，发现枚举属性enumerable为true，这证明，不可被遍历的实现机制并不是利用了属性的枚举特性。</li>
-</ol>
-<h4 id="Symbol的登记"><a href="#Symbol的登记" class="headerlink" title="Symbol的登记"></a>Symbol的登记</h4><p>&nbsp;&nbsp;Symbol其实是一个登记策略，在当前环境中登记一个值，每次调用构造函数就会登记一个值。<br>&nbsp;&nbsp;但是有时候并不需要每次都登记同一个值，因此有了两个相关的函数。<br><strong>Symbol.for()</strong><br>&nbsp;&nbsp;Symbol.for(key)函数会查找当前环境是否登记了给定key的Symbol值，没有则会登记并且调用构造函数创建一个新的Symbol值，有则返回这个Symbol值。</p>
-<p><strong>Symbol.keyFor()</strong><br>Symbol.for(key)函数会查找当前环境是否登记了给定key的Symbol值，没有则会返回undefined，有则返回这个Symbol值。  </p>
-<p>&nbsp;&nbsp;symbol值是否登记和是否有Simbol值是两个不冲突的概念。</p>
-<h4 id="Symbol内置了一堆Symbol值，"><a href="#Symbol内置了一堆Symbol值，" class="headerlink" title="Symbol内置了一堆Symbol值，"></a>Symbol内置了一堆Symbol值，</h4><p>&nbsp;&nbsp;es6在某些功能的实现中，使用了这些内置的值。这些值用到了再去记忆吧。</p>
+</code></pre>
+                  <p>&nbsp;&nbsp;上面的代码说明了Symbol的用法。 </p>
+                  <ol>
+                    <li>
+                      <p>Symbol是基本类型，创建对象的时候使用Symbol()，而不是new Symbol()</p>
+                    </li>
+                    <li>
+                      <p>Symbol(“test”)构造函数的参数是Symbol的key，可以填入任意值，但是一般也要求填入有意义的，如果填入一个对象就会变成Symbol([object
+                        Object]),key其实是调用了toString()方法。
+                      </p>
+                    </li>
+                    <li>使用[]将Symbol值作为属性添加给对象，也是用[]来访问，不能使用“.”,点号是普通访问方法。</li>
+                    <li>普通的遍历方法遍历不到Symbol属性，需要使用特殊的函数Object.getOwnPropertyDescriptor()来获取。</li>
+                    <li>通过查看Symbol属性的特性，发现枚举属性enumerable为true，这证明，不可被遍历的实现机制并不是利用了属性的枚举特性。</li>
+                  </ol>
+                  <h4 id="Symbol的登记">
+                    <a href="#Symbol的登记" class="headerlink" title="Symbol的登记"></a>Symbol的登记</h4>
+                  <p>&nbsp;&nbsp;Symbol其实是一个登记策略，在当前环境中登记一个值，每次调用构造函数就会登记一个值。
+                    <br>&nbsp;&nbsp;但是有时候并不需要每次都登记同一个值，因此有了两个相关的函数。
+                    <br>
+                    <strong>Symbol.for()</strong>
+                    <br>&nbsp;&nbsp;Symbol.for(key)函数会查找当前环境是否登记了给定key的Symbol值，没有则会登记并且调用构造函数创建一个新的Symbol值，有则返回这个Symbol值。</p>
+                  <p>
+                    <strong>Symbol.keyFor()</strong>
+                    <br>Symbol.for(key)函数会查找当前环境是否登记了给定key的Symbol值，没有则会返回undefined，有则返回这个Symbol值。
+                    </p>
+                  <p>&nbsp;&nbsp;symbol值是否登记和是否有Simbol值是两个不冲突的概念。</p>
+                  <h4 id="Symbol内置了一堆Symbol值，">
+                    <a href="#Symbol内置了一堆Symbol值，" class="headerlink" title="Symbol内置了一堆Symbol值，"></a>Symbol内置了一堆Symbol值，</h4>
+                  <p>&nbsp;&nbsp;es6在某些功能的实现中，使用了这些内置的值。这些值用到了再去记忆吧。</p>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-        </div>
-      
+                <footer class="post-footer">
 
-      
-        
-      
+                  <div class="post-tags">
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/08/es6总结/es6对象扩展/" rel="next" title="es6-对象扩展">
-                <i class="fa fa-chevron-left"></i> es6-对象扩展
-              </a>
-            
+                    <a href="/tags/javascript/" rel="tag"># javascript</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/07/08/es6总结/es6对象扩展/" rel="next" title="es6-对象扩展">
+                        <i class="fa fa-chevron-left"></i> es6-对象扩展
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/07/09/js的事件循环机制（v8）（一）/" rel="prev" title="js事件循环机制（一）">
+                        js事件循环机制（一）
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+              </div>
+            </div>
+
           </div>
 
-          <span class="post-nav-divider"></span>
+          <div class="comments" id="comments">
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/09/js的事件循环机制（v8）（一）/" rel="prev" title="js事件循环机制（一）">
-                js事件循环机制（一） <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
 
           </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="陈宁" />
-          <p class="site-author-name" itemprop="name">陈宁</p>
-           
-              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-          
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
         </div>
-        <nav class="site-state motion-element">
 
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
 
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
 
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
 
-        </nav>
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
 
-        
+              </div>
+              <nav class="site-state motion-element">
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-                  
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
                     <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-                  
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
                     <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
+                    知乎
+                  </a>
+                </span>
 
-        
-        
+              </div>
 
-        
+            </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
 
-      </section>
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#前言">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          前言</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#Symbol是es新的基础类型之一">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          Symbol是es新的基础类型之一</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#Symbol的使用">
+                        <span class="nav-number">3.</span>
+                        <span class="nav-text">
+                          Symbol的使用</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#Symbol的登记">
+                        <span class="nav-number">4.</span>
+                        <span class="nav-text">
+                          Symbol的登记</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#Symbol内置了一堆Symbol值，">
+                        <span class="nav-number">5.</span>
+                        <span class="nav-text">
+                          Symbol内置了一堆Symbol值，</span>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol是es新的基础类型之一"><span class="nav-number">2.</span> <span class="nav-text">Symbol是es新的基础类型之一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的使用"><span class="nav-number">3.</span> <span class="nav-text">Symbol的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的登记"><span class="nav-number">4.</span> <span class="nav-text">Symbol的登记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol内置了一堆Symbol值，"><span class="nav-number">5.</span> <span class="nav-text">Symbol内置了一堆Symbol值，</span></a></li></ol></div>
-            
+              </div>
+            </section>
+            <!--/noindex-->
 
           </div>
-        </section>
-      <!--/noindex-->
-      
+        </aside>
 
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">陈宁</span>
-</div>
+        <div class="copyright">
 
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-
-        
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
 
-  
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
   <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
   <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
-
-
-  
-  
-
-  
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
 
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url =
+        'https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/';
+      this.page.identifier = '2017/07/09/es6总结/es6-Symbol/';
+      this.page.title = 'es6-Symbol';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
 
-  
+  </script>
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/';
-          this.page.identifier = '2017/07/09/es6总结/es6-Symbol/';
-          this.page.title = 'es6-Symbol';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://cn.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
   <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-  
-  
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
 
   <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
+
 </html>

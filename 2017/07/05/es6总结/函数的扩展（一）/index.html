@@ -1,918 +1,706 @@
 <!doctype html>
 
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
   <meta name="keywords" content="es6," />
 
-
-
-
-
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
+  <meta name="description" content="函数默认值 &amp;nbsp;&amp;nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过  y = y||&amp;apos;dadasd&amp;apos;  这样的方法，而es6支持了函数默认值。   &amp;nbsp;&amp;nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值    函数默认值和结构赋值结合使">
+  <meta name="keywords" content="es6">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="es6-函数扩展（一）">
+  <meta property="og:url" content="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="函数默认值 &amp;nbsp;&amp;nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过  y = y||&amp;apos;dadasd&amp;apos;  这样的方法，而es6支持了函数默认值。   &amp;nbsp;&amp;nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值    函数默认值和结构赋值结合使">
+  <meta property="og:updated_time" content="2017-08-03T07:52:01.164Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="es6-函数扩展（一）">
+  <meta name="twitter:description" content="函数默认值 &amp;nbsp;&amp;nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过  y = y||&amp;apos;dadasd&amp;apos;  这样的方法，而es6支持了函数默认值。   &amp;nbsp;&amp;nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值    函数默认值和结构赋值结合使">
 
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
 
+  </script>
 
-
-
-<meta name="description" content="函数默认值&amp;nbsp;&amp;nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过   y = y||&amp;apos;dadasd&amp;apos; 这样的方法，而es6支持了函数默认值。&amp;nbsp;&amp;nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值 函数默认值和结构赋值结合使用&amp;nbsp;&amp;nb">
-<meta name="keywords" content="es6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="es6-函数扩展（一）">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/index.html">
-<meta property="og:site_name" content="长夜">
-<meta property="og:description" content="函数默认值&amp;nbsp;&amp;nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过   y = y||&amp;apos;dadasd&amp;apos; 这样的方法，而es6支持了函数默认值。&amp;nbsp;&amp;nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值 函数默认值和结构赋值结合使用&amp;nbsp;&amp;nb">
-<meta property="og:updated_time" content="2017-08-03T07:52:01.164Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6-函数扩展（一）">
-<meta name="twitter:description" content="函数默认值&amp;nbsp;&amp;nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过   y = y||&amp;apos;dadasd&amp;apos; 这样的方法，而es6支持了函数默认值。&amp;nbsp;&amp;nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值 函数默认值和结构赋值结合使用&amp;nbsp;&amp;nb">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/"/>
-
-
-
-
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/"
+  />
 
   <title> es6-函数扩展（一） | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
   <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">长夜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">I Want More！</p>
-      
-  </div>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+            <p class="site-subtitle">I Want More！</p>
 
-<nav class="site-nav">
-  
+          </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+        <nav class="site-nav">
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
+            <div id="posts" class="posts-expand">
 
-  
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                es6-函数扩展（一）
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T09:05:13+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
-                    <span itemprop="name">es6知识梳理</span>
-                  </a>
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
                 </span>
 
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
                 </span>
-                <a href="/2017/07/05/es6总结/函数的扩展（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/05/es6总结/函数的扩展（一）/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
 
-          
-          
+                <header class="post-header">
 
-          
+                  <h1 class="post-title" itemprop="name headline">
 
-          
+                    es6-函数扩展（一）
 
-          
+                  </h1>
 
-        </div>
-      </header>
-    
+                  <div class="post-meta">
+                    <span class="post-time">
 
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-    <div class="post-body" itemprop="articleBody">
+                      <span class="post-meta-item-text">发表于</span>
 
-      
-      
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T09:05:13+08:00">
+                        2017-07-05
+                      </time>
 
-      
-        <h4 id="函数默认值"><a href="#函数默认值" class="headerlink" title="函数默认值"></a>函数默认值</h4><p>&nbsp;&nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过  </p>
-<pre><code>y = y||&apos;dadasd&apos;
-</code></pre><p>这样的方法，而es6支持了函数默认值。<br>&nbsp;&nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值</p>
-<h5 id="函数默认值和结构赋值结合使用"><a href="#函数默认值和结构赋值结合使用" class="headerlink" title="函数默认值和结构赋值结合使用"></a>函数默认值和结构赋值结合使用</h5><p>&nbsp;&nbsp;函数默认值可以和解构赋值结合使用，需要弄清楚的规则只有一条：  </p>
-<pre><code>1. 函数接受到参数的时候先判断参数是否是undefined，如果是，触发默认值，如果不是，则由传入参数进行解构赋值
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/05/es6总结/函数的扩展（一）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/05/es6总结/函数的扩展（一）/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h4 id="函数默认值">
+                    <a href="#函数默认值" class="headerlink" title="函数默认值"></a>函数默认值</h4>
+                  <p>&nbsp;&nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过 </p>
+                  <pre><code>y = y||&apos;dadasd&apos;
+</code></pre>
+                  <p>这样的方法，而es6支持了函数默认值。
+                    <br>&nbsp;&nbsp;函数默认值的触发条件为undefined，只有在参数为undefined的时候才会默认赋值，参数为null或者false等值时不会默认赋值</p>
+                  <h5 id="函数默认值和结构赋值结合使用">
+                    <a href="#函数默认值和结构赋值结合使用" class="headerlink" title="函数默认值和结构赋值结合使用"></a>函数默认值和结构赋值结合使用</h5>
+                  <p>&nbsp;&nbsp;函数默认值可以和解构赋值结合使用，需要弄清楚的规则只有一条： </p>
+                  <pre><code>1. 函数接受到参数的时候先判断参数是否是undefined，如果是，触发默认值，如果不是，则由传入参数进行解构赋值
 2. 进行解构赋值的时候，如果解构得到的结果是undefined，则对被赋值对象赋予默认值
-</code></pre><h5 id="函数默认值的位置"><a href="#函数默认值的位置" class="headerlink" title="函数默认值的位置"></a>函数默认值的位置</h5><p>&nbsp;&nbsp;函数的默认值只有在末尾的时候可以省略不谢，这时默认会传入undefined，而默认值如果不在末尾则不能省略不写，如果实在不能复制，也要传入一个undefined。</p>
-<h5 id="length属性失效"><a href="#length属性失效" class="headerlink" title="length属性失效"></a>length属性失效</h5><p>&nbsp;&nbsp;length会在读取到默认参数时失效。</p>
-<ol>
-<li>在没有默认参数时，函数的length属性会得到函数参数的个数</li>
-<li>在有默认参数时，函数的length属性会从设置默认参数的参数位置开始失效。</li>
-</ol>
-<h5 id="默认参数的作用域"><a href="#默认参数的作用域" class="headerlink" title="默认参数的作用域"></a>默认参数的作用域</h5><p>&nbsp;&nbsp;函数的默认参数也有作用域。这里的作用域单凭函数代码很难判断：</p>
-<pre><code>let x = 1;
+</code></pre>
+                  <h5 id="函数默认值的位置">
+                    <a href="#函数默认值的位置" class="headerlink" title="函数默认值的位置"></a>函数默认值的位置</h5>
+                  <p>&nbsp;&nbsp;函数的默认值只有在末尾的时候可以省略不谢，这时默认会传入undefined，而默认值如果不在末尾则不能省略不写，如果实在不能复制，也要传入一个undefined。</p>
+                  <h5 id="length属性失效">
+                    <a href="#length属性失效" class="headerlink" title="length属性失效"></a>length属性失效</h5>
+                  <p>&nbsp;&nbsp;length会在读取到默认参数时失效。</p>
+                  <ol>
+                    <li>在没有默认参数时，函数的length属性会得到函数参数的个数</li>
+                    <li>在有默认参数时，函数的length属性会从设置默认参数的参数位置开始失效。</li>
+                  </ol>
+                  <h5 id="默认参数的作用域">
+                    <a href="#默认参数的作用域" class="headerlink" title="默认参数的作用域"></a>默认参数的作用域</h5>
+                  <p>&nbsp;&nbsp;函数的默认参数也有作用域。这里的作用域单凭函数代码很难判断：</p>
+                  <pre><code>let x = 1;
 function f(y = x) {
     var x = 2;// let x =2 结果一样
     console.log(y);
 }
 f()//1
-</code></pre><p>在思考了这个例子以后我得出了一个结论：  </p>
-<pre><code>默认参数作用域和传统作用域一样，先是函数作用域，然后是外部作用域。
-</code></pre><p>但是这个结论的理解对js原理要有一定的理解，首先，什么是作用域？</p>
-<pre><code>作用域是一套规则，创建执行上下文的时候就会创造作用域，js是词法作用域。  
+</code></pre>
+                  <p>在思考了这个例子以后我得出了一个结论： </p>
+                  <pre><code>默认参数作用域和传统作用域一样，先是函数作用域，然后是外部作用域。
+</code></pre>
+                  <p>但是这个结论的理解对js原理要有一定的理解，首先，什么是作用域？</p>
+                  <pre><code>作用域是一套规则，创建执行上下文的时候就会创造作用域，js是词法作用域。  
 它规定了查找变量的路径和方式，也就是先在自己内部找，找不到再去外部找
-</code></pre><p>默认参数在进行变量查找的时候就会按照作用域规则进行查找<br>然后要理解，默认参数的运行时机，它是什么时候运行，什么时候完成赋值？</p>
-<pre><code>参数定义于赋值站在创建变量对象的第一步完成，前面提到过，先完成arguments  
+</code></pre>
+                  <p>默认参数在进行变量查找的时候就会按照作用域规则进行查找
+                    <br>然后要理解，默认参数的运行时机，它是什么时候运行，什么时候完成赋值？</p>
+                  <pre><code>参数定义于赋值站在创建变量对象的第一步完成，前面提到过，先完成arguments  
 对象的创建与赋值，然后针对var和函数声明进行提前声明。
 然而在默认参数进行赋值的时候函数内部的变量和函数其实还没有被初始化。
 因此其实默认参数的作用域是不包括自己的， 狭义上可以这么理解
-</code></pre><p>所以最后得到结论，默认参数的变量赋值是不参考内部作用域的。内部作用域找不到非参数变量，像y=x这种赋值，x只能去外部作用域找。</p>
-<h5 id="一个问题，let究竟有没有变量提升？"><a href="#一个问题，let究竟有没有变量提升？" class="headerlink" title="一个问题，let究竟有没有变量提升？"></a>一个问题，let究竟有没有变量提升？</h5><p>在知乎上看到这个专栏，虽然对使用let没有影响，但对理解它有帮助，let也是有变量提升的，只是这个变量提升与我们传统的理解有些不同，我们熟悉的是声明提升，也就是把函数声明提升，还有一种提升是创建提升，在let变量没有被声明提升这是肯定的，但是js对它进行了创建提升，一个变量是先被创建，然后被声明，let声明只有创建提升，没有变量提升，所以在重复声明let的时候，可以提前报错错误，is already been decleared，js不允许重复创建，但是它允许重复声明。<br>可能莫名其妙看到这里的人已经乱了。。。。。但是我不准备花时间把这个不重要的深度知识点详细说一遍，想看的可以自己去看知乎的这篇专栏吧<br><a href="https://zhuanlan.zhihu.com/p/28140450" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/28140450</a></p>
-<h4 id="rest参数写法-…"><a href="#rest参数写法-…" class="headerlink" title="rest参数写法 …"></a>rest参数写法 …</h4><p>&nbsp;&nbsp;es6支持使用rest参数的方式来获取多余的参数，rest会将参数扩展成一个数组，可以不再使用arguments对象，但是rest参数不能放在参数中间，只能坐在最后一个</p>
-<h4 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符 …"></a>扩展运算符 …</h4><p>&nbsp;&nbsp;rest参数和扩展运算符在形式上是一样的，但是作用完全相反，扩展运算符是用来将数组或者类似数组的具有iterable接口的对象转换成单个的元素。<br>扩展运算符使用场景很多，可以扩展字符串成为数组改进apply，可以改进apply函数参数的写法，可以和解构结合使用获取数组内容。</p>
-<h4 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h4><p>&nbsp;&nbsp;函数的name属性指向函数的名称。</p>
-<ol>
-<li>对于函数声明的函数对象，name指向函数名，对于对象字面量声明的匿名函数，es5中name属性为空的字符串‘’，而es6中为对象名。  </li>
-<li>bind函数绑定使用的函数的名称前面都要加上bound。</li>
-</ol>
+</code></pre>
+                  <p>所以最后得到结论，默认参数的变量赋值是不参考内部作用域的。内部作用域找不到非参数变量，像y=x这种赋值，x只能去外部作用域找。</p>
+                  <h5 id="一个问题，let究竟有没有变量提升？">
+                    <a href="#一个问题，let究竟有没有变量提升？" class="headerlink" title="一个问题，let究竟有没有变量提升？"></a>一个问题，let究竟有没有变量提升？</h5>
+                  <p>在知乎上看到这个专栏，虽然对使用let没有影响，但对理解它有帮助，let也是有变量提升的，只是这个变量提升与我们传统的理解有些不同，我们熟悉的是声明提升，也就是把函数声明提升，还有一种提升是创建提升，在let变量没有被声明提升这是肯定的，但是js对它进行了创建提升，一个变量是先被创建，然后被声明，let声明只有创建提升，没有变量提升，所以在重复声明let的时候，可以提前报错错误，is
+                    already been decleared，js不允许重复创建，但是它允许重复声明。
+                    <br>可能莫名其妙看到这里的人已经乱了。。。。。但是我不准备花时间把这个不重要的深度知识点详细说一遍，想看的可以自己去看知乎的这篇专栏吧
+                    <br>
+                    <a href="https://zhuanlan.zhihu.com/p/28140450" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/28140450</a>
+                  </p>
+                  <h4 id="rest参数写法-…">
+                    <a href="#rest参数写法-…" class="headerlink" title="rest参数写法 …"></a>rest参数写法 …</h4>
+                  <p>&nbsp;&nbsp;es6支持使用rest参数的方式来获取多余的参数，rest会将参数扩展成一个数组，可以不再使用arguments对象，但是rest参数不能放在参数中间，只能坐在最后一个</p>
+                  <h4 id="扩展运算符-…">
+                    <a href="#扩展运算符-…" class="headerlink" title="扩展运算符 …"></a>扩展运算符 …</h4>
+                  <p>&nbsp;&nbsp;rest参数和扩展运算符在形式上是一样的，但是作用完全相反，扩展运算符是用来将数组或者类似数组的具有iterable接口的对象转换成单个的元素。
+                    <br>扩展运算符使用场景很多，可以扩展字符串成为数组改进apply，可以改进apply函数参数的写法，可以和解构结合使用获取数组内容。</p>
+                  <h4 id="name属性">
+                    <a href="#name属性" class="headerlink" title="name属性"></a>name属性</h4>
+                  <p>&nbsp;&nbsp;函数的name属性指向函数的名称。</p>
+                  <ol>
+                    <li>对于函数声明的函数对象，name指向函数名，对于对象字面量声明的匿名函数，es5中name属性为空的字符串‘’，而es6中为对象名。
+                      </li>
+                    <li>bind函数绑定使用的函数的名称前面都要加上bound。</li>
+                  </ol>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/es6/" rel="tag"># es6</a>
-          
-        </div>
-      
+                <footer class="post-footer">
 
-      
-        
-      
+                  <div class="post-tags">
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/04/es6总结/es6数组扩展/" rel="next" title="es6-数组扩展">
-                <i class="fa fa-chevron-left"></i> es6-数组扩展
-              </a>
-            
+                    <a href="/tags/es6/" rel="tag"># es6</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/07/04/es6总结/es6数组扩展/" rel="next" title="es6-数组扩展">
+                        <i class="fa fa-chevron-left"></i> es6-数组扩展
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/07/06/es6总结/函数的扩展（二）/" rel="prev" title="es6-函数扩展（二）">
+                        es6-函数扩展（二）
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+              </div>
+            </div>
+
           </div>
 
-          <span class="post-nav-divider"></span>
+          <div class="comments" id="comments">
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/06/es6总结/函数的扩展（二）/" rel="prev" title="es6-函数扩展（二）">
-                es6-函数扩展（二） <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
 
           </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="陈宁" />
-          <p class="site-author-name" itemprop="name">陈宁</p>
-           
-              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-          
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
         </div>
-        <nav class="site-state motion-element">
 
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
 
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
 
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
 
-        </nav>
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
 
-        
+              </div>
+              <nav class="site-state motion-element">
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-                  
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
                     <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-                  
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
                     <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
+                    知乎
+                  </a>
+                </span>
 
-        
-        
+              </div>
 
-        
+            </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
 
-      </section>
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#函数默认值">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          函数默认值</span>
+                      </a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#函数默认值和结构赋值结合使用">
+                            <span class="nav-number">1.1.</span>
+                            <span class="nav-text">
+                              函数默认值和结构赋值结合使用</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#函数默认值的位置">
+                            <span class="nav-number">1.2.</span>
+                            <span class="nav-text">
+                              函数默认值的位置</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#length属性失效">
+                            <span class="nav-number">1.3.</span>
+                            <span class="nav-text">
+                              length属性失效</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#默认参数的作用域">
+                            <span class="nav-number">1.4.</span>
+                            <span class="nav-text">
+                              默认参数的作用域</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#一个问题，let究竟有没有变量提升？">
+                            <span class="nav-number">1.5.</span>
+                            <span class="nav-text">
+                              一个问题，let究竟有没有变量提升？</span>
+                          </a>
+                        </li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#rest参数写法-…">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          rest参数写法 …</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#扩展运算符-…">
+                        <span class="nav-number">3.</span>
+                        <span class="nav-text">
+                          扩展运算符 …</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#name属性">
+                        <span class="nav-number">4.</span>
+                        <span class="nav-text">
+                          name属性</span>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数默认值"><span class="nav-number">1.</span> <span class="nav-text">函数默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数默认值和结构赋值结合使用"><span class="nav-number">1.1.</span> <span class="nav-text">函数默认值和结构赋值结合使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数默认值的位置"><span class="nav-number">1.2.</span> <span class="nav-text">函数默认值的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#length属性失效"><span class="nav-number">1.3.</span> <span class="nav-text">length属性失效</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#默认参数的作用域"><span class="nav-number">1.4.</span> <span class="nav-text">默认参数的作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一个问题，let究竟有没有变量提升？"><span class="nav-number">1.5.</span> <span class="nav-text">一个问题，let究竟有没有变量提升？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rest参数写法-…"><span class="nav-number">2.</span> <span class="nav-text">rest参数写法 …</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展运算符-…"><span class="nav-number">3.</span> <span class="nav-text">扩展运算符 …</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#name属性"><span class="nav-number">4.</span> <span class="nav-text">name属性</span></a></li></ol></div>
-            
+              </div>
+            </section>
+            <!--/noindex-->
 
           </div>
-        </section>
-      <!--/noindex-->
-      
+        </aside>
 
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">陈宁</span>
-</div>
+        <div class="copyright">
 
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-
-        
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
 
-  
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
   <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
   <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
-
-
-  
-  
-
-  
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
 
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url = 'https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/';
+      this.page.identifier = '2017/07/05/es6总结/函数的扩展（一）/';
+      this.page.title = 'es6-函数扩展（一）';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
 
-  
+  </script>
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/';
-          this.page.identifier = '2017/07/05/es6总结/函数的扩展（一）/';
-          this.page.title = 'es6-函数扩展（一）';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://cn.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
   <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-  
-  
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
 
   <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
+
 </html>

@@ -1,927 +1,729 @@
 <!doctype html>
 
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
   <meta name="keywords" content="markDown," />
 
-
-
-
-
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
+  <meta name="description" content="markDown写法    1、定义标题文本写法 直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本     2、有序列表和无序列表    有序列表 1. DASDASD 2. DASDASD 3. DASDASFD     无序列表    1   2   3     3、使用”&amp;gt;”来进行引用    你好，引用的字体会是灰白色     4、图片链">
+  <meta name="keywords" content="markDown">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="markDown写法">
+  <meta property="og:url" content="https://peacecup.github.io/2017/05/26/markDown写法/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="markDown写法    1、定义标题文本写法 直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本     2、有序列表和无序列表    有序列表 1. DASDASD 2. DASDASD 3. DASDASFD     无序列表    1   2   3     3、使用”&amp;gt;”来进行引用    你好，引用的字体会是灰白色     4、图片链">
+  <meta property="og:updated_time" content="2017-06-05T09:28:43.384Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="markDown写法">
+  <meta name="twitter:description" content="markDown写法    1、定义标题文本写法 直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本     2、有序列表和无序列表    有序列表 1. DASDASD 2. DASDASD 3. DASDASFD     无序列表    1   2   3     3、使用”&amp;gt;”来进行引用    你好，引用的字体会是灰白色     4、图片链">
 
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
 
+  </script>
 
-
-
-<meta name="description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-<meta name="keywords" content="markDown">
-<meta property="og:type" content="article">
-<meta property="og:title" content="markDown写法">
-<meta property="og:url" content="https://peacecup.github.io/2017/05/26/markDown写法/index.html">
-<meta property="og:site_name" content="长夜">
-<meta property="og:description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-<meta property="og:updated_time" content="2017-06-05T09:28:43.384Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markDown写法">
-<meta name="twitter:description" content="markDown写法1、定义标题文本写法直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本 2、有序列表和无序列表有序列表1. DASDASD 2. DASDASD 3. DASDASFD 无序列表 1 2 3  3、使用”&amp;gt;”来进行引用 你好，引用的字体会是灰白色  4、图片链接博客中添加图片我们可以使用图床获取图片的URL， 可以去这个网址http">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/05/26/markDown写法/"/>
-
-
-
-
+  <link rel="canonical" href="https://peacecup.github.io/2017/05/26/markDown写法/" />
 
   <title> markDown写法 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
   <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">长夜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">I Want More！</p>
-      
-  </div>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+            <p class="site-subtitle">I Want More！</p>
 
-<nav class="site-nav">
-  
+          </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+        <nav class="site-nav">
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
+            <div id="posts" class="posts-expand">
 
-  
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/05/26/markDown写法/">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/05/26/markDown写法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                markDown写法
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:11:39+08:00">
-                2017-05-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markDown/" itemprop="url" rel="index">
-                    <span itemprop="name">markDown</span>
-                  </a>
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
                 </span>
 
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
                 </span>
-                <a href="/2017/05/26/markDown写法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/26/markDown写法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
 
-          
-          
+                <header class="post-header">
 
-          
+                  <h1 class="post-title" itemprop="name headline">
 
-          
+                    markDown写法
 
-          
+                  </h1>
 
-        </div>
-      </header>
-    
+                  <div class="post-meta">
+                    <span class="post-time">
 
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-    <div class="post-body" itemprop="articleBody">
+                      <span class="post-meta-item-text">发表于</span>
 
-      
-      
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:11:39+08:00">
+                        2017-05-26
+                      </time>
 
-      
-        <h1 id="markDown写法"><a href="#markDown写法" class="headerlink" title="markDown写法"></a>markDown写法</h1><h3 id="1、定义标题文本写法"><a href="#1、定义标题文本写法" class="headerlink" title="1、定义标题文本写法"></a>1、定义标题文本写法</h3><p>直接写和按一下tab’写是有区别的、#的个数指定字体大小</p>
-<pre><code>按tab,然后直接写就是正文文本
-</code></pre><h3 id="2、有序列表和无序列表"><a href="#2、有序列表和无序列表" class="headerlink" title="2、有序列表和无序列表"></a>2、有序列表和无序列表</h3><h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><pre><code>1. DASDASD
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/markDown/" itemprop="url" rel="index">
+                          <span itemprop="name">markDown</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/05/26/markDown写法/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/26/markDown写法/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h1 id="markDown写法">
+                    <a href="#markDown写法" class="headerlink" title="markDown写法"></a>markDown写法</h1>
+                  <h3 id="1、定义标题文本写法">
+                    <a href="#1、定义标题文本写法" class="headerlink" title="1、定义标题文本写法"></a>1、定义标题文本写法</h3>
+                  <p>直接写和按一下tab’写是有区别的、#的个数指定字体大小</p>
+                  <pre><code>按tab,然后直接写就是正文文本
+</code></pre>
+                  <h3 id="2、有序列表和无序列表">
+                    <a href="#2、有序列表和无序列表" class="headerlink" title="2、有序列表和无序列表"></a>2、有序列表和无序列表</h3>
+                  <h5 id="有序列表">
+                    <a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5>
+                  <pre><code>1. DASDASD
 2. DASDASD
 3. DASDASFD
-</code></pre><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-<h3 id="3、使用”-gt-”来进行引用"><a href="#3、使用”-gt-”来进行引用" class="headerlink" title="3、使用”&gt;”来进行引用"></a>3、使用”&gt;”来进行引用</h3><blockquote>
-<p>你好，引用的字体会是灰白色</p>
-</blockquote>
-<h3 id="4、图片链接"><a href="#4、图片链接" class="headerlink" title="4、图片链接"></a>4、图片链接</h3><pre><code>博客中添加图片我们可以使用图床获取图片的URL，
+</code></pre>
+                  <h5 id="无序列表">
+                    <a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5>
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul>
+                  <h3 id="3、使用”-gt-”来进行引用">
+                    <a href="#3、使用”-gt-”来进行引用" class="headerlink" title="3、使用”&gt;”来进行引用"></a>3、使用”&gt;”来进行引用</h3>
+                  <blockquote>
+                    <p>你好，引用的字体会是灰白色</p>
+                  </blockquote>
+                  <h3 id="4、图片链接">
+                    <a href="#4、图片链接" class="headerlink" title="4、图片链接"></a>4、图片链接</h3>
+                  <pre><code>博客中添加图片我们可以使用图床获取图片的URL，
 可以去这个网址http://jiantuku.com/#/
 图片的写法是![]()
 ![nihao](http://dadasd/adasd/sdasd,jpg)
-</code></pre><h3 id="5、粗体斜体"><a href="#5、粗体斜体" class="headerlink" title="5、粗体斜体"></a>5、粗体斜体</h3><p>使用<strong> </strong>就是粗体，使用一个<em> </em>就是一斜体<br><strong>你好</strong>  <em>你好</em></p>
-<h3 id="6、生成表格"><a href="#6、生成表格" class="headerlink" title="6、生成表格"></a>6、生成表格</h3><table>
-<thead>
-<tr>
-<th>Tables</th>
-<th style="text-align:center">Are</th>
-<th style="text-align:right">Cool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col 3 is</td>
-<td style="text-align:center">right-aligned</td>
-<td style="text-align:right">$1600</td>
-</tr>
-<tr>
-<td>col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:right">$12</td>
-</tr>
-<tr>
-<td>zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:right">$1</td>
-</tr>
-</tbody>
-</table>
-<p>使用这样的语法 “| Tables        | Are           | Cool  |<br>| ————- |:————-:| —–:|<br>| col 3 is      | right-aligned | $1600 |<br>| col 2 is      | centered      |   $12 |<br>| zebra stripes | are neat      |    $1 |”</p>
-<h3 id="7、代码块"><a href="#7、代码块" class="headerlink" title="7、代码块"></a>7、代码块</h3><p>使用”`“来包裹<br><code>var a = &quot;name&quot;;
-var b = &quot;cv&quot;;</code></p>
+</code></pre>
+                  <h3 id="5、粗体斜体">
+                    <a href="#5、粗体斜体" class="headerlink" title="5、粗体斜体"></a>5、粗体斜体</h3>
+                  <p>使用
+                    <strong> </strong>就是粗体，使用一个
+                    <em> </em>就是一斜体
+                    <br>
+                    <strong>你好</strong>
+                    <em>你好</em>
+                  </p>
+                  <h3 id="6、生成表格">
+                    <a href="#6、生成表格" class="headerlink" title="6、生成表格"></a>6、生成表格</h3>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Tables</th>
+                        <th style="text-align:center">Are</th>
+                        <th style="text-align:right">Cool</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>col 3 is</td>
+                        <td style="text-align:center">right-aligned</td>
+                        <td style="text-align:right">$1600</td>
+                      </tr>
+                      <tr>
+                        <td>col 2 is</td>
+                        <td style="text-align:center">centered</td>
+                        <td style="text-align:right">$12</td>
+                      </tr>
+                      <tr>
+                        <td>zebra stripes</td>
+                        <td style="text-align:center">are neat</td>
+                        <td style="text-align:right">$1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>使用这样的语法 “| Tables | Are | Cool |
+                    <br>| ————- |:————-:| —–:|
+                    <br>| col 3 is | right-aligned | $1600 |
+                    <br>| col 2 is | centered | $12 |
+                    <br>| zebra stripes | are neat | $1 |”</p>
+                  <h3 id="7、代码块">
+                    <a href="#7、代码块" class="headerlink" title="7、代码块"></a>7、代码块</h3>
+                  <p>使用”`“来包裹
+                    <br>
+                    <code>var a = &quot;name&quot;; var b = &quot;cv&quot;;</code>
+                  </p>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <div>
-      
-        
+                <div>
 
-      
-    </div>
+                </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/markDown/" rel="tag"># markDown</a>
-          
-        </div>
-      
+                <footer class="post-footer">
 
-      
-        
-      
+                  <div class="post-tags">
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/26/上传项目到github/" rel="next" title="上传项目到github“">
-                <i class="fa fa-chevron-left"></i> 上传项目到github“
-              </a>
-            
+                    <a href="/tags/markDown/" rel="tag"># markDown</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/05/26/上传项目到github/" rel="next" title="上传项目到github“">
+                        <i class="fa fa-chevron-left"></i> 上传项目到github“
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/06/01/无标题Markdown/" rel="prev" title="个人总结">
+                        个人总结
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+              </div>
+            </div>
+
           </div>
 
-          <span class="post-nav-divider"></span>
+          <div class="comments" id="comments">
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/01/无标题Markdown/" rel="prev" title="个人总结">
-                个人总结 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
 
           </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="陈宁" />
-          <p class="site-author-name" itemprop="name">陈宁</p>
-           
-              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-          
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
         </div>
-        <nav class="site-state motion-element">
 
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
 
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
 
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
 
-        </nav>
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
 
-        
+              </div>
+              <nav class="site-state motion-element">
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-                  
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
                     <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-                  
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
                     <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
+                    知乎
+                  </a>
+                </span>
 
-        
-        
+              </div>
 
-        
+            </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
 
-      </section>
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-1">
+                      <a class="nav-link" href="#markDown写法">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          markDown写法</span>
+                      </a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3">
+                          <a class="nav-link" href="#1、定义标题文本写法">
+                            <span class="nav-number">1.0.1.</span>
+                            <span class="nav-text">
+                              1、定义标题文本写法</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-3">
+                          <a class="nav-link" href="#2、有序列表和无序列表">
+                            <span class="nav-number">1.0.2.</span>
+                            <span class="nav-text">
+                              2、有序列表和无序列表</span>
+                          </a>
+                          <ol class="nav-child">
+                            <li class="nav-item nav-level-5">
+                              <a class="nav-link" href="#有序列表">
+                                <span class="nav-number">1.0.2.0.1.</span>
+                                <span class="nav-text">
+                                  有序列表</span>
+                              </a>
+                            </li>
+                            <li class="nav-item nav-level-5">
+                              <a class="nav-link" href="#无序列表">
+                                <span class="nav-number">1.0.2.0.2.</span>
+                                <span class="nav-text">
+                                  无序列表</span>
+                              </a>
+                            </li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#3、使用”-gt-”来进行引用">
+                        <span class="nav-number">1.0.3.</span>
+                        <span class="nav-text">
+                          3、使用”>”来进行引用</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#4、图片链接">
+                        <span class="nav-number">1.0.4.</span>
+                        <span class="nav-text">
+                          4、图片链接</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#5、粗体斜体">
+                        <span class="nav-number">1.0.5.</span>
+                        <span class="nav-text">
+                          5、粗体斜体</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#6、生成表格">
+                        <span class="nav-number">1.0.6.</span>
+                        <span class="nav-text">
+                          6、生成表格</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#7、代码块">
+                        <span class="nav-number">1.0.7.</span>
+                        <span class="nav-text">
+                          7、代码块</span>
+                      </a>
+                    </li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  </ol>
+                </div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markDown写法"><span class="nav-number">1.</span> <span class="nav-text">markDown写法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、定义标题文本写法"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、定义标题文本写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、有序列表和无序列表"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、有序列表和无序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有序列表"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无序列表"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">无序列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、使用”-gt-”来进行引用"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、使用”>”来进行引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、图片链接"><span class="nav-number">1.0.4.</span> <span class="nav-text">4、图片链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、粗体斜体"><span class="nav-number">1.0.5.</span> <span class="nav-text">5、粗体斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、生成表格"><span class="nav-number">1.0.6.</span> <span class="nav-text">6、生成表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、代码块"><span class="nav-number">1.0.7.</span> <span class="nav-text">7、代码块</span></a></li></ol></li></ol></li></ol></div>
-            
+              </div>
+            </section>
+            <!--/noindex-->
 
           </div>
-        </section>
-      <!--/noindex-->
-      
+        </aside>
 
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">陈宁</span>
-</div>
+        <div class="copyright">
 
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-
-        
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
 
-  
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
   <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
   <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
-
-
-  
-  
-
-  
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
 
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url = 'https://peacecup.github.io/2017/05/26/markDown写法/';
+      this.page.identifier = '2017/05/26/markDown写法/';
+      this.page.title = 'markDown写法';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
 
-  
+  </script>
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/05/26/markDown写法/';
-          this.page.identifier = '2017/05/26/markDown写法/';
-          this.page.title = 'markDown写法';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://cn.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
   <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-  
-  
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
 
   <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
+
 </html>

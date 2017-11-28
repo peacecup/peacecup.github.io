@@ -1,909 +1,658 @@
 <!doctype html>
 
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
   <meta name="keywords" content="es6," />
 
-
-
-
-
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
+  <meta name="description" content="基础回顾 &amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。     对象的属性和分为数据属性和访问器属性。    数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）   访问器特性有get、set、configurable、enumerable">
+  <meta name="keywords" content="es6">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="es6-对象扩展">
+  <meta property="og:url" content="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="基础回顾 &amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。     对象的属性和分为数据属性和访问器属性。    数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）   访问器特性有get、set、configurable、enumerable">
+  <meta property="og:updated_time" content="2017-08-03T07:52:30.092Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="es6-对象扩展">
+  <meta name="twitter:description" content="基础回顾 &amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。     对象的属性和分为数据属性和访问器属性。    数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）   访问器特性有get、set、configurable、enumerable">
 
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
 
+  </script>
 
-
-
-<meta name="description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
-<meta name="keywords" content="es6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="es6-对象扩展">
-<meta property="og:url" content="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/index.html">
-<meta property="og:site_name" content="长夜">
-<meta property="og:description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
-<meta property="og:updated_time" content="2017-08-03T07:52:30.092Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6-对象扩展">
-<meta name="twitter:description" content="基础回顾&amp;nbsp;&amp;nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。    对象的属性和分为数据属性和访问器属性。  数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来） 访问器特性有get、set、configurable、enumerable 获取特性的函数Obj">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/"/>
-
-
-
-
+  <link rel="canonical" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/"
+  />
 
   <title> es6-对象扩展 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
   <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">长夜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">I Want More！</p>
-      
-  </div>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+            <p class="site-subtitle">I Want More！</p>
 
-<nav class="site-nav">
-  
+          </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+        <nav class="site-nav">
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
+            <div id="posts" class="posts-expand">
 
-  
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/">
 
-  
-  
-  
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/">
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
+                <header class="post-header">
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
+                  <h1 class="post-title" itemprop="name headline">
 
-    
-      <header class="post-header">
+                    es6-对象扩展
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                es6-对象扩展
-              
-            
-          </h1>
-        
+                  </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T13:57:13+08:00">
-                2017-07-08
-              </time>
-            
+                  <div class="post-meta">
+                    <span class="post-time">
 
-            
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-            
-          </span>
+                      <span class="post-meta-item-text">发表于</span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
-                    <span itemprop="name">es6知识梳理</span>
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T13:57:13+08:00">
+                        2017-07-08
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/08/es6总结/es6对象扩展/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/08/es6总结/es6对象扩展/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h4 id="基础回顾">
+                    <a href="#基础回顾" class="headerlink" title="基础回顾"></a>基础回顾</h4>
+                  <p>&nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。 </p>
+                  <ol>
+                    <li>对象的属性和分为数据属性和访问器属性。 </li>
+                    <li>数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）</li>
+                    <li>访问器特性有get、set、configurable、enumerable</li>
+                    <li>获取特性的函数Object.getOwnPropertyDescriptor()、定义属性特性的函数Object.defineProperty()和Object.defineProperties()</li>
+                    <li>一旦一个属性已经修改了configurable特性，被设定为false不可配置以后，就不能再次被修改除value外的其他属性了。</li>
+                    <li>创建对象的发展历史：工厂模式-》构造函数模式-》原型模式-》组合使用构造函数和原型模式-》动态圆形模式-》计生/稳妥构造函数模式</li>
+                    <li>原型、prototype属性、对象实例实例、构造函数、
+                      <strong>proto</strong>属性之间的关系：对象的prototype指向对象的原型，对象的实例的
+                      <strong>proto</strong>属性指向对象的原型，原型的constructor属性指向对象的构造函数。</li>
+                    <li>函数的继承就是利用了原型链的原理，将对象的实例的原型赋值为被继承函数。</li>
+                  </ol>
+                  <p>这些对象的知识点看起来不多，但是每一条都展开确实还是要花费好一些时间。只是，原型相关的知识现在越来越用不到了，不论是继承还是封装对象，es6里都进行了扩展。有时候真觉得花的这么些时间来理解吃透原型究竟有多少用。</p>
+                  <h4 id="属性的简写">
+                    <a href="#属性的简写" class="headerlink" title="属性的简写"></a>属性的简写</h4>
+                  <p>&nbsp;&nbsp;es6支持对属性名进行简写，就像解构里的模式一样，可以使用模式简写的方式来简写对象属性，对于属性方法，也可以省略掉function关键字。确实是很好用的简写方式，节省了大量冗余代码。</p>
+                  <h4 id="Object-is-函数">
+                    <a href="#Object-is-函数" class="headerlink" title="Object.is()函数"></a>Object.is()函数</h4>
+                  <p>&nbsp;&nbsp;传统的判断上是否相等函数有一定的漏洞，比如-0不等于+0，NaN等于NaN，但是其实正确结果是相反的，es6使用了新的算法来进行全等判断，比===更加有效。</p>
+                  <h4 id="Object-assign-函数">
+                    <a href="#Object-assign-函数" class="headerlink" title="Object.assign()函数"></a>Object.assign()函数</h4>
+                  <p>&nbsp;&nbsp;Object.assign(target,source)函数会将source对象中的所有可枚举属性复制到target对象中，并且会覆盖同名的对象。
+                    <br>&nbsp;&nbsp;这个对象复制的方法并不是深复制，在面对可枚举属性是对象的时候，只是进行了浅复制，复制了引用地址。对于这一点要格外小心</p>
+                  <h4 id="属性的遍历">
+                    <a href="#属性的遍历" class="headerlink" title="属性的遍历"></a>属性的遍历</h4>
+                  <p>&nbsp;&nbsp;属性石头可被遍历和它的enumerable属性有关，若是enumerable属性为false不可被枚举，此时使用for
+                    in就不能遍历该对象，这里在总结列举一下遍历对象的方式：
+                  </p>
+                  <ol>
+                    <li>for in：会遍历出自身的可枚举属性以及继承的可枚举属性</li>
+                    <li>for of：会遍历出所有自身的可枚举属性</li>
+                    <li>Object.keys()/values()/entries()：自身的可枚举属性</li>
+                    <li>JSON.stringify()：只会串行化自身的可枚举属性</li>
+                    <li>Object.assign()：可枚举的自身属性</li>
+                    <li>Reflect.enumerate()：和for in 一样</li>
+                  </ol>
+                  <h4 id="对象扩展运算符">
+                    <a href="#对象扩展运算符" class="headerlink" title="对象扩展运算符"></a>对象扩展运算符</h4>
+                  <p>&nbsp;&nbsp;也可以对对象使用扩展运算符 … 。有下面两种用法。</p>
+                  <ol>
+                    <li>解构赋值的时候使用…进行扩展</li>
+                    <li>复制对象</li>
+                  </ol>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-tags">
+
+                    <a href="/tags/es6/" rel="tag"># es6</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/07/07/es6总结/关于js递归的一个问题/" rel="next" title="关于js递归的一个问题">
+                        <i class="fa fa-chevron-left"></i> 关于js递归的一个问题
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/07/09/es6总结/es6-Symbol/" rel="prev" title="es6-Symbol">
+                        es6-Symbol
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
+
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
                   </a>
                 </span>
 
-                
-                
-              
-            </span>
-          
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
 
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/08/es6总结/es6对象扩展/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/08/es6总结/es6对象扩展/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h4 id="基础回顾"><a href="#基础回顾" class="headerlink" title="基础回顾"></a>基础回顾</h4><p>&nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。  </p>
-<ol>
-<li>对象的属性和分为数据属性和访问器属性。 </li>
-<li>数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）</li>
-<li>访问器特性有get、set、configurable、enumerable</li>
-<li>获取特性的函数Object.getOwnPropertyDescriptor()、定义属性特性的函数Object.defineProperty()和Object.defineProperties()</li>
-<li>一旦一个属性已经修改了configurable特性，被设定为false不可配置以后，就不能再次被修改除value外的其他属性了。</li>
-<li>创建对象的发展历史：工厂模式-》构造函数模式-》原型模式-》组合使用构造函数和原型模式-》动态圆形模式-》计生/稳妥构造函数模式</li>
-<li>原型、prototype属性、对象实例实例、构造函数、<strong>proto</strong>属性之间的关系：对象的prototype指向对象的原型，对象的实例的<strong>proto</strong>属性指向对象的原型，原型的constructor属性指向对象的构造函数。</li>
-<li>函数的继承就是利用了原型链的原理，将对象的实例的原型赋值为被继承函数。</li>
-</ol>
-<p>这些对象的知识点看起来不多，但是每一条都展开确实还是要花费好一些时间。只是，原型相关的知识现在越来越用不到了，不论是继承还是封装对象，es6里都进行了扩展。有时候真觉得花的这么些时间来理解吃透原型究竟有多少用。</p>
-<h4 id="属性的简写"><a href="#属性的简写" class="headerlink" title="属性的简写"></a>属性的简写</h4><p>&nbsp;&nbsp;es6支持对属性名进行简写，就像解构里的模式一样，可以使用模式简写的方式来简写对象属性，对于属性方法，也可以省略掉function关键字。确实是很好用的简写方式，节省了大量冗余代码。</p>
-<h4 id="Object-is-函数"><a href="#Object-is-函数" class="headerlink" title="Object.is()函数"></a>Object.is()函数</h4><p>&nbsp;&nbsp;传统的判断上是否相等函数有一定的漏洞，比如-0不等于+0，NaN等于NaN，但是其实正确结果是相反的，es6使用了新的算法来进行全等判断，比===更加有效。</p>
-<h4 id="Object-assign-函数"><a href="#Object-assign-函数" class="headerlink" title="Object.assign()函数"></a>Object.assign()函数</h4><p>&nbsp;&nbsp;Object.assign(target,source)函数会将source对象中的所有可枚举属性复制到target对象中，并且会覆盖同名的对象。<br>&nbsp;&nbsp;这个对象复制的方法并不是深复制，在面对可枚举属性是对象的时候，只是进行了浅复制，复制了引用地址。对于这一点要格外小心</p>
-<h4 id="属性的遍历"><a href="#属性的遍历" class="headerlink" title="属性的遍历"></a>属性的遍历</h4><p>&nbsp;&nbsp;属性石头可被遍历和它的enumerable属性有关，若是enumerable属性为false不可被枚举，此时使用for in就不能遍历该对象，这里在总结列举一下遍历对象的方式：  </p>
-<ol>
-<li>for in：会遍历出自身的可枚举属性以及继承的可枚举属性</li>
-<li>for of：会遍历出所有自身的可枚举属性</li>
-<li>Object.keys()/values()/entries()：自身的可枚举属性</li>
-<li>JSON.stringify()：只会串行化自身的可枚举属性</li>
-<li>Object.assign()：可枚举的自身属性</li>
-<li>Reflect.enumerate()：和for in 一样</li>
-</ol>
-<h4 id="对象扩展运算符"><a href="#对象扩展运算符" class="headerlink" title="对象扩展运算符"></a>对象扩展运算符</h4><p>&nbsp;&nbsp;也可以对对象使用扩展运算符 … 。有下面两种用法。</p>
-<ol>
-<li>解构赋值的时候使用…进行扩展</li>
-<li>复制对象</li>
-</ol>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/es6/" rel="tag"># es6</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/07/es6总结/关于js递归的一个问题/" rel="next" title="关于js递归的一个问题">
-                <i class="fa fa-chevron-left"></i> 关于js递归的一个问题
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/09/es6总结/es6-Symbol/" rel="prev" title="es6-Symbol">
-                es6-Symbol <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="陈宁" />
-          <p class="site-author-name" itemprop="name">陈宁</p>
-           
-              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-                  
                     <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
+                    知乎
+                  </a>
+                </span>
 
-        
-        
+              </div>
 
-        
+            </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
 
-      </section>
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#基础回顾">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          基础回顾</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#属性的简写">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          属性的简写</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#Object-is-函数">
+                        <span class="nav-number">3.</span>
+                        <span class="nav-text">
+                          Object.is()函数</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#Object-assign-函数">
+                        <span class="nav-number">4.</span>
+                        <span class="nav-text">
+                          Object.assign()函数</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#属性的遍历">
+                        <span class="nav-number">5.</span>
+                        <span class="nav-text">
+                          属性的遍历</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#对象扩展运算符">
+                        <span class="nav-number">6.</span>
+                        <span class="nav-text">
+                          对象扩展运算符</span>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础回顾"><span class="nav-number">1.</span> <span class="nav-text">基础回顾</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的简写"><span class="nav-number">2.</span> <span class="nav-text">属性的简写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-is-函数"><span class="nav-number">3.</span> <span class="nav-text">Object.is()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-assign-函数"><span class="nav-number">4.</span> <span class="nav-text">Object.assign()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性的遍历"><span class="nav-number">5.</span> <span class="nav-text">属性的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象扩展运算符"><span class="nav-number">6.</span> <span class="nav-text">对象扩展运算符</span></a></li></ol></div>
-            
+              </div>
+            </section>
+            <!--/noindex-->
 
           </div>
-        </section>
-      <!--/noindex-->
-      
+        </aside>
 
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">陈宁</span>
-</div>
+        <div class="copyright">
 
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-
-        
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
 
-  
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
   <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
   <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
-
-
-  
-  
-
-  
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
 
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url = 'https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/';
+      this.page.identifier = '2017/07/08/es6总结/es6对象扩展/';
+      this.page.title = 'es6-对象扩展';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
 
-  
+  </script>
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/';
-          this.page.identifier = '2017/07/08/es6总结/es6对象扩展/';
-          this.page.title = 'es6-对象扩展';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://cn.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
   <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-  
-  
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
 
   <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
+
 </html>

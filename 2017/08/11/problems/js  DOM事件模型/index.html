@@ -1,913 +1,663 @@
 <!doctype html>
 
-
-
-  
-
-
 <html class="theme-next mist use-motion" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
   <meta name="keywords" content="前端," />
 
-
-
-
-
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
+  <meta name="description" content="IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。   好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。    DOM事件 浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行">
+  <meta name="keywords" content="前端">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="js  DOM事件模型">
+  <meta property="og:url" content="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。   好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。    DOM事件 浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行">
+  <meta property="og:updated_time" content="2017-08-11T09:25:27.034Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="js  DOM事件模型">
+  <meta name="twitter:description" content="IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。   好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。    DOM事件 浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行">
 
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
 
+  </script>
 
+  <link rel="canonical" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/"
+  />
 
-
-<meta name="description" content="IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。 浏览器事件在js事">
-<meta name="keywords" content="前端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js  DOM事件模型">
-<meta property="og:url" content="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/index.html">
-<meta property="og:site_name" content="长夜">
-<meta property="og:description" content="IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。 浏览器事件在js事">
-<meta property="og:updated_time" content="2017-08-11T09:25:27.034Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js  DOM事件模型">
-<meta name="twitter:description" content="IE这个傻叉像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。 浏览器事件在js事">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/"/>
-
-
-
-
-
-  <title> js  DOM事件模型 | 长夜 </title>
+  <title> js DOM事件模型 | 长夜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
 
   <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">长夜</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">I Want More！</p>
-      
-  </div>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+            <p class="site-subtitle">I Want More！</p>
 
-<nav class="site-nav">
-  
+          </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
+        <nav class="site-nav">
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
       </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
+            <div id="posts" class="posts-expand">
 
-  
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/">
 
-  
-  
-  
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/">
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈宁">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
+                <header class="post-header">
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="长夜">
-    </span>
+                  <h1 class="post-title" itemprop="name headline">
 
-    
-      <header class="post-header">
+                    js DOM事件模型
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                js  DOM事件模型
-              
-            
-          </h1>
-        
+                  </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                2017-08-11
-              </time>
-            
+                  <div class="post-meta">
+                    <span class="post-time">
 
-            
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-            
-          </span>
+                      <span class="post-meta-item-text">发表于</span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                    <span itemprop="name">前端问题梳理</span>
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
+                        2017-08-11
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">前端问题梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/08/11/problems/js  DOM事件模型/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/js  DOM事件模型/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h4 id="IE这个傻叉">
+                    <a href="#IE这个傻叉" class="headerlink" title="IE这个傻叉"></a>IE这个傻叉</h4>
+                  <p>像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。
+                    <br>好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。</p>
+                  <h4 id="DOM事件">
+                    <a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h4>
+                  <p>浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。</p>
+                  <p>浏览器事件在js事件循环中处于微任务队列micro-tasks的末尾，回顾一下事件循环任务队列相关知识点。</p>
+                  <ol>
+                    <li>一个js线程有一个函数执行栈站、一个事件循环、多个任务队列</li>
+                    <li>任务队列分为宏任务队列mxcro-tasks和微任务队列micro-tasks</li>
+                    <li>宏任务的先后顺序：script（栈运行代码）&gt;setTimeout/setInteval &gt;setImmediate(nodejs)&gt;I/O&gt;UI
+                      Rendering。
+                    </li>
+                    <li>微任务的先后顺序：process.nextTrick&gt;promise&gt;DOM事件。</li>
+                    <li>事件循环从script开始运行，之后运行所有微任务，第一次循环结束，第二次循环按照宏任务队列的顺序执行，执行完一条宏任务队列，就去执行所有微任务，然后又回头按照顺序执行宏任务队列，然后执行微任务，这个过程持续进行直到清空宏任务和微任务队列，第二次循环结束。</li>
+                  </ol>
+                  <p>结合实践循环，DOM事件在微任务队列中的DOM实践队列中。具体执行顺序应该是：</p>
+                  <ol>
+                    <li>事件被触发</li>
+                    <li>浏览器监听器监听到事件</li>
+                    <li>将相应事件放置到DOM任务队列中</li>
+                    <li>事件循环执行到DOM微任务队列的时候执行这个相应事件。</li>
+                  </ol>
+                  <h4 id="事件捕获和事件冒泡">
+                    <a href="#事件捕获和事件冒泡" class="headerlink" title="事件捕获和事件冒泡"></a>事件捕获和事件冒泡</h4>
+                  <p>在DOM0级事件的年代，由于标准的不同意，浏览器厂商有了两种不同的DOM事件标准，一个叫事件捕获，就是从最外层元素开始捕获事件，然后执行，然后向下捕获然后执行，然后向下捕获然后执行。IE采用了事件冒泡，从最下层开始先执行，然后向上冒泡，然后执行，然后冒泡。
+                  </p>
+                  <p>两种思路没有谁是谁非。但是IE最后赢了，因为DOM0级事件的依然以事件冒泡的方式存在于浏览器中，而其他浏览器选择了支持DOM2.0的标准。</p>
+                  <p>
+                    <strong>DOM0级规定使用on+’type’的方式来绑定事件，注意，此时IE9以下是不支持这一套的，它使用的另一套实现事件冒泡的机制</strong>。</p>
+                  <p>DOM2.0划分由ie9开始，IE8以上的浏览器以及其他浏览器都支持DOM2.0的事件模型标准。</p>
+                  <p>DOM2.0规定，同时使用事件捕获和事件冒泡，一个DOM2.0事件分为三个阶段： </p>
+                  <ol>
+                    <li>事件捕获</li>
+                    <li>处于事件</li>
+                    <li>事件冒泡</li>
+                  </ol>
+                  <p>DOM2规定使用addEventListener和removeEventListener来绑定和删除事件，使用第三个参数来规定在哪一个阶段进行时间执行。</p>
+                  <h4 id="IE9以前的事件机制">
+                    <a href="#IE9以前的事件机制" class="headerlink" title="IE9以前的事件机制"></a>IE9以前的事件机制</h4>
+                  <p>IE9以前采用attachEvent()和detachEvent()来绑定和注销事件。和DOM0级一样，都是默认在冒泡阶段进行事件执行。现在也支持</p>
+                  <h4 id="IE9以后的事件机制">
+                    <a href="#IE9以后的事件机制" class="headerlink" title="IE9以后的事件机制"></a>IE9以后的事件机制</h4>
+                  <p>IE9以后按照DOM2.0的规范进行事件模型，前面有说明</p>
+                  <h4 id="IE中的event对象">
+                    <a href="#IE中的event对象" class="headerlink" title="IE中的event对象"></a>IE中的event对象</h4>
+                  <p>IE中的event对象和在DOM中不一样，在DOM中event是作为参数传递进事件执行函数，但是在IE中，event同时还作为window的对象存在，并且会在每次事件响应的时候刷新window.event。</p>
+                  <p>在DOM中使用stopPropagation来阻止冒泡，使用preventDefault来阻止默认事件，使用event.target来获取事件目标。</p>
+                  <p>在IE中使用event.returnValue = false来阻止默认事件，使用event.SrcElement来获取目标事件</p>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-tags">
+
+                    <a href="/tags/前端/" rel="tag"># 前端</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/08/11/problems/CSS  BFC/" rel="next" title="CSS  流体特性和BFC">
+                        <i class="fa fa-chevron-left"></i> CSS 流体特性和BFC
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/08/11/problems/javascript的attributes和property的异同/" rel="prev" title="javascript的attributes和property的异同">
+                        javascript的attributes和property的异同
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
+
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
                   </a>
                 </span>
 
-                
-                
-              
-            </span>
-          
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
 
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/11/problems/js  DOM事件模型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/11/problems/js  DOM事件模型/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h4 id="IE这个傻叉"><a href="#IE这个傻叉" class="headerlink" title="IE这个傻叉"></a>IE这个傻叉</h4><p>像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。<br>好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。</p>
-<h4 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h4><p>浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相应执行。</p>
-<p>浏览器事件在js事件循环中处于微任务队列micro-tasks的末尾，回顾一下事件循环任务队列相关知识点。</p>
-<ol>
-<li>一个js线程有一个函数执行栈站、一个事件循环、多个任务队列</li>
-<li>任务队列分为宏任务队列mxcro-tasks和微任务队列micro-tasks</li>
-<li>宏任务的先后顺序：script（栈运行代码）&gt;setTimeout/setInteval &gt;setImmediate(nodejs)&gt;I/O&gt;UI Rendering。</li>
-<li>微任务的先后顺序：process.nextTrick&gt;promise&gt;DOM事件。</li>
-<li>事件循环从script开始运行，之后运行所有微任务，第一次循环结束，第二次循环按照宏任务队列的顺序执行，执行完一条宏任务队列，就去执行所有微任务，然后又回头按照顺序执行宏任务队列，然后执行微任务，这个过程持续进行直到清空宏任务和微任务队列，第二次循环结束。</li>
-</ol>
-<p>结合实践循环，DOM事件在微任务队列中的DOM实践队列中。具体执行顺序应该是：</p>
-<ol>
-<li>事件被触发</li>
-<li>浏览器监听器监听到事件</li>
-<li>将相应事件放置到DOM任务队列中</li>
-<li>事件循环执行到DOM微任务队列的时候执行这个相应事件。</li>
-</ol>
-<h4 id="事件捕获和事件冒泡"><a href="#事件捕获和事件冒泡" class="headerlink" title="事件捕获和事件冒泡"></a>事件捕获和事件冒泡</h4><p>在DOM0级事件的年代，由于标准的不同意，浏览器厂商有了两种不同的DOM事件标准，一个叫事件捕获，就是从最外层元素开始捕获事件，然后执行，然后向下捕获然后执行，然后向下捕获然后执行。IE采用了事件冒泡，从最下层开始先执行，然后向上冒泡，然后执行，然后冒泡。  </p>
-<p>两种思路没有谁是谁非。但是IE最后赢了，因为DOM0级事件的依然以事件冒泡的方式存在于浏览器中，而其他浏览器选择了支持DOM2.0的标准。</p>
-<p><strong>DOM0级规定使用on+’type’的方式来绑定事件，注意，此时IE9以下是不支持这一套的，它使用的另一套实现事件冒泡的机制</strong>。</p>
-<p>DOM2.0划分由ie9开始，IE8以上的浏览器以及其他浏览器都支持DOM2.0的事件模型标准。</p>
-<p>DOM2.0规定，同时使用事件捕获和事件冒泡，一个DOM2.0事件分为三个阶段：  </p>
-<ol>
-<li>事件捕获</li>
-<li>处于事件</li>
-<li>事件冒泡</li>
-</ol>
-<p>DOM2规定使用addEventListener和removeEventListener来绑定和删除事件，使用第三个参数来规定在哪一个阶段进行时间执行。</p>
-<h4 id="IE9以前的事件机制"><a href="#IE9以前的事件机制" class="headerlink" title="IE9以前的事件机制"></a>IE9以前的事件机制</h4><p>IE9以前采用attachEvent()和detachEvent()来绑定和注销事件。和DOM0级一样，都是默认在冒泡阶段进行事件执行。现在也支持</p>
-<h4 id="IE9以后的事件机制"><a href="#IE9以后的事件机制" class="headerlink" title="IE9以后的事件机制"></a>IE9以后的事件机制</h4><p>IE9以后按照DOM2.0的规范进行事件模型，前面有说明</p>
-<h4 id="IE中的event对象"><a href="#IE中的event对象" class="headerlink" title="IE中的event对象"></a>IE中的event对象</h4><p>IE中的event对象和在DOM中不一样，在DOM中event是作为参数传递进事件执行函数，但是在IE中，event同时还作为window的对象存在，并且会在每次事件响应的时候刷新window.event。</p>
-<p>在DOM中使用stopPropagation来阻止冒泡，使用preventDefault来阻止默认事件，使用event.target来获取事件目标。</p>
-<p>在IE中使用event.returnValue = false来阻止默认事件，使用event.SrcElement来获取目标事件</p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/08/02/s的事件循环机制（v8）（二）/" rel="next" title="js事件循环机制（二）">
-                <i class="fa fa-chevron-left"></i> js事件循环机制（二）
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/11/problems/js实现继承的方式/" rel="prev" title="js实现继承的方式">
-                js实现继承的方式 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="陈宁" />
-          <p class="site-author-name" itemprop="name">陈宁</p>
-           
-              <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-                  
                     <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
 
-        
-        
+                    知乎
+                  </a>
+                </span>
 
-        
-        
+              </div>
 
-        
+            </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
 
-      </section>
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#IE这个傻叉">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          IE这个傻叉</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#DOM事件">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          DOM事件</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#事件捕获和事件冒泡">
+                        <span class="nav-number">3.</span>
+                        <span class="nav-text">
+                          事件捕获和事件冒泡</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#IE9以前的事件机制">
+                        <span class="nav-number">4.</span>
+                        <span class="nav-text">
+                          IE9以前的事件机制</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#IE9以后的事件机制">
+                        <span class="nav-number">5.</span>
+                        <span class="nav-text">
+                          IE9以后的事件机制</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-4">
+                      <a class="nav-link" href="#IE中的event对象">
+                        <span class="nav-number">6.</span>
+                        <span class="nav-text">
+                          IE中的event对象</span>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#IE这个傻叉"><span class="nav-number">1.</span> <span class="nav-text">IE这个傻叉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM事件"><span class="nav-number">2.</span> <span class="nav-text">DOM事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件捕获和事件冒泡"><span class="nav-number">3.</span> <span class="nav-text">事件捕获和事件冒泡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE9以前的事件机制"><span class="nav-number">4.</span> <span class="nav-text">IE9以前的事件机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE9以后的事件机制"><span class="nav-number">5.</span> <span class="nav-text">IE9以后的事件机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE中的event对象"><span class="nav-number">6.</span> <span class="nav-text">IE中的event对象</span></a></li></ol></div>
-            
+              </div>
+            </section>
+            <!--/noindex-->
 
           </div>
-        </section>
-      <!--/noindex-->
-      
+        </aside>
 
-      
-
-    </div>
-  </aside>
-
-
-        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">陈宁</span>
-</div>
+        <div class="copyright">
 
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-
-        
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
 
-  
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-  
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
   <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
   <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
   <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
-
-
-  
-  
-
-  
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
 
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url =
+        'https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/';
+      this.page.identifier = '2017/08/11/problems/js  DOM事件模型/';
+      this.page.title = 'js  DOM事件模型';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
 
-  
+  </script>
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/';
-          this.page.identifier = '2017/08/11/problems/js  DOM事件模型/';
-          this.page.title = 'js  DOM事件模型';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://cn.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
   <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-  
-  
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
 
   <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
+
 </html>
