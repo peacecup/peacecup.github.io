@@ -1,105 +1,241 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
 
 <head>
+  <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://peacecup.github.io/warn.html">
+<![endif]-->
   <meta charset="utf-8">
 
-  <title>关于js递归的一个问题 | 长夜</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="发现的两个递归问题 之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：  var isSquare = function(n){     function square(index = 0,n){         var res = index*index;         if(res">
-  <meta name="keywords" content="javascript">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="关于js递归的一个问题">
-  <meta property="og:url" content="https://peacecup.github.io/2017/07/07/es6总结/关于js递归的一个问题/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="发现的两个递归问题 之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：  var isSquare = function(n){     function square(index = 0,n){         var res = index*index;         if(res">
-  <meta property="og:updated_time" content="2017-08-01T06:53:45.086Z">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="关于js递归的一个问题">
-  <meta name="twitter:description" content="发现的两个递归问题 之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：  var isSquare = function(n){     function square(index = 0,n){         var res = index*index;         if(res">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="mobile-agent" content="format=html5; url=https://peacecup.github.io">
+  <meta name="author" content="陈宁">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/SimpleStyle.min.css">
 
-  <link rel="alternate" href="/atom.xml" title="长夜" type="application/atom+xml">
+  <link rel="shortcut icon" href="/images/favicon.png">
 
-  <link rel="icon" href="/favicon.png">
+  <title>关于js递归的一个问题 - 长夜</title>
 
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <meta name="keywords" content="undefined">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <meta name="description " content="打开新世界的大门">
 
 </head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-        <div id="banner"></div>
-        <div id="header-outer" class="outer">
-          <div id="header-title" class="inner">
-            <h1 id="logo-wrap">
-              <a href="/" id="logo">长夜</a>
-            </h1>
+  <div id="nav">
+    <nav class="nav-menu">
+      <a class="site-name current" href="/" title="说">说</a>
+      <a class="site-index current" href="/">
+        <i class="fa fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/archives" title="Archives">
+        <i class="fa fa-archives"></i>
+        <span>Archives</span>
+      </a>
+      <a href="/tags" title="Tags">
+        <i class="fa fa-tags"></i>
+        <span>Tags</span>
+      </a>
+      <!-- custom single page of menus -->
 
-            <h2 id="subtitle-wrap">
-              <a href="/" id="subtitle">I Want More！</a>
-            </h2>
+      <a href="/cross_fire" title="穿越火线">
+        <i class="fa fa-wifi"></i>
+        <span>穿越火线</span>
+      </a>
 
-          </div>
-          <div id="header-inner" class="inner">
-            <nav id="main-nav">
-              <a id="main-nav-toggle" class="nav-icon"></a>
+      <a href="/help" title="急救中心">
+        <i class="fa fa-question-circle"></i>
+        <span>急救中心</span>
+      </a>
 
-              <a class="main-nav-link" href="/">Home</a>
+    </nav>
+  </div>
 
-              <a class="main-nav-link" href="/archives">Archives</a>
+  <div class="nav-user">
+    <a class="btn-search" href="#">
+      <i class="fa fa-search"></i>
+    </a>
+    <a class="btn-read-mode" href="#">
+      <i class="fa fa-sun-o"></i>
+    </a>
+    <a class="btn-weixin-mp" href="javascript:">
+      <i class="fa fa-weixin"></i>
+    </a>
+  </div>
 
-            </nav>
-            <nav id="sub-nav">
+  <div id="wrapper" class="clearfix">
+    <div id="body">
+      <div class="main" id="main">
+        <div id="cover">
+          <div class="cover-img"></div>
+          <div class="cover-info">
 
-              <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+            <h1 class="cover-siteName">说IT</h1>
+            <h3 class="cover-siteTitle">聊技术，谈情怀</h3>
+            <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+            <div class="cover-sns">
 
-              <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
-            </nav>
-            <div id="search-form-wrap">
-              <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-                <input type="search" name="q" class="search-form-input" placeholder="Search">
-                <button type="submit" class="search-form-submit">&#xF002;</button>
-                <input type="hidden" name="sitesearch" value="https://peacecup.github.io">
-              </form>
-            </div>
-          </div>
-        </div>
-      </header>
+              <div class="btn btn-telegram">
+                <a href="http://t.me/codeist" target="_blank" title="telegram" ref="friend">
+                  <i class="fa fa-telegram"></i>
+                </a>
+              </div>
 
-      <div class="outer">
-        <section id="main">
-          <article id="post-es6总结/关于js递归的一个问题" class="article article-type-post" itemscope
-                                                                                          itemprop="blogPost">
-            <div class="article-meta">
-              <a href="/2017/07/07/es6总结/关于js递归的一个问题/" class="article-date">
-                <time datetime="2017-07-07T10:23:07.000Z" itemprop="datePublished">2017-07-07</time>
-              </a>
+              <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/coder.thomas/" target="_blank" title="instagram"
+                                                                                                ref="friend">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </div>
 
-              <div class="article-category">
-                <a class="article-category-link" href="/categories/javascript/">javascript</a>
+              <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                  <i class="fa fa-github"></i>
+                </a>
               </div>
 
             </div>
-            <div class="article-inner">
+          </div>
+        </div>
 
-              <header class="article-header">
-                <h1 class="article-title" itemprop="name">
-                  关于js递归的一个问题
-                </h1>
+        <div class="page-title">
+          <ul>
+            <li>
+              <a href="/">最新</a>
+            </li>
 
-              </header>
+            <li class="">
+              <a href="/categories/big-front-end" data-name="前端">前端</a>
+            </li>
 
-              <div class="article-entry" itemprop="articleBody">
+            <li class="">
+              <a href="/categories/server-side" data-name="后台">后台</a>
+            </li>
 
-                <h4 id="发现的两个递归问题">
-                  <a href="#发现的两个递归问题" class="headerlink" title="发现的两个递归问题"></a>发现的两个递归问题</h4>
-                <p>之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：
+            <li class="">
+              <a href="/categories/design" data-name="设计">设计</a>
+            </li>
+
+            <li class="">
+              <a href="/categories/resource" data-name="资源">资源</a>
+            </li>
+
+            <li class="page-search">
+              <form id="search" class="search-form">
+                <label for="s" class="sr-only">Input Search key Words Here</label>
+                <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here"
+                />
+                <button type="submit" class="search-form-submit" title="Search">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+              <div class="ins-search">
+                <div class="ins-search-mask"></div>
+                <div class="ins-search-container">
+                  <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..." />
+                    <span class="ins-close ins-selectable">
+                      <i class="fa fa-times-circle"></i>
+                    </span>
+                  </div>
+                  <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                (function(window) {
+                  var INSIGHT_CONFIG = {
+                    TRANSLATION: {
+                      POSTS: 'Posts',
+                      PAGES: 'Pages',
+                      CATEGORIES: 'Categories',
+                      TAGS: 'Tags',
+                      UNTITLED: '(Untitled)',
+                    },
+                    ROOT_URL: '/',
+                    CONTENT_URL: '/content.json',
+                  };
+                  window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+                })(window);
+
+              </script>
+
+            </li>
+
+          </ul>
+        </div>
+        <div class="main-inner">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="post-header">
+              <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                  <img width="48" src="undefined" alt="avatar" />
+                </a>
+                <p>
+                  <span class="label">作者</span>
+                  <a href="undefined" target="_blank">undefined</a>
+                  <span title="最后编辑于2017-07-07">2017-07-07</span>
                 </p>
-                <pre><code>var isSquare = function(n){
+                <p>undefined</p>
+              </div>
+              <h2 class="post-title">关于js递归的一个问题</h2>
+              <div class="post-meta">
+                本文总共663个字 | 您是第
+                <span id="busuanzi_value_page_pv">
+                  <i class="fa fa-spinner fa-spin"></i>
+                </span>位看到它们的小伙伴
+              </div>
+            </div>
+            <div class="post-content markdown-body">
+              <h4 id="发现的两个递归问题">
+                <a href="#发现的两个递归问题" class="headerlink" title="发现的两个递归问题"></a>发现的两个递归问题</h4>
+              <p>之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：
+              </p>
+              <pre><code>var isSquare = function(n){
     function square(index = 0,n){
         var res = index*index;
         if(res === n){
@@ -113,251 +249,85 @@
     return  square(0,n);
 }
 </code></pre>
-                <p>这里有一个小细节，在递归时如果想要递归结果返回某个值，那么在递归调用函数的时候必须使用return，很好理解，被调用的时候返回的只是一个数值，并没有在外层函数中返回。</p>
-                <h4 id="内存溢出">
-                  <a href="#内存溢出" class="headerlink" title="内存溢出"></a>内存溢出</h4>
-                <p>递归很容易导致内存溢出，上面的代码在n足够大的时候就会导致内存溢出，原因在于每次递归函数调用都会创建执行上下文，而js线程被分配的栈空间是有限的，每个执行上下文window分配为1M，在浏览器不支持尾调用优化的情况下，递归数量次数一旦过多就会内存溢出</p>
-                <h4 id="在没有尾调用优化的情况下应该少用递归，尽量少用for循环。">
-                  <a href="#在没有尾调用优化的情况下应该少用递归，尽量少用for循环。" class="headerlink" title="在没有尾调用优化的情况下应该少用递归，尽量少用for循环。"></a>在没有尾调用优化的情况下应该少用递归，尽量少用for循环。</h4>
+              <p>这里有一个小细节，在递归时如果想要递归结果返回某个值，那么在递归调用函数的时候必须使用return，很好理解，被调用的时候返回的只是一个数值，并没有在外层函数中返回。</p>
+              <h4 id="内存溢出">
+                <a href="#内存溢出" class="headerlink" title="内存溢出"></a>内存溢出</h4>
+              <p>递归很容易导致内存溢出，上面的代码在n足够大的时候就会导致内存溢出，原因在于每次递归函数调用都会创建执行上下文，而js线程被分配的栈空间是有限的，每个执行上下文window分配为1M，在浏览器不支持尾调用优化的情况下，递归数量次数一旦过多就会内存溢出</p>
+              <h4 id="在没有尾调用优化的情况下应该少用递归，尽量少用for循环。">
+                <a href="#在没有尾调用优化的情况下应该少用递归，尽量少用for循环。" class="headerlink" title="在没有尾调用优化的情况下应该少用递归，尽量少用for循环。"></a>在没有尾调用优化的情况下应该少用递归，尽量少用for循环。</h4>
 
-              </div>
-              <footer class="article-footer">
-                <a data-url="https://peacecup.github.io/2017/07/07/es6总结/关于js递归的一个问题/" data-id="cjajctdrh001r04qt9hoyc3q4"
-                                                                                                class="article-share-link">Delen</a>
-
-                <ul class="article-tag-list">
-                  <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="/tags/javascript/">javascript</a>
-                  </li>
-                </ul>
-
-              </footer>
+            </div>
+            <div class="post-tool">
+              <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+              </a>
             </div>
 
-            <nav id="article-nav">
+            <div class="post-tags">Tags：
 
-              <a href="/2017/07/08/es6总结/es6对象扩展/" id="article-nav-newer" class="article-nav-link-wrap">
-                <strong class="article-nav-caption">Nieuwer</strong>
-                <div class="article-nav-title">
+              <a href="/tags/javascript/">javascript</a>
 
-                  es6-对象扩展
-
-                </div>
-              </a>
-
-              <a href="/2017/07/06/es6总结/函数的扩展（二）/" id="article-nav-older" class="article-nav-link-wrap">
-                <strong class="article-nav-caption">Ouder</strong>
-                <div class="article-nav-title">es6-函数扩展（二）</div>
-              </a>
-
-            </nav>
+            </div>
 
           </article>
-        </section>
 
-        <aside id="sidebar">
+          <p>本文内容仅作为作者个人兴趣与观点，不代表所在公司及团队的观点和决策。若有不恰当之处，望不吝赐教</p>
 
-          <div class="widget-wrap">
-            <h3 class="widget-title">Categorieën</h3>
-            <div class="widget">
-              <ul class="category-list">
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/HTTP-axios/">-- HTTP -- axios</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/es6总结/">es6总结</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/es6知识梳理/">es6知识梳理</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/github/">github</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/javascript/">javascript</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/js基础/">js基础</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/markDown/">markDown</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/react/">react</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/个人总结/">个人总结</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
-                </li>
-                <li class="category-list-item">
-                  <a class="category-list-link" href="/categories/框架整理/">框架整理</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="widget-wrap">
-            <h3 class="widget-title">Labels</h3>
-            <div class="widget">
-              <ul class="tag-list">
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/axios/">axios</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/es6/">es6</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/express/">express</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/github/">github</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/javascript/">javascript</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/js/">js</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/js基础/">js基础</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/lowdb/">lowdb</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/markDown/">markDown</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/moment/">moment</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/react/">react</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/vue/">vue</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/webpack/">webpack</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/前端/">前端</a>
-                </li>
-                <li class="tag-list-item">
-                  <a class="tag-list-link" href="/tags/总结/">总结</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="widget-wrap">
-            <h3 class="widget-title">Tag Cloud</h3>
-            <div class="widget tagcloud">
-              <a href="/tags/axios/" style="font-size: 10px;">axios</a>
-              <a href="/tags/es6/" style="font-size: 16.67px;">es6</a>
-              <a href="/tags/express/" style="font-size: 10px;">express</a>
-              <a href="/tags/github/" style="font-size: 10px;">github</a>
-              <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a>
-              <a href="/tags/js/" style="font-size: 10px;">js</a>
-              <a href="/tags/js基础/" style="font-size: 10px;">js基础</a>
-              <a href="/tags/lowdb/" style="font-size: 10px;">lowdb</a>
-              <a href="/tags/markDown/" style="font-size: 10px;">markDown</a>
-              <a href="/tags/moment/" style="font-size: 10px;">moment</a>
-              <a href="/tags/react/" style="font-size: 10px;">react</a>
-              <a href="/tags/vue/" style="font-size: 10px;">vue</a>
-              <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
-              <a href="/tags/前端/" style="font-size: 20px;">前端</a>
-              <a href="/tags/总结/" style="font-size: 10px;">总结</a>
-            </div>
-          </div>
-
-          <div class="widget-wrap">
-            <h3 class="widget-title">Archieven</h3>
-            <div class="widget">
-              <ul class="archive-list">
-                <li class="archive-list-item">
-                  <a class="archive-list-link" href="/archives/2017/11/">November 2017</a>
-                </li>
-                <li class="archive-list-item">
-                  <a class="archive-list-link" href="/archives/2017/08/">August 2017</a>
-                </li>
-                <li class="archive-list-item">
-                  <a class="archive-list-link" href="/archives/2017/07/">July 2017</a>
-                </li>
-                <li class="archive-list-item">
-                  <a class="archive-list-link" href="/archives/2017/06/">June 2017</a>
-                </li>
-                <li class="archive-list-item">
-                  <a class="archive-list-link" href="/archives/2017/05/">May 2017</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="widget-wrap">
-            <h3 class="widget-title">Recente berichten</h3>
-            <div class="widget">
-              <ul>
-
-                <li>
-                  <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/">万达监控预警项目前端框架整理（三）----项目入口文件</a>
-                </li>
-
-                <li>
-                  <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">前端框架（二）</a>
-                </li>
-
-                <li>
-                  <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">前端框架（一）</a>
-                </li>
-
-                <li>
-                  <a href="/2017/11/27/vue源码学习/数据监控/">(no title)</a>
-                </li>
-
-                <li>
-                  <a href="/2017/08/11/problems/事件委托、jq事件委托/">(no title)</a>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-
-        </aside>
+        </div>
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
       </div>
-      <footer id="footer">
-
-        <div class="outer">
-          <div id="footer-info" class="inner">
-            &copy; 2017 陈宁
-            <br> Powered by
-            <a href="http://hexo.io/" target="_blank">Hexo</a>
-          </div>
-        </div>
-      </footer>
-
+      <!-- end #main-->
     </div>
-    <nav id="mobile-nav">
+    <!-- end #body -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>
+          <a href="/about" title="About">About</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <!-- 自定义链接 -->
+          <a href="/help" title="help">急救中心</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+          本站点采用
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立
+          <a href="/timeline" id="siteBuildingTime"></a>天
+          <br/> ©2017 基于
+          <a href="http://hexo.io" target="_blank">Hexo</a>搭建 ，主题&nbsp
+          <a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+          ，作者
+          <a href="https://www.tangkunyin.com" target="_blank">唐先森</a>
+          ，Hosted by
+          <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
 
-      <a href="/" class="mobile-nav-link">Home</a>
-
-      <a href="/archives" class="mobile-nav-link">Archives</a>
-
-    </nav>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
-
-
-    </script>
-
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-    <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-    <script src="/js/script.js"></script>
+      </div>
+    </footer>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js/InsightSearch.js"></script>
+    <script src="/js/SimpleCore.js"></script>
 
   </div>
+  <div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:">
+      <i class="fa fa-angle-up"></i>
+    </a>
+  </div>
+  <script>
+    $(function() {
+      SimpleCore.init({
+        buildingTime: '08/20/2014',
+        current: $('.post-tags').length > 0 ? 'post' : 'archive',
+        wxMpImg: '/images/weixin-mp.png',
+        donateImg: '/images/donate-qr.png',
+      });
+    });
+
+  </script>
 </body>
 
 </html>
