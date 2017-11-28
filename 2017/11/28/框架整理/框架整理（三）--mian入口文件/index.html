@@ -6,11 +6,7 @@
   <meta name="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="陈宁">
   <title>万达监控预警项目前端框架整理（三）----项目入口文件 · 长夜</title>
-  <meta name="description" content="入口文件
-单页SPA项目一般只有一个有用的入口文件，在入口文件里会根据使用的UI框架进行集成，将路由、状态管理器、国际化、时间规范等集成到项目中。 
-import Vue from &amp;apos;vue&amp;apos;;
-import iView from &amp;apos;iview&amp;apos;;
-impor">
+  <meta name="description" content="vue入口文件里的项目集成">
   <meta name="keywords">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
                                                                                   name="viewport">
@@ -64,7 +60,7 @@ impor">
           <a href="/categories">分类</a>
         </li>
         <li>
-          <a href="/archives">归档</a>
+          <a href="/archives" class="current">归档</a>
         </li>
         <li>
           <a href="/tags">标签</a>
@@ -279,8 +275,8 @@ _.keys(commonComponents).map(k =&gt; {
                   <i class="fa fa-sun-o"></i>
                   <span class="date">2017-11-28</span>
                   <i class="fa fa-tag"></i>
-                  <a href="/categories/前端框架/" title="前端框架" class="tag">前端框架 </a>
-                  <a href="/tags/vue/" title="vue" class="tag">vue </a>
+                  <a href="/categories/框架整理/" title="框架整理" class="tag">框架整理 </a>
+                  <a href="/tags/vue-moment/" title="-- vue -- moment" class="tag">-- vue -- moment </a>
                 </div>
               </div>
             </div>
@@ -302,7 +298,7 @@ _.keys(commonComponents).map(k =&gt; {
           <div class="pagination">
             <ul class="clearfix">
               <li class="next pagbuttons">
-                <a role="navigation" href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/" title="万达监控预警项目前端框架整理（er）----开发阶段MOCK server"
+                <a role="navigation" href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/" title="前端框架（二）"
                                                                                                 class="btn">下一篇</a>
               </li>
             </ul>
