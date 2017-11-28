@@ -1,513 +1,1419 @@
-<!DOCTYPE HTML>
-<html class="no-js" lang="zh-CN">
-<!--
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                            O\ = /O
-//                        ____/`---'\____
-//                      .   ' \\| |// `.
-//                       / \\||| : |||// \
-//                     / _||||| -:- |||||- \
-//                       | | \\\ - /// | |
-//                     | \_| ''\---/'' | |
-//                      \ .-\__ `-` ___/-. /
-//                   ___`. .' /--.--\ `. . __
-//                ."" '< `.___\_<|>_/___.' >'"".
-//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
-//                 \ \ `-. \_ __\ /__ _/ .-` / /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//                 拦截插件累计拦截逗比攻击"1381438"次！
-//         .............................................
-//                  佛祖保佑             永无BUG
-//          佛曰:
-//                  写字楼里写字间，写字间里程序员；
-//                  程序人员写程序，又拿程序换酒钱。
-//                  酒醒只在网上坐，酒醉还来网下眠；
-//                  酒醉酒醒日复日，网上网下年复年。
-//                  但愿老死电脑间，不愿鞠躬老板前；
-//                  奔驰宝马贵者趣，公交自行程序员。
-//                  别人笑我忒疯癫，我笑自己命太贱；
-//                  不见满街漂亮妹，哪个归得程序员？
--->
+<!doctype html>
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 
 <head>
-  <!--[if lte IE 9]>
-<meta http-equiv="refresh" content="0;url=https://peacecup.github.io/warn.html">
-<![endif]-->
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-  <meta http-equiv="mobile-agent" content="format=html5; url=https://peacecup.github.io">
-  <meta name="author" content="陈宁">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/SimpleStyle.min.css">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  <link rel="shortcut icon" href="/images/favicon.png">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
 
-  <title>长夜 - I Want More！</title>
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
 
-  <meta name="keywords" content="undefined">
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
 
-  <meta name="description " content="打开新世界的大门">
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
+  <meta name="keywords" content="Hexo, NexT" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+  <meta name="description" content="打开新世界的大门">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="长夜">
+  <meta property="og:url" content="https://peacecup.github.io/page/3/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="打开新世界的大门">
+  <meta property="og:locale" content="zh-Hans">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="长夜">
+  <meta name="twitter:description" content="打开新世界的大门">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
+
+  </script>
+
+  <link rel="canonical" href="https://peacecup.github.io/page/3/" />
+
+  <title> 长夜 </title>
 </head>
 
-<body>
-  <div id="nav">
-    <nav class="nav-menu">
-      <a class="site-name current" href="/" title="说">说</a>
-      <a class="site-index current" href="/">
-        <i class="fa fa-home"></i>
-        <span>Home</span>
-      </a>
-      <a href="/archives" title="Archives">
-        <i class="fa fa-archives"></i>
-        <span>Archives</span>
-      </a>
-      <a href="/tags" title="Tags">
-        <i class="fa fa-tags"></i>
-        <span>Tags</span>
-      </a>
-      <!-- custom single page of menus -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-      <a href="/cross_fire" title="穿越火线">
-        <i class="fa fa-wifi"></i>
-        <span>穿越火线</span>
-      </a>
+  <div class="container sidebar-position-right 
+   page-home 
+ ">
+    <div class="headband"></div>
 
-      <a href="/help" title="急救中心">
-        <i class="fa fa-question-circle"></i>
-        <span>急救中心</span>
-      </a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-    </nav>
-  </div>
-
-  <div class="nav-user">
-    <a class="btn-search" href="#">
-      <i class="fa fa-search"></i>
-    </a>
-    <a class="btn-read-mode" href="#">
-      <i class="fa fa-sun-o"></i>
-    </a>
-    <a class="btn-weixin-mp" href="javascript:">
-      <i class="fa fa-weixin"></i>
-    </a>
-  </div>
-
-  <div id="wrapper" class="clearfix">
-    <div id="body">
-      <div class="main" id="main">
-        <div id="cover">
-          <div class="cover-img"></div>
-          <div class="cover-info">
-
-            <h1 class="cover-siteName">说IT</h1>
-            <h3 class="cover-siteTitle">聊技术，谈情怀</h3>
-            <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
-            <div class="cover-sns">
-
-              <div class="btn btn-github">
-                <a href="https://github.com/peacecup" target="_blank" title="github" ref="friend">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
             </div>
+
+            <p class="site-subtitle">I Want More！</p>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
           </div>
         </div>
 
-        <div class="page-title">
-          <ul>
-            <li class="active">
-              <a href="/" data-name="最近文章">最近</a>
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
             </li>
 
-            <li class="">
-              <a href="/categories/big-front-end" data-name="前端">前端</a>
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
             </li>
 
-            <li class="">
-              <a href="/categories/server-side" data-name="后台">后台</a>
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
             </li>
 
-            <li class="">
-              <a href="/categories/design" data-name="设计">设计</a>
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
             </li>
 
-            <li class="">
-              <a href="/categories/resource" data-name="资源">资源</a>
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
             </li>
 
-            <li class="page-search">
-              <form id="search" class="search-form">
-                <label for="s" class="sr-only">Input Search key Words Here</label>
-                <input class="search-field" type="text" name="s" class="text" />
-                <!--  <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />-->
-                <button type="submit" class="search-form-submit" title="Search">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-              <div class="ins-search">
-                <div class="ins-search-mask"></div>
-                <div class="ins-search-container">
-                  <div class="ins-input-wrapper">
-                    <input type="text" class="ins-search-input" placeholder="Type something..." />
-                    <span class="ins-close ins-selectable">
-                      <i class="fa fa-times-circle"></i>
-                    </span>
-                  </div>
-                  <div class="ins-section-wrapper">
-                    <div class="ins-section-container"></div>
-                  </div>
-                </div>
-              </div>
-              <script>
-                (function(window) {
-                  var INSIGHT_CONFIG = {
-                    TRANSLATION: {
-                      POSTS: 'Posts',
-                      PAGES: 'Pages',
-                      CATEGORIES: 'Categories',
-                      TAGS: 'Tags',
-                      UNTITLED: '(Untitled)',
-                    },
-                    ROOT_URL: '/',
-                    CONTENT_URL: '/content.json',
-                  };
-                  window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-                })(window);
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
 
-              </script>
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
 
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
             </li>
 
           </ul>
-        </div>
-        <div class="main-inner">
 
-          <!-- 首页默认取最最新文章集 -->
+          <div class="site-search">
 
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-07-05
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
               </div>
-              <a class="post-title" href="/2017/07/05/es6总结/函数的扩展（一）/" target="_blank" title="es6-函数扩展（一）">es6-函数扩展（一）</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
 
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/es6/" target="_blank">es6</a>
-
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
               </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
             </div>
-            <div class="post-desc">
-              es6-函数扩展（一）
-            </div>
-          </article>
 
-          <article class="post">
+          </div>
 
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-07-04
-              </div>
-              <a class="post-title" href="/2017/07/04/es6总结/es6数组扩展/" target="_blank" title="es6-数组扩展">es6-数组扩展</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/es6/" target="_blank">es6</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              es6-数组扩展
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-07-03
-              </div>
-              <a class="post-title" href="/2017/07/03/es6总结/es6字符串扩展/" target="_blank" title="es6-字符串扩展">es6-字符串扩展</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/es6/" target="_blank">es6</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              es6-字符串扩展
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-07-02
-              </div>
-              <a class="post-title" href="/2017/07/02/解构赋值/" target="_blank" title="es6-解构赋值">es6-解构赋值</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/es6/" target="_blank">es6</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              es6-解构赋值
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-07-01
-              </div>
-              <a class="post-title" href="/2017/07/01/let const/" target="_blank" title="es6-let/const">es6-let/const</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/es6/" target="_blank">es6</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              es6-let/const
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-06-15
-              </div>
-              <a class="post-title" href="/2017/06/15/react入门级基础知识（干货）/" target="_blank" title="react入门级教程（一）">react入门级教程（一）</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/react/" target="_blank">react</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              react入门级教程（一）
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-06-07
-              </div>
-              <a class="post-title" href="/2017/06/07/fetch相关概念/" target="_blank" title="DOM新API fetch">DOM新API fetch</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/js基础/" target="_blank">js基础</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              DOM新API fetch
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-06-05
-              </div>
-              <a class="post-title" href="/2017/06/05/javascript数据类型/" target="_blank" title="JS typeof总结---6种数据类型">JS typeof总结---6种数据类型</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/js/" target="_blank">js</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              JS typeof总结---6种数据类型
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-06-02
-              </div>
-              <a class="post-title" href="/2017/06/02/axios笔记/" target="_blank" title="axios随笔">axios随笔</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/axios/" target="_blank">axios</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              axios随笔
-            </div>
-          </article>
-
-          <article class="post">
-
-            <div class="post-header">
-              <div class="post-meta">
-                <a href="undefined" target="_blank">
-                  <strong>undefined</strong>
-                </a>
-                <em>·</em>2017-06-01
-              </div>
-              <a class="post-title" href="/2017/06/01/无标题Markdown/" target="_blank" title="个人总结">个人总结</a>
-              <div class="post-meta">
-                <a href="/tags" target="_blank">
-                  <i class="fa fa-tags"></i>
-                </a>
-
-                <em>·</em>
-                <a href="https://peacecup.github.io/tags/总结/" target="_blank">总结</a>
-
-              </div>
-            </div>
-            <div class="post-desc">
-              个人总结
-            </div>
-          </article>
-
-        </div>
-        <!-- 分页开始 -->
-
-        <div id="btn-pager">
-
-          <a class="extend prev" rel="prev" href="/page/2/">Prev</a>
-          <a class="page-number" href="/">1</a>
-          <a class="page-number" href="/page/2/">2</a>
-          <span class="page-number current">3</span>
-          <a class="page-number" href="/page/4/">4</a>
-          <a class="extend next" rel="next" href="/page/4/">Next</a>
-        </div>
+        </nav>
 
       </div>
-      <!-- end #main-->
-    </div>
-    <!-- end #body -->
-    <footer class="footer">
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+            <section id="posts" class="posts-expand">
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/05/es6总结/函数的扩展（一）/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/05/es6总结/函数的扩展（一）/" itemprop="url">
+                      es6-函数扩展（一）
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T09:05:13+08:00">
+                        2017-07-05
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/05/es6总结/函数的扩展（一）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/05/es6总结/函数的扩展（一）/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  函数默认值 &nbsp;&nbsp;es5是不支持默认函数值的，在以前要实现默认函数值只能够通过 y = y||&apos;dadasd&apos; 这样的方法，而es6支持了函数默认值。
+                  &nbsp;&nbsp;函数默认值的触发条件为undefined，只有在参数为undefined ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/05/es6总结/函数的扩展（一）/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/04/es6总结/es6数组扩展/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/04/es6总结/es6数组扩展/" itemprop="url">
+                      es6-数组扩展
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T09:03:52+08:00">
+                        2017-07-04
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/04/es6总结/es6数组扩展/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/04/es6总结/es6数组扩展/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &nbsp;&nbsp;数组不管在那个语言里都是很重要的一种数据类型，数组的使用广泛让怎么合理高效率的使用它成为一个问题，我目前遇到的问题主要集中两个部分：
+                  空间、时间复杂度：滥用数组，动不动就新建数组，针对存储列表类数据向来是直接使用数组来操作。也不怎么考虑事件复杂度，大多数时 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/04/es6总结/es6数组扩展/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/03/es6总结/es6字符串扩展/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/03/es6总结/es6字符串扩展/" itemprop="url">
+                      es6-字符串扩展
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T11:24:12+08:00">
+                        2017-07-03
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/03/es6总结/es6字符串扩展/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/03/es6总结/es6字符串扩展/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &nbsp;&nbsp;es6很大程度上是对es5的扩展，完全向下兼容，并且扩展出新特性。 新特性 &nbsp;&nbsp;es6在字符串上增加了的新特性有一下面这几种特性。
+                  对unicode字符的进一步支持 includes()、startsWith()、endsWi ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/03/es6总结/es6字符串扩展/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/02/解构赋值/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/02/解构赋值/" itemprop="url">
+                      es6-解构赋值
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T09:37:21+08:00">
+                        2017-07-02
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/02/解构赋值/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/02/解构赋值/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &nbsp;&nbsp;es6由于import、export模块化的能力，也推出了解构赋值这么一种能力，顾名思义，解析赋值，解析js代码然后进行赋值。这篇只是梳理并不设计代码例子。es6的解构赋值指的是在赋值表达式中解构右边部分的值然后将值赋给左边。
+                  解构赋值的几种情况 &n ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/02/解构赋值/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/01/let const/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/01/let const/" itemprop="url">
+                      es6-let/const
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T14:34:42+08:00">
+                        2017-07-01
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/01/let const/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/01/let const/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &nbsp;&nbsp;尝试在不查看文档的情况下写出es6知识点的相关内容，遇到没记清楚的再查阅才能加深记忆力，好记性不如烂笔头 let/const几个重要特性
+                  没有变量提升 暂时性死区 不允许重复声明 全局声明的变量不再挂载到window上 &nbsp;&n ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/01/let const/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/15/react入门级基础知识（干货）/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/06/15/react入门级基础知识（干货）/" itemprop="url">
+                      react入门级教程（一）
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T10:03:43+08:00">
+                        2017-06-15
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/react/" itemprop="url" rel="index">
+                          <span itemprop="name">react</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/15/react入门级基础知识（干货）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/15/react入门级基础知识（干货）/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  react入门级教程（一） 1、前言 react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。
+                  react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/06/15/react入门级基础知识（干货）/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/07/fetch相关概念/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/06/07/fetch相关概念/" itemprop="url">
+                      DOM新API fetch
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T09:49:36+08:00">
+                        2017-06-07
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/js基础/" itemprop="url" rel="index">
+                          <span itemprop="name">js基础</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/07/fetch相关概念/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/07/fetch相关概念/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &emsp;&emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗
+                  &emsp;&emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/06/07/fetch相关概念/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/05/javascript数据类型/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/06/05/javascript数据类型/" itemprop="url">
+                      JS typeof总结---6种数据类型
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-05T17:07:30+08:00">
+                        2017-06-05
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/js基础/" itemprop="url" rel="index">
+                          <span itemprop="name">js基础</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/05/javascript数据类型/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/05/javascript数据类型/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？
+                  js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object， ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/06/05/javascript数据类型/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/02/axios笔记/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/06/02/axios笔记/" itemprop="url">
+                      axios随笔
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T15:59:59+08:00">
+                        2017-06-02
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/HTTP-axios/" itemprop="url" rel="index">
+                          <span itemprop="name">-- HTTP -- axios</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/02/axios笔记/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/02/axios笔记/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  简介 &emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在nod
+                  ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/06/02/axios笔记/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/01/无标题Markdown/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/06/01/无标题Markdown/" itemprop="url">
+                      个人总结
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T16:45:42+08:00">
+                        2017-06-01
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/个人总结/" itemprop="url" rel="index">
+                          <span itemprop="name">个人总结</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/01/无标题Markdown/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/01/无标题Markdown/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 最近领导和我聊了很多关于个人发展，关于职业规划方面的东西，对我确实有一些触动，也实实在在的点醒了我. 个人问题 长久以来，我深航都存在基础不稳的问题，大学阶段的浑浑噩噩，工作以后填填补补。靠着java找到的工作，但是自己却基本还是停留在对简单的框架使用，java基础没有好好总结过，
+                  ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/06/01/无标题Markdown/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+            </section>
+
+            <nav class="pagination">
+              <a class="extend prev" rel="prev" href="/page/2/">
+                <i class="fa fa-angle-left"></i>
+              </a>
+              <a class="page-number" href="/">1</a>
+              <a class="page-number" href="/page/2/">2</a>
+              <span class="page-number current">3</span>
+              <a class="page-number" href="/page/4/">4</a>
+              <a class="extend next" rel="next" href="/page/4/">
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </nav>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <section class="site-overview sidebar-panel sidebar-panel-active">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
+
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
+                    <i class="fa fa-fw fa-zhihu"></i>
+
+                    知乎
+                  </a>
+                </span>
+
+              </div>
+
+            </section>
+
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
       <div class="footer-inner">
-        <p>
-          <a href="/about" title="About">About</a>&nbsp;&nbsp
-          <em>·</em>&nbsp;&nbsp
-          <!-- 自定义链接 -->
-          <a href="/help" title="help">急救中心</a>&nbsp;&nbsp
-          <em>·</em>&nbsp;&nbsp
-          <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp
-          <em>·</em>&nbsp;&nbsp
-          <a href="/app" title="App下载">App下载</a>
-        </p>
-        <p>
-          本站点采用
-          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立
-          <a href="/timeline" id="siteBuildingTime"></a>天
-          <br/> ©2017 基于
-          <a href="http://hexo.io" target="_blank">Hexo</a>搭建 ，主题&nbsp
-          <a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
-          ，作者
-          <a href="https://www.tangkunyin.com" target="_blank">唐先森</a>
-          ，Hosted by
-          <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
-        </p>
+        <div class="copyright">
+
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
+
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
+
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
       </div>
     </footer>
-    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/js/InsightSearch.js"></script>
-    <script src="/js/SimpleCore.js"></script>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+
+    </div>
 
   </div>
-  <div class="fixed-btn">
-    <a class="btn-gotop" href="javascript:">
-      <i class="fa fa-angle-up"></i>
-    </a>
-  </div>
-  <script>
-    $(function() {
-      SimpleCore.init({
-        buildingTime: '08/20/2014',
-        current: $('.post-tags').length > 0 ? 'post' : 'archive',
-        wxMpImg: '/images/weixin-mp.png',
-        donateImg: '/images/donate-qr.png',
-      });
-    });
+
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
 
   </script>
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
+
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
 </body>
 
 </html>
