@@ -41,9 +41,20 @@
     <content type="text"><![CDATA[title: 事件委托和jq事件委托 date: 2017-8-11 14:34:42 categories: 前端问题梳理 tags: 前端 事件委托 事件委托的概念要从js事件模型说起，js事件模型现代主流浏览器实现的都是DOM2级的时间模型，分为三个阶段： 事件捕获 处于事件 事件冒泡 事件委托的原理就是基于此。 由于事件捕获和冒泡的机制，点击在子元素上的事件，先在父元素进行捕获，然后到达子元素然后进行冒泡，冒泡到父元素。 这样，父元素就可以代理子元素的事件，通过event.target（子元素目标）和event.currentTraget（父元素目标）可以区分和获取父子元素进行DOM操作。这么写可以很好的优化事件。 jq事件委托 jq1.7以下使用live、delagate方法来绑定事件委托，jQuery1.7以上的同一采用on方法来绑定事件委托。 jqueryObject.on(&apos;click&apos;,&quot;p&quot;,handle) //将所有p元素的点击事件委托到jqueryObject上。 $(&quot;#div&quot;).on(&apos;click&apos;,&quot;span&quot;,function(){}); //将id为div的元素中的span的click事件委托到div上。 需要注意的是，focus和blur等少数事件不支持冒泡，不通过冒泡传递，因此不能使用事件委托。 使用相同形式的off函数来移除绑定的事件。]]></content>
   </entry>
   <entry>
-    <title><![CDATA[javascript的attributes和property的异同]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2Fjavascript%E7%9A%84attributes%E5%92%8Cproperty%E7%9A%84%E5%BC%82%E5%90%8C%2F</url>
-    <content type="text"><![CDATA[javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM Element元素的时候就会自动创建在元素上，这些就是property。 attributes是用来保存元素的属性的，任何属性包括自定义属性都会在attributes中存储，attributes本质上是一个NodeNamedMap，一个类似于数组的解构，里面的属性元素为Attr结构，是一个次一级的节点对象。 两者只是在概念上有一些重叠，但是实际上，两者没有任何关系，改变任意一方都不会对对方有什么影响。 对应在jquery上，有attr和prop两个方法，这两者对应于attributes和property。老版本的DOM，可能是DOM2或者DOM3，把property设定为了attributes的一个子集，但是现在，经过测试，完全没有这回事，应该是已经修改过。]]></content>
+    <title><![CDATA[js Error详解]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%20Error%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[不重要 JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。 Error js错误类的基础是Error对象。构造函数里没有定义任何内容，Error实例被抛出以后，就只会有一个报错，事实上一旦报错就会直接从函数调用栈中被弹出，事件循环不会继续运行这个任务。 Error.prototype原型上定义了三个属性： constructor：构造函数 message：错误信息 name：错误名 当然不同的浏览器厂商也为此做了不同的额外属性： 对于 Microsoft，微软为IE扩充了： discription：错误描述 ，和message差不多 number：错误码 Mozilla这个为了终身对抗IE的组织也为fireFox扩充了一大堆内容 filename：错误文件名 lineNumber：行号 columnNumber：列号 stact：错误的堆栈 toSource()和toString() 其他错误类 在Error类的基础上，通过继承又封装了6个其他的错误构造函数。 EvalError eval执行环境产生的错误。与eval（）有关。 InternalError 这是个不标准的API，用来返回JS引擎内部的一些错误，比如递归太多等。 RangeError 数值或者变量超出了它的范围。 ReferenceError 引用错误，无效引用等 SyntaxError 在解析代码的过程中发生的语法错误。 其实就是语法错误。eval代码的解析执行也会导致语法错误。 TypeError 变量的类型不是预期类型时就会发生这个错误。 URIError 在调用encodeURI或者decodeURI时发生的错误，URI处理错误 错误类的继承方式 6大错误类是按照原型链继承的方式来实现继承的。]]></content>
+      <categories>
+        <category>前端问题梳理</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AMD和CMD的区别]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2FAMD%E5%92%8CCMD%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。 commonJS简单的定义了module.export 和require的封装和加载方式 ，并且由于是服务器所以不需要要考虑异步加载的问题，只需要一直同步加载就可以完成任务。 这一套模块化规范在浏览器是行不通的，浏览器是需要异步加载的，在浏览器端的，，模块化方案规范分为两种，一种是AMD，一种是CMD。 AMD规范对应于RequireJS。 requireJS使用define(id,[dependency],callback())定义模块，在callback()中实现具体的模块功能。 使用require([module],callback())来加载模块。 requireJs是异步加载模块的。 CMD规范则对应于SeaJS。 seaJS使用define(id,[dep],factory())来生成，和AMD的define区别在于，seaJS推崇一个模块一个文件的写法，在factory工厂函数里进行加载模块。 使用require(id)函数来获取模块 使用seajs.use(id,calback())来使用模块 兼容AMD的写法。 区别在于： AMD是前置依赖，在定义模块的时候就要声明依赖 CMD是就近依赖，只有在用到了某个模块的时候才去加载模块。 两者都是异步下载模块，但两者的脚本执行时间是不同的，requireJS会提前执行脚本会在加载完成以后立刻push到任务队列进行执行，而SeaJS在下载完成以后没有执行代码，而是保留不发，在调用require的时候才会真正执行，相当于把下载的代码直接切在require的位置，进行同步执行，一个是下载完成后把代码作为异步任务放到script宏任务队列中，一个时下载完成以后不push，而是在执行的时候同步执行代码，可能用js的事件循环机制来理解有些不同，但是道理是这个道理。]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
@@ -55,6 +66,39 @@
     <title><![CDATA[浏览器内核]]></title>
     <url>%2F2017%2F08%2F11%2Fproblems%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%2F</url>
     <content type="text"><![CDATA[浏览器内核 浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。 五大浏览器内核 Trident,也就是IE内核，捆绑在微软的windows中，腾讯的QQ浏览器、360浏览器等也是采用的IE内核，trident。 Gecko，代表作是火狐浏览器，Gecko是开源的。 Webkit，开源项目。chrome以前采用过chrome，以及Opera。 Presto，曾经是Opero浏览器的内核，但是opero在13年加入了谷歌阵营，所以弃用了。 Blink，谷歌和opera开发的浏览器，现在谷歌仍在使用。]]></content>
+      <categories>
+        <category>前端问题梳理</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[深复制和浅复制]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2F%E6%B7%B1%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B5%85%E5%A4%8D%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。 浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: &apos;cn&apos;} var b = a； b == a // true 引用类型的对象按引用访问，a和b指向同一个对象的引用。 Object.assign()等函数也是浅复制 深复制的办法 jquery.extend()方法。 JSON序列化，有缺陷，不能复制到原型值以及继承的值，不能复制函数。 通过for…in循环进行遍历，然后新建一个空对象进行赋值，for…in可以遍历出所有可枚举的属性以及集成的属性。]]></content>
+      <categories>
+        <category>前端问题梳理</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js实现继承的方式]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[js实现继承的方式 js实现继承的方式目前我知道的大体可以分为两类： es5通过原型链来实现继承，具体有构造函数继承、原型继承、组合构造函数和原型继承、寄生继承。寄生组合继承。 es6使用class extend supper来实现继承 es5的继承方式 原型链 原型链是实现继承的主要手段，首先是解释几个概念： 构造函数：构造函数用来生成对象。 原型：每个构造函数都有一个原型，原型的constructor属性指向构造函数。 prototype：构造函数的prototype指针指向原型。 实例：通过new关键字生成的构造函数的实例。 proto：实例的 proto指针指向原型。 那么，什么是原型链呢？ 实现原型的方法是使用 proto来串联对象与被继承对象：将对象的原型赋值为被继承对象的实例。 这样，new 出来的对象的实例的 proto就会指向它对应的原型也就是被继承对象的实例，而被继承对象的实例的 proto又指向了被继承对象的原型，这样就可以把被继承对象构造函数里的属性和原型里的属性都继承过来。 一直重复这个过程形成的链就是原型链。 借用构造函数 原型链存在一个很致命的问题，继承的属性是共享的，一旦某一个实例修改了继承属性值，另一个实例中中的值也会被修改。 因此衍生了借用构造函数实现继承。 借用构造函数就是在构造函数中使用call来调用被继承对象构造函数，这样，每一个构造函数实例都会拥有唯一的一份数据，互不影响。 但是这样又导致了属性方法不能共用的问题。 组合继承 解决借用构造函数问题的方式是组合继承，和创建对象中的集合模式一样，这可以说是可以很好投入使用的一种成熟的模式。 组合继承，组合使用原型链和构造函数。 function A(property){ this.property = property } A.prototype.method = function(){ } function B(property){ A.call(this,property) } B.prototype = new A(); var C = new B(&quot;hello&quot;); C.property // hello var D = new B(&quot;world&quot;); D.property // world C.property = &quot;1&quot;; D.property // world; 组合继承使用构造函数模式来继承不应共享的数据和方法，使用原型链来继承共用的属性和方法。 原型继承 原型继承也就是es5引入的函数Object.create(Object，options)。 Object.create()函数的原理是在函数内部创建一个函数，并且将该函数的原型赋值为传入对象，然后返回这个函数的实例，这种原型继承的方式依然存在每个实例都共享属性的问题。 寄生式继承 寄生式继承是在原型继承的基础上展开的，在原型继承的基础上，在函数内部继续扩充要被返回的实例。 缺点一样是每个实例共享属性。不能复用 组合寄生式继承 组合继承虽然已经比较完善，但是依然有不够精简的问题，它调用了两次构造函数，组合继承式寄生就是为了解决这个问题出现的。 代码原理在于，使用寄生函数来替代原型赋值那一步，寄生函数实现了对原型的赋值以及对构造函数的重写。 es6的继承方式 使用class、extends、supper来实现继承。 class A extends B{ constructor(x,y){ supper(); this.x = x; this.y = y; } }]]></content>
+      <categories>
+        <category>前端问题梳理</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS 流体特性和BFC]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2FCSS%20%20BFC%2F</url>
+    <content type="text"><![CDATA[块状元素的流体特性 html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin padding border等特性影响，也就是说流体特性 是针对于盒模型的content部分进行的。 BFC–块级格式化上下文 BFC元素的特点是：不管内部元素怎么翻江倒海，外部的相邻元素纹丝未动，不会影响到外部元素。 一个普通块级元素要变成BFC元素需要满足下面的某一个条件： overflow属性设定为 auto、scroll、hidden。 float属性不为none。 display属性为table-cell、 table-caption、inline-block中的一个。 position属性不是relative或者static。 一旦满足了任意一个情况，就会具有BFC属性。]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
@@ -85,53 +129,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[CSS 流体特性和BFC]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2FCSS%20%20BFC%2F</url>
-    <content type="text"><![CDATA[块状元素的流体特性 html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin padding border等特性影响，也就是说流体特性 是针对于盒模型的content部分进行的。 BFC–块级格式化上下文 BFC元素的特点是：不管内部元素怎么翻江倒海，外部的相邻元素纹丝未动，不会影响到外部元素。 一个普通块级元素要变成BFC元素需要满足下面的某一个条件： overflow属性设定为 auto、scroll、hidden。 float属性不为none。 display属性为table-cell、 table-caption、inline-block中的一个。 position属性不是relative或者static。 一旦满足了任意一个情况，就会具有BFC属性。]]></content>
-      <categories>
-        <category>前端问题梳理</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[AMD和CMD的区别]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2FAMD%E5%92%8CCMD%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。 commonJS简单的定义了module.export 和require的封装和加载方式 ，并且由于是服务器所以不需要要考虑异步加载的问题，只需要一直同步加载就可以完成任务。 这一套模块化规范在浏览器是行不通的，浏览器是需要异步加载的，在浏览器端的，，模块化方案规范分为两种，一种是AMD，一种是CMD。 AMD规范对应于RequireJS。 requireJS使用define(id,[dependency],callback())定义模块，在callback()中实现具体的模块功能。 使用require([module],callback())来加载模块。 requireJs是异步加载模块的。 CMD规范则对应于SeaJS。 seaJS使用define(id,[dep],factory())来生成，和AMD的define区别在于，seaJS推崇一个模块一个文件的写法，在factory工厂函数里进行加载模块。 使用require(id)函数来获取模块 使用seajs.use(id,calback())来使用模块 兼容AMD的写法。 区别在于： AMD是前置依赖，在定义模块的时候就要声明依赖 CMD是就近依赖，只有在用到了某个模块的时候才去加载模块。 两者都是异步下载模块，但两者的脚本执行时间是不同的，requireJS会提前执行脚本会在加载完成以后立刻push到任务队列进行执行，而SeaJS在下载完成以后没有执行代码，而是保留不发，在调用require的时候才会真正执行，相当于把下载的代码直接切在require的位置，进行同步执行，一个是下载完成后把代码作为异步任务放到script宏任务队列中，一个时下载完成以后不push，而是在执行的时候同步执行代码，可能用js的事件循环机制来理解有些不同，但是道理是这个道理。]]></content>
-      <categories>
-        <category>前端问题梳理</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[深复制和浅复制]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2F%E6%B7%B1%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B5%85%E5%A4%8D%E5%88%B6%2F</url>
-    <content type="text"><![CDATA[基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。 浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: &apos;cn&apos;} var b = a； b == a // true 引用类型的对象按引用访问，a和b指向同一个对象的引用。 Object.assign()等函数也是浅复制 深复制的办法 jquery.extend()方法。 JSON序列化，有缺陷，不能复制到原型值以及继承的值，不能复制函数。 通过for…in循环进行遍历，然后新建一个空对象进行赋值，for…in可以遍历出所有可枚举的属性以及集成的属性。]]></content>
-      <categories>
-        <category>前端问题梳理</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[js Error详解]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%20Error%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[不重要 JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。 Error js错误类的基础是Error对象。构造函数里没有定义任何内容，Error实例被抛出以后，就只会有一个报错，事实上一旦报错就会直接从函数调用栈中被弹出，事件循环不会继续运行这个任务。 Error.prototype原型上定义了三个属性： constructor：构造函数 message：错误信息 name：错误名 当然不同的浏览器厂商也为此做了不同的额外属性： 对于 Microsoft，微软为IE扩充了： discription：错误描述 ，和message差不多 number：错误码 Mozilla这个为了终身对抗IE的组织也为fireFox扩充了一大堆内容 filename：错误文件名 lineNumber：行号 columnNumber：列号 stact：错误的堆栈 toSource()和toString() 其他错误类 在Error类的基础上，通过继承又封装了6个其他的错误构造函数。 EvalError eval执行环境产生的错误。与eval（）有关。 InternalError 这是个不标准的API，用来返回JS引擎内部的一些错误，比如递归太多等。 RangeError 数值或者变量超出了它的范围。 ReferenceError 引用错误，无效引用等 SyntaxError 在解析代码的过程中发生的语法错误。 其实就是语法错误。eval代码的解析执行也会导致语法错误。 TypeError 变量的类型不是预期类型时就会发生这个错误。 URIError 在调用encodeURI或者decodeURI时发生的错误，URI处理错误 错误类的继承方式 6大错误类是按照原型链继承的方式来实现继承的。]]></content>
-      <categories>
-        <category>前端问题梳理</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[js实现继承的方式]]></title>
-    <url>%2F2017%2F08%2F11%2Fproblems%2Fjs%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E6%96%B9%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[js实现继承的方式 js实现继承的方式目前我知道的大体可以分为两类： es5通过原型链来实现继承，具体有构造函数继承、原型继承、组合构造函数和原型继承、寄生继承。寄生组合继承。 es6使用class extend supper来实现继承 es5的继承方式 原型链 原型链是实现继承的主要手段，首先是解释几个概念： 构造函数：构造函数用来生成对象。 原型：每个构造函数都有一个原型，原型的constructor属性指向构造函数。 prototype：构造函数的prototype指针指向原型。 实例：通过new关键字生成的构造函数的实例。 proto：实例的 proto指针指向原型。 那么，什么是原型链呢？ 实现原型的方法是使用 proto来串联对象与被继承对象：将对象的原型赋值为被继承对象的实例。 这样，new 出来的对象的实例的 proto就会指向它对应的原型也就是被继承对象的实例，而被继承对象的实例的 proto又指向了被继承对象的原型，这样就可以把被继承对象构造函数里的属性和原型里的属性都继承过来。 一直重复这个过程形成的链就是原型链。 借用构造函数 原型链存在一个很致命的问题，继承的属性是共享的，一旦某一个实例修改了继承属性值，另一个实例中中的值也会被修改。 因此衍生了借用构造函数实现继承。 借用构造函数就是在构造函数中使用call来调用被继承对象构造函数，这样，每一个构造函数实例都会拥有唯一的一份数据，互不影响。 但是这样又导致了属性方法不能共用的问题。 组合继承 解决借用构造函数问题的方式是组合继承，和创建对象中的集合模式一样，这可以说是可以很好投入使用的一种成熟的模式。 组合继承，组合使用原型链和构造函数。 function A(property){ this.property = property } A.prototype.method = function(){ } function B(property){ A.call(this,property) } B.prototype = new A(); var C = new B(&quot;hello&quot;); C.property // hello var D = new B(&quot;world&quot;); D.property // world C.property = &quot;1&quot;; D.property // world; 组合继承使用构造函数模式来继承不应共享的数据和方法，使用原型链来继承共用的属性和方法。 原型继承 原型继承也就是es5引入的函数Object.create(Object，options)。 Object.create()函数的原理是在函数内部创建一个函数，并且将该函数的原型赋值为传入对象，然后返回这个函数的实例，这种原型继承的方式依然存在每个实例都共享属性的问题。 寄生式继承 寄生式继承是在原型继承的基础上展开的，在原型继承的基础上，在函数内部继续扩充要被返回的实例。 缺点一样是每个实例共享属性。不能复用 组合寄生式继承 组合继承虽然已经比较完善，但是依然有不够精简的问题，它调用了两次构造函数，组合继承式寄生就是为了解决这个问题出现的。 代码原理在于，使用寄生函数来替代原型赋值那一步，寄生函数实现了对原型的赋值以及对构造函数的重写。 es6的继承方式 使用class、extends、supper来实现继承。 class A extends B{ constructor(x,y){ supper(); this.x = x; this.y = y; } }]]></content>
+    <title><![CDATA[javascript的attributes和property的异同]]></title>
+    <url>%2F2017%2F08%2F11%2Fproblems%2Fjavascript%E7%9A%84attributes%E5%92%8Cproperty%E7%9A%84%E5%BC%82%E5%90%8C%2F</url>
+    <content type="text"><![CDATA[javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM Element元素的时候就会自动创建在元素上，这些就是property。 attributes是用来保存元素的属性的，任何属性包括自定义属性都会在attributes中存储，attributes本质上是一个NodeNamedMap，一个类似于数组的解构，里面的属性元素为Attr结构，是一个次一级的节点对象。 两者只是在概念上有一些重叠，但是实际上，两者没有任何关系，改变任意一方都不会对对方有什么影响。 对应在jquery上，有attr和prop两个方法，这两者对应于attributes和property。老版本的DOM，可能是DOM2或者DOM3，把property设定为了attributes的一个子集，但是现在，经过测试，完全没有这回事，应该是已经修改过。]]></content>
       <categories>
         <category>前端问题梳理</category>
       </categories>
