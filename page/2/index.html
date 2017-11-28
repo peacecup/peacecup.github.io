@@ -86,13 +86,13 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/javascript的attributes和property的异同/">javascript的attributes和property的异同</a>
+              <a href="/2017/08/11/problems/js  DOM事件模型/">js DOM事件模型</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM
-              Element元素的时候...
+              IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。
+              好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件 浏览器事件模...
             </p>
           </div>
           <div class="post-footer">
@@ -110,36 +110,14 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/深复制和浅复制/">深复制和浅复制</a>
+              <a href="/2017/08/11/problems/浏览器内核/">浏览器内核</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。
-              浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: &apos;cn...</p>
-          </div>
-          <div class="post-footer">
-            <div class="meta">
-              <div class="info">
-                <i class="fa fa-sun-o"></i>
-                <span class="date">2017-08-11</span>
-                <i class="fa fa-tag"></i>
-                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
-                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="post animated fadeInDown">
-          <div class="post-title">
-            <h3>
-              <a href="/2017/08/11/problems/CSS  BFC/">CSS 流体特性和BFC</a>
-            </h3>
-          </div>
-          <div class="post-content">
-            <p>
-              块状元素的流体特性 html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin
-              padding border等特性影响，也就是说流体特性 是针对于盒模型的content部分进行的。 BFC–块级格式化上下文 BF...
+              浏览器内核 浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。
+              五大浏览器内核 Trident,也就是IE内核，捆绑在微软的wind...
+
             </p>
           </div>
           <div class="post-footer">
@@ -157,13 +135,37 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/js Error详解/">js Error详解</a>
+              <a href="/2017/08/11/problems/AMD和CMD的区别/">AMD和CMD的区别</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              不重要 JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。
-              Error js错误类的基础是Error对象。构造函数里没有...
+              AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。
+              commonJS简单的定义了module.export 和require的封装和加载方式 ，并且...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/js无阻塞加载/">js无阻塞加载</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              js异步加载问题？ js无阻赛加载包括js下载和js编译执行两个部分。 解决方案： 使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？
+              使用动态创建Script标签的方式，...
             </p>
           </div>
           <div class="post-footer">
