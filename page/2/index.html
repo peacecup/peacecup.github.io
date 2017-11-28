@@ -83,14 +83,37 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/javascript的attributes和property的异同/">javascript的attributes和property的异同</a>
+              <a href="/2017/08/11/problems/AMD和CMD的区别/">AMD和CMD的区别</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM
-              Element元素的时候...
+              AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。
+              commonJS简单的定义了module.export 和require的封装和加载方式 ，并且...
             </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/深复制和浅复制/">深复制和浅复制</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。
+              浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: &apos;cn...</p>
           </div>
           <div class="post-footer">
             <div class="meta">
@@ -138,30 +161,6 @@
             <p>
               js实现继承的方式 js实现继承的方式目前我知道的大体可以分为两类： es5通过原型链来实现继承，具体有构造函数继承、原型继承、组合构造函数和原型继承、寄生继承。寄生组合继承。
               es6使用class extend supper来实现继承 es5的继承方式 原型链 原型链是实现继承的...
-            </p>
-          </div>
-          <div class="post-footer">
-            <div class="meta">
-              <div class="info">
-                <i class="fa fa-sun-o"></i>
-                <span class="date">2017-08-11</span>
-                <i class="fa fa-tag"></i>
-                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
-                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="post animated fadeInDown">
-          <div class="post-title">
-            <h3>
-              <a href="/2017/08/11/problems/js  DOM事件模型/">js DOM事件模型</a>
-            </h3>
-          </div>
-          <div class="post-content">
-            <p>
-              IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。
-              好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件 浏览器事件模...
             </p>
           </div>
           <div class="post-footer">
