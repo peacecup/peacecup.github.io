@@ -60,6 +60,9 @@
           <a href="/archives">归档</a>
         </li>
         <li>
+          <a href="/tags">Tag</a>
+        </li>
+        <li>
           <a href="/links">友链</a>
         </li>
       </div>
@@ -80,13 +83,15 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/深复制和浅复制/">深复制和浅复制</a>
+              <a href="/2017/08/11/problems/浏览器内核/">浏览器内核</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。
-              浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: &apos;cn...</p>
+              浏览器内核 浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。
+              五大浏览器内核 Trident,也就是IE内核，捆绑在微软的wind...
+
+            </p>
           </div>
           <div class="post-footer">
             <div class="meta">
@@ -127,13 +132,13 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/js Error详解/">js Error详解</a>
+              <a href="/2017/08/11/problems/AMD和CMD的区别/">AMD和CMD的区别</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              不重要 JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。
-              Error js错误类的基础是Error对象。构造函数里没有...
+              AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。
+              commonJS简单的定义了module.export 和require的封装和加载方式 ，并且...
             </p>
           </div>
           <div class="post-footer">
@@ -151,13 +156,13 @@
         <div class="post animated fadeInDown">
           <div class="post-title">
             <h3>
-              <a href="/2017/08/11/problems/js实现继承的方式/">js实现继承的方式</a>
+              <a href="/2017/08/11/problems/js Error详解/">js Error详解</a>
             </h3>
           </div>
           <div class="post-content">
             <p>
-              js实现继承的方式 js实现继承的方式目前我知道的大体可以分为两类： es5通过原型链来实现继承，具体有构造函数继承、原型继承、组合构造函数和原型继承、寄生继承。寄生组合继承。
-              es6使用class extend supper来实现继承 es5的继承方式 原型链 原型链是实现继承的...
+              不重要 JS的报错信息在某种程度上来说在代码里并不重要，js不像其他高级语言一样对于错误信息有强烈的规范化要求，一般而言，报错是为了业务需求而报错，浏览器端的js代码几乎不会有需要业务需求报错的时候，而更多的是在node中，可能有相关问题。
+              Error js错误类的基础是Error对象。构造函数里没有...
             </p>
           </div>
           <div class="post-footer">
