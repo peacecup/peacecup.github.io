@@ -1,306 +1,101 @@
-<!doctype html>
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
-
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
-  />
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-                                                                                  rel="stylesheet" type="text/css">
-
-  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
-                                                                                  type="text/css" />
-
-  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-  <meta name="keywords" content="webpack," />
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-  <meta name="description" content="項目介紹 这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。 项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboot+微服务+feiclient来实现，数据库使用Mysql5.6。    前端架构 第一版架构">
-  <meta name="keywords" content="webpack">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="万达监控预警项目前端框架整理（一）----webpack相关“">
-  <meta property="og:url" content="https://peacecup.github.io/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="項目介紹 这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。 项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboot+微服务+feiclient来实现，数据库使用Mysql5.6。    前端架构 第一版架构">
-  <meta property="og:updated_time" content="2017-11-27T07:07:42.554Z">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="万达监控预警项目前端框架整理（一）----webpack相关“">
-  <meta name="twitter:description" content="項目介紹 这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。 项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboot+微服务+feiclient来实现，数据库使用Mysql5.6。    前端架构 第一版架构">
-
-  <script type="text/javascript" id="hexo.configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {
-      root: '/',
-      scheme: 'Mist',
-      sidebar: {
-        "position": "right",
-        "display": "post",
-        "offset": 12,
-        "offset_float": 0,
-        "b2t": false,
-        "scrollpercent": false
-      },
-      fancybox: true,
-      motion: true,
-      duoshuo: {
-        userId: '0',
-        author: '博主'
-      },
-      algolia: {
-        applicationID: '',
-        apiKey: '',
-        indexName: '',
-        hits: {
-          "per_page": 10
-        },
-        labels: {
-          "input_placeholder": "Search for Posts",
-          "hits_empty": "We didn't find any results for the search: ${query}",
-          "hits_stats": "${hits} results found in ${time} ms"
-        }
-      }
-    };
-
-  </script>
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/"
-  />
-
-  <title> 万达监控预警项目前端框架整理（一）----webpack相关“ | 长夜 </title>
+  <meta charset="utf-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="陈宁">
+  <title>万达监控预警项目前端框架整理（一）----webpack相关“ · 长夜</title>
+  <meta name="description" content="項目介紹
+这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。
+项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboo">
+  <meta name="keywords">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+                                                                                  name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="renderer" content="webkit">
+  <link rel="short icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/blog_basic.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  <div class="container sidebar-position-right page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta ">
-
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before">
-                  <i></i>
-                </span>
-                <span class="site-title">长夜</span>
-                <span class="logo-line-after">
-                  <i></i>
-                </span>
-              </a>
-            </div>
-
-            <p class="site-subtitle">I Want More！</p>
-
-          </div>
-
-          <div class="site-nav-toggle">
-            <button>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-            </button>
-          </div>
+<body>
+  <div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/logo@2x.png" style="width:127px;">
+        <h3 title="">
+          <a href="/">长夜</a>
+        </h3>
+        <div class="description">
+          <p>打开新世界的大门</p>
         </div>
-
-        <nav class="site-nav">
-
-          <ul id="menu" class="menu">
-
-            <li class="menu-item menu-item-home">
-              <a href="/" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-home"></i>
-                <br /> 首页
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-categories">
-              <a href="/categories" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-th"></i>
-                <br /> 分类
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-about">
-              <a href="/about" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-user"></i>
-                <br /> 关于
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-archives">
-              <a href="/archives" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-archive"></i>
-                <br /> 归档
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-tags">
-              <a href="/tags" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-tags"></i>
-                <br /> 标签
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-sitemap">
-              <a href="/sitemap.xml" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
-                <br /> 站点地图
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-commonweal">
-              <a href="/404.html" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
-                <br /> 公益404
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-search">
-
-              <a href="javascript:;" class="popup-trigger">
-
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-                <br /> 搜索
-              </a>
-            </li>
-
-          </ul>
-
-          <div class="site-search">
-
-            <div class="algolia-popup popup search-popup">
-              <div class="algolia-search">
-                <div class="algolia-search-input-icon">
-                  <i class="fa fa-search"></i>
-                </div>
-                <div class="algolia-search-input" id="algolia-search-input"></div>
-              </div>
-
-              <div class="algolia-results">
-                <div id="algolia-stats"></div>
-                <div id="algolia-hits"></div>
-                <div id="algolia-pagination" class="algolia-pagination"></div>
-              </div>
-
-              <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-              </span>
-            </div>
-
-          </div>
-
-        </nav>
-
       </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-
-            <div id="posts" class="posts-expand">
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    万达监控预警项目前端框架整理（一）----webpack相关“
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T11:34:42+08:00">
-                        2017-11-27
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端框架/" itemprop="url" rel="index">
-                          <span itemprop="name">前端框架</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  <h3 id="項目介紹">
-                    <a href="#項目介紹" class="headerlink" title="項目介紹"></a>項目介紹</h3>
-                  <p>这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。</p>
-                  <p>项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboot+微服务+feiclient来实现，数据库使用Mysql5.6。</p>
-                  <h3 id="前端架构">
-                    <a href="#前端架构" class="headerlink" title="前端架构"></a>前端架构</h3>
-                  <p>第一版架构使用react完成，采用react+webpack+redux+soga完成，由于万达要求，技术栈改为以vue为主，下面就vue为主的前端架构做总结：</p>
-                  <h4 id="webpack基础配置">
-                    <a href="#webpack基础配置" class="headerlink" title="webpack基础配置"></a>webpack基础配置</h4>
-                  <pre><code>/* webpack.base.config.js    基础配置*/
+    </div>
+    <ul class="social-links"></ul>
+    <div class="footer">
+      <a target="_blank" href="/">
+        <span>Theme by </span>
+      </a>
+      <a href="https://www.caicai.me"> CaiCai </a>
+      <span>&</span>
+      <a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a>
+      <div class="by_farbox">
+        <a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        <li>
+          <a href="/">首页</a>
+        </li>
+        <li>
+          <a href="/about">关于</a>
+        </li>
+        <li>
+          <a href="/archives">归档</a>
+        </li>
+        <li>
+          <a href="/links">友链</a>
+        </li>
+      </div>
+      <div class="information">
+        <div class="back_btn">
+          <li>
+            <a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a>
+          </li>
+        </div>
+        <div class="avatar">
+          <img>
+        </div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        <div class="post-page">
+          <div class="post animated fadeInDown">
+            <div class="post-title">
+              <h3>
+                <a>万达监控预警项目前端框架整理（一）----webpack相关“</a>
+              </h3>
+            </div>
+            <div class="post-content">
+              <h3 id="項目介紹">
+                <a href="#項目介紹" class="headerlink" title="項目介紹"></a>項目介紹</h3>
+              <p>这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。</p>
+              <p>项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboot+微服务+feiclient来实现，数据库使用Mysql5.6。</p>
+              <h3 id="前端架构">
+                <a href="#前端架构" class="headerlink" title="前端架构"></a>前端架构</h3>
+              <p>第一版架构使用react完成，采用react+webpack+redux+soga完成，由于万达要求，技术栈改为以vue为主，下面就vue为主的前端架构做总结：</p>
+              <h4 id="webpack基础配置">
+                <a href="#webpack基础配置" class="headerlink" title="webpack基础配置"></a>webpack基础配置</h4>
+              <pre><code>/* webpack.base.config.js    基础配置*/
 
 const path = require(&apos;path&apos;);
 const webpack = require(&apos;webpack&apos;);
@@ -378,8 +173,8 @@ module.exports = {
     }
 };
 </code></pre>
-                  <p>本地环境配置：</p>
-                  <pre><code>/*webpack.dev.config.js*/
+              <p>本地环境配置：</p>
+              <pre><code>/*webpack.dev.config.js*/
 
 const webpack = require(&apos;webpack&apos;);
 const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
@@ -428,29 +223,29 @@ module.exports = merge(webpackBaseConfig, {
     ]
 });
 </code></pre>
-                  <p>在基础配置里采用了重复第三方模块的统一打包：多入口vendors、ExtractTextPluging插件、HtmlWebpackPlugin、自定义webpack插件</p>
-                  <h5 id="多入口">
-                    <a href="#多入口" class="headerlink" title="多入口"></a>多入口</h5>
-                  <p>由于将所有模块打包到一起之后文件的大小会以M记，对于一次文件请求来说太大，一般来说，会将同一功能模块的文件打包在一起，以多入口的方式利用CommonChunkPulgin来处理成单独的“&lt;
-                    script&gt;”标签进行插入。
-                    <br>进行多入口打包的规则总结如下： </p>
-                  <ol>
-                    <li>打包粒度要合适，每一个模块的大小最好不要超过500kb</li>
-                    <li>打包数目不要超过浏览器并发请求资源数，ie一般为4个，chrome一般为6个，多了就会导致请求
-                      <br>卡顿</li>
-                    <li>利用留浏览器304缓存，公共部分代码应该都为静态资源</li>
-                    <li>在打包上应该避免将层次较深的资源打包到入口中，应该做懒加载。</li>
-                  </ol>
-                  <p>具体项目中表现如下： </p>
-                  <ol>
-                    <li>第三方共用的库打一个包，比如vue全家桶</li>
-                    <li>公共组件打一个包，比如弹窗组件、loading组件</li>
-                    <li>项目通用的工具类打一个包</li>
-                    <li>一个大的功能模块打一个包，一般而言，项目不会大到这种地步</li>
-                    <li>每个功能模块的子页面进行异步加载。</li>
-                  </ol>
-                  <p>本项目中，由于项目体积不大，所以只多出了一个第三方公共模块vendors，入口文件中配置了vendors入口： </p>
-                  <pre><code>import Vue from &apos;vue&apos;;
+              <p>在基础配置里采用了重复第三方模块的统一打包：多入口vendors、ExtractTextPluging插件、HtmlWebpackPlugin、自定义webpack插件</p>
+              <h5 id="多入口">
+                <a href="#多入口" class="headerlink" title="多入口"></a>多入口</h5>
+              <p>由于将所有模块打包到一起之后文件的大小会以M记，对于一次文件请求来说太大，一般来说，会将同一功能模块的文件打包在一起，以多入口的方式利用CommonChunkPulgin来处理成单独的“&lt;
+                script&gt;”标签进行插入。
+                <br>进行多入口打包的规则总结如下： </p>
+              <ol>
+                <li>打包粒度要合适，每一个模块的大小最好不要超过500kb</li>
+                <li>打包数目不要超过浏览器并发请求资源数，ie一般为4个，chrome一般为6个，多了就会导致请求
+                  <br>卡顿</li>
+                <li>利用留浏览器304缓存，公共部分代码应该都为静态资源</li>
+                <li>在打包上应该避免将层次较深的资源打包到入口中，应该做懒加载。</li>
+              </ol>
+              <p>具体项目中表现如下： </p>
+              <ol>
+                <li>第三方共用的库打一个包，比如vue全家桶</li>
+                <li>公共组件打一个包，比如弹窗组件、loading组件</li>
+                <li>项目通用的工具类打一个包</li>
+                <li>一个大的功能模块打一个包，一般而言，项目不会大到这种地步</li>
+                <li>每个功能模块的子页面进行异步加载。</li>
+              </ol>
+              <p>本项目中，由于项目体积不大，所以只多出了一个第三方公共模块vendors，入口文件中配置了vendors入口： </p>
+              <pre><code>import Vue from &apos;vue&apos;;
 import iView from &apos;iview&apos;;
 import VueRouter from &apos;vue-router&apos;;
 import axios from &apos;axios&apos;;
@@ -462,13 +257,13 @@ import html2canvas from &apos;html2canvas&apos;;
 import rasterizehtml from &apos;rasterizehtml&apos;;
 import store from &apos;store&apos;;
 </code></pre>
-                  <p>上面这些第三方模块被打包成vendor，利用CommonsChunkPlugin来处理，代码中有说明。</p>
-                  <p>CommonsChunkPlugin是webpack插件，用来提取出公共模块进行打包，只在首页加载一次便缓存起来，不会再重复抓取。</p>
-                  <h5 id="ExtractTextPluging">
-                    <a href="#ExtractTextPluging" class="headerlink" title="ExtractTextPluging"></a>ExtractTextPluging</h5>
-                  <p>extract-text-webpack-plugin插件用来从bundle中提取出css作为一个公共的css文件。在webpack的配置文件中引用，在loader中设置额外的提取。
-                  </p>
-                  <pre><code>{
+              <p>上面这些第三方模块被打包成vendor，利用CommonsChunkPlugin来处理，代码中有说明。</p>
+              <p>CommonsChunkPlugin是webpack插件，用来提取出公共模块进行打包，只在首页加载一次便缓存起来，不会再重复抓取。</p>
+              <h5 id="ExtractTextPluging">
+                <a href="#ExtractTextPluging" class="headerlink" title="ExtractTextPluging"></a>ExtractTextPluging</h5>
+              <p>extract-text-webpack-plugin插件用来从bundle中提取出css作为一个公共的css文件。在webpack的配置文件中引用，在loader中设置额外的提取。
+              </p>
+              <pre><code>{
             test: /\.vue$/,
             loader: &apos;vue-loader&apos;,
             options: {
@@ -485,17 +280,17 @@ import store from &apos;store&apos;;
             }
         }
 </code></pre>
-                  <p>定义use来确实使用什么来解析提取的内容，使用fallback来定义从什么中抽取文件。 </p>
-                  <h5 id="HtmlWebpackPlugin">
-                    <a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h5>
-                  <p>html-webpack-plugin是用来生成HTML文件并且自动引用打包的文件。可以指定模板的位置，可以指定引用文件的位置，可以增加title，增加favicon等等，是一个服务于首页的插件。</p>
-                  <h5 id="自定义webpack插件">
-                    <a href="#自定义webpack插件" class="headerlink" title="自定义webpack插件"></a>自定义webpack插件</h5>
-                  <h6 id="cpmpile和compilation">
-                    <a href="#cpmpile和compilation" class="headerlink" title="cpmpile和compilation"></a>cpmpile和compilation</h6>
-                  <p>自定义webpack通常通过重写插件的apply方法，并且将webpack的compile作为参数传递进入方法。compile对象时webpack在编译启动时，将配置文件数据注入后生成的编译对象。
-                    <br>compilation是在文件发生变动时，webpack的一个代表发生变化的对象，他包含了各种变化的回调</p>
-                  <pre><code>function HelloWorldPlugin(){
+              <p>定义use来确实使用什么来解析提取的内容，使用fallback来定义从什么中抽取文件。 </p>
+              <h5 id="HtmlWebpackPlugin">
+                <a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h5>
+              <p>html-webpack-plugin是用来生成HTML文件并且自动引用打包的文件。可以指定模板的位置，可以指定引用文件的位置，可以增加title，增加favicon等等，是一个服务于首页的插件。</p>
+              <h5 id="自定义webpack插件">
+                <a href="#自定义webpack插件" class="headerlink" title="自定义webpack插件"></a>自定义webpack插件</h5>
+              <h6 id="cpmpile和compilation">
+                <a href="#cpmpile和compilation" class="headerlink" title="cpmpile和compilation"></a>cpmpile和compilation</h6>
+              <p>自定义webpack通常通过重写插件的apply方法，并且将webpack的compile作为参数传递进入方法。compile对象时webpack在编译启动时，将配置文件数据注入后生成的编译对象。
+                <br>compilation是在文件发生变动时，webpack的一个代表发生变化的对象，他包含了各种变化的回调</p>
+              <pre><code>function HelloWorldPlugin(){
 }
 HelloWorldPlugin.prototype.apply = function(compile){
     compile.plugin(&quot;emit&quot;,function(compilation,callback){
@@ -504,10 +299,10 @@ HelloWorldPlugin.prototype.apply = function(compile){
     })
 }
 </code></pre>
-                  <h5 id="AutoMerage插件">
-                    <a href="#AutoMerage插件" class="headerlink" title="AutoMerage插件"></a>AutoMerage插件</h5>
-                  <p>本项目使用了自定义插件AutoMerage，功能是读取文件目录，自动生成对外导出文件。 </p>
-                  <pre><code>/**
+              <h5 id="AutoMerage插件">
+                <a href="#AutoMerage插件" class="headerlink" title="AutoMerage插件"></a>AutoMerage插件</h5>
+              <p>本项目使用了自定义插件AutoMerage，功能是读取文件目录，自动生成对外导出文件。 </p>
+              <pre><code>/**
  * AutoMerage.js
  */
 
@@ -558,8 +353,8 @@ AutoMergeJs.prototype.apply = function (compiler) {
 };
 module.exports = AutoMergeJs;
 </code></pre>
-                  <p>进行模板文本操作的工具类</p>
-                  <pre><code>/**
+              <p>进行模板文本操作的工具类</p>
+              <pre><code>/**
  * util.js
  */
 var fs = require(&quot;fs&quot;);
@@ -612,10 +407,10 @@ function readFilesInDir(dirUrl, option) {
 
 module.exports = {readFilesInDir: readFilesInDir};
 </code></pre>
-                  <p>这里的几个关键技术是Handlebars、fs、lodash。
-                    <br>Handlebars是一种模板技术，通过将数据和模板结合，在编译之后就可以自动生成文件。
-                    <br>index.tpl </p>
-                  <pre><code>//Do not modify this file, it will be auto generated
+              <p>这里的几个关键技术是Handlebars、fs、lodash。
+                <br>Handlebars是一种模板技术，通过将数据和模板结合，在编译之后就可以自动生成文件。
+                <br>index.tpl </p>
+              <pre><code>//Do not modify this file, it will be auto generated
 import vuexDecorator from &apos;../libs/vuexDecorator&apos;;
 {{#list}}
 import  {{this.name}} from &apos;{{this.fullName}}&apos;;
@@ -627,8 +422,8 @@ export default {
 {{/list}}
 }
 </code></pre>
-                  <p>编译模板： </p>
-                  <pre><code>//获取模板文件
+              <p>编译模板： </p>
+              <pre><code>//获取模板文件
 let data = fs.readFileSync(src + &apos;/&apos; + f.template, &apos;utf-8&apos;);
 const template = Handlebars.compile(data);
 //利用目录文件遍历模板生成文件
@@ -636,364 +431,65 @@ let result = template({
     list: files
 });
 </code></pre>
-                  <p>写回文件：</p>
-                  <pre><code>fs.writeFileSync(src + &apos;/&apos; + f.target, result);
+              <p>写回文件：</p>
+              <pre><code>fs.writeFileSync(src + &apos;/&apos; + f.target, result);
 </code></pre>
-                  <p>在对js使用按照这种方法就可以实现动态配置，减少代码量。</p>
-                  <p>fs是nodejs内置的模块，可以做文件读写，这里有几个关键的函数：</p>
-                  <ol>
-                    <li>fs.readFileSync() 读取文件内容</li>
-                    <li>fs.writeFileSync() 写入文件</li>
-                    <li>fs.statSync() 获取文件状态，返回Stats类</li>
-                    <li>stats.isFile() 是否是文件</li>
-                    <li>stats.isDirectory() 是否是目录</li>
-                    <li>fs.readdirSync() 读取文档目录结构</li>
-                  </ol>
-                  <p>lodash是和underscore类似的函数式变成的库，提供了大量的实用的方法。</p>
-
+              <p>在对js使用按照这种方法就可以实现动态配置，减少代码量。</p>
+              <p>fs是nodejs内置的模块，可以做文件读写，这里有几个关键的函数：</p>
+              <ol>
+                <li>fs.readFileSync() 读取文件内容</li>
+                <li>fs.writeFileSync() 写入文件</li>
+                <li>fs.statSync() 获取文件状态，返回Stats类</li>
+                <li>stats.isFile() 是否是文件</li>
+                <li>stats.isDirectory() 是否是目录</li>
+                <li>fs.readdirSync() 读取文档目录结构</li>
+              </ol>
+              <p>lodash是和underscore类似的函数式变成的库，提供了大量的实用的方法。</p>
+            </div>
+            <div class="post-footer">
+              <div class="meta">
+                <div class="info">
+                  <i class="fa fa-sun-o"></i>
+                  <span class="date">2017-11-27</span>
+                  <i class="fa fa-tag"></i>
+                  <a href="/categories/前端框架/" title="前端框架" class="tag">前端框架 </a>
+                  <a href="/tags/webpack/" title="webpack" class="tag">webpack </a>
                 </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-tags">
-
-                    <a href="/tags/webpack/" rel="tag"># webpack</a>
-
-                  </div>
-
-                  <div class="post-nav">
-                    <div class="post-nav-next post-nav-item">
-
-                      <a href="/2017/11/27/vue源码学习/数据监控/" rel="next" title="">
-                        <i class="fa fa-chevron-left"></i>
-                      </a>
-
-                    </div>
-
-                    <span class="post-nav-divider"></span>
-
-                    <div class="post-nav-prev post-nav-item">
-
-                      <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/" rel="prev" title="万达监控预警项目前端框架整理（三）----项目入口文件">
-                        万达监控预警项目前端框架整理（三）----项目入口文件
-                        <i class="fa fa-chevron-right"></i>
-                      </a>
-
-                    </div>
-                  </div>
-
-                </footer>
-              </article>
-
-              <div class="post-spread">
-
-                <!-- JiaThis Button BEGIN -->
-                <div class="jiathis_style">
-                  <a class="jiathis_button_tsina"></a>
-                  <a class="jiathis_button_tqq"></a>
-                  <a class="jiathis_button_weixin"></a>
-                  <a class="jiathis_button_cqq"></a>
-                  <a class="jiathis_button_douban"></a>
-                  <a class="jiathis_button_renren"></a>
-                  <a class="jiathis_button_qzone"></a>
-                  <a class="jiathis_button_kaixin001"></a>
-                  <a class="jiathis_button_copy"></a>
-                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
-                                                                                                  target="_blank"></a>
-                  <a class="jiathis_counter_style"></a>
-                </div>
-                <script type="text/javascript">
-                  var jiathis_config = {
-                    hideMore: false
-                  }
-
-                </script>
-                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-                <!-- JiaThis Button END -->
-
               </div>
             </div>
-
           </div>
-
-          <div class="comments" id="comments">
-
-            <div id="disqus_thread">
-              <noscript>
-                Please enable JavaScript to view the
-                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-              </noscript>
+          <div class="share">
+            <div class="evernote">
+              <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();"
+                                                                                              ref="nofollow" target="_blank" class="fa fa-bookmark"></a>
             </div>
-
+            <div class="weibo">
+              <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
+                                                                                              class="fa fa-weibo"></a>
+            </div>
+            <div class="twitter">
+              <a href="http://twitter.com/home?status=,https://peacecup.github.io/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/,长夜,万达监控预警项目前端框架整理（一）----webpack相关“,;"
+                                                                                              class="fa fa-twitter"></a>
+            </div>
           </div>
-
-        </div>
-
-        <div class="sidebar-toggle">
-          <div class="sidebar-toggle-line-wrap">
-            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-          </div>
-        </div>
-
-        <aside id="sidebar" class="sidebar">
-          <div class="sidebar-inner">
-
-            <ul class="sidebar-nav motion-element">
-              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                文章目录
+          <div class="pagination">
+            <ul class="clearfix">
+              <li class="pre pagbuttons">
+                <a role="navigation" href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/" title="万达监控预警项目前端框架整理（er）----开发阶段MOCK server"
+                                                                                                class="btn">上一篇</a>
               </li>
-              <li class="sidebar-nav-overview" data-target="site-overview">
-                站点概览
+              <li class="next pagbuttons">
+                <a role="navigation" href="/2017/11/27/vue源码学习/数据监控/" title="" class="btn">下一篇</a>
               </li>
             </ul>
-
-            <section class="site-overview sidebar-panel">
-              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
-                />
-                <p class="site-author-name" itemprop="name">陈宁</p>
-
-                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-
-              </div>
-              <nav class="site-state motion-element">
-
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives">
-                    <span class="site-state-item-count">32</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-
-              </nav>
-
-              <div class="links-of-author motion-element">
-
-                <span class="links-of-author-item">
-                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-
-                    <i class="fa fa-fw fa-github"></i>
-
-                    GitHub
-                  </a>
-                </span>
-
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-
-                    <i class="fa fa-fw fa-zhihu"></i>
-
-                    知乎
-                  </a>
-                </span>
-
-              </div>
-
-            </section>
-
-            <!--noindex-->
-            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-              <div class="post-toc">
-
-                <div class="post-toc-content">
-                  <ol class="nav">
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#項目介紹">
-                        <span class="nav-number">1.</span>
-                        <span class="nav-text">
-                          項目介紹</span>
-                      </a>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#前端架构">
-                        <span class="nav-number">2.</span>
-                        <span class="nav-text">
-                          前端架构</span>
-                      </a>
-                      <ol class="nav-child">
-                        <li class="nav-item nav-level-4">
-                          <a class="nav-link" href="#webpack基础配置">
-                            <span class="nav-number">2.1.</span>
-                            <span class="nav-text">
-                              webpack基础配置</span>
-                          </a>
-                          <ol class="nav-child">
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#多入口">
-                                <span class="nav-number">2.1.1.</span>
-                                <span class="nav-text">
-                                  多入口</span>
-                              </a>
-                            </li>
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#ExtractTextPluging">
-                                <span class="nav-number">2.1.2.</span>
-                                <span class="nav-text">
-                                  ExtractTextPluging</span>
-                              </a>
-                            </li>
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#HtmlWebpackPlugin">
-                                <span class="nav-number">2.1.3.</span>
-                                <span class="nav-text">
-                                  HtmlWebpackPlugin</span>
-                              </a>
-                            </li>
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#自定义webpack插件">
-                                <span class="nav-number">2.1.4.</span>
-                                <span class="nav-text">
-                                  自定义webpack插件</span>
-                              </a>
-                              <ol class="nav-child">
-                                <li class="nav-item nav-level-6">
-                                  <a class="nav-link" href="#cpmpile和compilation">
-                                    <span class="nav-number">2.1.4.1.</span>
-                                    <span class="nav-text">
-                                      cpmpile和compilation</span>
-                                  </a>
-                                </li>
-                              </ol>
-                            </li>
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#AutoMerage插件">
-                                <span class="nav-number">2.1.5.</span>
-                                <span class="nav-text">
-                                  AutoMerage插件</span>
-                              </a>
-                            </li>
-                          </ol>
-                        </li>
-                      </ol>
-                    </li>
-                  </ol>
-                </div>
-
-              </div>
-            </section>
-            <!--/noindex-->
-
           </div>
-        </aside>
-
+        </div>
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-
-          &copy;
-          <span itemprop="copyrightYear">2017</span>
-          <span class="with-love">
-            <i class="fa fa-heart"></i>
-          </span>
-          <span class="author" itemprop="copyrightHolder">陈宁</span>
-        </div>
-
-        <div class="powered-by">
-          由
-          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-        </div>
-
-        <div class="theme-info">
-          主题 -
-          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-            NexT.Mist
-          </a>
-        </div>
-
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-
     </div>
-
   </div>
-
-  <script type="text/javascript">
-    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-      window.Promise = null;
-    }
-
-  </script>
-
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-
-  <script type="text/javascript">
-    var disqus_config = function() {
-      this.page.url =
-        'https://peacecup.github.io/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/';
-      this.page.identifier = '2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/';
-      this.page.title = '万达监控预警项目前端框架整理（一）----webpack相关“';
-    };
-    var d = document,
-      s = d.createElement('script');
-    s.src = 'https://cn.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-
-  </script>
-
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.appear.js"></script>
 </body>
 
 </html>

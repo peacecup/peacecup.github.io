@@ -1,348 +1,145 @@
-<!doctype html>
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
+  <meta charset="utf-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="陈宁">
+  <title>react入门级教程（一） · 长夜</title>
+  <meta name="description" content="react入门级教程（一）
 
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
-  />
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-                                                                                  rel="stylesheet" type="text/css">
-
-  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
-                                                                                  type="text/css" />
-
-  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-  <meta name="keywords" content="react," />
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-  <meta name="description" content="react入门级教程（一）    1、前言 react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。   react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成   ，而vue配置项要多很多，语法也相">
-  <meta name="keywords" content="react">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="react入门级教程（一）">
-  <meta property="og:url" content="https://peacecup.github.io/2017/06/15/react入门级基础知识（干货）/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="react入门级教程（一）    1、前言 react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。   react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成   ，而vue配置项要多很多，语法也相">
-  <meta property="og:updated_time" content="2017-07-31T07:19:13.960Z">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="react入门级教程（一）">
-  <meta name="twitter:description" content="react入门级教程（一）    1、前言 react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。   react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成   ，而vue配置项要多很多，语法也相">
-
-  <script type="text/javascript" id="hexo.configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {
-      root: '/',
-      scheme: 'Mist',
-      sidebar: {
-        "position": "right",
-        "display": "post",
-        "offset": 12,
-        "offset_float": 0,
-        "b2t": false,
-        "scrollpercent": false
-      },
-      fancybox: true,
-      motion: true,
-      duoshuo: {
-        userId: '0',
-        author: '博主'
-      },
-      algolia: {
-        applicationID: '',
-        apiKey: '',
-        indexName: '',
-        hits: {
-          "per_page": 10
-        },
-        labels: {
-          "input_placeholder": "Search for Posts",
-          "hits_empty": "We didn't find any results for the search: ${query}",
-          "hits_stats": "${hits} results found in ${time} ms"
-        }
-      }
-    };
-
-  </script>
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/06/15/react入门级基础知识（干货）/"
-  />
-
-  <title> react入门级教程（一） | 长夜 </title>
+  1、前言
+react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。
+  react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代">
+  <meta name="keywords">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+                                                                                  name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="renderer" content="webkit">
+  <link rel="short icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/blog_basic.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  <div class="container sidebar-position-right page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta ">
-
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before">
-                  <i></i>
-                </span>
-                <span class="site-title">长夜</span>
-                <span class="logo-line-after">
-                  <i></i>
-                </span>
-              </a>
-            </div>
-
-            <p class="site-subtitle">I Want More！</p>
-
-          </div>
-
-          <div class="site-nav-toggle">
-            <button>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-            </button>
-          </div>
+<body>
+  <div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/logo@2x.png" style="width:127px;">
+        <h3 title="">
+          <a href="/">长夜</a>
+        </h3>
+        <div class="description">
+          <p>打开新世界的大门</p>
         </div>
-
-        <nav class="site-nav">
-
-          <ul id="menu" class="menu">
-
-            <li class="menu-item menu-item-home">
-              <a href="/" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-home"></i>
-                <br /> 首页
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-categories">
-              <a href="/categories" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-th"></i>
-                <br /> 分类
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-about">
-              <a href="/about" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-user"></i>
-                <br /> 关于
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-archives">
-              <a href="/archives" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-archive"></i>
-                <br /> 归档
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-tags">
-              <a href="/tags" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-tags"></i>
-                <br /> 标签
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-sitemap">
-              <a href="/sitemap.xml" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
-                <br /> 站点地图
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-commonweal">
-              <a href="/404.html" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
-                <br /> 公益404
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-search">
-
-              <a href="javascript:;" class="popup-trigger">
-
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-                <br /> 搜索
-              </a>
-            </li>
-
-          </ul>
-
-          <div class="site-search">
-
-            <div class="algolia-popup popup search-popup">
-              <div class="algolia-search">
-                <div class="algolia-search-input-icon">
-                  <i class="fa fa-search"></i>
-                </div>
-                <div class="algolia-search-input" id="algolia-search-input"></div>
-              </div>
-
-              <div class="algolia-results">
-                <div id="algolia-stats"></div>
-                <div id="algolia-hits"></div>
-                <div id="algolia-pagination" class="algolia-pagination"></div>
-              </div>
-
-              <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-              </span>
-            </div>
-
-          </div>
-
-        </nav>
-
       </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-
-            <div id="posts" class="posts-expand">
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/15/react入门级基础知识（干货）/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    react入门级教程（一）
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T10:03:43+08:00">
-                        2017-06-15
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/react/" itemprop="url" rel="index">
-                          <span itemprop="name">react</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/06/15/react入门级基础知识（干货）/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/15/react入门级基础知识（干货）/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  <h3 id="react入门级教程（一）">
-                    <a href="#react入门级教程（一）" class="headerlink" title="react入门级教程（一）"></a>react入门级教程（一）</h3>
-                  <h4 id="1、前言">
-                    <a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h4>
-                  <p>react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。
-                    <br>react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成
-                    <br>，而vue配置项要多很多，语法也相对多很多，这也是为什么我近期准备啃react的原因，对于es6的高度依赖对开发人员的成长更有好处，能学到更多东西。
-                    <br>写这个教程，最大的目的是巩固自己的基础，其次是希望能帮助到一些和我一样的初学者。</p>
-                  <h4 id="2、create-react-app">
-                    <a href="#2、create-react-app" class="headerlink" title="2、create-react-app"></a>2、create-react-app</h4>
-                  <p>一个工程化的兼容性强的前端开发环境自己配置对于初学者来说是非常艰难的，需要配置es6环境，配置基于node的服务器，配置打包工具，配置模块化，
-                    <br>配置css3、html5支持，等等。对初学者，这会是一个很难受的过程，去年年初，我自己在不知道vue-cli的情况下研读了github上别人的项目，对着一堆
-                    <br>代码研究了好几天才搞明白，究竟在干嘛，还是在知道了vue-cli以后才知道是自动生成的代码，而不是自己写的，很难受。
-                    <br>因此，学习这些框架在不进行进一步webpack配置的情况下，完全可以直接用自动化工具来初始化一个项目，而不需要自己来搭建，vue项目使用vue-cli，
-                    <br>react项目使用create-react-app。使用npm安装create-react-app：</p>
-                  <pre><code>npm install create-react-app -g   //建议全局安装
+    </div>
+    <ul class="social-links"></ul>
+    <div class="footer">
+      <a target="_blank" href="/">
+        <span>Theme by </span>
+      </a>
+      <a href="https://www.caicai.me"> CaiCai </a>
+      <span>&</span>
+      <a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a>
+      <div class="by_farbox">
+        <a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        <li>
+          <a href="/">首页</a>
+        </li>
+        <li>
+          <a href="/about">关于</a>
+        </li>
+        <li>
+          <a href="/archives">归档</a>
+        </li>
+        <li>
+          <a href="/links">友链</a>
+        </li>
+      </div>
+      <div class="information">
+        <div class="back_btn">
+          <li>
+            <a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a>
+          </li>
+        </div>
+        <div class="avatar">
+          <img>
+        </div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        <div class="post-page">
+          <div class="post animated fadeInDown">
+            <div class="post-title">
+              <h3>
+                <a>react入门级教程（一）</a>
+              </h3>
+            </div>
+            <div class="post-content">
+              <h3 id="react入门级教程（一）">
+                <a href="#react入门级教程（一）" class="headerlink" title="react入门级教程（一）"></a>react入门级教程（一）</h3>
+              <h4 id="1、前言">
+                <a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h4>
+              <p>react的官方文档的逻辑和语言方式真的是难看，就像看外语翻译来的文学小说，再真挚再伟大的感情波动读起来都像是在看戏，还不如自己做一个总结。
+                <br>react和vue我都系统学习过，两者对比起来，react的自由度会更高一些，react的开发更接近原生js代码，除了它基本的不多的几个语法，其他的都是es6来完成
+                <br>，而vue配置项要多很多，语法也相对多很多，这也是为什么我近期准备啃react的原因，对于es6的高度依赖对开发人员的成长更有好处，能学到更多东西。
+                <br>写这个教程，最大的目的是巩固自己的基础，其次是希望能帮助到一些和我一样的初学者。</p>
+              <h4 id="2、create-react-app">
+                <a href="#2、create-react-app" class="headerlink" title="2、create-react-app"></a>2、create-react-app</h4>
+              <p>一个工程化的兼容性强的前端开发环境自己配置对于初学者来说是非常艰难的，需要配置es6环境，配置基于node的服务器，配置打包工具，配置模块化，
+                <br>配置css3、html5支持，等等。对初学者，这会是一个很难受的过程，去年年初，我自己在不知道vue-cli的情况下研读了github上别人的项目，对着一堆
+                <br>代码研究了好几天才搞明白，究竟在干嘛，还是在知道了vue-cli以后才知道是自动生成的代码，而不是自己写的，很难受。
+                <br>因此，学习这些框架在不进行进一步webpack配置的情况下，完全可以直接用自动化工具来初始化一个项目，而不需要自己来搭建，vue项目使用vue-cli，
+                <br>react项目使用create-react-app。使用npm安装create-react-app：</p>
+              <pre><code>npm install create-react-app -g   //建议全局安装
 </code></pre>
-                  <p>create-react-app构建了一个完善的开发环境，包括热替换等。 </p>
-                  <pre><code>//创建一个项目
+              <p>create-react-app构建了一个完善的开发环境，包括热替换等。 </p>
+              <pre><code>//创建一个项目
 create-react-app 项目名称
 //初始化项目
 npm install
 //运行项目
 npm start
 </code></pre>
-                  <p>执行上面代码就可以初始化并且运行项目，会得到一个demo页面，这里就不截图了。src下的index是react项目的入口文件，其他的是组件。</p>
-                  <h4 id="3、react基础语法">
-                    <a href="#3、react基础语法" class="headerlink" title="3、react基础语法"></a>3、react基础语法</h4>
-                  <p>其实之前也做了好几次整理，但是还是容易变得模糊，不精准，只能说好记性不如烂笔头，这里主要对对react部分来说明语法，react-dom暂且放一放
-                    <br>这里会提到以下几个类和方法：react、Component、jsx、render、props。
-                    <br>下面是一个简单的react组件 </p>
-                  <pre><code>import React,{Component} from &apos;react&apos;; //从react导入React相关环境以及组件环境
+              <p>执行上面代码就可以初始化并且运行项目，会得到一个demo页面，这里就不截图了。src下的index是react项目的入口文件，其他的是组件。</p>
+              <h4 id="3、react基础语法">
+                <a href="#3、react基础语法" class="headerlink" title="3、react基础语法"></a>3、react基础语法</h4>
+              <p>其实之前也做了好几次整理，但是还是容易变得模糊，不精准，只能说好记性不如烂笔头，这里主要对对react部分来说明语法，react-dom暂且放一放
+                <br>这里会提到以下几个类和方法：react、Component、jsx、render、props。
+                <br>下面是一个简单的react组件 </p>
+              <pre><code>import React,{Component} from &apos;react&apos;; //从react导入React相关环境以及组件环境
 var root = document.querySelector(&quot;app&quot;);//拿到页面的根元素。
 render(&lt;div&gt;haha&lt;/div&gt;,root);// 组件的render渲染方法，把虚拟的div组件绑定到root上
 </code></pre>
-                  <p>其实上面三行代码已经包含了react的精髓内容，react更多的是一种基于数据的新的开发思维模式。
-                    <br>第一行代码，在单页应用spa里依赖react的环境，这个环境有很多内容，这里只依赖了Component，一个组件相关的类
-                    <br>第二行代码，获取要挂载的根节点
-                    <br>第三行代码，创建一个虚拟DOM，也就是
-                    <div>haha</div>,然后把这个虚拟DOM挂载到根节点上,
-                    <br>react的精髓就在于创建虚拟DOM，挂载以后生成真实的DOM，用数据驱动虚拟DOM进行变化，虚拟DOM的变化反映到挂载的真实DOM上。
-                    <br>react的目的就是更小耦合度的划分功能模块成组件，一个功能或者几个功能划分成一个组件，组件的通信来完成复杂功能。</p>
-                  <h4 id="4、创建组件的两种方式">
-                    <a href="#4、创建组件的两种方式" class="headerlink" title="4、创建组件的两种方式"></a>4、创建组件的两种方式</h4>
-                  <p>通过reactDOm来创建的方式并不被官方推介。</p>
-                  <h5 id="a、创建无状态组件">
-                    <a href="#a、创建无状态组件" class="headerlink" title="a、创建无状态组件"></a>a、创建无状态组件</h5>
-                  <p>由react开创的组件化的模式在于转换操作DOM为操作数据，以前我们习惯于使用jquery操作DOM来做页面逻辑操作，react的思路是利用操作数据来改变虚拟DOM然后更新真实DOM，比如一个表单验证，使用jquery是操作DOM来获取表单元素的值，然后对值进行校验，然后再一次操作提示部分的DOM进行复制，使用react的思路是创建一个虚拟的DOM表单，直接进行表单数据验证，将验证结果反应到反应到数据上，然后根据数据重绘表单界面。jquery是一个工具，运用jquery是一个横向的单点的过程，只关心自己择器操作的DOM，而不关心使用场景。而使用react是一个纵向的连续的过程
-                    <br>一个react组件本身就是可以持续改变，多个组件通过父子关系，兄弟关系，在横向和纵向上可以组合拉伸。一个用户操作在jquery里只是一个普通的操作DOM改变界面，在react里却是能看到一条线，一条由用户操作引起的数据流向的线。更重要的一点是，react组件是可以积累的，是可复用的。
-                    <br>会到第一种创建组件的方式：无状态组件。一个组件的状态就是它的数据，数据变化，组件就会重新绘制，无状态组件就是没有自己状态的组件，这种组件不在少数，只展示信息的组件，它不需要有属于自己的数据，他只负责展示，用户操作的组件，一个button只代表一个用户点击操作，它于它的父组件不可分割，也不需要有自己的数据。我们通过函数式的写法来创建组件：
-                  </p>
-                  <pre><code>ShowMessage.jsx
+              <p>其实上面三行代码已经包含了react的精髓内容，react更多的是一种基于数据的新的开发思维模式。
+                <br>第一行代码，在单页应用spa里依赖react的环境，这个环境有很多内容，这里只依赖了Component，一个组件相关的类
+                <br>第二行代码，获取要挂载的根节点
+                <br>第三行代码，创建一个虚拟DOM，也就是
+                <div>haha</div>,然后把这个虚拟DOM挂载到根节点上,
+                <br>react的精髓就在于创建虚拟DOM，挂载以后生成真实的DOM，用数据驱动虚拟DOM进行变化，虚拟DOM的变化反映到挂载的真实DOM上。
+                <br>react的目的就是更小耦合度的划分功能模块成组件，一个功能或者几个功能划分成一个组件，组件的通信来完成复杂功能。</p>
+              <h4 id="4、创建组件的两种方式">
+                <a href="#4、创建组件的两种方式" class="headerlink" title="4、创建组件的两种方式"></a>4、创建组件的两种方式</h4>
+              <p>通过reactDOm来创建的方式并不被官方推介。</p>
+              <h5 id="a、创建无状态组件">
+                <a href="#a、创建无状态组件" class="headerlink" title="a、创建无状态组件"></a>a、创建无状态组件</h5>
+              <p>由react开创的组件化的模式在于转换操作DOM为操作数据，以前我们习惯于使用jquery操作DOM来做页面逻辑操作，react的思路是利用操作数据来改变虚拟DOM然后更新真实DOM，比如一个表单验证，使用jquery是操作DOM来获取表单元素的值，然后对值进行校验，然后再一次操作提示部分的DOM进行复制，使用react的思路是创建一个虚拟的DOM表单，直接进行表单数据验证，将验证结果反应到反应到数据上，然后根据数据重绘表单界面。jquery是一个工具，运用jquery是一个横向的单点的过程，只关心自己择器操作的DOM，而不关心使用场景。而使用react是一个纵向的连续的过程
+                <br>一个react组件本身就是可以持续改变，多个组件通过父子关系，兄弟关系，在横向和纵向上可以组合拉伸。一个用户操作在jquery里只是一个普通的操作DOM改变界面，在react里却是能看到一条线，一条由用户操作引起的数据流向的线。更重要的一点是，react组件是可以积累的，是可复用的。
+                <br>会到第一种创建组件的方式：无状态组件。一个组件的状态就是它的数据，数据变化，组件就会重新绘制，无状态组件就是没有自己状态的组件，这种组件不在少数，只展示信息的组件，它不需要有属于自己的数据，他只负责展示，用户操作的组件，一个button只代表一个用户点击操作，它于它的父组件不可分割，也不需要有自己的数据。我们通过函数式的写法来创建组件：
+              </p>
+              <pre><code>ShowMessage.jsx
 import React from &apos;react&apos;;
 const ShowMessage = () =&gt; {
     return(
@@ -351,10 +148,10 @@ const ShowMessage = () =&gt; {
 }
 export default ShowMessage;
 </code></pre>
-                  <p>() =&gt; {}箭头函数式es6的写法，用来固定this指向,简写function，它等于 function(){},
-                    <br>import和export是es6模块化的东西。上面这个组件就是一个没有自己状态的组件，但是它没有意义，一个静态div的组件是没有意义的，使它有意义的是他的父组件，它没有自己的数据，但是可以有父组件的数据，父组件传递数据给子组件的方式是通过属性，然后在子组件里通过props来获取数据.
-                  </p>
-                  <pre><code>parent.jsx
+              <p>() =&gt; {}箭头函数式es6的写法，用来固定this指向,简写function，它等于 function(){},
+                <br>import和export是es6模块化的东西。上面这个组件就是一个没有自己状态的组件，但是它没有意义，一个静态div的组件是没有意义的，使它有意义的是他的父组件，它没有自己的数据，但是可以有父组件的数据，父组件传递数据给子组件的方式是通过属性，然后在子组件里通过props来获取数据.
+              </p>
+              <pre><code>parent.jsx
 
 import showMessage from &apos;showMessage.jsx&apos;;
 import React,{Component} from &quot;react&quot;;
@@ -371,9 +168,9 @@ class Parent extends Component{
 }
 export default Parent;
 </code></pre>
-                  <p>这里使用属性的方式把message赋值给ShowMessage子组件。 {message}是jsx的语法，jsx是一个
-                    <br>js的扩充语言，它的写法于html一样，在读取编译的时候，会使用creatElement函数来根据标签创建js对象，{message}是在jsx里插入变量的写法。</p>
-                  <pre><code>ShowMessage.jsx
+              <p>这里使用属性的方式把message赋值给ShowMessage子组件。 {message}是jsx的语法，jsx是一个
+                <br>js的扩充语言，它的写法于html一样，在读取编译的时候，会使用creatElement函数来根据标签创建js对象，{message}是在jsx里插入变量的写法。</p>
+              <pre><code>ShowMessage.jsx
 import React from &quot;react&quot;;
 const ShowMessage = (props) =&gt; {
     return(
@@ -382,8 +179,8 @@ const ShowMessage = (props) =&gt; {
 }
 export default ShowMessage;
 </code></pre>
-                  <p>在子组件里通过props来接受父组件的数据,包括给子组件绑定事件，如下 </p>
-                  <pre><code>&lt;ShowMessage message={message} method={this.method}/&gt;
+              <p>在子组件里通过props来接受父组件的数据,包括给子组件绑定事件，如下 </p>
+              <pre><code>&lt;ShowMessage message={message} method={this.method}/&gt;
 
 ShowMessage.jsx
 import React from &quot;react&quot;;
@@ -394,10 +191,10 @@ const ShowMessage = (props) =&gt; {
 }
 export default ShowMessage;
 </code></pre>
-                  <h5 id="b、创建有状态的组件">
-                    <a href="#b、创建有状态的组件" class="headerlink" title="b、创建有状态的组件"></a>b、创建有状态的组件</h5>
-                  <p>上面的Parent组件其实就是有状态的组件 </p>
-                  <pre><code>parent.jsx
+              <h5 id="b、创建有状态的组件">
+                <a href="#b、创建有状态的组件" class="headerlink" title="b、创建有状态的组件"></a>b、创建有状态的组件</h5>
+              <p>上面的Parent组件其实就是有状态的组件 </p>
+              <pre><code>parent.jsx
 
 import showMessage from &apos;showMessage.jsx&apos;;
 import React,{Component} from &quot;react&quot;;
@@ -414,11 +211,11 @@ class Parent extends Component{
 }
 export default Parent;
 </code></pre>
-                  <p>class是es6创建类的关键字，于创建一个函数其实差别不大；extends是es6进行继承的写法，es5必须通过原型链将圆形赋值给被继承对象的实例才能完成继承，es6简化了这个部分，现在只需要使用extends就可以完成继承，当然也可以使用supper函数。
-                    <br>Component是react里的组件相关的类，render是Component提供的渲染函数，用来渲染组件。
-                    <br>一个组件有了自己的状态就可以做很多事情了，要牢记的一点是：组件的数据发生改变就会调用render函数重新绘制组件，组件的数据包括自己状态state和来自父组件的数据props。
-                    <br>比如做一个提交功能，包含提交按钮，一个提示信息，提交时还要禁止点击 </p>
-                  <pre><code>Button.jsx
+              <p>class是es6创建类的关键字，于创建一个函数其实差别不大；extends是es6进行继承的写法，es5必须通过原型链将圆形赋值给被继承对象的实例才能完成继承，es6简化了这个部分，现在只需要使用extends就可以完成继承，当然也可以使用supper函数。
+                <br>Component是react里的组件相关的类，render是Component提供的渲染函数，用来渲染组件。
+                <br>一个组件有了自己的状态就可以做很多事情了，要牢记的一点是：组件的数据发生改变就会调用render函数重新绘制组件，组件的数据包括自己状态state和来自父组件的数据props。
+                <br>比如做一个提交功能，包含提交按钮，一个提示信息，提交时还要禁止点击 </p>
+              <pre><code>Button.jsx
 import React from &quot;react&quot;;
 const Button = (props) =&gt; {
     const {children, loading, submit} = props;
@@ -432,10 +229,10 @@ const Button = (props) =&gt; {
 }
 export default Button;
 </code></pre>
-                  <p>这个提交按钮Button组件没有自己的状态，只有父组件传递的提交函数，子元素，是否loadind。
-                    <br>className是为了和class关键字区分开，className表示css类名，const { … } = props是es
-                    <br>6解析结构的写法</p>
-                  <pre><code>Dialog.jsx
+              <p>这个提交按钮Button组件没有自己的状态，只有父组件传递的提交函数，子元素，是否loadind。
+                <br>className是为了和class关键字区分开，className表示css类名，const { … } = props是es
+                <br>6解析结构的写法</p>
+              <pre><code>Dialog.jsx
 import React from &quot;react&quot;;
 const Dialog = () =&gt; {
     const {message, close} = props;
@@ -452,8 +249,8 @@ const Dialog = () =&gt; {
     )
 }
 </code></pre>
-                  <p>这个弹出框组件接受父组件的消息和关闭函数 </p>
-                  <pre><code>App.jsx
+              <p>这个弹出框组件接受父组件的消息和关闭函数 </p>
+              <pre><code>App.jsx
 import React, { Component} from &quot;react&quot;;
 import Button from &quot;Button.jsx&quot;;
 class App extends Component{
@@ -500,360 +297,71 @@ class App extends Component{
     }
 }
 </code></pre>
-                  <p>这个由三个组件组成的提交功能的组合组件中数据的流向从上到下，从用户点击开始，点击改变了父组件状态，组件状态改变了子组件的props。</p>
-                  <h4 id="5、react组件的声明周期钩子">
-                    <a href="#5、react组件的声明周期钩子" class="headerlink" title="5、react组件的声明周期钩子"></a>5、react组件的声明周期钩子</h4>
-                  <p>任何流程和事物都有一个生命周期，react的声明周期有三种：挂载前后、更新前后、销毁前
-                    <br>挂载前后：componentWillMount（）、componentDidMount（） </p>
-                  <p>更新前： </p>
-                  <ul>
-                    <li>componentWillReceiveProps接收到一个新的props时，在重新render之前调用</li>
-                    <li>shouldComponentUpdate 接收到一个新的state或者props时，在重新render之前调用</li>
-                    <li>componentWillUpdate 接收到一个新的state或者props时，在重新render之前调用</li>
-                  </ul>
-                  <p>更新后：</p>
-                  <ul>
-                    <li>componentDidUpdate 组件完成更新之后调用</li>
-                  </ul>
-                  <p>销毁前： </p>
-                  <ul>
-                    <li>componentWillUnmount</li>
-                  </ul>
-
+              <p>这个由三个组件组成的提交功能的组合组件中数据的流向从上到下，从用户点击开始，点击改变了父组件状态，组件状态改变了子组件的props。</p>
+              <h4 id="5、react组件的声明周期钩子">
+                <a href="#5、react组件的声明周期钩子" class="headerlink" title="5、react组件的声明周期钩子"></a>5、react组件的声明周期钩子</h4>
+              <p>任何流程和事物都有一个生命周期，react的声明周期有三种：挂载前后、更新前后、销毁前
+                <br>挂载前后：componentWillMount（）、componentDidMount（） </p>
+              <p>更新前： </p>
+              <ul>
+                <li>componentWillReceiveProps接收到一个新的props时，在重新render之前调用</li>
+                <li>shouldComponentUpdate 接收到一个新的state或者props时，在重新render之前调用</li>
+                <li>componentWillUpdate 接收到一个新的state或者props时，在重新render之前调用</li>
+              </ul>
+              <p>更新后：</p>
+              <ul>
+                <li>componentDidUpdate 组件完成更新之后调用</li>
+              </ul>
+              <p>销毁前： </p>
+              <ul>
+                <li>componentWillUnmount</li>
+              </ul>
+            </div>
+            <div class="post-footer">
+              <div class="meta">
+                <div class="info">
+                  <i class="fa fa-sun-o"></i>
+                  <span class="date">2017-06-15</span>
+                  <i class="fa fa-tag"></i>
+                  <a href="/categories/react/" title="react" class="tag">react </a>
+                  <a href="/tags/react/" title="react" class="tag">react </a>
                 </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-tags">
-
-                    <a href="/tags/react/" rel="tag"># react</a>
-
-                  </div>
-
-                  <div class="post-nav">
-                    <div class="post-nav-next post-nav-item">
-
-                      <a href="/2017/06/07/fetch相关概念/" rel="next" title="DOM新API fetch">
-                        <i class="fa fa-chevron-left"></i> DOM新API fetch
-                      </a>
-
-                    </div>
-
-                    <span class="post-nav-divider"></span>
-
-                    <div class="post-nav-prev post-nav-item">
-
-                      <a href="/2017/07/01/let const/" rel="prev" title="es6-let/const">
-                        es6-let/const
-                        <i class="fa fa-chevron-right"></i>
-                      </a>
-
-                    </div>
-                  </div>
-
-                </footer>
-              </article>
-
-              <div class="post-spread">
-
-                <!-- JiaThis Button BEGIN -->
-                <div class="jiathis_style">
-                  <a class="jiathis_button_tsina"></a>
-                  <a class="jiathis_button_tqq"></a>
-                  <a class="jiathis_button_weixin"></a>
-                  <a class="jiathis_button_cqq"></a>
-                  <a class="jiathis_button_douban"></a>
-                  <a class="jiathis_button_renren"></a>
-                  <a class="jiathis_button_qzone"></a>
-                  <a class="jiathis_button_kaixin001"></a>
-                  <a class="jiathis_button_copy"></a>
-                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
-                                                                                                  target="_blank"></a>
-                  <a class="jiathis_counter_style"></a>
-                </div>
-                <script type="text/javascript">
-                  var jiathis_config = {
-                    hideMore: false
-                  }
-
-                </script>
-                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-                <!-- JiaThis Button END -->
-
               </div>
             </div>
-
           </div>
-
-          <div class="comments" id="comments">
-
-            <div id="disqus_thread">
-              <noscript>
-                Please enable JavaScript to view the
-                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-              </noscript>
+          <div class="share">
+            <div class="evernote">
+              <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();"
+                                                                                              ref="nofollow" target="_blank" class="fa fa-bookmark"></a>
             </div>
-
+            <div class="weibo">
+              <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
+                                                                                              class="fa fa-weibo"></a>
+            </div>
+            <div class="twitter">
+              <a href="http://twitter.com/home?status=,https://peacecup.github.io/2017/06/15/react入门级基础知识（干货）/,长夜,react入门级教程（一）,;"
+                                                                                              class="fa fa-twitter"></a>
+            </div>
           </div>
-
-        </div>
-
-        <div class="sidebar-toggle">
-          <div class="sidebar-toggle-line-wrap">
-            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-          </div>
-        </div>
-
-        <aside id="sidebar" class="sidebar">
-          <div class="sidebar-inner">
-
-            <ul class="sidebar-nav motion-element">
-              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                文章目录
+          <div class="pagination">
+            <ul class="clearfix">
+              <li class="pre pagbuttons">
+                <a role="navigation" href="/2017/07/01/let const/" title="es6-let/const"
+                                                                                                class="btn">上一篇</a>
               </li>
-              <li class="sidebar-nav-overview" data-target="site-overview">
-                站点概览
+              <li class="next pagbuttons">
+                <a role="navigation" href="/2017/06/07/fetch相关概念/" title="DOM新API fetch"
+                                                                                                class="btn">下一篇</a>
               </li>
             </ul>
-
-            <section class="site-overview sidebar-panel">
-              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
-                />
-                <p class="site-author-name" itemprop="name">陈宁</p>
-
-                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-
-              </div>
-              <nav class="site-state motion-element">
-
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives">
-                    <span class="site-state-item-count">32</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-
-              </nav>
-
-              <div class="links-of-author motion-element">
-
-                <span class="links-of-author-item">
-                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-
-                    <i class="fa fa-fw fa-github"></i>
-
-                    GitHub
-                  </a>
-                </span>
-
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-
-                    <i class="fa fa-fw fa-zhihu"></i>
-
-                    知乎
-                  </a>
-                </span>
-
-              </div>
-
-            </section>
-
-            <!--noindex-->
-            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-              <div class="post-toc">
-
-                <div class="post-toc-content">
-                  <ol class="nav">
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#react入门级教程（一）">
-                        <span class="nav-number">1.</span>
-                        <span class="nav-text">
-                          react入门级教程（一）</span>
-                      </a>
-                      <ol class="nav-child">
-                        <li class="nav-item nav-level-4">
-                          <a class="nav-link" href="#1、前言">
-                            <span class="nav-number">1.1.</span>
-                            <span class="nav-text">
-                              1、前言</span>
-                          </a>
-                        </li>
-                        <li class="nav-item nav-level-4">
-                          <a class="nav-link" href="#2、create-react-app">
-                            <span class="nav-number">1.2.</span>
-                            <span class="nav-text">
-                              2、create-react-app</span>
-                          </a>
-                        </li>
-                        <li class="nav-item nav-level-4">
-                          <a class="nav-link" href="#3、react基础语法">
-                            <span class="nav-number">1.3.</span>
-                            <span class="nav-text">
-                              3、react基础语法</span>
-                          </a>
-                        </li>
-                        <li class="nav-item nav-level-4">
-                          <a class="nav-link" href="#4、创建组件的两种方式">
-                            <span class="nav-number">1.4.</span>
-                            <span class="nav-text">
-                              4、创建组件的两种方式</span>
-                          </a>
-                          <ol class="nav-child">
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#a、创建无状态组件">
-                                <span class="nav-number">1.4.1.</span>
-                                <span class="nav-text">
-                                  a、创建无状态组件</span>
-                              </a>
-                            </li>
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#b、创建有状态的组件">
-                                <span class="nav-number">1.4.2.</span>
-                                <span class="nav-text">
-                                  b、创建有状态的组件</span>
-                              </a>
-                            </li>
-                          </ol>
-                        </li>
-                        <li class="nav-item nav-level-4">
-                          <a class="nav-link" href="#5、react组件的声明周期钩子">
-                            <span class="nav-number">1.5.</span>
-                            <span class="nav-text">
-                              5、react组件的声明周期钩子</span>
-                          </a>
-                        </li>
-                      </ol>
-                    </li>
-                  </ol>
-                </div>
-
-              </div>
-            </section>
-            <!--/noindex-->
-
           </div>
-        </aside>
-
+        </div>
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-
-          &copy;
-          <span itemprop="copyrightYear">2017</span>
-          <span class="with-love">
-            <i class="fa fa-heart"></i>
-          </span>
-          <span class="author" itemprop="copyrightHolder">陈宁</span>
-        </div>
-
-        <div class="powered-by">
-          由
-          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-        </div>
-
-        <div class="theme-info">
-          主题 -
-          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-            NexT.Mist
-          </a>
-        </div>
-
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-
     </div>
-
   </div>
-
-  <script type="text/javascript">
-    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-      window.Promise = null;
-    }
-
-  </script>
-
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-
-  <script type="text/javascript">
-    var disqus_config = function() {
-      this.page.url =
-        'https://peacecup.github.io/2017/06/15/react入门级基础知识（干货）/';
-      this.page.identifier = '2017/06/15/react入门级基础知识（干货）/';
-      this.page.title = 'react入门级教程（一）';
-    };
-    var d = document,
-      s = d.createElement('script');
-    s.src = 'https://cn.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-
-  </script>
-
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.appear.js"></script>
 </body>
 
 </html>

@@ -1,1379 +1,331 @@
-<!doctype html>
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
-
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
-  />
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-                                                                                  rel="stylesheet" type="text/css">
-
-  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
-                                                                                  type="text/css" />
-
-  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
+  <meta charset="utf-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="陈宁">
+  <title>长夜</title>
   <meta name="description" content="打开新世界的大门">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="长夜">
-  <meta property="og:url" content="https://peacecup.github.io/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="打开新世界的大门">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="长夜">
-  <meta name="twitter:description" content="打开新世界的大门">
-
-  <script type="text/javascript" id="hexo.configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {
-      root: '/',
-      scheme: 'Mist',
-      sidebar: {
-        "position": "right",
-        "display": "post",
-        "offset": 12,
-        "offset_float": 0,
-        "b2t": false,
-        "scrollpercent": false
-      },
-      fancybox: true,
-      motion: true,
-      duoshuo: {
-        userId: '0',
-        author: '博主'
-      },
-      algolia: {
-        applicationID: '',
-        apiKey: '',
-        indexName: '',
-        hits: {
-          "per_page": 10
-        },
-        labels: {
-          "input_placeholder": "Search for Posts",
-          "hits_empty": "We didn't find any results for the search: ${query}",
-          "hits_stats": "${hits} results found in ${time} ms"
-        }
-      }
-    };
-
-  </script>
-
-  <link rel="canonical" href="https://peacecup.github.io/" />
-
-  <title> 长夜 </title>
+  <meta name="keywords">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+                                                                                  name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="renderer" content="webkit">
+  <link rel="short icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/blog_basic.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  <div class="container sidebar-position-right 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta ">
-
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before">
-                  <i></i>
-                </span>
-                <span class="site-title">长夜</span>
-                <span class="logo-line-after">
-                  <i></i>
-                </span>
-              </a>
-            </div>
-
-            <p class="site-subtitle">I Want More！</p>
-
-          </div>
-
-          <div class="site-nav-toggle">
-            <button>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-            </button>
-          </div>
+<body>
+  <div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="/images/logo@2x.png" style="width:127px;">
+        <h3 title="">
+          <a href="/">长夜</a>
+        </h3>
+        <div class="description">
+          <p>打开新世界的大门</p>
         </div>
-
-        <nav class="site-nav">
-
-          <ul id="menu" class="menu">
-
-            <li class="menu-item menu-item-home">
-              <a href="/" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-home"></i>
-                <br /> 首页
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-categories">
-              <a href="/categories" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-th"></i>
-                <br /> 分类
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-about">
-              <a href="/about" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-user"></i>
-                <br /> 关于
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-archives">
-              <a href="/archives" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-archive"></i>
-                <br /> 归档
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-tags">
-              <a href="/tags" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-tags"></i>
-                <br /> 标签
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-sitemap">
-              <a href="/sitemap.xml" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
-                <br /> 站点地图
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-commonweal">
-              <a href="/404.html" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
-                <br /> 公益404
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-search">
-
-              <a href="javascript:;" class="popup-trigger">
-
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-                <br /> 搜索
-              </a>
-            </li>
-
-          </ul>
-
-          <div class="site-search">
-
-            <div class="algolia-popup popup search-popup">
-              <div class="algolia-search">
-                <div class="algolia-search-input-icon">
-                  <i class="fa fa-search"></i>
-                </div>
-                <div class="algolia-search-input" id="algolia-search-input"></div>
-              </div>
-
-              <div class="algolia-results">
-                <div id="algolia-stats"></div>
-                <div id="algolia-hits"></div>
-                <div id="algolia-pagination" class="algolia-pagination"></div>
-              </div>
-
-              <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-              </span>
-            </div>
-
-          </div>
-
-        </nav>
-
       </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-
-            <section id="posts" class="posts-expand">
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/" itemprop="url">
-                      万达监控预警项目前端框架整理（er）----开发阶段MOCK server
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T11:34:42+08:00">
-                        2017-11-28
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端框架/" itemprop="url" rel="index">
-                          <span itemprop="name">前端框架</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  MOCK mock的字面意思就叫模拟，mock技术就是用来模拟前端请求的后端返回。之前有使用过mock.js这个模块，但是在涉及list数据的情况下不是很好用。
-                  本项目里使用了lowdb技术，Low-DB技术是一个基于Lo-Dash中间件的技术，他不依赖于nosql数据库。是一种纯json
-                  ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/11/28/框架整理/框架整理（三）--mian入口文件/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/" itemprop="url">
-                      万达监控预警项目前端框架整理（三）----项目入口文件
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T11:34:42+08:00">
-                        2017-11-28
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端框架/" itemprop="url" rel="index">
-                          <span itemprop="name">前端框架</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/28/框架整理/框架整理（三）--mian入口文件/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  入口文件 单页SPA项目一般只有一个有用的入口文件，在入口文件里会根据使用的UI框架进行集成，将路由、状态管理器、国际化、时间规范等集成到项目中。 import
-                  Vue from &apos;vue&apos;; import iView from &apos;iview&apos;;
-                  im ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/" itemprop="url">
-                      万达监控预警项目前端框架整理（一）----webpack相关“
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T11:34:42+08:00">
-                        2017-11-27
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端框架/" itemprop="url" rel="index">
-                          <span itemprop="name">前端框架</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  項目介紹 这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。
-                  项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用spring ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/11/27/vue源码学习/数据监控/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/11/27/vue源码学习/数据监控/" itemprop="url">
-                      未命名
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T09:41:15+08:00">
-                        2017-11-27
-                      </time>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/11/27/vue源码学习/数据监控/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/27/vue源码学习/数据监控/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/11/27/vue源码学习/数据监控/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/事件委托、jq事件委托/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/事件委托、jq事件委托/" itemprop="url">
-                      未命名
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:42:18+08:00">
-                        2017-08-11
-                      </time>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/08/11/problems/事件委托、jq事件委托/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/事件委托、jq事件委托/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  title: 事件委托和jq事件委托 date: 2017-8-11 14:34:42 categories: 前端问题梳理 tags: 前端 事件委托 事件委托的概念要从js事件模型说起，js事件模型现代主流浏览器实现的都是DOM2级的时间模型，分为三个阶段：
-                  ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/08/11/problems/事件委托、jq事件委托/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js  DOM事件模型/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/js  DOM事件模型/" itemprop="url">
-                      js DOM事件模型
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                        2017-08-11
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                          <span itemprop="name">前端问题梳理</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/08/11/problems/js  DOM事件模型/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/js  DOM事件模型/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。
-                  好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件 ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/08/11/problems/js  DOM事件模型/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/浏览器内核/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/浏览器内核/" itemprop="url">
-                      浏览器内核
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                        2017-08-11
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                          <span itemprop="name">前端问题梳理</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/08/11/problems/浏览器内核/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/浏览器内核/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  浏览器内核 浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。
-                  五大浏览器内核 Trident,也就是IE内核，捆绑在 ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/08/11/problems/浏览器内核/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js实现继承的方式/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/js实现继承的方式/" itemprop="url">
-                      js实现继承的方式
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                        2017-08-11
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                          <span itemprop="name">前端问题梳理</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/08/11/problems/js实现继承的方式/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/js实现继承的方式/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  js实现继承的方式 js实现继承的方式目前我知道的大体可以分为两类： es5通过原型链来实现继承，具体有构造函数继承、原型继承、组合构造函数和原型继承、寄生继承。寄生组合继承。
-                  es6使用class extend supper来实现继承 es5的继承方式 原型链 原型 ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/08/11/problems/js实现继承的方式/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/深复制和浅复制/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/深复制和浅复制/" itemprop="url">
-                      深复制和浅复制
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                        2017-08-11
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                          <span itemprop="name">前端问题梳理</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/08/11/problems/深复制和浅复制/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/深复制和浅复制/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。
-                  浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: & ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/08/11/problems/深复制和浅复制/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js无阻塞加载/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/js无阻塞加载/" itemprop="url">
-                      js无阻塞加载
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
-                        2017-08-11
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
-                          <span itemprop="name">前端问题梳理</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/08/11/problems/js无阻塞加载/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/js无阻塞加载/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  js异步加载问题？ js无阻赛加载包括js下载和js编译执行两个部分。 解决方案： 使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？
-                  使用动态创建Scrip ...
-                  <!--noindex-->
-                  <div class="post-button text-center">
-                    <a class="btn" href="/2017/08/11/problems/js无阻塞加载/#more" rel="contents">
-                      阅读全文 &raquo;
-                    </a>
-                  </div>
-                  <!--/noindex-->
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-eof"></div>
-
-                </footer>
-              </article>
-
-            </section>
-
-            <nav class="pagination">
-              <span class="page-number current">1</span>
-              <a class="page-number" href="/page/2/">2</a>
-              <span class="space">&hellip;</span>
-              <a class="page-number" href="/page/4/">4</a>
-              <a class="extend next" rel="next" href="/page/2/">
-                <i class="fa fa-angle-right"></i>
-              </a>
-            </nav>
-
-          </div>
-
-        </div>
-
-        <div class="sidebar-toggle">
-          <div class="sidebar-toggle-line-wrap">
-            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-          </div>
-        </div>
-
-        <aside id="sidebar" class="sidebar">
-          <div class="sidebar-inner">
-
-            <section class="site-overview sidebar-panel sidebar-panel-active">
-              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
-                />
-                <p class="site-author-name" itemprop="name">陈宁</p>
-
-                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-
-              </div>
-              <nav class="site-state motion-element">
-
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives">
-                    <span class="site-state-item-count">32</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-
-              </nav>
-
-              <div class="links-of-author motion-element">
-
-                <span class="links-of-author-item">
-                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-
-                    <i class="fa fa-fw fa-github"></i>
-
-                    GitHub
-                  </a>
-                </span>
-
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-
-                    <i class="fa fa-fw fa-zhihu"></i>
-
-                    知乎
-                  </a>
-                </span>
-
-              </div>
-
-            </section>
-
-          </div>
-        </aside>
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-
-          &copy;
-          <span itemprop="copyrightYear">2017</span>
-          <span class="with-love">
-            <i class="fa fa-heart"></i>
-          </span>
-          <span class="author" itemprop="copyrightHolder">陈宁</span>
-        </div>
-
-        <div class="powered-by">
-          由
-          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-        </div>
-
-        <div class="theme-info">
-          主题 -
-          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-            NexT.Mist
-          </a>
-        </div>
-
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-
     </div>
-
+    <ul class="social-links"></ul>
+    <div class="footer">
+      <a target="_blank" href="/">
+        <span>Theme by </span>
+      </a>
+      <a href="https://www.caicai.me"> CaiCai </a>
+      <span>&</span>
+      <a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a>
+      <div class="by_farbox">
+        <a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a>
+      </div>
+    </div>
   </div>
+  <div class="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        <li>
+          <a href="/" class="current">首页</a>
+        </li>
+        <li>
+          <a href="/about">关于</a>
+        </li>
+        <li>
+          <a href="/archives">归档</a>
+        </li>
+        <li>
+          <a href="/links">友链</a>
+        </li>
+      </div>
+      <div class="information">
+        <div class="back_btn">
+          <li>
+            <a onclick="window.history.go(-1)" style="display:none;" class="fa fa-chevron-left">
+            </a>
+          </li>
+        </div>
+        <div class="avatar">
+          <img>
+        </div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/">万达监控预警项目前端框架整理（三）----项目入口文件</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              入口文件 单页SPA项目一般只有一个有用的入口文件，在入口文件里会根据使用的UI框架进行集成，将路由、状态管理器、国际化、时间规范等集成到项目中。 import
+              Vue from &apos;vue&apos;; import iView from &apos;iview&apos;; import
+              Vu...</p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-11-28</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端框架/" title="前端框架" class="tag">前端框架 </a>
+                <a href="/tags/vue/" title="vue" class="tag">vue </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">万达监控预警项目前端框架整理（er）----开发阶段MOCK server</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              MOCK mock的字面意思就叫模拟，mock技术就是用来模拟前端请求的后端返回。之前有使用过mock.js这个模块，但是在涉及list数据的情况下不是很好用。
+              本项目里使用了lowdb技术，Low-DB技术是一个基于Lo-Dash中间件的技术，他不依赖于nosql数据库。是一种纯json文本的数据库技...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-11-28</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端框架/" title="前端框架" class="tag">前端框架 </a>
+                <a href="/tags/mock/" title="mock" class="tag">mock </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">万达监控预警项目前端框架整理（一）----webpack相关“</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              項目介紹 这个项目由美国一监控公司的产品pagerduty定制而来，原版的pagerduty已经不能很好的兼容万达金融内部的所有系统，因此选择开发这一套新的pagerduty来满足内需。
+              项目架构采用传统的中途岛模式，前后端分离，前端采用webpack+vue为核心技术栈，后端采用springboot+微服...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-11-27</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端框架/" title="前端框架" class="tag">前端框架 </a>
+                <a href="/tags/webpack/" title="webpack" class="tag">webpack </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/11/27/vue源码学习/数据监控/"></a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-11-27</span>
+                <i class="fa fa-tag"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/事件委托、jq事件委托/"></a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              title: 事件委托和jq事件委托 date: 2017-8-11 14:34:42 categories: 前端问题梳理 tags: 前端 事件委托 事件委托的概念要从js事件模型说起，js事件模型现代主流浏览器实现的都是DOM2级的时间模型，分为三个阶段：
+              事件捕...
 
-  <script type="text/javascript">
-    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-      window.Promise = null;
-    }
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/浏览器内核/">浏览器内核</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              浏览器内核 浏览器内核是浏览器处理问题的中心，包括渲染引擎和js引擎，js引擎中就又我们熟悉的V8。 由于不同公司的市场份额利益，每个公司都自己开发1浏览器就有了不同的内核，主流浏览器包括IE、chrome、firefox等。
+              五大浏览器内核 Trident,也就是IE内核，捆绑在微软的wind...
 
-  </script>
-
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/CSS  BFC/">CSS 流体特性和BFC</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              块状元素的流体特性 html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin
+              padding border等特性影响，也就是说流体特性 是针对于盒模型的content部分进行的。 BFC–块级格式化上下文 BF...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/AMD和CMD的区别/">AMD和CMD的区别</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。
+              commonJS简单的定义了module.export 和require的封装和加载方式 ，并且...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/js无阻塞加载/">js无阻塞加载</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              js异步加载问题？ js无阻赛加载包括js下载和js编译执行两个部分。 解决方案： 使用defer或者async关键字来标明异步执行，这种情况下，脚本下载异步，脚本执行异步，在最早加载完界面的时候执行，onLoaded之前。defer和async的异同？
+              使用动态创建Script标签的方式，...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post animated fadeInDown">
+          <div class="post-title">
+            <h3>
+              <a href="/2017/08/11/problems/javascript的attributes和property的异同/">javascript的attributes和property的异同</a>
+            </h3>
+          </div>
+          <div class="post-content">
+            <p>
+              javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM
+              Element元素的时候...
+            </p>
+          </div>
+          <div class="post-footer">
+            <div class="meta">
+              <div class="info">
+                <i class="fa fa-sun-o"></i>
+                <span class="date">2017-08-11</span>
+                <i class="fa fa-tag"></i>
+                <a href="/categories/前端问题梳理/" title="前端问题梳理" class="tag">前端问题梳理 </a>
+                <a href="/tags/前端/" title="前端" class="tag">前端 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <ul class="clearfix">
+            <li class="next pagbuttons">
+              <a role="navigation" href="/page/2/" class="btn">下一页</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/jquery.appear.js"></script>
 </body>
 
 </html>
