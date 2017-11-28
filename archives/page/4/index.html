@@ -1,122 +1,326 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
   <meta charset="utf-8">
-  <meta name="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="陈宁">
-  <title>归档 · 长夜</title>
-  <meta name="description" content="归档页面 - 长夜">
-  <meta name="keywords">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-                                                                                  name="viewport">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta content="black" name="apple-mobile-web-app-status-bar-style">
-  <meta content="telephone=no" name="format-detection">
-  <meta name="renderer" content="webkit">
-  <link rel="short icon" href="/images/favicon.png" type="image/x-icon">
+
+  <title>Archieven | 长夜</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="打开新世界的大门">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="长夜">
+  <meta property="og:url" content="https://peacecup.github.io/archives/page/4/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="打开新世界的大门">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="长夜">
+  <meta name="twitter:description" content="打开新世界的大门">
+
+  <link rel="alternate" href="/atom.xml" title="长夜" type="application/atom+xml">
+
+  <link rel="icon" href="/favicon.png">
+
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/blog_basic.css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
 </head>
 
 <body>
-  <div class="sidebar animated fadeInDown">
-    <div class="logo-title">
-      <div class="title">
-        <img src="/images/logo@2x.png" style="width:127px;">
-        <h3 title="">
-          <a href="/">长夜</a>
-        </h3>
-        <div class="description">
-          <p>打开新世界的大门</p>
-        </div>
-      </div>
-    </div>
-    <ul class="social-links"></ul>
-    <div class="footer">
-      <a target="_blank" href="/">
-        <span>Theme by </span>
-      </a>
-      <a href="https://www.caicai.me"> CaiCai </a>
-      <span>&</span>
-      <a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a>
-      <div class="by_farbox">
-        <a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a>
-      </div>
-    </div>
-  </div>
-  <div class="main">
-    <div class="page-top animated fadeInDown">
-      <div class="nav">
-        <li>
-          <a href="/">首页</a>
-        </li>
-        <li>
-          <a href="/about">关于</a>
-        </li>
-        <li>
-          <a href="/archives" class="current">归档</a>
-        </li>
-        <li>
-          <a href="/tags">Tag</a>
-        </li>
-        <li>
-          <a href="/links">友链</a>
-        </li>
-      </div>
-      <div class="information">
-        <div class="back_btn">
-          <li>
-            <a onclick="window.history.go(-1)" style="display:none;" class="fa fa-chevron-left">
-            </a>
-          </li>
-        </div>
-        <div class="avatar">
-          <img>
-        </div>
-      </div>
-    </div>
-    <div class="autopagerize_page_element">
-      <div class="content">
-        <div class="archive animated fadeInDown">
-          <ul class="list-with-title">
-            <div class="archive">
-              <div class="listing-title">2017</div>
-              <ul class="listing">
-                <div class="listing-item">
-                  <div class="listing-post">
-                    <a href="/2017/05/26/markDown写法/" title="markDown写法">markDown写法</a>
-                    <div class="post-time">
-                      <span class="date">05-26</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="listing-item">
-                  <div class="listing-post">
-                    <a href="/2017/05/26/上传项目到github/" title="上传项目到github“">上传项目到github“</a>
-                    <div class="post-time">
-                      <span class="date">05-26</span>
-                    </div>
-                  </div>
-                </div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+        <div id="banner"></div>
+        <div id="header-outer" class="outer">
+          <div id="header-title" class="inner">
+            <h1 id="logo-wrap">
+              <a href="/" id="logo">长夜</a>
+            </h1>
+
+            <h2 id="subtitle-wrap">
+              <a href="/" id="subtitle">I Want More！</a>
+            </h2>
+
+          </div>
+          <div id="header-inner" class="inner">
+            <nav id="main-nav">
+              <a id="main-nav-toggle" class="nav-icon"></a>
+
+              <a class="main-nav-link" href="/">Home</a>
+
+              <a class="main-nav-link" href="/archives">Archives</a>
+
+            </nav>
+            <nav id="sub-nav">
+
+              <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
+              <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+                <input type="search" name="q" class="search-form-input" placeholder="Search">
+                <button type="submit" class="search-form-submit">&#xF002;</button>
+                <input type="hidden" name="sitesearch" value="https://peacecup.github.io">
+              </form>
             </div>
-            <div class="pagination">
-              <ul class="clearfix">
-                <li class="pre pagbuttons">
-                  <a role="navigation" href="/archives/page/3/" class="btn">上一页</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="outer">
+        <section id="main">
+          <section class="archives-wrap">
+            <div class="archive-year-wrap">
+              <a href="/archives/2017" class="archive-year">2017</a>
+            </div>
+            <div class="archives">
+
+              <article class="archive-article archive-type-post">
+                <div class="archive-article-inner">
+                  <header class="archive-article-header">
+                    <a href="/2017/05/26/markDown写法/" class="archive-article-date">
+                      <time datetime="2017-05-26T07:11:39.061Z" itemprop="datePublished">May 26</time>
+                    </a>
+
+                    <h1 itemprop="name">
+                      <a class="archive-article-title" href="/2017/05/26/markDown写法/">markDown写法</a>
+                    </h1>
+
+                  </header>
+                </div>
+              </article>
+
+              <article class="archive-article archive-type-post">
+                <div class="archive-article-inner">
+                  <header class="archive-article-header">
+                    <a href="/2017/05/26/上传项目到github/" class="archive-article-date">
+                      <time datetime="2017-05-26T03:34:42.000Z" itemprop="datePublished">May 26</time>
+                    </a>
+
+                    <h1 itemprop="name">
+                      <a class="archive-article-title" href="/2017/05/26/上传项目到github/">上传项目到github“</a>
+                    </h1>
+
+                  </header>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <nav id="page-nav">
+            <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; __('prev')</a>
+            <a class="page-number" href="/archives/">1</a>
+            <a class="page-number" href="/archives/page/2/">2</a>
+            <a class="page-number" href="/archives/page/3/">3</a>
+            <span class="page-number current">4</span>
+          </nav>
+        </section>
+
+        <aside id="sidebar">
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Categorieën</h3>
+            <div class="widget">
+              <ul class="category-list">
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/HTTP-axios/">-- HTTP -- axios</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/es6总结/">es6总结</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/es6知识梳理/">es6知识梳理</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/github/">github</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/javascript/">javascript</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/js基础/">js基础</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/markDown/">markDown</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/react/">react</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/个人总结/">个人总结</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/框架整理/">框架整理</a>
                 </li>
               </ul>
             </div>
-            </ul>
-        </div>
+          </div>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Labels</h3>
+            <div class="widget">
+              <ul class="tag-list">
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/axios/">axios</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/es6/">es6</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/express/">express</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/github/">github</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/javascript/">javascript</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/js/">js</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/js基础/">js基础</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/lowdb/">lowdb</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/markDown/">markDown</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/moment/">moment</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/react/">react</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/vue/">vue</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/webpack/">webpack</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/前端/">前端</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/总结/">总结</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Tag Cloud</h3>
+            <div class="widget tagcloud">
+              <a href="/tags/axios/" style="font-size: 10px;">axios</a>
+              <a href="/tags/es6/" style="font-size: 16.67px;">es6</a>
+              <a href="/tags/express/" style="font-size: 10px;">express</a>
+              <a href="/tags/github/" style="font-size: 10px;">github</a>
+              <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a>
+              <a href="/tags/js/" style="font-size: 10px;">js</a>
+              <a href="/tags/js基础/" style="font-size: 10px;">js基础</a>
+              <a href="/tags/lowdb/" style="font-size: 10px;">lowdb</a>
+              <a href="/tags/markDown/" style="font-size: 10px;">markDown</a>
+              <a href="/tags/moment/" style="font-size: 10px;">moment</a>
+              <a href="/tags/react/" style="font-size: 10px;">react</a>
+              <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+              <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+              <a href="/tags/前端/" style="font-size: 20px;">前端</a>
+              <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+            </div>
+          </div>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Archieven</h3>
+            <div class="widget">
+              <ul class="archive-list">
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/11/">November 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/08/">August 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/07/">July 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/06/">June 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/05/">May 2017</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Recente berichten</h3>
+            <div class="widget">
+              <ul>
+
+                <li>
+                  <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/">万达监控预警项目前端框架整理（三）----项目入口文件</a>
+                </li>
+
+                <li>
+                  <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">前端框架（二）</a>
+                </li>
+
+                <li>
+                  <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">前端框架（一）</a>
+                </li>
+
+                <li>
+                  <a href="/2017/11/27/vue源码学习/数据监控/">(no title)</a>
+                </li>
+
+                <li>
+                  <a href="/2017/08/11/problems/事件委托、jq事件委托/">(no title)</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+        </aside>
+
       </div>
+      <footer id="footer">
+
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy; 2017 陈宁
+            <br> Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo</a>
+          </div>
+        </div>
+      </footer>
+
     </div>
+    <nav id="mobile-nav">
+
+      <a href="/" class="mobile-nav-link">Home</a>
+
+      <a href="/archives" class="mobile-nav-link">Archives</a>
+
+    </nav>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+
+
+    </script>
+
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+    <script src="/js/script.js"></script>
+
   </div>
-  <script src="/js/jquery.js"></script>
-  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
-  <script src="/js/jquery.appear.js"></script>
 </body>
 
 </html>

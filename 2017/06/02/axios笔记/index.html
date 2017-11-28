@@ -1,108 +1,111 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
   <meta charset="utf-8">
-  <meta name="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="陈宁">
-  <title>axios随笔 · 长夜</title>
-  <meta name="description" content="简介
-&amp;emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在node中发">
-  <meta name="keywords">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-                                                                                  name="viewport">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta content="black" name="apple-mobile-web-app-status-bar-style">
-  <meta content="telephone=no" name="format-detection">
-  <meta name="renderer" content="webkit">
-  <link rel="short icon" href="/images/favicon.png" type="image/x-icon">
+
+  <title>axios随笔 | 长夜</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介 &amp;emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在node中发起http请求，在形式上支持Promise异步链式编程，也支持自动转化json，同样还可以做请">
+  <meta name="keywords" content="axios">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="axios随笔">
+  <meta property="og:url" content="https://peacecup.github.io/2017/06/02/axios笔记/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="简介 &amp;emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在node中发起http请求，在形式上支持Promise异步链式编程，也支持自动转化json，同样还可以做请">
+  <meta property="og:updated_time" content="2017-06-02T11:42:41.078Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="axios随笔">
+  <meta name="twitter:description" content="简介 &amp;emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在node中发起http请求，在形式上支持Promise异步链式编程，也支持自动转化json，同样还可以做请">
+
+  <link rel="alternate" href="/atom.xml" title="长夜" type="application/atom+xml">
+
+  <link rel="icon" href="/favicon.png">
+
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/blog_basic.css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
 </head>
 
 <body>
-  <div class="sidebar animated fadeInDown">
-    <div class="logo-title">
-      <div class="title">
-        <img src="/images/logo@2x.png" style="width:127px;">
-        <h3 title="">
-          <a href="/">长夜</a>
-        </h3>
-        <div class="description">
-          <p>打开新世界的大门</p>
-        </div>
-      </div>
-    </div>
-    <ul class="social-links"></ul>
-    <div class="footer">
-      <a target="_blank" href="/">
-        <span>Theme by </span>
-      </a>
-      <a href="https://www.caicai.me"> CaiCai </a>
-      <span>&</span>
-      <a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a>
-      <div class="by_farbox">
-        <a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a>
-      </div>
-    </div>
-  </div>
-  <div class="main">
-    <div class="page-top animated fadeInDown">
-      <div class="nav">
-        <li>
-          <a href="/">首页</a>
-        </li>
-        <li>
-          <a href="/about">关于</a>
-        </li>
-        <li>
-          <a href="/categories">分类</a>
-        </li>
-        <li>
-          <a href="/archives">归档</a>
-        </li>
-        <li>
-          <a href="/tags">标签</a>
-        </li>
-        <li>
-          <a href="/links">友链</a>
-        </li>
-      </div>
-      <div class="information">
-        <div class="back_btn">
-          <li>
-            <a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a>
-          </li>
-        </div>
-        <div class="avatar">
-          <img>
-        </div>
-      </div>
-    </div>
-    <div class="autopagerize_page_element">
-      <div class="content">
-        <div class="post-page">
-          <div class="post animated fadeInDown">
-            <div class="post-title">
-              <h3>
-                <a>axios随笔</a>
-              </h3>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+        <div id="banner"></div>
+        <div id="header-outer" class="outer">
+          <div id="header-title" class="inner">
+            <h1 id="logo-wrap">
+              <a href="/" id="logo">长夜</a>
+            </h1>
+
+            <h2 id="subtitle-wrap">
+              <a href="/" id="subtitle">I Want More！</a>
+            </h2>
+
+          </div>
+          <div id="header-inner" class="inner">
+            <nav id="main-nav">
+              <a id="main-nav-toggle" class="nav-icon"></a>
+
+              <a class="main-nav-link" href="/">Home</a>
+
+              <a class="main-nav-link" href="/archives">Archives</a>
+
+            </nav>
+            <nav id="sub-nav">
+
+              <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
+              <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+                <input type="search" name="q" class="search-form-input" placeholder="Search">
+                <button type="submit" class="search-form-submit">&#xF002;</button>
+                <input type="hidden" name="sitesearch" value="https://peacecup.github.io">
+              </form>
             </div>
-            <div class="post-content">
-              <h3 id="简介">
-                <a href="#简介" class="headerlink" title="简介"></a>简介</h3>
-              <p>&emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在node中发起http请求，在形式上支持Promise异步链式编程，也支持自动转化json，同样还可以做请求拦截和分发。是功能很强大的一个插件</p>
-              <h3 id="安装">
-                <a href="#安装" class="headerlink" title="安装"></a>安装</h3>
-              <p>&emsp;直接引入官方axios.js或者使用npm安装
-                <br>
-                <code>npm i axios</code>
-              </p>
-              <h3 id="示例">
-                <a href="#示例" class="headerlink" title="示例"></a>示例</h3>
-              <pre><code>//发起一个user请求，参数为给定的ID
+          </div>
+        </div>
+      </header>
+
+      <div class="outer">
+        <section id="main">
+          <article id="post-axios笔记" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/2017/06/02/axios笔记/" class="article-date">
+                <time datetime="2017-06-02T07:59:59.841Z" itemprop="datePublished">2017-06-02</time>
+              </a>
+
+              <div class="article-category">
+                <a class="article-category-link" href="/categories/HTTP-axios/">-- HTTP -- axios</a>
+              </div>
+
+            </div>
+            <div class="article-inner">
+
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">
+                  axios随笔
+                </h1>
+
+              </header>
+
+              <div class="article-entry" itemprop="articleBody">
+
+                <h3 id="简介">
+                  <a href="#简介" class="headerlink" title="简介"></a>简介</h3>
+                <p>&emsp;axios是一个基于es6 Promise的HTTP库，可以在浏览器和nodejs中使用。在vue2之后，官方不在推介vue-resource，然是推介使用axios，作为一个被很多人引用为项目依赖的模块，各方面的性能还是信得过的。在浏览器中发起XMLRequest，在node中发起http请求，在形式上支持Promise异步链式编程，也支持自动转化json，同样还可以做请求拦截和分发。是功能很强大的一个插件</p>
+                <h3 id="安装">
+                  <a href="#安装" class="headerlink" title="安装"></a>安装</h3>
+                <p>&emsp;直接引入官方axios.js或者使用npm安装
+                  <br>
+                  <code>npm i axios</code>
+                </p>
+                <h3 id="示例">
+                  <a href="#示例" class="headerlink" title="示例"></a>示例</h3>
+                <pre><code>//发起一个user请求，参数为给定的ID
 axios.get(&apos;/user?ID=1234&apos;)
 .then(function(res){
     conole.log(res)
@@ -122,14 +125,14 @@ axios.get(&apos;/user&apos;,{
     console.log(error)
 });
 </code></pre>
-              <h3 id="axios语法">
-                <a href="#axios语法" class="headerlink" title="axios语法"></a>axios语法</h3>
-              <h4 id="1-基础用法–发起请求">
-                <a href="#1-基础用法–发起请求" class="headerlink" title="1.基础用法–发起请求"></a>1.基础用法–发起请求</h4>
-              <pre><code>axios(config).then().catch();
+                <h3 id="axios语法">
+                  <a href="#axios语法" class="headerlink" title="axios语法"></a>axios语法</h3>
+                <h4 id="1-基础用法–发起请求">
+                  <a href="#1-基础用法–发起请求" class="headerlink" title="1.基础用法–发起请求"></a>1.基础用法–发起请求</h4>
+                <pre><code>axios(config).then().catch();
 </code></pre>
-              <p>&emsp;config的配置如下 </p>
-              <pre><code>config = {
+                <p>&emsp;config的配置如下 </p>
+                <pre><code>config = {
     method: &apos;get/post/put/delete...&apos;,
     url: &apos;/api/dsdsd/dsd&apos;,
     data: {
@@ -147,10 +150,10 @@ axios({
     }
 });
 </code></pre>
-              <h4 id="2-请求方法的重命名">
-                <a href="#2-请求方法的重命名" class="headerlink" title="2.请求方法的重命名"></a>2.请求方法的重命名</h4>
-              <p>&emsp;根据axios(config)，来重命名一批方法。</p>
-              <pre><code>//请求配置外置化
+                <h4 id="2-请求方法的重命名">
+                  <a href="#2-请求方法的重命名" class="headerlink" title="2.请求方法的重命名"></a>2.请求方法的重命名</h4>
+                <p>&emsp;根据axios(config)，来重命名一批方法。</p>
+                <pre><code>//请求配置外置化
 axios.request(config)
 axios.get(url[,config])
 axios.delete(url[,config])
@@ -160,13 +163,13 @@ axios.post(url[,data[,config]])
 axios.put(url[,data[,config]])
 axios.patch(url[,data[,config]])
 </code></pre>
-              <p>config中的url、data、method会被重命名方法中的参数替换掉</p>
-              <h4 id="3-创建axios实例">
-                <a href="#3-创建axios实例" class="headerlink" title="3.创建axios实例"></a>3.创建axios实例</h4>
-              <pre><code>axios.create(config)
+                <p>config中的url、data、method会被重命名方法中的参数替换掉</p>
+                <h4 id="3-创建axios实例">
+                  <a href="#3-创建axios实例" class="headerlink" title="3.创建axios实例"></a>3.创建axios实例</h4>
+                <pre><code>axios.create(config)
 </code></pre>
-              <p>创建实例的意义在于预定义一些参数值，那么采用这个实例来发起请求，这些参数就会默认载入。</p>
-              <pre><code>//创建一个axios实例
+                <p>创建实例的意义在于预定义一些参数值，那么采用这个实例来发起请求，这些参数就会默认载入。</p>
+                <pre><code>//创建一个axios实例
 var instance = axios.create({
     baseURL:&apos;http://some-domain.com/api/&apos;,
     timeout:1000,
@@ -175,8 +178,8 @@ var instance = axios.create({
 //使用实例来发起请求
 instance.get(&apos;/api/user/123&apos;);
 </code></pre>
-              <p>同axios本身一样，实例也有方法重命名 </p>
-              <pre><code>instance.request(config)
+                <p>同axios本身一样，实例也有方法重命名 </p>
+                <pre><code>instance.request(config)
 instance.get(url[,config])
 instance.delete(url[,config])
 instance.head(url[,config])
@@ -185,210 +188,210 @@ instance.post(url[,data[,config]])
 instance.put(url[,data[,config]])
 instance.patch(url[,data[,config]])
 </code></pre>
-              <h4 id="4-请求参数配置全局信息">
-                <a href="#4-请求参数配置全局信息" class="headerlink" title="4.请求参数配置全局信息"></a>4.请求参数配置全局信息</h4>
-              <div style="height: 500px;overflow-y: scroll;">
-                <br>
-                <br> {
-                <br> //
-                <code>url</code>是服务器链接，用来请求
-                <br> url:’/user’,
-                <br>
-                <br> //
-                <code>method</code>是发起请求时的请求方法
-                <br> method:
-                <code>get</code>,
-                <br>
-                <br> //
-                <code>baseURL</code>如果
-                <code>url</code>不是绝对地址，那么将会加在其前面。
-                <br> //当axios使用相对地址时这个设置非常方便
-                <br> //在其实例中的方法
-                <br> baseURL:’
-                <a href="http://some-domain.com/api/" target="_blank" rel="external">http://some-domain.com/api/</a>‘,
-                <br>
-                <br> //
-                <code>transformRequest</code>允许请求的数据在传到服务器之前进行转化。
-                <br> //这个只适用于
-                <code>PUT</code>,
-                <code>GET</code>,
-                <code>PATCH</code>方法。
-                <br> //数组中的最后一个函数必须返回一个字符串或者一个
-                <code>ArrayBuffer</code>,或者
-                <code>Stream</code>,
-                <code>Buffer</code>实例,
-                <code>ArrayBuffer</code>,
-                <code>FormData</code>
-                <br> transformRequest:[function(data){
-                <br> //依自己的需求对请求数据进行处理
-                <br> return data;
-                <br> }],
-                <br>
-                <br> //
-                <code>transformResponse</code>允许返回的数据传入then/catch之前进行处理
-                <br> transformResponse:[function(data){
-                <br> //依需要对数据进行处理
-                <br> return data;
-                <br> }],
-                <br>
-                <br> //
-                <code>headers</code>是自定义的要被发送的头信息
-                <br> headers:{‘X-Requested-with’:’XMLHttpRequest’},
-                <br>
-                <br> //
-                <code>params</code>是请求连接中的请求参数，必须是一个纯对象，或者URLSearchParams对象
-                <br> params:{
-                <br> ID:12345
-                <br> },
-                <br>
-                <br> //
-                <code>paramsSerializer</code>是一个可选的函数，是用来序列化参数
-                <br> //例如：（
-                <a href="https://ww.npmjs.com/package/qs,http://api.jquery.com/jquery.param/" target="_blank"
-                                                                                                rel="external">https://ww.npmjs.com/package/qs,http://api.jquery.com/jquery.param/</a>)
-                <br> paramsSerializer: function(params){
-                <br> return Qs.stringify(params,{arrayFormat:’brackets’})
-                <br> },
-                <br>
-                <br> //
-                <code>data</code>是请求提需要设置的数据
-                <br> //只适用于应用的’PUT’,’POST’,’PATCH’，请求方法
-                <br> //当没有设置
-                <code>transformRequest</code>时，必须是以下其中之一的类型（不可重复？）：
-                <br> //-string,plain object,ArrayBuffer,ArrayBufferView,URLSearchParams
-                <br> //-仅浏览器：FormData,File,Blob
-                <br> //-仅Node：Stream
-                <br> data:{
-                <br> firstName:’fred’
-                <br> },
-                <br> //
-                <code>timeout</code>定义请求的时间，单位是毫秒。
-                <br> //如果请求的时间超过这个设定时间，请求将会停止。
-                <br> timeout:1000,
-                <br>
-                <br> //
-                <code>withCredentials</code>表明是否跨网站访问协议，
-                <br> //应该使用证书
-                <br> withCredentials:false //默认值
-                <br>
-                <br> //
-                <code>adapter</code>适配器，允许自定义处理请求，这会使测试更简单。
-                <br> //返回一个promise，并且提供验证返回（查看
-                <a href="#response-api">response docs</a>）
-                <br> adapter:function(config){
-                <br> /
-                <em>…</em>/
-                <br> },
-                <br>
-                <br> //
-                <code>auth</code>表明HTTP基础的认证应该被使用，并且提供证书。
-                <br> //这个会设置一个
-                <code>authorization</code> 头（header），并且覆盖你在header设置的Authorization头信息。
-                <br> auth:{
-                <br> username:’janedoe’,
-                <br> password:’s00pers3cret’
-                <br> },
-                <br>
-                <br> //
-                <code>responsetype</code>表明服务器返回的数据类型，这些类型的设置应该是
-                <br> //‘arraybuffer’,’blob’,’document’,’json’,’text’,stream’
-                <br> responsetype:’json’,
-                <br>
-                <br> //
-                <code>xsrfHeaderName</code> 是http头（header）的名字，并且该头携带xsrf的值
-                <br> xrsfHeadername:’X-XSRF-TOKEN’，//默认值
-                <br>
-                <br> //
-                <code>onUploadProgress</code>允许处理上传过程的事件
-                <br> onUploadProgress: function(progressEvent){
-                <br> //本地过程事件发生时想做的事
-                <br> },
-                <br>
-                <br> //
-                <code>onDownloadProgress</code>允许处理下载过程的事件
-                <br> onDownloadProgress: function(progressEvent){
-                <br> //下载过程中想做的事
-                <br> },
-                <br>
-                <br> //
-                <code>maxContentLength</code> 定义http返回内容的最大容量
-                <br> maxContentLength: 2000,
-                <br>
-                <br> //
-                <code>validateStatus</code> 定义promise的resolve和reject。
-                <br> //http返回状态码，如果
-                <code>validateStatus</code>返回true（或者设置成null/undefined），promise将会接受；其他的promise将会拒绝。
-                <br> validateStatus: function(status){
-                <br> return status &gt;= 200 &amp;&amp; stauts &lt; 300;//默认
-                <br> },
-                <br>
-                <br> //
-                <code>httpAgent</code> 和
-                <code>httpsAgent</code>当产生一个http或者https请求时分别定义一个自定义的代理，在nodejs中。
-                <br> //这个允许设置一些选选个，像是
-                <code>keepAlive</code>–这个在默认中是没有开启的。
-                <br> httpAgent: new http.Agent({keepAlive:treu}),
-                <br> httpsAgent: new https.Agent({keepAlive:true}),
-                <br>
-                <br> //
-                <code>proxy</code>定义服务器的主机名字和端口号。
-                <br> //
-                <code>auth</code>表明HTTP基本认证应该跟
-                <code>proxy</code>相连接，并且提供证书。
-                <br> //这个将设置一个’Proxy-Authorization’头(header)，覆盖原先自定义的。
-                <br> proxy:{
-                <br> host:127.0.0.1,
-                <br> port:9000,
-                <br> auth:{
-                <br> username:’cdd’,
-                <br> password:’123456’
-                <br> }
-                <br> },
-                <br>
-                <br> //
-                <code>cancelTaken</code> 定义一个取消，能够用来取消请求
-                <br> //（查看 下面的Cancellation 的详细部分）
-                <br> cancelToken: new CancelToken(function(cancel){
-                <br> })
-                <br> }
-                <br>
-              </div>
+                <h4 id="4-请求参数配置全局信息">
+                  <a href="#4-请求参数配置全局信息" class="headerlink" title="4.请求参数配置全局信息"></a>4.请求参数配置全局信息</h4>
+                <div style="height: 500px;overflow-y: scroll;">
+                  <br>
+                  <br> {
+                  <br> //
+                  <code>url</code>是服务器链接，用来请求
+                  <br> url:’/user’,
+                  <br>
+                  <br> //
+                  <code>method</code>是发起请求时的请求方法
+                  <br> method:
+                  <code>get</code>,
+                  <br>
+                  <br> //
+                  <code>baseURL</code>如果
+                  <code>url</code>不是绝对地址，那么将会加在其前面。
+                  <br> //当axios使用相对地址时这个设置非常方便
+                  <br> //在其实例中的方法
+                  <br> baseURL:’
+                  <a href="http://some-domain.com/api/" target="_blank" rel="external">http://some-domain.com/api/</a>‘,
+                  <br>
+                  <br> //
+                  <code>transformRequest</code>允许请求的数据在传到服务器之前进行转化。
+                  <br> //这个只适用于
+                  <code>PUT</code>,
+                  <code>GET</code>,
+                  <code>PATCH</code>方法。
+                  <br> //数组中的最后一个函数必须返回一个字符串或者一个
+                  <code>ArrayBuffer</code>,或者
+                  <code>Stream</code>,
+                  <code>Buffer</code>实例,
+                  <code>ArrayBuffer</code>,
+                  <code>FormData</code>
+                  <br> transformRequest:[function(data){
+                  <br> //依自己的需求对请求数据进行处理
+                  <br> return data;
+                  <br> }],
+                  <br>
+                  <br> //
+                  <code>transformResponse</code>允许返回的数据传入then/catch之前进行处理
+                  <br> transformResponse:[function(data){
+                  <br> //依需要对数据进行处理
+                  <br> return data;
+                  <br> }],
+                  <br>
+                  <br> //
+                  <code>headers</code>是自定义的要被发送的头信息
+                  <br> headers:{‘X-Requested-with’:’XMLHttpRequest’},
+                  <br>
+                  <br> //
+                  <code>params</code>是请求连接中的请求参数，必须是一个纯对象，或者URLSearchParams对象
+                  <br> params:{
+                  <br> ID:12345
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>paramsSerializer</code>是一个可选的函数，是用来序列化参数
+                  <br> //例如：（
+                  <a href="https://ww.npmjs.com/package/qs,http://api.jquery.com/jquery.param/" target="_blank"
+                                                                                                  rel="external">https://ww.npmjs.com/package/qs,http://api.jquery.com/jquery.param/</a>)
+                  <br> paramsSerializer: function(params){
+                  <br> return Qs.stringify(params,{arrayFormat:’brackets’})
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>data</code>是请求提需要设置的数据
+                  <br> //只适用于应用的’PUT’,’POST’,’PATCH’，请求方法
+                  <br> //当没有设置
+                  <code>transformRequest</code>时，必须是以下其中之一的类型（不可重复？）：
+                  <br> //-string,plain object,ArrayBuffer,ArrayBufferView,URLSearchParams
+                  <br> //-仅浏览器：FormData,File,Blob
+                  <br> //-仅Node：Stream
+                  <br> data:{
+                  <br> firstName:’fred’
+                  <br> },
+                  <br> //
+                  <code>timeout</code>定义请求的时间，单位是毫秒。
+                  <br> //如果请求的时间超过这个设定时间，请求将会停止。
+                  <br> timeout:1000,
+                  <br>
+                  <br> //
+                  <code>withCredentials</code>表明是否跨网站访问协议，
+                  <br> //应该使用证书
+                  <br> withCredentials:false //默认值
+                  <br>
+                  <br> //
+                  <code>adapter</code>适配器，允许自定义处理请求，这会使测试更简单。
+                  <br> //返回一个promise，并且提供验证返回（查看
+                  <a href="#response-api">response docs</a>）
+                  <br> adapter:function(config){
+                  <br> /
+                  <em>…</em>/
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>auth</code>表明HTTP基础的认证应该被使用，并且提供证书。
+                  <br> //这个会设置一个
+                  <code>authorization</code> 头（header），并且覆盖你在header设置的Authorization头信息。
+                  <br> auth:{
+                  <br> username:’janedoe’,
+                  <br> password:’s00pers3cret’
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>responsetype</code>表明服务器返回的数据类型，这些类型的设置应该是
+                  <br> //‘arraybuffer’,’blob’,’document’,’json’,’text’,stream’
+                  <br> responsetype:’json’,
+                  <br>
+                  <br> //
+                  <code>xsrfHeaderName</code> 是http头（header）的名字，并且该头携带xsrf的值
+                  <br> xrsfHeadername:’X-XSRF-TOKEN’，//默认值
+                  <br>
+                  <br> //
+                  <code>onUploadProgress</code>允许处理上传过程的事件
+                  <br> onUploadProgress: function(progressEvent){
+                  <br> //本地过程事件发生时想做的事
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>onDownloadProgress</code>允许处理下载过程的事件
+                  <br> onDownloadProgress: function(progressEvent){
+                  <br> //下载过程中想做的事
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>maxContentLength</code> 定义http返回内容的最大容量
+                  <br> maxContentLength: 2000,
+                  <br>
+                  <br> //
+                  <code>validateStatus</code> 定义promise的resolve和reject。
+                  <br> //http返回状态码，如果
+                  <code>validateStatus</code>返回true（或者设置成null/undefined），promise将会接受；其他的promise将会拒绝。
+                  <br> validateStatus: function(status){
+                  <br> return status &gt;= 200 &amp;&amp; stauts &lt; 300;//默认
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>httpAgent</code> 和
+                  <code>httpsAgent</code>当产生一个http或者https请求时分别定义一个自定义的代理，在nodejs中。
+                  <br> //这个允许设置一些选选个，像是
+                  <code>keepAlive</code>–这个在默认中是没有开启的。
+                  <br> httpAgent: new http.Agent({keepAlive:treu}),
+                  <br> httpsAgent: new https.Agent({keepAlive:true}),
+                  <br>
+                  <br> //
+                  <code>proxy</code>定义服务器的主机名字和端口号。
+                  <br> //
+                  <code>auth</code>表明HTTP基本认证应该跟
+                  <code>proxy</code>相连接，并且提供证书。
+                  <br> //这个将设置一个’Proxy-Authorization’头(header)，覆盖原先自定义的。
+                  <br> proxy:{
+                  <br> host:127.0.0.1,
+                  <br> port:9000,
+                  <br> auth:{
+                  <br> username:’cdd’,
+                  <br> password:’123456’
+                  <br> }
+                  <br> },
+                  <br>
+                  <br> //
+                  <code>cancelTaken</code> 定义一个取消，能够用来取消请求
+                  <br> //（查看 下面的Cancellation 的详细部分）
+                  <br> cancelToken: new CancelToken(function(cancel){
+                  <br> })
+                  <br> }
+                  <br>
+                </div>
 
-              <h4 id="5-返回对象response包含对象">
-                <a href="#5-返回对象response包含对象" class="headerlink" title="5.返回对象response包含对象"></a>5.返回对象response包含对象</h4>
-              <p>response包含以下5个对象： </p>
-              <ol>
-                <li>data：{}：服务器返回的数据</li>
-                <li>status: 200 服务器返回的http状态码</li>
-                <li>statusText： ‘ok’ 服务器返回的状态信息</li>
-                <li>header:{} : 服务器返回头信息</li>
-                <li>config：{} axiox的请求配置信息</li>
-              </ol>
-              <h4 id="6-默认配置">
-                <a href="#6-默认配置" class="headerlink" title="6.默认配置"></a>6.默认配置</h4>
-              <p>可以给axios或者axios的实例设置默认配置，axios中有三种配置信息：</p>
-              <ol>
-                <li>默认配置，在模块的lib/defaults.js中的默认配置</li>
-                <li>其次是自定义的默认属性</li>
-                <li>最后是请求中的config配置</li>
-              </ol>
-              <p>在定义实例的时候会在默认配置文件中创建一份临时数据，实例被销毁的时候，也销毁临时配置数据。</p>
-              <p>自定义默认数据的方式如下： </p>
-              <pre><code>instance.defaults.headers.common[&apos;Authorization&apos;] = AUTH_TOKEN;
+                <h4 id="5-返回对象response包含对象">
+                  <a href="#5-返回对象response包含对象" class="headerlink" title="5.返回对象response包含对象"></a>5.返回对象response包含对象</h4>
+                <p>response包含以下5个对象： </p>
+                <ol>
+                  <li>data：{}：服务器返回的数据</li>
+                  <li>status: 200 服务器返回的http状态码</li>
+                  <li>statusText： ‘ok’ 服务器返回的状态信息</li>
+                  <li>header:{} : 服务器返回头信息</li>
+                  <li>config：{} axiox的请求配置信息</li>
+                </ol>
+                <h4 id="6-默认配置">
+                  <a href="#6-默认配置" class="headerlink" title="6.默认配置"></a>6.默认配置</h4>
+                <p>可以给axios或者axios的实例设置默认配置，axios中有三种配置信息：</p>
+                <ol>
+                  <li>默认配置，在模块的lib/defaults.js中的默认配置</li>
+                  <li>其次是自定义的默认属性</li>
+                  <li>最后是请求中的config配置</li>
+                </ol>
+                <p>在定义实例的时候会在默认配置文件中创建一份临时数据，实例被销毁的时候，也销毁临时配置数据。</p>
+                <p>自定义默认数据的方式如下： </p>
+                <pre><code>instance.defaults.headers.common[&apos;Authorization&apos;] = AUTH_TOKEN;
 </code></pre>
-              <h4 id="7-配置拦截器">
-                <a href="#7-配置拦截器" class="headerlink" title="7.配置拦截器"></a>7.配置拦截器</h4>
-              <p>axios支持配置两种拦截器：拦截请求、拦截响应
-                <br>拦截请求：</p>
-              <pre><code>axios.interceptors.request.use(function(config){
+                <h4 id="7-配置拦截器">
+                  <a href="#7-配置拦截器" class="headerlink" title="7.配置拦截器"></a>7.配置拦截器</h4>
+                <p>axios支持配置两种拦截器：拦截请求、拦截响应
+                  <br>拦截请求：</p>
+                <pre><code>axios.interceptors.request.use(function(config){
     //在请求之前做的一些事
 },function(error){
     //在请求错误之前做的一些事
     return Promise.reject(error)
 })
 </code></pre>
-              <p>拦截响应： </p>
-              <pre><code>//添加一个返回拦截器
+                <p>拦截响应： </p>
+                <pre><code>//添加一个返回拦截器
 axios.interceptors.response.use(function(response){
     //对返回的数据进行一些处理
     return response;
@@ -397,55 +400,248 @@ axios.interceptors.response.use(function(response){
     return Promise.reject(error);
 });
 </code></pre>
-              <p>取消拦截器需要使用eject函数</p>
-              <pre><code>axios.interceptors.request.eject(&apos;拦截器名称&apos;)
+                <p>取消拦截器需要使用eject函数</p>
+                <pre><code>axios.interceptors.request.eject(&apos;拦截器名称&apos;)
 </code></pre>
-            </div>
-            <div class="post-footer">
-              <div class="meta">
-                <div class="info">
-                  <i class="fa fa-sun-o"></i>
-                  <span class="date">2017-06-02</span>
-                  <i class="fa fa-tag"></i>
-                  <a href="/categories/HTTP-axios/" title="-- HTTP -- axios"
-                                                                                                  class="tag">-- HTTP -- axios </a>
-                  <a href="/tags/axios/" title="axios" class="tag">axios </a>
-                </div>
+
               </div>
+              <footer class="article-footer">
+                <a data-url="https://peacecup.github.io/2017/06/02/axios笔记/" data-id="cjajctdqf000104qtp0hs1xk6"
+                                                                                                class="article-share-link">Delen</a>
+
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="/tags/axios/">axios</a>
+                  </li>
+                </ul>
+
+              </footer>
+            </div>
+
+            <nav id="article-nav">
+
+              <a href="/2017/06/05/javascript数据类型/" id="article-nav-newer" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">Nieuwer</strong>
+                <div class="article-nav-title">
+
+                  JS typeof总结---6种数据类型
+
+                </div>
+              </a>
+
+              <a href="/2017/06/01/无标题Markdown/" id="article-nav-older" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">Ouder</strong>
+                <div class="article-nav-title">个人总结</div>
+              </a>
+
+            </nav>
+
+          </article>
+        </section>
+
+        <aside id="sidebar">
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Categorieën</h3>
+            <div class="widget">
+              <ul class="category-list">
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/HTTP-axios/">-- HTTP -- axios</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/es6总结/">es6总结</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/es6知识梳理/">es6知识梳理</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/github/">github</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/javascript/">javascript</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/js基础/">js基础</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/markDown/">markDown</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/react/">react</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/个人总结/">个人总结</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
+                </li>
+                <li class="category-list-item">
+                  <a class="category-list-link" href="/categories/框架整理/">框架整理</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="share">
-            <div class="evernote">
-              <a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();"
-                                                                                              ref="nofollow" target="_blank" class="fa fa-bookmark"></a>
-            </div>
-            <div class="weibo">
-              <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"
-                                                                                              class="fa fa-weibo"></a>
-            </div>
-            <div class="twitter">
-              <a href="http://twitter.com/home?status=,https://peacecup.github.io/2017/06/02/axios笔记/,长夜,axios随笔,;"
-                                                                                              class="fa fa-twitter"></a>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Labels</h3>
+            <div class="widget">
+              <ul class="tag-list">
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/axios/">axios</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/es6/">es6</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/express/">express</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/github/">github</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/javascript/">javascript</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/js/">js</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/js基础/">js基础</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/lowdb/">lowdb</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/markDown/">markDown</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/moment/">moment</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/react/">react</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/vue/">vue</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/webpack/">webpack</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/前端/">前端</a>
+                </li>
+                <li class="tag-list-item">
+                  <a class="tag-list-link" href="/tags/总结/">总结</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="pagination">
-            <ul class="clearfix">
-              <li class="pre pagbuttons">
-                <a role="navigation" href="/2017/06/05/javascript数据类型/" title="JS typeof总结---6种数据类型"
-                                                                                                class="btn">上一篇</a>
-              </li>
-              <li class="next pagbuttons">
-                <a role="navigation" href="/2017/06/01/无标题Markdown/" title="个人总结" class="btn">下一篇</a>
-              </li>
-            </ul>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Tag Cloud</h3>
+            <div class="widget tagcloud">
+              <a href="/tags/axios/" style="font-size: 10px;">axios</a>
+              <a href="/tags/es6/" style="font-size: 16.67px;">es6</a>
+              <a href="/tags/express/" style="font-size: 10px;">express</a>
+              <a href="/tags/github/" style="font-size: 10px;">github</a>
+              <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a>
+              <a href="/tags/js/" style="font-size: 10px;">js</a>
+              <a href="/tags/js基础/" style="font-size: 10px;">js基础</a>
+              <a href="/tags/lowdb/" style="font-size: 10px;">lowdb</a>
+              <a href="/tags/markDown/" style="font-size: 10px;">markDown</a>
+              <a href="/tags/moment/" style="font-size: 10px;">moment</a>
+              <a href="/tags/react/" style="font-size: 10px;">react</a>
+              <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+              <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+              <a href="/tags/前端/" style="font-size: 20px;">前端</a>
+              <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+            </div>
+          </div>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Archieven</h3>
+            <div class="widget">
+              <ul class="archive-list">
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/11/">November 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/08/">August 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/07/">July 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/06/">June 2017</a>
+                </li>
+                <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archives/2017/05/">May 2017</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Recente berichten</h3>
+            <div class="widget">
+              <ul>
+
+                <li>
+                  <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/">万达监控预警项目前端框架整理（三）----项目入口文件</a>
+                </li>
+
+                <li>
+                  <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">前端框架（二）</a>
+                </li>
+
+                <li>
+                  <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">前端框架（一）</a>
+                </li>
+
+                <li>
+                  <a href="/2017/11/27/vue源码学习/数据监控/">(no title)</a>
+                </li>
+
+                <li>
+                  <a href="/2017/08/11/problems/事件委托、jq事件委托/">(no title)</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+      <footer id="footer">
+
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy; 2017 陈宁
+            <br> Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo</a>
           </div>
         </div>
-      </div>
+      </footer>
+
     </div>
+    <nav id="mobile-nav">
+
+      <a href="/" class="mobile-nav-link">Home</a>
+
+      <a href="/archives" class="mobile-nav-link">Archives</a>
+
+    </nav>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+
+
+    </script>
+
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+    <script src="/js/script.js"></script>
+
   </div>
-  <script src="/js/jquery.js"></script>
-  <script src="/js/jquery-migrate-1.2.1.min.js"></script>
-  <script src="/js/jquery.appear.js"></script>
 </body>
 
 </html>
