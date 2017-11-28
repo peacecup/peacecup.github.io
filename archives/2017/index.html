@@ -1,629 +1,430 @@
-<!doctype html>
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
+  <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://peacecup.github.io/warn.html">
+<![endif]-->
+  <meta charset="utf-8">
 
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="mobile-agent" content="format=html5; url=https://peacecup.github.io">
+  <meta name="author" content="陈宁">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/SimpleStyle.min.css">
 
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
-  />
+  <link rel="shortcut icon" href="/images/favicon.png">
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-                                                                                  rel="stylesheet" type="text/css">
+  <title>归档集- 2017 - 长夜</title>
 
-  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
-                                                                                  type="text/css" />
+  <meta name="keywords" content="undefined">
 
-  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+  <meta name="description " content="打开新世界的大门">
 
-  <meta name="keywords" content="Hexo, NexT" />
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-  <meta name="description" content="打开新世界的大门">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="长夜">
-  <meta property="og:url" content="https://peacecup.github.io/archives/2017/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="打开新世界的大门">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="长夜">
-  <meta name="twitter:description" content="打开新世界的大门">
-
-  <script type="text/javascript" id="hexo.configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {
-      root: '/',
-      scheme: 'Mist',
-      sidebar: {
-        "position": "right",
-        "display": "post",
-        "offset": 12,
-        "offset_float": 0,
-        "b2t": false,
-        "scrollpercent": false
-      },
-      fancybox: true,
-      motion: true,
-      duoshuo: {
-        userId: '0',
-        author: '博主'
-      },
-      algolia: {
-        applicationID: '',
-        apiKey: '',
-        indexName: '',
-        hits: {
-          "per_page": 10
-        },
-        labels: {
-          "input_placeholder": "Search for Posts",
-          "hits_empty": "We didn't find any results for the search: ${query}",
-          "hits_stats": "${hits} results found in ${time} ms"
-        }
-      }
-    };
-
-  </script>
-
-  <link rel="canonical" href="https://peacecup.github.io/archives/2017/" />
-
-  <title> 归档 | 长夜 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+  <div id="nav">
+    <nav class="nav-menu">
+      <a class="site-name current" href="/" title="说">说</a>
+      <a class="site-index current" href="/">
+        <i class="fa fa-home"></i>
+        <span>首页</span>
+      </a>
+      <a href="/archives" title="归档">
+        <i class="fa fa-archives"></i>
+        <span>归档</span>
+      </a>
+      <a href="/tags" title="标签">
+        <i class="fa fa-tags"></i>
+        <span>标签</span>
+      </a>
+      <!-- custom single page of menus -->
 
-  <div class="container sidebar-position-right  page-archive  ">
-    <div class="headband"></div>
+      <a href="/cross_fire" title="穿越火线">
+        <i class="fa fa-wifi"></i>
+        <span>穿越火线</span>
+      </a>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta ">
+      <a href="/help" title="急救中心">
+        <i class="fa fa-question-circle"></i>
+        <span>急救中心</span>
+      </a>
 
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before">
-                  <i></i>
-                </span>
-                <span class="site-title">长夜</span>
-                <span class="logo-line-after">
-                  <i></i>
-                </span>
-              </a>
+    </nav>
+  </div>
+
+  <div class="nav-user">
+    <a class="btn-search" href="#">
+      <i class="fa fa-search"></i>
+    </a>
+    <a class="btn-read-mode" href="#">
+      <i class="fa fa-sun-o"></i>
+    </a>
+    <a class="btn-weixin-mp" href="javascript:">
+      <i class="fa fa-weixin"></i>
+    </a>
+  </div>
+
+  <div id="wrapper" class="clearfix">
+    <div id="body">
+      <div class="main" id="main">
+        <div id="cover">
+          <div class="cover-img"></div>
+          <div class="cover-info">
+
+            <h1 class="cover-siteName">说IT</h1>
+            <h3 class="cover-siteTitle">聊技术，谈情怀</h3>
+            <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+            <div class="cover-sns">
+
+              <div class="btn btn-telegram">
+                <a href="http://t.me/codeist" target="_blank" title="telegram" ref="friend">
+                  <i class="fa fa-telegram"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/coder.thomas/" target="_blank" title="instagram"
+                                                                                                ref="friend">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+
             </div>
-
-            <p class="site-subtitle">I Want More！</p>
-
-          </div>
-
-          <div class="site-nav-toggle">
-            <button>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-            </button>
           </div>
         </div>
 
-        <nav class="site-nav">
-
-          <ul id="menu" class="menu">
-
-            <li class="menu-item menu-item-home">
-              <a href="/" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-home"></i>
-                <br /> 首页
-              </a>
+        <div class="page-title">
+          <ul>
+            <li>
+              <a href="/" data-name="首页" title="Back Home">首页</a>
             </li>
-
-            <li class="menu-item menu-item-categories">
-              <a href="/categories" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-th"></i>
-                <br /> 分类
-              </a>
+            <li>
+              <a href="/tags" data-name="标签云" title="标签云">标签</a>
             </li>
+            <li class="page-search">
+              <form id="search" class="search-form">
+                <label for="s" class="sr-only">请输入关键字</label>
+                <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字"
+                />
+                <button type="submit" class="search-form-submit" title="搜索">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+              <div class="ins-search">
+                <div class="ins-search-mask"></div>
+                <div class="ins-search-container">
+                  <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+                    <span class="ins-close ins-selectable">
+                      <i class="fa fa-times-circle"></i>
+                    </span>
+                  </div>
+                  <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                (function(window) {
+                  var INSIGHT_CONFIG = {
+                    TRANSLATION: {
+                      POSTS: '文章',
+                      PAGES: '页面',
+                      CATEGORIES: '分类',
+                      TAGS: '标签',
+                      UNTITLED: '(无标题)',
+                    },
+                    ROOT_URL: '/',
+                    CONTENT_URL: '/content.json',
+                  };
+                  window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+                })(window);
 
-            <li class="menu-item menu-item-about">
-              <a href="/about" rel="section">
+              </script>
 
-                <i class="menu-item-icon fa fa-fw fa-user"></i>
-                <br /> 关于
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-archives">
-              <a href="/archives" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-archive"></i>
-                <br /> 归档
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-tags">
-              <a href="/tags" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-tags"></i>
-                <br /> 标签
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-sitemap">
-              <a href="/sitemap.xml" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
-                <br /> 站点地图
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-commonweal">
-              <a href="/404.html" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
-                <br /> 公益404
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-search">
-
-              <a href="javascript:;" class="popup-trigger">
-
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-                <br /> 搜索
-              </a>
             </li>
 
           </ul>
-
-          <div class="site-search">
-
-            <div class="algolia-popup popup search-popup">
-              <div class="algolia-search">
-                <div class="algolia-search-input-icon">
-                  <i class="fa fa-search"></i>
-                </div>
-                <div class="algolia-search-input" id="algolia-search-input"></div>
-              </div>
-
-              <div class="algolia-results">
-                <div id="algolia-stats"></div>
-                <div id="algolia-hits"></div>
-                <div id="algolia-pagination" class="algolia-pagination"></div>
-              </div>
-
-              <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-              </span>
+        </div>
+        <div class="main-inner">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="post-header">
+              <h3 class="post-title">坦率的讲 - 本站目前共计32篇文章</h3>
             </div>
+            <p>
+              <img src="/images/category-bg.jpg" alt="category-bg">
+            </p>
+            <div class="post-content markdown-body" itemprop="articleBody">
+              <div class="archives">
 
-          </div>
+                <div class="archives-item">
+                  <h2>2017年11月</h2>
+                  <ul class="archives_list">
 
-        </nav>
+                    <li>28日11:34:42
+                      <a href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/">万达监控预警项目前端框架整理（三）----项目入口文件</a>
+                    </li>
 
-      </div>
-    </header>
+                    <li>28日11:34:42
+                      <a href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/">前端框架（二）</a>
+                    </li>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
+                    <li>27日11:34:42
+                      <a href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/">前端框架（一）</a>
+                    </li>
 
-            <section id="posts" class="posts-collapse">
-              <span class="archive-move-on"></span>
+                    <li>27日09:41:15
+                      <a href="/2017/11/27/vue源码学习/数据监控/"></a>
+                    </li>
 
-              <span class="archive-page-counter">
+                  </ul>
+                </div>
 
-                OK! 目前共计 32 篇日志。 继续努力。
-              </span>
+                <div class="archives-item">
+                  <h2>2017年08月</h2>
+                  <ul class="archives_list">
 
-              <div class="collection-title">
-                <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+                    <li>11日17:42:18
+                      <a href="/2017/08/11/problems/事件委托、jq事件委托/"></a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/浏览器内核/">浏览器内核</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/AMD和CMD的区别/">AMD和CMD的区别</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/深复制和浅复制/">深复制和浅复制</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/js Error详解/">js Error详解</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/CSS  BFC/">CSS 流体特性和BFC</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/js无阻塞加载/">js无阻塞加载</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/js实现继承的方式/">js实现继承的方式</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/javascript的attributes和property的异同/">javascript的attributes和property的异同</a>
+                    </li>
+
+                    <li>11日14:34:42
+                      <a href="/2017/08/11/problems/js  DOM事件模型/">js DOM事件模型</a>
+                    </li>
+
+                    <li>02日16:03:25
+                      <a href="/2017/08/02/s的事件循环机制（v8）（二）/">js事件循环机制（二）</a>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div class="archives-item">
+                  <h2>2017年07月</h2>
+                  <ul class="archives_list">
+
+                    <li>09日16:02:25
+                      <a href="/2017/07/09/js的事件循环机制（v8）（一）/">js事件循环机制（一）</a>
+                    </li>
+
+                    <li>09日14:51:42
+                      <a href="/2017/07/09/es6总结/es6-Symbol/">es6-Symbol</a>
+                    </li>
+
+                    <li>08日13:57:13
+                      <a href="/2017/07/08/es6总结/es6对象扩展/">es6-对象扩展</a>
+                    </li>
+
+                    <li>07日18:23:07
+                      <a href="/2017/07/07/es6总结/关于js递归的一个问题/">关于js递归的一个问题</a>
+                    </li>
+
+                    <li>06日19:32:47
+                      <a href="/2017/07/06/es6总结/函数的扩展（二）/">es6-函数扩展（二）</a>
+                    </li>
+
+                    <li>05日09:05:13
+                      <a href="/2017/07/05/es6总结/函数的扩展（一）/">es6-函数扩展（一）</a>
+                    </li>
+
+                    <li>04日09:03:52
+                      <a href="/2017/07/04/es6总结/es6数组扩展/">es6-数组扩展</a>
+                    </li>
+
+                    <li>03日11:24:12
+                      <a href="/2017/07/03/es6总结/es6字符串扩展/">es6-字符串扩展</a>
+                    </li>
+
+                    <li>02日09:37:21
+                      <a href="/2017/07/02/解构赋值/">es6-解构赋值</a>
+                    </li>
+
+                    <li>01日14:34:42
+                      <a href="/2017/07/01/let const/">es6-let/const</a>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div class="archives-item">
+                  <h2>2017年06月</h2>
+                  <ul class="archives_list">
+
+                    <li>15日10:03:43
+                      <a href="/2017/06/15/react入门级基础知识（干货）/">react入门级教程（一）</a>
+                    </li>
+
+                    <li>07日09:49:36
+                      <a href="/2017/06/07/fetch相关概念/">DOM新API fetch</a>
+                    </li>
+
+                    <li>05日17:07:30
+                      <a href="/2017/06/05/javascript数据类型/">JS typeof总结---6种数据类型</a>
+                    </li>
+
+                    <li>02日15:59:59
+                      <a href="/2017/06/02/axios笔记/">axios随笔</a>
+                    </li>
+
+                    <li>01日16:45:42
+                      <a href="/2017/06/01/无标题Markdown/">个人总结</a>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div class="archives-item">
+                  <h2>2017年05月</h2>
+                  <ul class="archives_list">
+
+                    <li>26日15:11:39
+                      <a href="/2017/05/26/markDown写法/">markDown写法</a>
+                    </li>
+
+                    <li>26日11:34:42
+                      <a href="/2017/05/26/上传项目到github/">上传项目到github“</a>
+                    </li>
+
+                  </ul>
+                </div>
+
               </div>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/11/28/框架整理/框架整理（三）--mian入口文件/" itemprop="url">
-
-                      <span itemprop="name">万达监控预警项目前端框架整理（三）----项目入口文件</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-11-28T11:34:42+08:00"
-                                                                                                    content="2017-11-28">
-                      11-28
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/11/28/框架整理/万达预警监控项目前端框架整理（二）/" itemprop="url">
-
-                      <span itemprop="name">前端框架（二）</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-11-28T11:34:42+08:00"
-                                                                                                    content="2017-11-28">
-                      11-28
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/11/27/框架整理/万达预警监控项目前端框架整理（-）/" itemprop="url">
-
-                      <span itemprop="name">前端框架（一）</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-11-27T11:34:42+08:00"
-                                                                                                    content="2017-11-27">
-                      11-27
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/11/27/vue源码学习/数据监控/" itemprop="url">
-
-                      <span itemprop="name">未命名</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-11-27T09:41:15+08:00"
-                                                                                                    content="2017-11-27">
-                      11-27
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/事件委托、jq事件委托/" itemprop="url">
-
-                      <span itemprop="name">未命名</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-08-11T17:42:18+08:00"
-                                                                                                    content="2017-08-11">
-                      08-11
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/深复制和浅复制/" itemprop="url">
-
-                      <span itemprop="name">深复制和浅复制</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-08-11T14:34:42+08:00"
-                                                                                                    content="2017-08-11">
-                      08-11
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/AMD和CMD的区别/" itemprop="url">
-
-                      <span itemprop="name">AMD和CMD的区别</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-08-11T14:34:42+08:00"
-                                                                                                    content="2017-08-11">
-                      08-11
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/浏览器内核/" itemprop="url">
-
-                      <span itemprop="name">浏览器内核</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-08-11T14:34:42+08:00"
-                                                                                                    content="2017-08-11">
-                      08-11
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/javascript的attributes和property的异同/"
-                                                                                                    itemprop="url">
-
-                      <span itemprop="name">javascript的attributes和property的异同</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-08-11T14:34:42+08:00"
-                                                                                                    content="2017-08-11">
-                      08-11
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                <header class="post-header">
-
-                  <h1 class="post-title">
-
-                    <a class="post-title-link" href="/2017/08/11/problems/js实现继承的方式/" itemprop="url">
-
-                      <span itemprop="name">js实现继承的方式</span>
-
-                    </a>
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-08-11T14:34:42+08:00"
-                                                                                                    content="2017-08-11">
-                      08-11
-                    </time>
-                  </div>
-
-                </header>
-              </article>
-
-            </section>
-
-            <nav class="pagination">
-              <span class="page-number current">1</span>
-              <a class="page-number" href="/archives/2017/page/2/">2</a>
-              <span class="space">&hellip;</span>
-              <a class="page-number" href="/archives/2017/page/4/">4</a>
-              <a class="extend next" rel="next" href="/archives/2017/page/2/">
-                <i class="fa fa-angle-right"></i>
-              </a>
-            </nav>
-
-          </div>
-
+            </div>
+          </article>
         </div>
 
-        <div class="sidebar-toggle">
-          <div class="sidebar-toggle-line-wrap">
-            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-          </div>
-        </div>
-
-        <aside id="sidebar" class="sidebar">
-          <div class="sidebar-inner">
-
-            <section class="site-overview sidebar-panel sidebar-panel-active">
-              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
-                />
-                <p class="site-author-name" itemprop="name">陈宁</p>
-
-                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-
-              </div>
-              <nav class="site-state motion-element">
-
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives">
-                    <span class="site-state-item-count">32</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">11</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">15</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-
-              </nav>
-
-              <div class="links-of-author motion-element">
-
-                <span class="links-of-author-item">
-                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-
-                    <i class="fa fa-fw fa-github"></i>
-
-                    GitHub
-                  </a>
-                </span>
-
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-
-                    <i class="fa fa-fw fa-zhihu"></i>
-
-                    知乎
-                  </a>
-                </span>
-
-              </div>
-
-            </section>
-
-          </div>
-        </aside>
-
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
+      <!-- end #main-->
+    </div>
+    <!-- end #body -->
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
-
-          &copy;
-          <span itemprop="copyrightYear">2017</span>
-          <span class="with-love">
-            <i class="fa fa-heart"></i>
-          </span>
-          <span class="author" itemprop="copyrightHolder">陈宁</span>
-        </div>
-
-        <div class="powered-by">
-          由
-          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-        </div>
-
-        <div class="theme-info">
-          主题 -
-          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-            NexT.Mist
-          </a>
-        </div>
+        <p>
+          <a href="/about" title="关于本站">关于本站</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <!-- 自定义链接 -->
+          <a href="/help" title="help">急救中心</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+          本站点采用
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立
+          <a href="/timeline" id="siteBuildingTime"></a>天
+          <br/> ©2017 基于
+          <a href="http://hexo.io" target="_blank">Hexo</a>搭建 ，主题&nbsp
+          <a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+          ，作者
+          <a href="https://www.tangkunyin.com" target="_blank">唐先森</a>
+          ，Hosted by
+          <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
 
       </div>
     </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-
-    </div>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js/InsightSearch.js"></script>
+    <script src="/js/SimpleCore.js"></script>
 
   </div>
-
-  <script type="text/javascript">
-    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-      window.Promise = null;
-    }
-
-  </script>
-
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-  <script type="text/javascript" id="motion.page.archive">
-    $('.archive-year').velocity('transition.slideLeftIn');
+  <div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:">
+      <i class="fa fa-angle-up"></i>
+    </a>
+  </div>
+  <script>
+    $(function() {
+      SimpleCore.init({
+        buildingTime: '08/20/2014',
+        current: $('.post-tags').length > 0 ? 'post' : 'archive',
+        wxMpImg: '/images/weixin-mp.png',
+        donateImg: '/images/donate-qr.png',
+      });
+    });
 
   </script>
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
 </body>
 
 </html>

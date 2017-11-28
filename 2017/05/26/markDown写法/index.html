@@ -1,729 +1,391 @@
-<!doctype html>
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
+  <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://peacecup.github.io/warn.html">
+<![endif]-->
+  <meta charset="utf-8">
 
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="mobile-agent" content="format=html5; url=https://peacecup.github.io">
+  <meta name="author" content="陈宁">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/SimpleStyle.min.css">
 
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
-  />
+  <link rel="shortcut icon" href="/images/favicon.png">
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-                                                                                  rel="stylesheet" type="text/css">
+  <title>markdown写法 - 长夜</title>
 
-  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
-                                                                                  type="text/css" />
+  <meta name="keywords" content="undefined">
 
-  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+  <meta name="description " content="打开新世界的大门">
 
-  <meta name="keywords" content="markDown," />
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-  <meta name="description" content="markDown写法    1、定义标题文本写法 直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本     2、有序列表和无序列表    有序列表 1. DASDASD 2. DASDASD 3. DASDASFD     无序列表    1   2   3     3、使用”&amp;gt;”来进行引用    你好，引用的字体会是灰白色     4、图片链">
-  <meta name="keywords" content="markDown">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="markDown写法">
-  <meta property="og:url" content="https://peacecup.github.io/2017/05/26/markDown写法/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="markDown写法    1、定义标题文本写法 直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本     2、有序列表和无序列表    有序列表 1. DASDASD 2. DASDASD 3. DASDASFD     无序列表    1   2   3     3、使用”&amp;gt;”来进行引用    你好，引用的字体会是灰白色     4、图片链">
-  <meta property="og:updated_time" content="2017-06-05T09:28:43.384Z">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="markDown写法">
-  <meta name="twitter:description" content="markDown写法    1、定义标题文本写法 直接写和按一下tab’写是有区别的、#的个数指定字体大小 按tab,然后直接写就是正文文本     2、有序列表和无序列表    有序列表 1. DASDASD 2. DASDASD 3. DASDASFD     无序列表    1   2   3     3、使用”&amp;gt;”来进行引用    你好，引用的字体会是灰白色     4、图片链">
-
-  <script type="text/javascript" id="hexo.configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {
-      root: '/',
-      scheme: 'Mist',
-      sidebar: {
-        "position": "right",
-        "display": "post",
-        "offset": 12,
-        "offset_float": 0,
-        "b2t": false,
-        "scrollpercent": false
-      },
-      fancybox: true,
-      motion: true,
-      duoshuo: {
-        userId: '0',
-        author: '博主'
-      },
-      algolia: {
-        applicationID: '',
-        apiKey: '',
-        indexName: '',
-        hits: {
-          "per_page": 10
-        },
-        labels: {
-          "input_placeholder": "Search for Posts",
-          "hits_empty": "We didn't find any results for the search: ${query}",
-          "hits_stats": "${hits} results found in ${time} ms"
-        }
-      }
-    };
-
-  </script>
-
-  <link rel="canonical" href="https://peacecup.github.io/2017/05/26/markDown写法/" />
-
-  <title> markDown写法 | 长夜 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+  <div id="nav">
+    <nav class="nav-menu">
+      <a class="site-name current" href="/" title="说">说</a>
+      <a class="site-index current" href="/">
+        <i class="fa fa-home"></i>
+        <span>首页</span>
+      </a>
+      <a href="/archives" title="归档">
+        <i class="fa fa-archives"></i>
+        <span>归档</span>
+      </a>
+      <a href="/tags" title="标签">
+        <i class="fa fa-tags"></i>
+        <span>标签</span>
+      </a>
+      <!-- custom single page of menus -->
 
-  <div class="container sidebar-position-right page-post-detail ">
-    <div class="headband"></div>
+      <a href="/cross_fire" title="穿越火线">
+        <i class="fa fa-wifi"></i>
+        <span>穿越火线</span>
+      </a>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta ">
+      <a href="/help" title="急救中心">
+        <i class="fa fa-question-circle"></i>
+        <span>急救中心</span>
+      </a>
 
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before">
-                  <i></i>
-                </span>
-                <span class="site-title">长夜</span>
-                <span class="logo-line-after">
-                  <i></i>
-                </span>
-              </a>
+    </nav>
+  </div>
+
+  <div class="nav-user">
+    <a class="btn-search" href="#">
+      <i class="fa fa-search"></i>
+    </a>
+    <a class="btn-read-mode" href="#">
+      <i class="fa fa-sun-o"></i>
+    </a>
+    <a class="btn-weixin-mp" href="javascript:">
+      <i class="fa fa-weixin"></i>
+    </a>
+  </div>
+
+  <div id="wrapper" class="clearfix">
+    <div id="body">
+      <div class="main" id="main">
+        <div id="cover">
+          <div class="cover-img"></div>
+          <div class="cover-info">
+
+            <h1 class="cover-siteName">说IT</h1>
+            <h3 class="cover-siteTitle">聊技术，谈情怀</h3>
+            <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+            <div class="cover-sns">
+
+              <div class="btn btn-telegram">
+                <a href="http://t.me/codeist" target="_blank" title="telegram" ref="friend">
+                  <i class="fa fa-telegram"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/coder.thomas/" target="_blank" title="instagram"
+                                                                                                ref="friend">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+
+              <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+
             </div>
-
-            <p class="site-subtitle">I Want More！</p>
-
-          </div>
-
-          <div class="site-nav-toggle">
-            <button>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-            </button>
           </div>
         </div>
 
-        <nav class="site-nav">
-
-          <ul id="menu" class="menu">
-
-            <li class="menu-item menu-item-home">
-              <a href="/" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-home"></i>
-                <br /> 首页
-              </a>
+        <div class="page-title">
+          <ul>
+            <li>
+              <a href="/">最新</a>
             </li>
 
-            <li class="menu-item menu-item-categories">
-              <a href="/categories" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-th"></i>
-                <br /> 分类
-              </a>
+            <li class="">
+              <a href="/categories/big-front-end" data-name="前端">前端</a>
             </li>
 
-            <li class="menu-item menu-item-about">
-              <a href="/about" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-user"></i>
-                <br /> 关于
-              </a>
+            <li class="">
+              <a href="/categories/server-side" data-name="后台">后台</a>
             </li>
 
-            <li class="menu-item menu-item-archives">
-              <a href="/archives" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-archive"></i>
-                <br /> 归档
-              </a>
+            <li class="">
+              <a href="/categories/design" data-name="设计">设计</a>
             </li>
 
-            <li class="menu-item menu-item-tags">
-              <a href="/tags" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-tags"></i>
-                <br /> 标签
-              </a>
+            <li class="">
+              <a href="/categories/resource" data-name="资源">资源</a>
             </li>
 
-            <li class="menu-item menu-item-sitemap">
-              <a href="/sitemap.xml" rel="section">
+            <li class="page-search">
+              <form id="search" class="search-form">
+                <label for="s" class="sr-only">请输入关键字</label>
+                <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字"
+                />
+                <button type="submit" class="search-form-submit" title="搜索">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+              <div class="ins-search">
+                <div class="ins-search-mask"></div>
+                <div class="ins-search-container">
+                  <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+                    <span class="ins-close ins-selectable">
+                      <i class="fa fa-times-circle"></i>
+                    </span>
+                  </div>
+                  <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                (function(window) {
+                  var INSIGHT_CONFIG = {
+                    TRANSLATION: {
+                      POSTS: '文章',
+                      PAGES: '页面',
+                      CATEGORIES: '分类',
+                      TAGS: '标签',
+                      UNTITLED: '(无标题)',
+                    },
+                    ROOT_URL: '/',
+                    CONTENT_URL: '/content.json',
+                  };
+                  window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+                })(window);
 
-                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
-                <br /> 站点地图
-              </a>
-            </li>
+              </script>
 
-            <li class="menu-item menu-item-commonweal">
-              <a href="/404.html" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
-                <br /> 公益404
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-search">
-
-              <a href="javascript:;" class="popup-trigger">
-
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-                <br /> 搜索
-              </a>
             </li>
 
           </ul>
-
-          <div class="site-search">
-
-            <div class="algolia-popup popup search-popup">
-              <div class="algolia-search">
-                <div class="algolia-search-input-icon">
-                  <i class="fa fa-search"></i>
-                </div>
-                <div class="algolia-search-input" id="algolia-search-input"></div>
+        </div>
+        <div class="main-inner">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="post-header">
+              <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                  <img width="48" src="undefined" alt="avatar" />
+                </a>
+                <p>
+                  <span class="label">作者</span>
+                  <a href="undefined" target="_blank">undefined</a>
+                  <span title="最后编辑于2017-05-26">2017-05-26</span>
+                </p>
+                <p>undefined</p>
               </div>
-
-              <div class="algolia-results">
-                <div id="algolia-stats"></div>
-                <div id="algolia-hits"></div>
-                <div id="algolia-pagination" class="algolia-pagination"></div>
+              <h2 class="post-title">markDown写法</h2>
+              <div class="post-meta">
+                本文总共828个字 | 您是第
+                <span id="busuanzi_value_page_pv">
+                  <i class="fa fa-spinner fa-spin"></i>
+                </span>位看到它们的小伙伴
               </div>
-
-              <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-              </span>
             </div>
-
-          </div>
-
-        </nav>
-
-      </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-
-            <div id="posts" class="posts-expand">
-
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/05/26/markDown写法/">
-
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
-
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
-
-                <header class="post-header">
-
-                  <h1 class="post-title" itemprop="name headline">
-
-                    markDown写法
-
-                  </h1>
-
-                  <div class="post-meta">
-                    <span class="post-time">
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">发表于</span>
-
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:11:39+08:00">
-                        2017-05-26
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/markDown/" itemprop="url" rel="index">
-                          <span itemprop="name">markDown</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/05/26/markDown写法/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/26/markDown写法/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  <h1 id="markDown写法">
-                    <a href="#markDown写法" class="headerlink" title="markDown写法"></a>markDown写法</h1>
-                  <h3 id="1、定义标题文本写法">
-                    <a href="#1、定义标题文本写法" class="headerlink" title="1、定义标题文本写法"></a>1、定义标题文本写法</h3>
-                  <p>直接写和按一下tab’写是有区别的、#的个数指定字体大小</p>
-                  <pre><code>按tab,然后直接写就是正文文本
+            <div class="post-content markdown-body">
+              <h1 id="markDown写法">
+                <a href="#markDown写法" class="headerlink" title="markDown写法"></a>markDown写法</h1>
+              <h3 id="1、定义标题文本写法">
+                <a href="#1、定义标题文本写法" class="headerlink" title="1、定义标题文本写法"></a>1、定义标题文本写法</h3>
+              <p>直接写和按一下tab’写是有区别的、#的个数指定字体大小</p>
+              <pre><code>按tab,然后直接写就是正文文本
 </code></pre>
-                  <h3 id="2、有序列表和无序列表">
-                    <a href="#2、有序列表和无序列表" class="headerlink" title="2、有序列表和无序列表"></a>2、有序列表和无序列表</h3>
-                  <h5 id="有序列表">
-                    <a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5>
-                  <pre><code>1. DASDASD
+              <h3 id="2、有序列表和无序列表">
+                <a href="#2、有序列表和无序列表" class="headerlink" title="2、有序列表和无序列表"></a>2、有序列表和无序列表</h3>
+              <h5 id="有序列表">
+                <a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5>
+              <pre><code>1. DASDASD
 2. DASDASD
 3. DASDASFD
 </code></pre>
-                  <h5 id="无序列表">
-                    <a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5>
-                  <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                  </ul>
-                  <h3 id="3、使用”-gt-”来进行引用">
-                    <a href="#3、使用”-gt-”来进行引用" class="headerlink" title="3、使用”&gt;”来进行引用"></a>3、使用”&gt;”来进行引用</h3>
-                  <blockquote>
-                    <p>你好，引用的字体会是灰白色</p>
-                  </blockquote>
-                  <h3 id="4、图片链接">
-                    <a href="#4、图片链接" class="headerlink" title="4、图片链接"></a>4、图片链接</h3>
-                  <pre><code>博客中添加图片我们可以使用图床获取图片的URL，
+              <h5 id="无序列表">
+                <a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+              <h3 id="3、使用”-gt-”来进行引用">
+                <a href="#3、使用”-gt-”来进行引用" class="headerlink" title="3、使用”&gt;”来进行引用"></a>3、使用”&gt;”来进行引用</h3>
+              <blockquote>
+                <p>你好，引用的字体会是灰白色</p>
+              </blockquote>
+              <h3 id="4、图片链接">
+                <a href="#4、图片链接" class="headerlink" title="4、图片链接"></a>4、图片链接</h3>
+              <pre><code>博客中添加图片我们可以使用图床获取图片的URL，
 可以去这个网址http://jiantuku.com/#/
 图片的写法是![]()
 ![nihao](http://dadasd/adasd/sdasd,jpg)
 </code></pre>
-                  <h3 id="5、粗体斜体">
-                    <a href="#5、粗体斜体" class="headerlink" title="5、粗体斜体"></a>5、粗体斜体</h3>
-                  <p>使用
-                    <strong> </strong>就是粗体，使用一个
-                    <em> </em>就是一斜体
-                    <br>
-                    <strong>你好</strong>
-                    <em>你好</em>
-                  </p>
-                  <h3 id="6、生成表格">
-                    <a href="#6、生成表格" class="headerlink" title="6、生成表格"></a>6、生成表格</h3>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Tables</th>
-                        <th style="text-align:center">Are</th>
-                        <th style="text-align:right">Cool</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>col 3 is</td>
-                        <td style="text-align:center">right-aligned</td>
-                        <td style="text-align:right">$1600</td>
-                      </tr>
-                      <tr>
-                        <td>col 2 is</td>
-                        <td style="text-align:center">centered</td>
-                        <td style="text-align:right">$12</td>
-                      </tr>
-                      <tr>
-                        <td>zebra stripes</td>
-                        <td style="text-align:center">are neat</td>
-                        <td style="text-align:right">$1</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p>使用这样的语法 “| Tables | Are | Cool |
-                    <br>| ————- |:————-:| —–:|
-                    <br>| col 3 is | right-aligned | $1600 |
-                    <br>| col 2 is | centered | $12 |
-                    <br>| zebra stripes | are neat | $1 |”</p>
-                  <h3 id="7、代码块">
-                    <a href="#7、代码块" class="headerlink" title="7、代码块"></a>7、代码块</h3>
-                  <p>使用”`“来包裹
-                    <br>
-                    <code>var a = &quot;name&quot;; var b = &quot;cv&quot;;</code>
-                  </p>
+              <h3 id="5、粗体斜体">
+                <a href="#5、粗体斜体" class="headerlink" title="5、粗体斜体"></a>5、粗体斜体</h3>
+              <p>使用
+                <strong> </strong>就是粗体，使用一个
+                <em> </em>就是一斜体
+                <br>
+                <strong>你好</strong>
+                <em>你好</em>
+              </p>
+              <h3 id="6、生成表格">
+                <a href="#6、生成表格" class="headerlink" title="6、生成表格"></a>6、生成表格</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tables</th>
+                    <th style="text-align:center">Are</th>
+                    <th style="text-align:right">Cool</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>col 3 is</td>
+                    <td style="text-align:center">right-aligned</td>
+                    <td style="text-align:right">$1600</td>
+                  </tr>
+                  <tr>
+                    <td>col 2 is</td>
+                    <td style="text-align:center">centered</td>
+                    <td style="text-align:right">$12</td>
+                  </tr>
+                  <tr>
+                    <td>zebra stripes</td>
+                    <td style="text-align:center">are neat</td>
+                    <td style="text-align:right">$1</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>使用这样的语法 “| Tables | Are | Cool |
+                <br>| ————- |:————-:| —–:|
+                <br>| col 3 is | right-aligned | $1600 |
+                <br>| col 2 is | centered | $12 |
+                <br>| zebra stripes | are neat | $1 |”</p>
+              <h3 id="7、代码块">
+                <a href="#7、代码块" class="headerlink" title="7、代码块"></a>7、代码块</h3>
+              <p>使用”`“来包裹
+                <br>
+                <code>var a = &quot;name&quot;; var b = &quot;cv&quot;;</code>
+              </p>
 
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-tags">
-
-                    <a href="/tags/markDown/" rel="tag"># markDown</a>
-
-                  </div>
-
-                  <div class="post-nav">
-                    <div class="post-nav-next post-nav-item">
-
-                      <a href="/2017/05/26/上传项目到github/" rel="next" title="上传项目到github“">
-                        <i class="fa fa-chevron-left"></i> 上传项目到github“
-                      </a>
-
-                    </div>
-
-                    <span class="post-nav-divider"></span>
-
-                    <div class="post-nav-prev post-nav-item">
-
-                      <a href="/2017/06/01/无标题Markdown/" rel="prev" title="个人总结">
-                        个人总结
-                        <i class="fa fa-chevron-right"></i>
-                      </a>
-
-                    </div>
-                  </div>
-
-                </footer>
-              </article>
-
-              <div class="post-spread">
-
-                <!-- JiaThis Button BEGIN -->
-                <div class="jiathis_style">
-                  <a class="jiathis_button_tsina"></a>
-                  <a class="jiathis_button_tqq"></a>
-                  <a class="jiathis_button_weixin"></a>
-                  <a class="jiathis_button_cqq"></a>
-                  <a class="jiathis_button_douban"></a>
-                  <a class="jiathis_button_renren"></a>
-                  <a class="jiathis_button_qzone"></a>
-                  <a class="jiathis_button_kaixin001"></a>
-                  <a class="jiathis_button_copy"></a>
-                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
-                                                                                                  target="_blank"></a>
-                  <a class="jiathis_counter_style"></a>
-                </div>
-                <script type="text/javascript">
-                  var jiathis_config = {
-                    hideMore: false
-                  }
-
-                </script>
-                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-                <!-- JiaThis Button END -->
-
-              </div>
+            </div>
+            <div class="post-tool">
+              <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+              </a>
             </div>
 
-          </div>
+            <div class="post-tags">标签：
 
-          <div class="comments" id="comments">
+              <a href="/tags/markDown/">markDown</a>
 
-            <div id="disqus_thread">
-              <noscript>
-                Please enable JavaScript to view the
-                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-              </noscript>
             </div>
 
-          </div>
+          </article>
+
+          <p>本文内容仅作为作者个人兴趣与观点，不代表所在公司及团队的观点和决策。若有不恰当之处，望不吝赐教</p>
 
         </div>
-
-        <div class="sidebar-toggle">
-          <div class="sidebar-toggle-line-wrap">
-            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-          </div>
-        </div>
-
-        <aside id="sidebar" class="sidebar">
-          <div class="sidebar-inner">
-
-            <ul class="sidebar-nav motion-element">
-              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                文章目录
-              </li>
-              <li class="sidebar-nav-overview" data-target="site-overview">
-                站点概览
-              </li>
-            </ul>
-
-            <section class="site-overview sidebar-panel">
-              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
-                />
-                <p class="site-author-name" itemprop="name">陈宁</p>
-
-                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-
-              </div>
-              <nav class="site-state motion-element">
-
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives">
-                    <span class="site-state-item-count">32</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">11</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">15</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-
-              </nav>
-
-              <div class="links-of-author motion-element">
-
-                <span class="links-of-author-item">
-                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-
-                    <i class="fa fa-fw fa-github"></i>
-
-                    GitHub
-                  </a>
-                </span>
-
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-
-                    <i class="fa fa-fw fa-zhihu"></i>
-
-                    知乎
-                  </a>
-                </span>
-
-              </div>
-
-            </section>
-
-            <!--noindex-->
-            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-              <div class="post-toc">
-
-                <div class="post-toc-content">
-                  <ol class="nav">
-                    <li class="nav-item nav-level-1">
-                      <a class="nav-link" href="#markDown写法">
-                        <span class="nav-number">1.</span>
-                        <span class="nav-text">
-                          markDown写法</span>
-                      </a>
-                      <ol class="nav-child">
-                        <li class="nav-item nav-level-3">
-                          <a class="nav-link" href="#1、定义标题文本写法">
-                            <span class="nav-number">1.0.1.</span>
-                            <span class="nav-text">
-                              1、定义标题文本写法</span>
-                          </a>
-                        </li>
-                        <li class="nav-item nav-level-3">
-                          <a class="nav-link" href="#2、有序列表和无序列表">
-                            <span class="nav-number">1.0.2.</span>
-                            <span class="nav-text">
-                              2、有序列表和无序列表</span>
-                          </a>
-                          <ol class="nav-child">
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#有序列表">
-                                <span class="nav-number">1.0.2.0.1.</span>
-                                <span class="nav-text">
-                                  有序列表</span>
-                              </a>
-                            </li>
-                            <li class="nav-item nav-level-5">
-                              <a class="nav-link" href="#无序列表">
-                                <span class="nav-number">1.0.2.0.2.</span>
-                                <span class="nav-text">
-                                  无序列表</span>
-                              </a>
-                            </li>
-                          </ol>
-                        </li>
-                      </ol>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#3、使用”-gt-”来进行引用">
-                        <span class="nav-number">1.0.3.</span>
-                        <span class="nav-text">
-                          3、使用”>”来进行引用</span>
-                      </a>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#4、图片链接">
-                        <span class="nav-number">1.0.4.</span>
-                        <span class="nav-text">
-                          4、图片链接</span>
-                      </a>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#5、粗体斜体">
-                        <span class="nav-number">1.0.5.</span>
-                        <span class="nav-text">
-                          5、粗体斜体</span>
-                      </a>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#6、生成表格">
-                        <span class="nav-number">1.0.6.</span>
-                        <span class="nav-text">
-                          6、生成表格</span>
-                      </a>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#7、代码块">
-                        <span class="nav-number">1.0.7.</span>
-                        <span class="nav-text">
-                          7、代码块</span>
-                      </a>
-                    </li>
-                  </ol>
-                  </li>
-                  </ol>
-                  </li>
-                  </ol>
-                </div>
-
-              </div>
-            </section>
-            <!--/noindex-->
-
-          </div>
-        </aside>
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
+      <!-- end #main-->
+    </div>
+    <!-- end #body -->
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">
-
-          &copy;
-          <span itemprop="copyrightYear">2017</span>
-          <span class="with-love">
-            <i class="fa fa-heart"></i>
-          </span>
-          <span class="author" itemprop="copyrightHolder">陈宁</span>
-        </div>
-
-        <div class="powered-by">
-          由
-          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-        </div>
-
-        <div class="theme-info">
-          主题 -
-          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-            NexT.Mist
-          </a>
-        </div>
+        <p>
+          <a href="/about" title="关于本站">关于本站</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <!-- 自定义链接 -->
+          <a href="/help" title="help">急救中心</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp
+          <em>·</em>&nbsp;&nbsp
+          <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+          本站点采用
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立
+          <a href="/timeline" id="siteBuildingTime"></a>天
+          <br/> ©2017 基于
+          <a href="http://hexo.io" target="_blank">Hexo</a>搭建 ，主题&nbsp
+          <a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+          ，作者
+          <a href="https://www.tangkunyin.com" target="_blank">唐先森</a>
+          ，Hosted by
+          <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
 
       </div>
     </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-
-    </div>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js/InsightSearch.js"></script>
+    <script src="/js/SimpleCore.js"></script>
 
   </div>
-
-  <script type="text/javascript">
-    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-      window.Promise = null;
-    }
-
-  </script>
-
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-
-  <script type="text/javascript">
-    var disqus_config = function() {
-      this.page.url = 'https://peacecup.github.io/2017/05/26/markDown写法/';
-      this.page.identifier = '2017/05/26/markDown写法/';
-      this.page.title = 'markDown写法';
-    };
-    var d = document,
-      s = d.createElement('script');
-    s.src = 'https://cn.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
+  <div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:">
+      <i class="fa fa-angle-up"></i>
+    </a>
+  </div>
+  <script>
+    $(function() {
+      SimpleCore.init({
+        buildingTime: '08/20/2014',
+        current: $('.post-tags').length > 0 ? 'post' : 'archive',
+        wxMpImg: '/images/weixin-mp.png',
+        donateImg: '/images/donate-qr.png',
+      });
+    });
 
   </script>
-
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
 </body>
 
 </html>
