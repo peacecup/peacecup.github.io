@@ -1,310 +1,205 @@
-<!doctype html>
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
+  <meta charset="utf-8">
 
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>DOM新API fetch | 长夜 | I Want More！</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
-  />
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
-                                                                                  rel="stylesheet" type="text/css">
-
-  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
-                                                                                  type="text/css" />
-
-  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-  <meta name="keywords" content="js基础," />
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-  <meta name="description" content="前言 &amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗   &amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的">
   <meta name="keywords" content="js基础">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="DOM新API fetch">
-  <meta property="og:url" content="https://peacecup.github.io/2017/06/07/fetch相关概念/index.html">
-  <meta property="og:site_name" content="长夜">
-  <meta property="og:description" content="前言 &amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗   &amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于">
-  <meta property="og:locale" content="zh-Hans">
-  <meta property="og:updated_time" content="2017-07-04T07:14:08.905Z">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="DOM新API fetch">
-  <meta name="twitter:description" content="前言 &amp;emsp;&amp;emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗   &amp;emsp;&amp;emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于">
-
-  <script type="text/javascript" id="hexo.configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {
-      root: '/',
-      scheme: 'Mist',
-      sidebar: {
-        "position": "right",
-        "display": "post",
-        "offset": 12,
-        "offset_float": 0,
-        "b2t": false,
-        "scrollpercent": false
-      },
-      fancybox: true,
-      motion: true,
-      duoshuo: {
-        userId: '0',
-        author: '博主'
-      },
-      algolia: {
-        applicationID: '',
-        apiKey: '',
-        indexName: '',
-        hits: {
-          "per_page": 10
-        },
-        labels: {
-          "input_placeholder": "Search for Posts",
-          "hits_empty": "We didn't find any results for the search: ${query}",
-          "hits_stats": "${hits} results found in ${time} ms"
-        }
-      }
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1.0.7">
+  <script type="text/javascript">
+    // Data Center
+    var DC = {
+      reward: true,
+      lv: JSON.parse(
+        '{"enable":true,"app_id":null,"app_key":null,"icon":true}'),
+      v: JSON.parse(
+        '{"enable":true,"appid":null,"appkey":null,"notify":false,"verify":false,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'
+      )
     };
 
   </script>
+  <script type="text/javascript">
+    window.lazyScripts = [];
 
-  <link rel="canonical" href="https://peacecup.github.io/2017/06/07/fetch相关概念/" />
-
-  <title> DOM新API fetch | 长夜 </title>
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+  <div id="loading" class="active"></div>
 
-  <div class="container sidebar-position-right page-post-detail ">
-    <div class="headband"></div>
+  <aside id="menu" class="hide">
+    <div class="inner flex-row-vertical">
+      <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light"
+                                                                                      id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+      </a>
+      <div class="brand-wrap" style="background-image:url(/)">
+        <div class="brand">
+          <a href="/" class="avatar waves-effect waves-circle waves-light">
+            <img src="/img/avatar.jpg">
+          </a>
+          <hgroup class="introduce">
+            <h5 class="nickname">陈宁</h5>
+            <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">277133779@qq.com</a>
+          </hgroup>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta ">
+          <ul class="menu-link">
 
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before">
-                  <i></i>
-                </span>
-                <span class="site-title">长夜</span>
-                <span class="logo-line-after">
-                  <i></i>
-                </span>
-              </a>
-            </div>
-
-            <p class="site-subtitle">I Want More！</p>
-
-          </div>
-
-          <div class="site-nav-toggle">
-            <button>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-              <span class="btn-bar"></span>
-            </button>
-          </div>
-        </div>
-
-        <nav class="site-nav">
-
-          <ul id="menu" class="menu">
-
-            <li class="menu-item menu-item-home">
-              <a href="/" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-home"></i>
-                <br /> 首页
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-categories">
-              <a href="/categories" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-th"></i>
-                <br /> 分类
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-about">
-              <a href="/about" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-user"></i>
-                <br /> 关于
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-archives">
-              <a href="/archives" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-archive"></i>
-                <br /> 归档
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-tags">
-              <a href="/tags" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-tags"></i>
-                <br /> 标签
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-sitemap">
-              <a href="/sitemap.xml" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
-                <br /> 站点地图
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-commonweal">
-              <a href="/404.html" rel="section">
-
-                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
-                <br /> 公益404
-              </a>
-            </li>
-
-            <li class="menu-item menu-item-search">
-
-              <a href="javascript:;" class="popup-trigger">
-
-                <i class="menu-item-icon fa fa-search fa-fw"></i>
-                <br /> 搜索
+            <li>
+              <a href="https://github.com/codefine" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
               </a>
             </li>
 
           </ul>
 
-          <div class="site-search">
+        </div>
+      </div>
+      <div class="scroll-wrap flex-col">
+        <ul class="nav">
 
-            <div class="algolia-popup popup search-popup">
-              <div class="algolia-search">
-                <div class="algolia-search-input-icon">
-                  <i class="fa fa-search"></i>
-                </div>
-                <div class="algolia-search-input" id="algolia-search-input"></div>
-              </div>
+          <li class="waves-block waves-effect">
+            <a href="/">
+              <i class="icon icon-lg icon-home"></i>
+              HOME
+            </a>
+          </li>
 
-              <div class="algolia-results">
-                <div id="algolia-stats"></div>
-                <div id="algolia-hits"></div>
-                <div id="algolia-pagination" class="algolia-pagination"></div>
-              </div>
+          <li class="waves-block waves-effect">
+            <a href="/categories">
+              <i class="icon icon-lg icon-th-list"></i>
+              CATEGORIES
+            </a>
+          </li>
 
-              <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-              </span>
-            </div>
+          <li class="waves-block waves-effect">
+            <a href="/tags">
+              <i class="icon icon-lg icon-tags"></i>
+              TAGS
+            </a>
+          </li>
 
-          </div>
+          <li class="waves-block waves-effect">
+            <a href="/archives">
+              <i class="icon icon-lg icon-archives"></i>
+              ARCHIVES
+            </a>
+          </li>
 
-        </nav>
+          <li class="waves-block waves-effect">
+            <a href="/custom">
+              <i class="icon icon-lg icon-plus-square"></i>
+              CUSTOM
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header class="top-header" id="header">
+      <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on"
+                                                                                        id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+          <span>DOM新API fetch</span>
+
+        </div>
+
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-search"></i>
+        </a>
 
       </div>
     </header>
+    <header class="content-header post-header">
+      <div class="container fade-scale">
+        <h1 class="title">DOM新API fetch</h1>
+        <h5 class="subtitle">
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
+          <time datetime="2017-06-07T01:49:36.040Z" itemprop="datePublished" class="page-time">
+            2017-06-07
+          </time>
 
-            <div id="posts" class="posts-expand">
+          <ul class="article-category-list">
+            <li class="article-category-list-item">
+              <a class="article-category-list-link" href="/categories/js基础/">js基础</a>
+            </li>
+          </ul>
 
-              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/07/fetch相关概念/">
+        </h5>
 
-                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <meta itemprop="name" content="陈宁">
-                  <meta itemprop="description" content="">
-                  <meta itemprop="image" content="/images/avatar.jpg">
-                </span>
+      </div>
 
-                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                  <meta itemprop="name" content="长夜">
-                </span>
+    </header>
 
-                <header class="post-header">
+    <div id="site_search">
+      <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..."
+                                                                                        class="form-control pull-left" />
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
 
-                  <h1 class="post-title" itemprop="name headline">
+    <div class="container body-wrap">
+      <article id="post-fetch相关概念" class="post-article article-type-post fade" itemprop="blogPost">
+        <div class="post-card">
+          <h1 class="post-card-title">DOM新API fetch</h1>
+          <div class="post-meta">
+            <time class="post-time" title="2017-06-07 09:49:36" datetime="2017-06-07T01:49:36.040Z"
+                                                                                            itemprop="datePublished">2017-06-07</time>
 
-                    DOM新API fetch
+            <ul class="article-category-list">
+              <li class="article-category-list-item">
+                <a class="article-category-list-link" href="/categories/js基础/">js基础</a>
+              </li>
+            </ul>
 
-                  </h1>
+            <span id="/2017/06/07/fetch相关概念/" class="leancloud_visitors" data-flag-title="DOM新API fetch"
+                                                                                            title="DOM新API fetch">
 
-                  <div class="post-meta">
-                    <span class="post-time">
+              <i class="icon icon-eye"></i>
 
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-calendar-o"></i>
-                      </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
 
-                      <span class="post-meta-item-text">发表于</span>
+            <span>
+              <i class="icon icon-comment-o"></i>
+              <a href="/2017/06/07/fetch相关概念/#comment">
+                <span class="valine-comment-count" data-xid="/2017/06/07/fetch相关概念/"></span>
+              </a>
+            </span>
 
-                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T09:49:36+08:00">
-                        2017-06-07
-                      </time>
-
-                    </span>
-
-                    <span class="post-category">
-
-                      <span class="post-meta-divider">|</span>
-
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                      </span>
-
-                      <span class="post-meta-item-text">分类于</span>
-
-                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                        <a href="/categories/js基础/" itemprop="url" rel="index">
-                          <span itemprop="name">js基础</span>
-                        </a>
-                      </span>
-
-                    </span>
-
-                    <span class="post-comments-count">
-                      <span class="post-meta-divider">|</span>
-                      <span class="post-meta-item-icon">
-                        <i class="fa fa-comment-o"></i>
-                      </span>
-                      <a href="/2017/06/07/fetch相关概念/#comments" itemprop="discussionUrl">
-                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/07/fetch相关概念/"
-                                                                                                        itemprop="commentCount"></span>
-                      </a>
-                    </span>
-
-                  </div>
-                </header>
-
-                <div class="post-body" itemprop="articleBody">
-
-                  <h3 id="前言">
-                    <a href="#前言" class="headerlink" title="前言"></a>前言</h3>
-                  <p>&emsp;&emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗
-                    <br>&emsp;&emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相比Promise和asyns/await来说不够友好、不符合长期以爱w3c关注分离的原则。因此，w3c发布了fecth标准，用来取代旧有的ajax。
-                    <br>&emsp;&emsp;其实浏览器请求天生就是异步操作，长久以来，一直都在致力于简化、规范化这个过程。jQuery的ajax方法，es6的Promise，es7的asyns/await、以及大量的前端框架，像angular-resource，axios等等。
-                    <br>&emsp;&emsp;但是w3c这个行为像是在搞事呀，ECMA组织发布了es6、es7中都包含有异步操作的内容，也都很强大，它在promise的基础上封装一个fetch出来有些瞎操心。不过从另一个角度来说，ajax以前也是w3c负责发布的标准，做这个改进也合情合理，但是fech像替换掉ajax甚至jquery的ajax，我并不看好。</p>
-                  <h3 id="fetch-API">
-                    <a href="#fetch-API" class="headerlink" title="fetch API"></a>fetch API</h3>
-                  <p>fetch的API主要体现在它的接口实现上，分为以下几个接口，GolbalFetch、Body、Request、Response、Headers，其他的接口暂时不准备学习。</p>
-                  <h5 id="GolbalFetch">
-                    <a href="#GolbalFetch" class="headerlink" title="GolbalFetch"></a>GolbalFetch</h5>
-                  <p>这个接口提供了fetch（）方法，window实现了这个接口，因此可以直接使用window.fetch()来请求资源，fetch()接受一个Request接口对象，或者一个URL。
-                  </p>
-                  <pre><code>var URL = &apos;https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=your_api_key&amp;format=json&amp;nojsoncallback=1&amp;tags=penguins&apos;;
+          </div>
+          <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="前言">
+              <a href="#前言" class="headerlink" title="前言"></a>前言</h3>
+            <p>&emsp;&emsp;之前刚刚总结了axios的用法，然后就突然发现了fetch这么一个东西，这个既然还是新的BOM标准之一，不得不感叹，前端技术推进真的是快，连ajax都要被取代了吗
+              <br>&emsp;&emsp;fetch是定义在BOM标准中window上得一个功能集，它的目的在于取代现有的XMLHttpRequest。w3c认为XMLHttpRequest比较杂乱、异步请求是基于事件模型的，相比Promise和asyns/await来说不够友好、不符合长期以爱w3c关注分离的原则。因此，w3c发布了fecth标准，用来取代旧有的ajax。
+              <br>&emsp;&emsp;其实浏览器请求天生就是异步操作，长久以来，一直都在致力于简化、规范化这个过程。jQuery的ajax方法，es6的Promise，es7的asyns/await、以及大量的前端框架，像angular-resource，axios等等。
+              <br>&emsp;&emsp;但是w3c这个行为像是在搞事呀，ECMA组织发布了es6、es7中都包含有异步操作的内容，也都很强大，它在promise的基础上封装一个fetch出来有些瞎操心。不过从另一个角度来说，ajax以前也是w3c负责发布的标准，做这个改进也合情合理，但是fech像替换掉ajax甚至jquery的ajax，我并不看好。</p>
+            <h3 id="fetch-API">
+              <a href="#fetch-API" class="headerlink" title="fetch API"></a>fetch API</h3>
+            <p>fetch的API主要体现在它的接口实现上，分为以下几个接口，GolbalFetch、Body、Request、Response、Headers，其他的接口暂时不准备学习。</p>
+            <h5 id="GolbalFetch">
+              <a href="#GolbalFetch" class="headerlink" title="GolbalFetch"></a>GolbalFetch</h5>
+            <p>这个接口提供了fetch（）方法，window实现了这个接口，因此可以直接使用window.fetch()来请求资源，fetch()接受一个Request接口对象，或者一个URL。
+            </p>
+            <pre><code>var URL = &apos;https://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=your_api_key&amp;format=json&amp;nojsoncallback=1&amp;tags=penguins&apos;;
 function fetchDemo() {
     fetch(URL).then(function(response) {
         return response.json();
@@ -314,313 +209,292 @@ function fetchDemo() {
 } 
 fetchDemo();
 </code></pre>
-                  <h5 id="Request">
-                    <a href="#Request" class="headerlink" title="Request"></a>Request</h5>
+            <h5 id="Request">
+              <a href="#Request" class="headerlink" title="Request"></a>Request</h5>
 
-                </div>
+          </div>
 
-                <div>
+          <blockquote class="post-copyright">
+            <div class="content">
+              <span class="post-time">
+                Last updated:
+                <time datetime="2017-07-04T07:14:08.905Z" itemprop="dateUpdated">2017-07-04 15:14:08</time>
+              </span>
+              <br> 转载注明出处，原文地址：
 
-                </div>
+              <a href="/2017/06/07/fetch相关概念/" target="_blank" rel="external">https://peacecup.github.io/2017/06/07/fetch相关概念/</a>
 
-                <div>
-
-                </div>
-
-                <div>
-
-                </div>
-
-                <footer class="post-footer">
-
-                  <div class="post-tags">
-
-                    <a href="/tags/js基础/" rel="tag"># js基础</a>
-
-                  </div>
-
-                  <div class="post-nav">
-                    <div class="post-nav-next post-nav-item">
-
-                      <a href="/2017/06/05/javascript数据类型/" rel="next" title="JS typeof总结---6种数据类型">
-                        <i class="fa fa-chevron-left"></i> JS typeof总结---6种数据类型
-                      </a>
-
-                    </div>
-
-                    <span class="post-nav-divider"></span>
-
-                    <div class="post-nav-prev post-nav-item">
-
-                      <a href="/2017/06/15/react入门级基础知识（干货）/" rel="prev" title="react入门级教程（一）">
-                        react入门级教程（一）
-                        <i class="fa fa-chevron-right"></i>
-                      </a>
-
-                    </div>
-                  </div>
-
-                </footer>
-              </article>
-
-              <div class="post-spread">
-
-                <!-- JiaThis Button BEGIN -->
-                <div class="jiathis_style">
-                  <a class="jiathis_button_tsina"></a>
-                  <a class="jiathis_button_tqq"></a>
-                  <a class="jiathis_button_weixin"></a>
-                  <a class="jiathis_button_cqq"></a>
-                  <a class="jiathis_button_douban"></a>
-                  <a class="jiathis_button_renren"></a>
-                  <a class="jiathis_button_qzone"></a>
-                  <a class="jiathis_button_kaixin001"></a>
-                  <a class="jiathis_button_copy"></a>
-                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
-                                                                                                  target="_blank"></a>
-                  <a class="jiathis_counter_style"></a>
-                </div>
-                <script type="text/javascript">
-                  var jiathis_config = {
-                    hideMore: false
-                  }
-
-                </script>
-                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-                <!-- JiaThis Button END -->
-
-              </div>
             </div>
+            <footer>
+              <a href="https://peacecup.github.io">
+                <img src="/img/avatar.jpg" alt="陈宁"> 陈宁
+              </a>
+            </footer>
+          </blockquote>
 
+          <div class="page-reward">
+            <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
           </div>
 
-          <div class="comments" id="comments">
-
-            <div id="disqus_thread">
-              <noscript>
-                Please enable JavaScript to view the
-                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-              </noscript>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="sidebar-toggle">
-          <div class="sidebar-toggle-line-wrap">
-            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-          </div>
-        </div>
-
-        <aside id="sidebar" class="sidebar">
-          <div class="sidebar-inner">
-
-            <ul class="sidebar-nav motion-element">
-              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                文章目录
-              </li>
-              <li class="sidebar-nav-overview" data-target="site-overview">
-                站点概览
+          <div class="post-footer">
+            <ul class="article-tag-list">
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tags/js基础/">js基础</a>
               </li>
             </ul>
 
-            <section class="site-overview sidebar-panel">
-              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
-                />
-                <p class="site-author-name" itemprop="name">陈宁</p>
+            <div class="page-share-wrap">
+              <div class="page-share" id="pageShare">
+                <ul class="reset share-icons">
 
-                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
-
-              </div>
-              <nav class="site-state motion-element">
-
-                <div class="site-state-item site-state-posts">
-                  <a href="/archives">
-                    <span class="site-state-item-count">32</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    <span class="site-state-item-count">11</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    <span class="site-state-item-count">15</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-
-              </nav>
-
-              <div class="links-of-author motion-element">
-
-                <span class="links-of-author-item">
-                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
-
-                    <i class="fa fa-fw fa-github"></i>
-
-                    GitHub
-                  </a>
-                </span>
-
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
-
-                    <i class="fa fa-fw fa-zhihu"></i>
-
-                    知乎
-                  </a>
-                </span>
-
-              </div>
-
-            </section>
-
-            <!--noindex-->
-            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-              <div class="post-toc">
-
-                <div class="post-toc-content">
-                  <ol class="nav">
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#前言">
-                        <span class="nav-number">1.</span>
-                        <span class="nav-text">
-                          前言</span>
-                      </a>
-                    </li>
-                    <li class="nav-item nav-level-3">
-                      <a class="nav-link" href="#fetch-API">
-                        <span class="nav-number">2.</span>
-                        <span class="nav-text">
-                          fetch API</span>
-                      </a>
-                      <ol class="nav-child">
-                        <li class="nav-item nav-level-5">
-                          <a class="nav-link" href="#GolbalFetch">
-                            <span class="nav-number">2.0.1.</span>
-                            <span class="nav-text">
-                              GolbalFetch</span>
-                          </a>
-                        </li>
-                        <li class="nav-item nav-level-5">
-                          <a class="nav-link" href="#Request">
-                            <span class="nav-number">2.0.2.</span>
-                            <span class="nav-text">
-                              Request</span>
-                          </a>
-                        </li>
-                      </ol>
-                    </li>
-                  </ol>
+                  <li>
+                    <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://peacecup.github.io/2017/06/07/fetch相关概念/&title=《DOM新API fetch》 — 长夜&pic=https://peacecup.github.io/img/avatar.jpg"
+                                                                                                    data-title="微博">
+                      <i class="icon icon-weibo"></i>
+                    </a>
                   </li>
-                  </ol>
-                </div>
 
+                  <li>
+                    <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+                      <i class="icon icon-weixin"></i>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://peacecup.github.io/2017/06/07/fetch相关概念/&title=《DOM新API fetch》 — 长夜&source=打开新世界的大门"
+                                                                                                    data-title=" QQ">
+                      <i class="icon icon-qq"></i>
+                    </a>
+                  </li>
+
+                </ul>
               </div>
-            </section>
-            <!--/noindex-->
+
+              <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+                <i class="icon icon-share-alt icon-lg"></i>
+              </a>
+            </div>
 
           </div>
-        </aside>
+
+          <div id="comment">
+          </div>
+
+        </div>
+        <nav class="post-nav flex-row flex-justify-between">
+
+          <div class="waves-block waves-effect prev">
+            <a href="/2017/06/15/react入门级基础知识（干货）/" id="post-prev" class="post-nav-link">
+              <div class="tips">
+                <i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+              <h4 class="title">react入门级教程（一）</h4>
+            </a>
+          </div>
+
+          <div class="waves-block waves-effect next">
+            <a href="/2017/06/05/javascript数据类型/" id="post-next" class="post-nav-link">
+              <div class="tips">Next
+                <i class="icon icon-angle-right icon-lg icon-pl"></i>
+              </div>
+              <h4 class="title">JS typeof总结---6种数据类型</h4>
+            </a>
+          </div>
+
+        </nav>
+
+      </article>
+
+      <div id="reward" class="page-modal reward-lay">
+        <a class="close" href="javascript:;">
+          <i class="icon icon-close"></i>
+        </a>
+        <h3 class="reward-title">
+          <i class="icon icon-quote-left"></i>
+          我们一起来让这个世界有趣一点
+          <i class="icon icon-quote-right"></i>
+        </h3>
+        <div class="reward-content">
+
+          <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+          </div>
+
+          <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/reward-wechat.jpg"
+                                                                                            data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+              <span class="reward-toggle-item wechat">微信</span>
+              <span class="reward-toggle-label"></span>
+              <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+          </label>
+
+        </div>
+      </div>
+
+    </div>
+    <aside class="post-widget">
+      <nav class="post-toc-wrap" id="post-toc">
+        <h4>TOC</h4>
+        <ol class="post-toc">
+          <li class="post-toc-item post-toc-level-3">
+            <a class="post-toc-link" href="#前言">
+              <span class="post-toc-number">1.</span>
+              <span class="post-toc-text">
+                前言</span>
+            </a>
+          </li>
+          <li class="post-toc-item post-toc-level-3">
+            <a class="post-toc-link" href="#fetch-API">
+              <span class="post-toc-number">2.</span>
+              <span class="post-toc-text">
+                fetch API</span>
+            </a>
+            <ol class="post-toc-child">
+              <li class="post-toc-item post-toc-level-5">
+                <a class="post-toc-link" href="#GolbalFetch">
+                  <span class="post-toc-number">2.0.1.</span>
+                  <span class="post-toc-text">
+                    GolbalFetch</span>
+                </a>
+              </li>
+              <li class="post-toc-item post-toc-level-5">
+                <a class="post-toc-link" href="#Request">
+                  <span class="post-toc-number">2.0.2.</span>
+                  <span class="post-toc-text">
+                    Request</span>
+                </a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        </li>
+        </ol>
+      </nav>
+    </aside>
+
+    <footer class="footer">
+
+      <div class="top">
+
+        <p>
+          <span>Links：</span>
+
+          <span class="blogroll-item">
+            <a href="https://www.github.com" target="_blank">github</a>
+          </span>
+
+          <span class="blogroll-item">
+            <a href="https://www.gitee.com" target="_blank">gitee</a>
+          </span>
+
+          <span class="blogroll-item">
+            <a href="https://www.coding.net" target="_blank">coding</a>
+          </span>
+
+        </p>
 
       </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-
-          &copy;
-          <span itemprop="copyrightYear">2017</span>
-          <span class="with-love">
-            <i class="fa fa-heart"></i>
+      <div class="bottom">
+        <p>
+          <span>
+            陈宁 &copy; 2017
           </span>
-          <span class="author" itemprop="copyrightHolder">陈宁</span>
-        </div>
 
-        <div class="powered-by">
-          由
-          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-        </div>
+          <span>
+            Power by
+            <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+            <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+          </span>
 
-        <div class="theme-info">
-          主题 -
-          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-            NexT.Mist
-          </a>
-        </div>
-
+        </p>
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
+  </main>
+  <div class="mask" id="mask"></div>
+  <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light">
+    <span class="icon icon-lg icon-chevron-up"></span>
+  </a>
 
-    </div>
+  <div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
 
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://peacecup.github.io/2017/06/07/fetch相关概念/&title=《DOM新API fetch》 — 长夜&pic=https://peacecup.github.io/img/avatar.jpg"
+                                                                                        data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://peacecup.github.io/2017/06/07/fetch相关概念/&title=《DOM新API fetch》 — 长夜&source=打开新世界的大门"
+                                                                                        data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+
+    </ul>
   </div>
 
+  <div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;">
+      <i class="icon icon-close"></i>
+    </a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://peacecup.github.io/2017/06/07/fetch相关概念/"
+                                                                                    alt="微信分享二维码">
+  </div>
+
+  <!-- main-js -->
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/plugins/fastclick.js?v=1.0.7"></script>
+
+  <script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+  <script type="text/javascript" src="/js/method.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/js/blog.js?v=1.0.7"></script>
+
+  <!-- third-party -->
+
+  <script type="text/javascript" src="/js/plugins/local_search.js?v=1.0.7"></script>
   <script type="text/javascript">
-    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-      window.Promise = null;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
     }
+    var path = "/" + search_path;
+    searchFunc(path, "local-search-input", "local-search-result");
 
   </script>
 
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script type="text/javascript" src="/js/plugins/valine.js?v=1.0.7"></script>
 
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.0.7"></script>
 
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
-
-  <script type="text/javascript">
-    var disqus_config = function() {
-      this.page.url = 'https://peacecup.github.io/2017/06/07/fetch相关概念/';
-      this.page.identifier = '2017/06/07/fetch相关概念/';
-      this.page.title = 'DOM新API fetch';
-    };
-    var d = document,
-      s = d.createElement('script');
-    s.src = 'https://cn.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-
+  <!-- mathjax config similar to math.stackexchange -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes:
+    true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    });
   </script>
 
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i
+    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
+                                                                                    ; } }); </script>
 
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 
