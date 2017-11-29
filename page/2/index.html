@@ -1,860 +1,1420 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
-  <title>长夜 | I Want More！</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  <meta name="keywords" content="undefined">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css?v=1.0.7">
-  <script type="text/javascript">
-    // Data Center
-    var DC = {
-      reward: false,
-      lv: JSON.parse(
-        '{"enable":true,"app_id":null,"app_key":null,"icon":true}'),
-      v: JSON.parse(
-        '{"enable":true,"appid":null,"appkey":null,"notify":false,"verify":false,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'
-      )
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
+
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+  <meta name="description" content="打开新世界的大门">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="长夜">
+  <meta property="og:url" content="https://peacecup.github.io/page/2/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="打开新世界的大门">
+  <meta property="og:locale" content="zh-Hans">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="长夜">
+  <meta name="twitter:description" content="打开新世界的大门">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
     };
 
   </script>
-  <script type="text/javascript">
-    window.lazyScripts = [];
 
-  </script>
+  <link rel="canonical" href="https://peacecup.github.io/page/2/" />
+
+  <title> 长夜 </title>
 </head>
 
-<body>
-  <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <aside id="menu">
-    <div class="inner flex-row-vertical">
-      <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light"
-                                                                                      id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-      </a>
-      <div class="brand-wrap" style="background-image:url(/)">
-        <div class="brand">
-          <a href="/" class="avatar waves-effect waves-circle waves-light">
-            <img src="/img/avatar.jpg">
-          </a>
-          <hgroup class="introduce">
-            <h5 class="nickname">陈宁</h5>
-            <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">277133779@qq.com</a>
-          </hgroup>
+  <div class="container sidebar-position-right 
+   page-home 
+ ">
+    <div class="headband"></div>
 
-          <ul class="menu-link">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-            <li>
-              <a href="https://github.com/codefine" target="_blank">
-                <i class="icon icon-lg icon-github"></i>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
+
+            <p class="site-subtitle">I Want More！</p>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
               </a>
             </li>
 
           </ul>
 
-        </div>
-      </div>
-      <div class="scroll-wrap flex-col">
-        <ul class="nav">
+          <div class="site-search">
 
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              HOME
-            </a>
-          </li>
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-th-list"></i>
-              CATEGORIES
-            </a>
-          </li>
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              TAGS
-            </a>
-          </li>
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/archives">
-              <i class="icon icon-lg icon-archives"></i>
-              ARCHIVES
-            </a>
-          </li>
+          </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/custom">
-              <i class="icon icon-lg icon-plus-square"></i>
-              CUSTOM
-            </a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </aside>
-
-  <main id="main">
-    <header class="top-header" id="header">
-      <div class="flex-row clearfix">
-        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on"
-                                                                                        id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">
-          <span>长夜</span>
-
-          <span> - </span>
-          <span class="header-description">I Want More！</span>
-
-        </div>
-
-        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
-          <i class="icon icon-lg icon-search"></i>
-        </a>
+        </nav>
 
       </div>
     </header>
-    <header class="content-header index-header">
-      <div class="container fade-scale">
-        <h1 class="title">长夜</h1>
-        <h5 class="subtitle">
 
-          I Want More！
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
 
-        </h5>
+            <section id="posts" class="posts-expand">
 
-      </div>
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/AMD和CMD的区别/">
 
-    </header>
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
 
-    <div id="site_search">
-      <div class="search-title clearfix">
-        <span class="pull-left">
-          <i class="icon icon-lg icon-search"></i>
-        </span>
-        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..."
-                                                                                        class="form-control pull-left" />
-        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
-          <i class="icon icon-lg icon-close"></i>
-        </a>
-      </div>
-      <div id="local-search-result"></div>
-    </div>
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
 
-    <div class="container body-wrap">
-      <ul class="post-list">
+                <header class="post-header">
 
-        <li class="post-list-item fade">
-          <article id="post-problems/深复制和浅复制" class="article-card article-type-post" itemprop="blogPost">
+                  <h1 class="post-title" itemprop="name headline">
 
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/08/11/problems/深复制和浅复制/">深复制和浅复制</a>
-            </h3>
+                    <a class="post-title-link" href="/2017/08/11/problems/AMD和CMD的区别/" itemprop="url">
+                      AMD和CMD的区别
+                    </a>
 
-            <div class="post-meta">
-              <time class="post-time" title="2017-08-11 14:34:42" datetime="2017-08-11T06:34:42.000Z"
-                                                                                              itemprop="datePublished">2017-08-11</time>
+                  </h1>
 
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
-                </li>
-              </ul>
+                  <div class="post-meta">
+                    <span class="post-time">
 
-              <span id="/2017/08/11/problems/深复制和浅复制/" class="leancloud_visitors" data-flag-title="深复制和浅复制"
-                                                                                              title="深复制和浅复制">
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
 
-                <i class="icon icon-eye"></i>
+                      <span class="post-meta-item-text">发表于</span>
 
-                <span class="leancloud-visitors-count"></span>
-              </span>
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
+                        2017-08-11
+                      </time>
 
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/08/11/problems/深复制和浅复制/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/08/11/problems/深复制和浅复制/"></span>
-                </a>
-              </span>
+                    </span>
 
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
+                    <span class="post-category">
 
-              基础类型的值没有浅复制 基础类型的值不存在浅复制问题，基础类型的值都是按值访问的。 只有引用类型的值有浅复制，Object、function、Array都存在。
-              浅复制的几种情况 对引用类型直接采用赋值表达式赋给另一个对象。 var a = {name: &apos;cn&apos;} var
-              b = a； b == a // true ...
+                      <span class="post-meta-divider">|</span>
 
-              <a href="/2017/08/11/problems/深复制和浅复制/" class="post-more waves-effect waves-button">
-                more...
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">前端问题梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/08/11/problems/AMD和CMD的区别/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/AMD和CMD的区别/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。
+                  commonJS简单的定义了module.export 和require的封装和加载方 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/08/11/problems/AMD和CMD的区别/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/javascript的attributes和property的异同/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/08/11/problems/javascript的attributes和property的异同/"
+                                                                                                    itemprop="url">
+                      javascript的attributes和property的异同
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
+                        2017-08-11
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">前端问题梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/08/11/problems/javascript的attributes和property的异同/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/javascript的attributes和property的异同/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM
+                  Eleme ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/08/11/problems/javascript的attributes和property的异同/#more"
+                                                                                                    rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/js实现继承的方式/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/08/11/problems/js实现继承的方式/" itemprop="url">
+                      js实现继承的方式
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
+                        2017-08-11
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">前端问题梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/08/11/problems/js实现继承的方式/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/js实现继承的方式/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  js实现继承的方式 js实现继承的方式目前我知道的大体可以分为两类： es5通过原型链来实现继承，具体有构造函数继承、原型继承、组合构造函数和原型继承、寄生继承。寄生组合继承。
+                  es6使用class extend supper来实现继承 es5的继承方式 原型链 原型 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/08/11/problems/js实现继承的方式/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/11/problems/CSS  BFC/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/08/11/problems/CSS  BFC/" itemprop="url">
+                      CSS 流体特性和BFC
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T14:34:42+08:00">
+                        2017-08-11
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/前端问题梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">前端问题梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/08/11/problems/CSS  BFC/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/problems/CSS  BFC/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  块状元素的流体特性 html元素分为块级元素和内联元素，而块状元素在展示上具有流体特性，会像水一样自动流动填满整个空间，而内联元素则不会。 流体特性会被margin
+                  padding border等特性影响，也就是说流体特性 是针对于盒模型的content部分进行的。 BFC–块级格式 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/08/11/problems/CSS  BFC/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/08/02/s的事件循环机制（v8）（二）/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/08/02/s的事件循环机制（v8）（二）/" itemprop="url">
+                      js事件循环机制（二）
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T16:03:25+08:00">
+                        2017-08-02
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/javascript/" itemprop="url" rel="index">
+                          <span itemprop="name">javascript</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/08/02/s的事件循环机制（v8）（二）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/02/s的事件循环机制（v8）（二）/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  事件循环的另一种解释 jsvascript是单线程高级脚本语言，每个线程拥有唯一的一个事件循环。 jsvascript代码在执行过程中，除了通过函数调用栈来解决函数执行顺序外，还依靠任务队列来搞定另外一些代码的执行顺序。
+                  一个线程中，函数调用栈是唯 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/08/02/s的事件循环机制（v8）（二）/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/09/js的事件循环机制（v8）（一）/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/09/js的事件循环机制（v8）（一）/" itemprop="url">
+                      js事件循环机制（一）
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T16:02:25+08:00">
+                        2017-07-09
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/javascript/" itemprop="url" rel="index">
+                          <span itemprop="name">javascript</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/09/js的事件循环机制（v8）（一）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/09/js的事件循环机制（v8）（一）/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  问题 &nbsp;&nbsp;对于js事件循环机自会的理解不清楚，经常导致一些代码执行顺序上的混乱，js事件循环机制决定了代码的执行顺序，下面将对事件循环机制的规则进行总结。
+                  &nbsp;&nbsp;自己写的博客不是为了写教程，更多的个人总结，我总喜欢带入第三人的角度去写这些东西 事 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/09/js的事件循环机制（v8）（一）/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/09/es6总结/es6-Symbol/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/09/es6总结/es6-Symbol/" itemprop="url">
+                      es6-Symbol
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T14:51:42+08:00">
+                        2017-07-09
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6总结/" itemprop="url" rel="index">
+                          <span itemprop="name">es6总结</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/09/es6总结/es6-Symbol/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/09/es6总结/es6-Symbol/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  前言 &nbsp;&nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突
+                  ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/09/es6总结/es6-Symbol/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/08/es6总结/es6对象扩展/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/08/es6总结/es6对象扩展/" itemprop="url">
+                      es6-对象扩展
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T13:57:13+08:00">
+                        2017-07-08
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/08/es6总结/es6对象扩展/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/08/es6总结/es6对象扩展/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  基础回顾 &nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。 对象的属性和分为数据属性和访问器属性。 数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以
+                  ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/08/es6总结/es6对象扩展/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/07/es6总结/关于js递归的一个问题/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/07/es6总结/关于js递归的一个问题/" itemprop="url">
+                      关于js递归的一个问题
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T18:23:07+08:00">
+                        2017-07-07
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/javascript/" itemprop="url" rel="index">
+                          <span itemprop="name">javascript</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/07/es6总结/关于js递归的一个问题/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/07/es6总结/关于js递归的一个问题/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  发现的两个递归问题 之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：
+                  var isSquare = function(n){ function square(index = 0, ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/07/es6总结/关于js递归的一个问题/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/07/06/es6总结/函数的扩展（二）/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    <a class="post-title-link" href="/2017/07/06/es6总结/函数的扩展（二）/" itemprop="url">
+                      es6-函数扩展（二）
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T19:32:47+08:00">
+                        2017-07-06
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/es6知识梳理/" itemprop="url" rel="index">
+                          <span itemprop="name">es6知识梳理</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/07/06/es6总结/函数的扩展（二）/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/06/es6总结/函数的扩展（二）/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  箭头函数 箭头函数大大的简化了函数的写法，： var a = x =&gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：
+                  没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型 ...
+                  <!--noindex-->
+                  <div class="post-button text-center">
+                    <a class="btn" href="/2017/07/06/es6总结/函数的扩展（二）/#more" rel="contents">
+                      阅读全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-eof"></div>
+
+                </footer>
+              </article>
+
+            </section>
+
+            <nav class="pagination">
+              <a class="extend prev" rel="prev" href="/">
+                <i class="fa fa-angle-left"></i>
               </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/前端/">前端</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-problems/js  DOM事件模型" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/08/11/problems/js  DOM事件模型/">js DOM事件模型</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-08-11 14:34:42" datetime="2017-08-11T06:34:42.000Z"
-                                                                                              itemprop="datePublished">2017-08-11</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
-                </li>
-              </ul>
-
-              <span id="/2017/08/11/problems/js  DOM事件模型/" class="leancloud_visitors" data-flag-title="js  DOM事件模型"
-                                                                                              title="js  DOM事件模型">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/08/11/problems/js  DOM事件模型/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/08/11/problems/js  DOM事件模型/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              IE这个傻叉 像IE这么垃圾的浏览器总有一天会拖垮微软的windows系统，仗着自己和windows绑定的大市场份额，强行搞事，什么都有它一腿，什么标准碰到它都要搞另一套。
-              好好的事件模型，大家都按这个做不就好了，非要搞特殊，结果就是我非要花时间来总结一下这些用法的不同。 DOM事件 浏览器事件模型是按照赵观察者模式来执行的，为DOM节点元素创建事件监听器，监听浏览器事件，相...
-
-              <a href="/2017/08/11/problems/js  DOM事件模型/" class="post-more waves-effect waves-button">
-                more...
+              <a class="page-number" href="/">1</a>
+              <span class="page-number current">2</span>
+              <a class="page-number" href="/page/3/">3</a>
+              <a class="page-number" href="/page/4/">4</a>
+              <a class="extend next" rel="next" href="/page/3/">
+                <i class="fa fa-angle-right"></i>
               </a>
-            </div>
+            </nav>
 
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/前端/">前端</a>
-                </li>
-              </ul>
+          </div>
 
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-problems/AMD和CMD的区别" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/08/11/problems/AMD和CMD的区别/">AMD和CMD的区别</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-08-11 14:34:42" datetime="2017-08-11T06:34:42.000Z"
-                                                                                              itemprop="datePublished">2017-08-11</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
-                </li>
-              </ul>
-
-              <span id="/2017/08/11/problems/AMD和CMD的区别/" class="leancloud_visitors" data-flag-title="AMD和CMD的区别"
-                                                                                              title="AMD和CMD的区别">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/08/11/problems/AMD和CMD的区别/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/08/11/problems/AMD和CMD的区别/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              AMD 和CMD 和 CommonJS的不同？ 前端模块化经过了刀耕火种一步步前进，最后形成了利用函数自执行的闭包的方式来创建模块，基于这个原理，nodeJS中形成了第一套模块化的方案CommonJS。
-              commonJS简单的定义了module.export 和require的封装和加载方式 ，并且由于是服务器所以不需要要考虑异步加载的问题，只需要一直同步加载就可以完成任务。
-              ...
-
-              <a href="/2017/08/11/problems/AMD和CMD的区别/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/前端/">前端</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-problems/javascript的attributes和property的异同" class="article-card article-type-post"
-                                                                                          itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/08/11/problems/javascript的attributes和property的异同/">javascript的attributes和property的异同</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-08-11 14:34:42" datetime="2017-08-11T06:34:42.000Z"
-                                                                                              itemprop="datePublished">2017-08-11</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/前端问题梳理/">前端问题梳理</a>
-                </li>
-              </ul>
-
-              <span id="/2017/08/11/problems/javascript的attributes和property的异同/" class="leancloud_visitors"
-                                                                                              data-flag-title="javascript的attributes和property的异同" title="javascript的attributes和property的异同">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/08/11/problems/javascript的attributes和property的异同/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/08/11/problems/javascript的attributes和property的异同/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              javascript中attributes和property的异同? property用来保存DOM的特性，在javascript的DOM对象里其实是没有这个对象的。特性表示一个表单元素可能具有的一些特定属性，比如说id、class、name、value等，这些东西在创建DOM
-              Element元素的时候就会自动创建在元素上，这些就是property。 attributes是用来保...
-
-              <a href="/2017/08/11/problems/javascript的attributes和property的异同/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/前端/">前端</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-s的事件循环机制（v8）（二）" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/08/02/s的事件循环机制（v8）（二）/">js事件循环机制（二）</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-08-02 16:03:25" datetime="2017-08-02T08:03:25.000Z"
-                                                                                              itemprop="datePublished">2017-08-02</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/javascript/">javascript</a>
-                </li>
-              </ul>
-
-              <span id="/2017/08/02/s的事件循环机制（v8）（二）/" class="leancloud_visitors" data-flag-title="js事件循环机制（二）"
-                                                                                              title="js事件循环机制（二）">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/08/02/s的事件循环机制（v8）（二）/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/08/02/s的事件循环机制（v8）（二）/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              事件循环的另一种解释 jsvascript是单线程高级脚本语言，每个线程拥有唯一的一个事件循环。 jsvascript代码在执行过程中，除了通过函数调用栈来解决函数执行顺序外，还依靠任务队列来搞定另外一些代码的执行顺序。
-              一个线程中，函数调用栈是唯一的，事件循环是唯一的，任务队列可以有多个。 任务队列又分为mocro-tasks（宏任务...
-
-              <a href="/2017/08/02/s的事件循环机制（v8）（二）/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/javascript/">javascript</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-js的事件循环机制（v8）（一）" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/07/09/js的事件循环机制（v8）（一）/">js事件循环机制（一）</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-07-09 16:02:25" datetime="2017-07-09T08:02:25.000Z"
-                                                                                              itemprop="datePublished">2017-07-09</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/javascript/">javascript</a>
-                </li>
-              </ul>
-
-              <span id="/2017/07/09/js的事件循环机制（v8）（一）/" class="leancloud_visitors" data-flag-title="js事件循环机制（一）"
-                                                                                              title="js事件循环机制（一）">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/07/09/js的事件循环机制（v8）（一）/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/07/09/js的事件循环机制（v8）（一）/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              问题 &nbsp;&nbsp;对于js事件循环机自会的理解不清楚，经常导致一些代码执行顺序上的混乱，js事件循环机制决定了代码的执行顺序，下面将对事件循环机制的规则进行总结。
-              &nbsp;&nbsp;自己写的博客不是为了写教程，更多的个人总结，我总喜欢带入第三人的角度去写这些东西 事件循环 &nbsp;&nbsp;
-              什么是js事件循环呢 我在网上看到的博文，我也不知道...
-
-              <a href="/2017/07/09/js的事件循环机制（v8）（一）/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/javascript/">javascript</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-es6总结/es6-Symbol" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/07/09/es6总结/es6-Symbol/">es6-Symbol</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-07-09 14:51:42" datetime="2017-07-09T06:51:42.000Z"
-                                                                                              itemprop="datePublished">2017-07-09</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/es6总结/">es6总结</a>
-                </li>
-              </ul>
-
-              <span id="/2017/07/09/es6总结/es6-Symbol/" class="leancloud_visitors" data-flag-title="es6-Symbol"
-                                                                                              title="es6-Symbol">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/07/09/es6总结/es6-Symbol/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/07/09/es6总结/es6-Symbol/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              前言 &nbsp;&nbsp;现代前端编写js代码ed时候，经常要使用来自其他源的对象，有时候我们要给对象扩充属性方法，但是es5按照名称来区分属性的方式会很容易导致属性名冲突，es6引入了Symbol基础类型来解决这个问题，使用Symbol创建的属性名是唯一的，永远不会和其他属性名冲突
-              Symbol是es新的基础类型之一 &nbsp;&nbsp;以前es有5种基本类型，Unde...
-
-              <a href="/2017/07/09/es6总结/es6-Symbol/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/es6/">es6</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-es6总结/es6对象扩展" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/07/08/es6总结/es6对象扩展/">es6-对象扩展</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-07-08 13:57:13" datetime="2017-07-08T05:57:13.000Z"
-                                                                                              itemprop="datePublished">2017-07-08</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/es6知识梳理/">es6知识梳理</a>
-                </li>
-              </ul>
-
-              <span id="/2017/07/08/es6总结/es6对象扩展/" class="leancloud_visitors" data-flag-title="es6-对象扩展"
-                                                                                              title="es6-对象扩展">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/07/08/es6总结/es6对象扩展/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/07/08/es6总结/es6对象扩展/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              基础回顾 &nbsp;&nbsp;在js高级程序设计中已经知道了关于对象的一些定义和特性，对象是无序的属性的集合。 对象的属性和分为数据属性和访问器属性。 数据特性有value、configurable（能否被配置除）、writable（是否只读）、enumerable（是否可以被枚举遍历出来）
-              访问器特性有get、set、configurable、enumerabl...
-
-              <a href="/2017/07/08/es6总结/es6对象扩展/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/es6/">es6</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-es6总结/关于js递归的一个问题" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/07/07/es6总结/关于js递归的一个问题/">关于js递归的一个问题</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-07-07 18:23:07" datetime="2017-07-07T10:23:07.000Z"
-                                                                                              itemprop="datePublished">2017-07-07</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/javascript/">javascript</a>
-                </li>
-              </ul>
-
-              <span id="/2017/07/07/es6总结/关于js递归的一个问题/" class="leancloud_visitors" data-flag-title="关于js递归的一个问题"
-                                                                                              title="关于js递归的一个问题">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/07/07/es6总结/关于js递归的一个问题/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/07/07/es6总结/关于js递归的一个问题/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              发现的两个递归问题 之前学习了es6递归的尾调用优化了，刚好在codewars刷题的时候就遇到了一个判断任意数是否是平方数的问题，正好利用递归来完成这个题目，原来的代码如下：
-              var isSquare = function(n){ function square(index = 0,n){ var res =
-              index*index; if(r...
-
-              <a href="/2017/07/07/es6总结/关于js递归的一个问题/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/javascript/">javascript</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-        <li class="post-list-item fade">
-          <article id="post-es6总结/函数的扩展（二）" class="article-card article-type-post" itemprop="blogPost">
-
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/07/06/es6总结/函数的扩展（二）/">es6-函数扩展（二）</a>
-            </h3>
-
-            <div class="post-meta">
-              <time class="post-time" title="2017-07-06 19:32:47" datetime="2017-07-06T11:32:47.000Z"
-                                                                                              itemprop="datePublished">2017-07-06</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/es6知识梳理/">es6知识梳理</a>
-                </li>
-              </ul>
-
-              <span id="/2017/07/06/es6总结/函数的扩展（二）/" class="leancloud_visitors" data-flag-title="es6-函数扩展（二）"
-                                                                                              title="es6-函数扩展（二）">
-
-                <i class="icon icon-eye"></i>
-
-                <span class="leancloud-visitors-count"></span>
-              </span>
-
-              <span>
-                <i class="icon icon-comment-o"></i>
-                <a href="/2017/07/06/es6总结/函数的扩展（二）/#comment">
-                  <span class="valine-comment-count" data-xid="/2017/07/06/es6总结/函数的扩展（二）/"></span>
-                </a>
-              </span>
-
-            </div>
-            <div class="post-content" id="post-content" itemprop="postContent">
-
-              箭头函数 箭头函数大大的简化了函数的写法，： var a = x =&gt; x*x; 箭头函数省去了function声明，省略了参数的写法，省略了返回的写法，有下面几个规则：
-              没有或者有多个参数，需要使用（）将参数包裹起来，只有一个参数则不用 如果箭头函数直接返回一个基础类型的值，则不需要使用{}，如果直接返回一个对象，那么需要使用（）括起来
-              箭头函数的函数体按照...
-
-              <a href="/2017/07/06/es6总结/函数的扩展（二）/" class="post-more waves-effect waves-button">
-                more...
-              </a>
-            </div>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/es6/">es6</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-
-        </li>
-
-      </ul>
-      <nav id="page-nav">
-        <div class="inner">
-          <a class="extend prev" rel="prev" href="/">上一页</a>
-          <a class="page-number" href="/">1</a>
-          <span class="page-number current">2</span>
-          <a class="page-number" href="/page/3/">3</a>
-          <a class="page-number" href="/page/4/">4</a>
-          <a class="extend next" rel="next" href="/page/3/">下一页</a>
         </div>
-      </nav>
 
-    </div>
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
 
-    <footer class="footer">
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
 
-      <div class="top">
+            <section class="site-overview sidebar-panel sidebar-panel-active">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
 
-        <p>
-          <span>Links：</span>
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
 
-          <span class="blogroll-item">
-            <a href="https://www.github.com" target="_blank">github</a>
-          </span>
+              </div>
+              <nav class="site-state motion-element">
 
-          <span class="blogroll-item">
-            <a href="https://www.gitee.com" target="_blank">gitee</a>
-          </span>
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
 
-          <span class="blogroll-item">
-            <a href="https://www.coding.net" target="_blank">coding</a>
-          </span>
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
 
-        </p>
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
+                    <i class="fa fa-fw fa-zhihu"></i>
+
+                    知乎
+                  </a>
+                </span>
+
+              </div>
+
+            </section>
+
+          </div>
+        </aside>
 
       </div>
+    </main>
 
-      <div class="bottom">
-        <p>
-          <span>
-            陈宁 &copy; 2017
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
           </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-          <span>
-            Power by
-            <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-            <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
-          </span>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-        </p>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
+
       </div>
     </footer>
 
-  </main>
-  <div class="mask" id="mask"></div>
-  <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light">
-    <span class="icon icon-lg icon-chevron-up"></span>
-  </a>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
 
-  <div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
+    </div>
 
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://peacecup.github.io/page/2/&title=长夜&pic=https://peacecup.github.io/img/avatar.jpg"
-                                                                                        data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://peacecup.github.io/page/2/&title=长夜&source=打开新世界的大门"
-                                                                                        data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-
-    </ul>
   </div>
 
-  <div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;">
-      <i class="icon icon-close"></i>
-    </a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://peacecup.github.io/page/2/"
-                                                                                    alt="微信分享二维码">
-  </div>
-
-  <!-- main-js -->
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/plugins/fastclick.js?v=1.0.7"></script>
-
-  <script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-
-  <script type="text/javascript" src="/js/method.js?v=1.0.7"></script>
-  <script type="text/javascript" src="/js/blog.js?v=1.0.7"></script>
-
-  <!-- third-party -->
-
-  <script type="text/javascript" src="/js/plugins/local_search.js?v=1.0.7"></script>
   <script type="text/javascript">
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
     }
-    var path = "/" + search_path;
-    searchFunc(path, "local-search-input", "local-search-result");
 
   </script>
 
-  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <script type="text/javascript" src="/js/plugins/valine.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  <!-- mathjax config similar to math.stackexchange -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes:
-    true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-    });
-  </script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i
-    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
-                                                                                    ; } }); </script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
+
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
 </body>
 

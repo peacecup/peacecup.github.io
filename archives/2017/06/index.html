@@ -1,433 +1,503 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
-  <title>Archives: 2017/6 | 长夜 | I Want More！</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  <meta name="keywords" content="undefined">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css?v=1.0.7">
-  <script type="text/javascript">
-    // Data Center
-    var DC = {
-      reward: false,
-      lv: JSON.parse(
-        '{"enable":true,"app_id":null,"app_key":null,"icon":true}'),
-      v: JSON.parse(
-        '{"enable":true,"appid":null,"appkey":null,"notify":false,"verify":false,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'
-      )
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
+
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+  <meta name="description" content="打开新世界的大门">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="长夜">
+  <meta property="og:url" content="https://peacecup.github.io/archives/2017/06/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="打开新世界的大门">
+  <meta property="og:locale" content="zh-Hans">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="长夜">
+  <meta name="twitter:description" content="打开新世界的大门">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
     };
 
   </script>
-  <script type="text/javascript">
-    window.lazyScripts = [];
 
-  </script>
+  <link rel="canonical" href="https://peacecup.github.io/archives/2017/06/" />
+
+  <title> 归档 | 长夜 </title>
 </head>
 
-<body>
-  <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <aside id="menu">
-    <div class="inner flex-row-vertical">
-      <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light"
-                                                                                      id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-      </a>
-      <div class="brand-wrap" style="background-image:url(/)">
-        <div class="brand">
-          <a href="/" class="avatar waves-effect waves-circle waves-light">
-            <img src="/img/avatar.jpg">
-          </a>
-          <hgroup class="introduce">
-            <h5 class="nickname">陈宁</h5>
-            <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">277133779@qq.com</a>
-          </hgroup>
+  <div class="container sidebar-position-right  page-archive  ">
+    <div class="headband"></div>
 
-          <ul class="menu-link">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-            <li>
-              <a href="https://github.com/codefine" target="_blank">
-                <i class="icon icon-lg icon-github"></i>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
+
+            <p class="site-subtitle">I Want More！</p>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
               </a>
             </li>
 
           </ul>
 
-        </div>
-      </div>
-      <div class="scroll-wrap flex-col">
-        <ul class="nav">
+          <div class="site-search">
 
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              HOME
-            </a>
-          </li>
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-th-list"></i>
-              CATEGORIES
-            </a>
-          </li>
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              TAGS
-            </a>
-          </li>
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
 
-          <li class="waves-block waves-effect active">
-            <a href="/archives">
-              <i class="icon icon-lg icon-archives"></i>
-              ARCHIVES
-            </a>
-          </li>
+          </div>
 
-          <li class="waves-block waves-effect">
-            <a href="/custom">
-              <i class="icon icon-lg icon-plus-square"></i>
-              CUSTOM
-            </a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </aside>
-
-  <main id="main">
-    <header class="top-header" id="header">
-      <div class="flex-row clearfix">
-        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on"
-                                                                                        id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">
-          <span>Archives</span>
-
-        </div>
-
-        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
-          <i class="icon icon-lg icon-search"></i>
-        </a>
+        </nav>
 
       </div>
     </header>
-    <header class="content-header archives-header">
-      <div class="container fade-scale">
-        <h1 class="title">Archives</h1>
-        <h5 class="subtitle">
 
-        </h5>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
 
-        <div class="remind">
-          <p>总计文章(
-            <span>32</span>)篇，约(
-            <span>63.3K</span>)字</p>
-          <p>Keep moving😎!!!</p>
+            <section id="posts" class="posts-collapse">
+              <span class="archive-move-on"></span>
+
+              <span class="archive-page-counter">
+
+                OK! 目前共计 32 篇日志。 继续努力。
+              </span>
+
+              <div class="collection-title">
+                <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+              </div>
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                <header class="post-header">
+
+                  <h1 class="post-title">
+
+                    <a class="post-title-link" href="/2017/06/15/react入门级基础知识（干货）/" itemprop="url">
+
+                      <span itemprop="name">react入门级教程（一）</span>
+
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <time class="post-time" itemprop="dateCreated" datetime="2017-06-15T10:03:43+08:00"
+                                                                                                    content="2017-06-15">
+                      06-15
+                    </time>
+                  </div>
+
+                </header>
+              </article>
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                <header class="post-header">
+
+                  <h1 class="post-title">
+
+                    <a class="post-title-link" href="/2017/06/07/fetch相关概念/" itemprop="url">
+
+                      <span itemprop="name">DOM新API fetch</span>
+
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <time class="post-time" itemprop="dateCreated" datetime="2017-06-07T09:49:36+08:00"
+                                                                                                    content="2017-06-07">
+                      06-07
+                    </time>
+                  </div>
+
+                </header>
+              </article>
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                <header class="post-header">
+
+                  <h1 class="post-title">
+
+                    <a class="post-title-link" href="/2017/06/05/javascript数据类型/" itemprop="url">
+
+                      <span itemprop="name">JS typeof总结---6种数据类型</span>
+
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <time class="post-time" itemprop="dateCreated" datetime="2017-06-05T17:07:30+08:00"
+                                                                                                    content="2017-06-05">
+                      06-05
+                    </time>
+                  </div>
+
+                </header>
+              </article>
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                <header class="post-header">
+
+                  <h1 class="post-title">
+
+                    <a class="post-title-link" href="/2017/06/02/axios笔记/" itemprop="url">
+
+                      <span itemprop="name">axios随笔</span>
+
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <time class="post-time" itemprop="dateCreated" datetime="2017-06-02T15:59:59+08:00"
+                                                                                                    content="2017-06-02">
+                      06-02
+                    </time>
+                  </div>
+
+                </header>
+              </article>
+
+              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                <header class="post-header">
+
+                  <h1 class="post-title">
+
+                    <a class="post-title-link" href="/2017/06/01/无标题Markdown/" itemprop="url">
+
+                      <span itemprop="name">个人总结</span>
+
+                    </a>
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <time class="post-time" itemprop="dateCreated" datetime="2017-06-01T16:45:42+08:00"
+                                                                                                    content="2017-06-01">
+                      06-01
+                    </time>
+                  </div>
+
+                </header>
+              </article>
+
+            </section>
+
+          </div>
+
         </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <section class="site-overview sidebar-panel sidebar-panel-active">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
+
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
+                    <i class="fa fa-fw fa-zhihu"></i>
+
+                    知乎
+                  </a>
+                </span>
+
+              </div>
+
+            </section>
+
+          </div>
+        </aside>
 
       </div>
+    </main>
 
-    </header>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
 
-    <div id="site_search">
-      <div class="search-title clearfix">
-        <span class="pull-left">
-          <i class="icon icon-lg icon-search"></i>
-        </span>
-        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..."
-                                                                                        class="form-control pull-left" />
-        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
-          <i class="icon icon-lg icon-close"></i>
-        </a>
-      </div>
-      <div id="local-search-result"></div>
-    </div>
-
-    <div class="container body-wrap fade">
-
-      <h3 class="archive-separator">June, 2017</h3>
-      <div class="waterfall">
-
-        <div class="waterfall-item">
-          <article class="article-card archive-article">
-            <div class="post-meta">
-              <time class="post-time" title="2017-06-15 10:03:43" datetime="2017-06-15T02:03:43.000Z"
-                                                                                              itemprop="datePublished">2017-06-15</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/react/">react</a>
-                </li>
-              </ul>
-
-            </div>
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/06/15/react入门级基础知识（干货）/">react入门级教程（一）</a>
-            </h3>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/react/">react</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
         </div>
 
-        <div class="waterfall-item">
-          <article class="article-card archive-article">
-            <div class="post-meta">
-              <time class="post-time" title="2017-06-07 09:49:36" datetime="2017-06-07T01:49:36.040Z"
-                                                                                              itemprop="datePublished">2017-06-07</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/js基础/">js基础</a>
-                </li>
-              </ul>
-
-            </div>
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/06/07/fetch相关概念/">DOM新API fetch</a>
-            </h3>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/js基础/">js基础</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
         </div>
 
-        <div class="waterfall-item">
-          <article class="article-card archive-article">
-            <div class="post-meta">
-              <time class="post-time" title="2017-06-05 17:07:30" datetime="2017-06-05T09:07:30.999Z"
-                                                                                              itemprop="datePublished">2017-06-05</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/js基础/">js基础</a>
-                </li>
-              </ul>
-
-            </div>
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/06/05/javascript数据类型/">JS typeof总结---6种数据类型</a>
-            </h3>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/js/">js</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
         </div>
 
-        <div class="waterfall-item">
-          <article class="article-card archive-article">
-            <div class="post-meta">
-              <time class="post-time" title="2017-06-02 15:59:59" datetime="2017-06-02T07:59:59.841Z"
-                                                                                              itemprop="datePublished">2017-06-02</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/HTTP-axios/">-- HTTP -- axios</a>
-                </li>
-              </ul>
-
-            </div>
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/06/02/axios笔记/">axios随笔</a>
-            </h3>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/axios/">axios</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-        </div>
-
-        <div class="waterfall-item">
-          <article class="article-card archive-article">
-            <div class="post-meta">
-              <time class="post-time" title="2017-06-01 16:45:42" datetime="2017-06-01T08:45:42.000Z"
-                                                                                              itemprop="datePublished">2017-06-01</time>
-
-              <ul class="article-category-list">
-                <li class="article-category-list-item">
-                  <a class="article-category-list-link" href="/categories/个人总结/">个人总结</a>
-                </li>
-              </ul>
-
-            </div>
-            <h3 class="post-title" itemprop="name">
-              <a class="post-title-link" href="/2017/06/01/无标题Markdown/">个人总结</a>
-            </h3>
-
-            <div class="post-footer">
-              <ul class="article-tag-list">
-                <li class="article-tag-list-item">
-                  <a class="article-tag-list-link" href="/tags/总结/">总结</a>
-                </li>
-              </ul>
-
-            </div>
-
-          </article>
-        </div>
-
-      </div>
-
-    </div>
-
-    <footer class="footer">
-
-      <div class="top">
-
-        <p>
-          <span>Links：</span>
-
-          <span class="blogroll-item">
-            <a href="https://www.github.com" target="_blank">github</a>
-          </span>
-
-          <span class="blogroll-item">
-            <a href="https://www.gitee.com" target="_blank">gitee</a>
-          </span>
-
-          <span class="blogroll-item">
-            <a href="https://www.coding.net" target="_blank">coding</a>
-          </span>
-
-        </p>
-
-      </div>
-
-      <div class="bottom">
-        <p>
-          <span>
-            陈宁 &copy; 2017
-          </span>
-
-          <span>
-            Power by
-            <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-            <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
-          </span>
-
-        </p>
       </div>
     </footer>
 
-  </main>
-  <div class="mask" id="mask"></div>
-  <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light">
-    <span class="icon icon-lg icon-chevron-up"></span>
-  </a>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
 
-  <div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
+    </div>
 
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://peacecup.github.io/archives/2017/06/&title=长夜&pic=https://peacecup.github.io/img/avatar.jpg"
-                                                                                        data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://peacecup.github.io/archives/2017/06/&title=长夜&source=打开新世界的大门"
-                                                                                        data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-
-    </ul>
   </div>
 
-  <div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;">
-      <i class="icon icon-close"></i>
-    </a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://peacecup.github.io/archives/2017/06/"
-                                                                                    alt="微信分享二维码">
-  </div>
-
-  <!-- main-js -->
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/plugins/fastclick.js?v=1.0.7"></script>
-
-  <script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-
-  <script type="text/javascript" src="/js/method.js?v=1.0.7"></script>
-  <script type="text/javascript" src="/js/blog.js?v=1.0.7"></script>
-
-  <!-- third-party -->
-
-  <script type="text/javascript" src="/js/plugins/local_search.js?v=1.0.7"></script>
   <script type="text/javascript">
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
     }
-    var path = "/" + search_path;
-    searchFunc(path, "local-search-input", "local-search-result");
 
   </script>
 
-  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <script type="text/javascript" src="/js/plugins/valine.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  <!-- mathjax config similar to math.stackexchange -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes:
-    true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-    });
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+  <script type="text/javascript" id="motion.page.archive">
+    $('.archive-year').velocity('transition.slideLeftIn');
+
   </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i
-    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
-                                                                                    ; } }); </script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
-      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
+
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
 </body>
 

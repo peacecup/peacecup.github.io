@@ -1,602 +1,730 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
 
-  <title>JS typeof总结---6种数据类型 | 长夜 | I Want More！</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
+
+  <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+  <meta name="keywords" content="js," />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+  <meta name="description" content="前言 &amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？   js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象">
   <meta name="keywords" content="js">
-  <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css?v=1.0.7">
-  <script type="text/javascript">
-    // Data Center
-    var DC = {
-      reward: true,
-      lv: JSON.parse(
-        '{"enable":true,"app_id":null,"app_key":null,"icon":true}'),
-      v: JSON.parse(
-        '{"enable":true,"appid":null,"appkey":null,"notify":false,"verify":false,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'
-      )
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="JS typeof总结---6种数据类型">
+  <meta property="og:url" content="https://peacecup.github.io/2017/06/05/javascript数据类型/index.html">
+  <meta property="og:site_name" content="长夜">
+  <meta property="og:description" content="前言 &amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？   js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因">
+  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:updated_time" content="2017-07-07T06:04:22.340Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JS typeof总结---6种数据类型">
+  <meta name="twitter:description" content="前言 &amp;emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？   js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Mist',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": false,
+        "scrollpercent": false
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
     };
 
   </script>
-  <script type="text/javascript">
-    window.lazyScripts = [];
 
-  </script>
+  <link rel="canonical" href="https://peacecup.github.io/2017/06/05/javascript数据类型/"
+  />
+
+  <title> JS typeof总结---6种数据类型 | 长夜 </title>
 </head>
 
-<body>
-  <div id="loading" class="active"></div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <aside id="menu" class="hide">
-    <div class="inner flex-row-vertical">
-      <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light"
-                                                                                      id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-      </a>
-      <div class="brand-wrap" style="background-image:url(/)">
-        <div class="brand">
-          <a href="/" class="avatar waves-effect waves-circle waves-light">
-            <img src="/img/avatar.jpg">
-          </a>
-          <hgroup class="introduce">
-            <h5 class="nickname">陈宁</h5>
-            <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">277133779@qq.com</a>
-          </hgroup>
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
 
-          <ul class="menu-link">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
 
-            <li>
-              <a href="https://github.com/codefine" target="_blank">
-                <i class="icon icon-lg icon-github"></i>
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">长夜</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
               </a>
-            </li>
+            </div>
 
-          </ul>
-
-        </div>
-      </div>
-      <div class="scroll-wrap flex-col">
-        <ul class="nav">
-
-          <li class="waves-block waves-effect">
-            <a href="/">
-              <i class="icon icon-lg icon-home"></i>
-              HOME
-            </a>
-          </li>
-
-          <li class="waves-block waves-effect">
-            <a href="/categories">
-              <i class="icon icon-lg icon-th-list"></i>
-              CATEGORIES
-            </a>
-          </li>
-
-          <li class="waves-block waves-effect">
-            <a href="/tags">
-              <i class="icon icon-lg icon-tags"></i>
-              TAGS
-            </a>
-          </li>
-
-          <li class="waves-block waves-effect">
-            <a href="/archives">
-              <i class="icon icon-lg icon-archives"></i>
-              ARCHIVES
-            </a>
-          </li>
-
-          <li class="waves-block waves-effect">
-            <a href="/custom">
-              <i class="icon icon-lg icon-plus-square"></i>
-              CUSTOM
-            </a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </aside>
-
-  <main id="main">
-    <header class="top-header" id="header">
-      <div class="flex-row clearfix">
-        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on"
-                                                                                        id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">
-          <span>JS typeof总结---6种数据类型</span>
-
-        </div>
-
-        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
-          <i class="icon icon-lg icon-search"></i>
-        </a>
-
-      </div>
-    </header>
-    <header class="content-header post-header">
-      <div class="container fade-scale">
-        <h1 class="title">JS typeof总结---6种数据类型</h1>
-        <h5 class="subtitle">
-
-          <time datetime="2017-06-05T09:07:30.999Z" itemprop="datePublished" class="page-time">
-            2017-06-05
-          </time>
-
-          <ul class="article-category-list">
-            <li class="article-category-list-item">
-              <a class="article-category-list-link" href="/categories/js基础/">js基础</a>
-            </li>
-          </ul>
-
-        </h5>
-
-      </div>
-
-    </header>
-
-    <div id="site_search">
-      <div class="search-title clearfix">
-        <span class="pull-left">
-          <i class="icon icon-lg icon-search"></i>
-        </span>
-        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..."
-                                                                                        class="form-control pull-left" />
-        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
-          <i class="icon icon-lg icon-close"></i>
-        </a>
-      </div>
-      <div id="local-search-result"></div>
-    </div>
-
-    <div class="container body-wrap">
-      <article id="post-javascript数据类型" class="post-article article-type-post fade" itemprop="blogPost">
-        <div class="post-card">
-          <h1 class="post-card-title">JS typeof总结---6种数据类型</h1>
-          <div class="post-meta">
-            <time class="post-time" title="2017-06-05 17:07:30" datetime="2017-06-05T09:07:30.999Z"
-                                                                                            itemprop="datePublished">2017-06-05</time>
-
-            <ul class="article-category-list">
-              <li class="article-category-list-item">
-                <a class="article-category-list-link" href="/categories/js基础/">js基础</a>
-              </li>
-            </ul>
-
-            <span id="/2017/06/05/javascript数据类型/" class="leancloud_visitors" data-flag-title="JS typeof总结---6种数据类型"
-                                                                                            title="JS typeof总结---6种数据类型">
-
-              <i class="icon icon-eye"></i>
-
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-            <span>
-              <i class="icon icon-comment-o"></i>
-              <a href="/2017/06/05/javascript数据类型/#comment">
-                <span class="valine-comment-count" data-xid="/2017/06/05/javascript数据类型/"></span>
-              </a>
-            </span>
+            <p class="site-subtitle">I Want More！</p>
 
           </div>
-          <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="前言">
-              <a href="#前言" class="headerlink" title="前言"></a>前言</h3>
-            <p>&emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？
-              <br>js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeof会返回7种值。</p>
-            <h3 id="js五种基本数据类型">
-              <a href="#js五种基本数据类型" class="headerlink" title="js五种基本数据类型"></a>js五种基本数据类型</h3>
-            <p>js有5种基本数据类型undefined、null、boolean、string、number，下面一一说明: </p>
-            <h4 id="1、Undefined">
-              <a href="#1、Undefined" class="headerlink" title="1、Undefined"></a>1、Undefined</h4>
-            <p>Undefined作为基本类型的意义，意如其名，未定义,Undefined作为变量的基本类型，是针对变量来说的，因此默认变量已经存在。 </p>
-            <h5 id="在ECMAScript里，Undefiend只有一个值，即特殊的undefiend">
-              <a href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend" class="headerlink" title="在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"></a>在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</h5>
-            <h5 id="在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量">
-              <a href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量" class="headerlink" title="在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"></a>在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</h5>
-            <pre><code>var a;
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-sitemap">
+              <a href="/sitemap.xml" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-sitemap"></i>
+                <br /> 站点地图
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-commonweal">
+              <a href="/404.html" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                <br /> 公益404
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="algolia-popup popup search-popup">
+              <div class="algolia-search">
+                <div class="algolia-search-input-icon">
+                  <i class="fa fa-search"></i>
+                </div>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+              </div>
+
+              <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+              </div>
+
+              <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+              </span>
+            </div>
+
+          </div>
+
+        </nav>
+
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+            <div id="posts" class="posts-expand">
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="https://peacecup.github.io/2017/06/05/javascript数据类型/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="陈宁">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="长夜">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">
+
+                    JS typeof总结---6种数据类型
+
+                  </h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-05T17:07:30+08:00">
+                        2017-06-05
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/js基础/" itemprop="url" rel="index">
+                          <span itemprop="name">js基础</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-comments-count">
+                      <span class="post-meta-divider">|</span>
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                      <a href="/2017/06/05/javascript数据类型/#comments" itemprop="discussionUrl">
+                        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/05/javascript数据类型/"
+                                                                                                        itemprop="commentCount"></span>
+                      </a>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+
+                  <h3 id="前言">
+                    <a href="#前言" class="headerlink" title="前言"></a>前言</h3>
+                  <p>&emsp;为什么要写这个东西？因为typeof总是返回一些乱七八糟的词啊，各种基本数据类型莫名其妙的相等！不总结一下不行了？那么，typeof究竟会返回哪些值呢？
+                    <br>js有5种基本类型Undefined、Null、Boolean、String、Number，一种复杂类型Object，函数本质是一个对象，但是函数由于它在js中的特殊性，也需要从其他对象中被区分出来function，因此，typeof会返回7种值。</p>
+                  <h3 id="js五种基本数据类型">
+                    <a href="#js五种基本数据类型" class="headerlink" title="js五种基本数据类型"></a>js五种基本数据类型</h3>
+                  <p>js有5种基本数据类型undefined、null、boolean、string、number，下面一一说明: </p>
+                  <h4 id="1、Undefined">
+                    <a href="#1、Undefined" class="headerlink" title="1、Undefined"></a>1、Undefined</h4>
+                  <p>Undefined作为基本类型的意义，意如其名，未定义,Undefined作为变量的基本类型，是针对变量来说的，因此默认变量已经存在。
+                    </p>
+                  <h5 id="在ECMAScript里，Undefiend只有一个值，即特殊的undefiend">
+                    <a href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend" class="headerlink" title="在ECMAScript里，Undefiend只有一个值，即特殊的undefiend"></a>在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</h5>
+                  <h5 id="在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量">
+                    <a href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量" class="headerlink" title="在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量"></a>在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</h5>
+                  <pre><code>var a;
 a == undefined// true
 typeof a//&apos;undefined&apos;
 </code></pre>
-            <p>我们考虑的是：什么样的变量 typeof会返回‘undefined’
-              <br>按照上面的定义，未初始化的变量会返回undefined；还有一种特殊情况也会返回undefined，那就是未声明变量 </p>
-            <pre><code>typeof b//&apos;undefined&apos;
+                  <p>我们考虑的是：什么样的变量 typeof会返回‘undefined’
+                    <br>按照上面的定义，未初始化的变量会返回undefined；还有一种特殊情况也会返回undefined，那就是未声明变量 </p>
+                  <pre><code>typeof b//&apos;undefined&apos;
 b == &apos;undefined&apos; // 会报错
 </code></pre>
-            <p>这里我们要分清楚三个概念:</p>
-            <ul>
-              <li>变量是否已定义</li>
-              <li>变量类型</li>
-              <li>变量的值 </li>
-            </ul>
-            <p>再结合typeof就不难理解为什么只有未初始化的变量值为undefined，而未定义和未初始化的变量数据类型都为Undefined。未定义的变量本来就不存在，把他归为Undefined变量只是为了更好的区分。</p>
-            <h5 id="因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在">
-              <a href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在" class="headerlink" title="因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"></a>因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</h5>
-            <h4 id="2、Null">
-              <a href="#2、Null" class="headerlink" title="2、Null"></a>2、Null</h4>
-            <p>&emsp;Null和Undefined类似，表示为空，但是在js里，为空是什么意思呢？ </p>
-            <h5 id="在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针">
-              <a href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针" class="headerlink"
-                                                                                              title="在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"></a>在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</h5>
-            <pre><code>var a = null;
+                  <p>这里我们要分清楚三个概念:</p>
+                  <ul>
+                    <li>变量是否已定义</li>
+                    <li>变量类型</li>
+                    <li>变量的值 </li>
+                  </ul>
+                  <p>再结合typeof就不难理解为什么只有未初始化的变量值为undefined，而未定义和未初始化的变量数据类型都为Undefined。未定义的变量本来就不存在，把他归为Undefined变量只是为了更好的区分。</p>
+                  <h5 id="因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在">
+                    <a href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在" class="headerlink" title="因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在"></a>因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</h5>
+                  <h4 id="2、Null">
+                    <a href="#2、Null" class="headerlink" title="2、Null"></a>2、Null</h4>
+                  <p>&emsp;Null和Undefined类似，表示为空，但是在js里，为空是什么意思呢？ </p>
+                  <h5 id="在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针">
+                    <a href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针" class="headerlink"
+                                                                                                    title="在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针"></a>在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</h5>
+                  <pre><code>var a = null;
 typeof a //&apos;object&apos;
 typeof null // &apos;object&apos;
 </code></pre>
-            <p>也就是说null表示一个没有指向的对象指针，这样我们就可以理解了。</p>
-            <p>这样看来，null和undefined其实并没有太大的区别，赋值一个空的对象指针null和赋值一个undefined，看起来没有区别，而且实际上
-            </p>
-            <pre><code>null == undefined// true
+                  <p>也就是说null表示一个没有指向的对象指针，这样我们就可以理解了。</p>
+                  <p>这样看来，null和undefined其实并没有太大的区别，赋值一个空的对象指针null和赋值一个undefined，看起来没有区别，而且实际上
+                    </p>
+                  <pre><code>null == undefined// true
 undefined == null//true
 </code></pre>
-            <p>更过分的是： </p>
-            <pre><code>var a = null;
+                  <p>更过分的是： </p>
+                  <pre><code>var a = null;
 a == undefined // true
 var b;
 b == undefined // true
 //这个最过分
 a == b //true，竟然是true，但是也引发出了一个大的猜想：在变量还没有被赋予实际值的时候，所有变量的值都是一样的，不一样的只有类型
 </code></pre>
-            <p>这两个值还真的是相等的，每次看到这里肯定就已经绕进去了。。。。这两个基本属性在搞什么呀，乱七八糟，莫名其妙。
-              <br>非要总结一下规则的话,可以说，这两种基本类型是一样的，一样的值；Undefined和Null就像两条线，两条一模一样的线，但是他们依然是不同的线。
-              <br>他们的不同就在于类型的不同，在于意义的不同，undefiend是未初始化的值，null是空的对象指针。
-              <br>ECMAScript引入这个undefined的最主要目的就是为了与空对象指针null做区分</p>
-            <h4 id="3、Boolean">
-              <a href="#3、Boolean" class="headerlink" title="3、Boolean"></a>3、Boolean</h4>
-            <p>&emsp;Boolean是ECMAScript中的布尔类型，有两个值：true和false，并且，这两个值区分大小写
-              <br>Boolean()可以转换其他类型为Boolean类型，在进行if（）判断时，就是默认调用了Boolean（）方法。 </p>
-            <ul>
-              <li>数据类型 true false</li>
-              <li>Boolean true false</li>
-              <li>Strung 非空字符串 空字符串</li>
-              <li>Number 任何非0数字（包括无穷大） 0和NaN</li>
-              <li>Object 任何Object null、</li>
-              <li>Undefined 不试用 undefined</li>
-            </ul>
-            <h4 id="4、Number">
-              <a href="#4、Number" class="headerlink" title="4、Number"></a>4、Number</h4>
-            <p>ECMAScript是基于IEEE754数值格式的，由于IEEE754的通病，浮点数会有四舍五入的毛病，0.1+0.2并不等于0.3，而是等于0.30000000000000004，所以不要确定浮点数的值。
-              <br>Number可以通过8进制、十进制、十六进制来表示，十进制和往常一样 </p>
-            <ul>
-              <li>八进制，首位数字为0,078表示八进制的78,十进制的64，</li>
-              <li>十六进制，首尾字符为0x，0x9表示十六进制的9，A~E表示11~15。</li>
-            </ul>
-            <p>数值范围上来说，Number有一个上下线，一旦超过了上线就会变成Infinity，超过下线就会变成-Infinity。
-              <br>而一个本来应该返回数值的数结果却没有返回数值，这个时候就会返回NaN，比如0/0就会返回NaN。NaN与任何值都不相等，包括它自身，它只是一个代表意义，表示不是数字。可以用isNaN来判断是否不是数字
-            </p>
+                  <p>这两个值还真的是相等的，每次看到这里肯定就已经绕进去了。。。。这两个基本属性在搞什么呀，乱七八糟，莫名其妙。
+                    <br>非要总结一下规则的话,可以说，这两种基本类型是一样的，一样的值；Undefined和Null就像两条线，两条一模一样的线，但是他们依然是不同的线。
+                    <br>他们的不同就在于类型的不同，在于意义的不同，undefiend是未初始化的值，null是空的对象指针。
+                    <br>ECMAScript引入这个undefined的最主要目的就是为了与空对象指针null做区分</p>
+                  <h4 id="3、Boolean">
+                    <a href="#3、Boolean" class="headerlink" title="3、Boolean"></a>3、Boolean</h4>
+                  <p>&emsp;Boolean是ECMAScript中的布尔类型，有两个值：true和false，并且，这两个值区分大小写
+                    <br>Boolean()可以转换其他类型为Boolean类型，在进行if（）判断时，就是默认调用了Boolean（）方法。 </p>
+                  <ul>
+                    <li>数据类型 true false</li>
+                    <li>Boolean true false</li>
+                    <li>Strung 非空字符串 空字符串</li>
+                    <li>Number 任何非0数字（包括无穷大） 0和NaN</li>
+                    <li>Object 任何Object null、</li>
+                    <li>Undefined 不试用 undefined</li>
+                  </ul>
+                  <h4 id="4、Number">
+                    <a href="#4、Number" class="headerlink" title="4、Number"></a>4、Number</h4>
+                  <p>ECMAScript是基于IEEE754数值格式的，由于IEEE754的通病，浮点数会有四舍五入的毛病，0.1+0.2并不等于0.3，而是等于0.30000000000000004，所以不要确定浮点数的值。
+                    <br>Number可以通过8进制、十进制、十六进制来表示，十进制和往常一样 </p>
+                  <ul>
+                    <li>八进制，首位数字为0,078表示八进制的78,十进制的64，</li>
+                    <li>十六进制，首尾字符为0x，0x9表示十六进制的9，A~E表示11~15。</li>
+                  </ul>
+                  <p>数值范围上来说，Number有一个上下线，一旦超过了上线就会变成Infinity，超过下线就会变成-Infinity。
+                    <br>而一个本来应该返回数值的数结果却没有返回数值，这个时候就会返回NaN，比如0/0就会返回NaN。NaN与任何值都不相等，包括它自身，它只是一个代表意义，表示不是数字。可以用isNaN来判断是否不是数字
+                  </p>
 
-          </div>
+                </div>
 
-          <blockquote class="post-copyright">
-            <div class="content">
-              <span class="post-time">
-                Last updated:
-                <time datetime="2017-07-07T06:04:22.340Z" itemprop="dateUpdated">2017-07-07 14:04:22</time>
-              </span>
-              <br> 转载注明出处，原文地址：
+                <div>
 
-              <a href="/2017/06/05/javascript数据类型/" target="_blank" rel="external">https://peacecup.github.io/2017/06/05/javascript数据类型/</a>
+                </div>
 
-            </div>
-            <footer>
-              <a href="https://peacecup.github.io">
-                <img src="/img/avatar.jpg" alt="陈宁"> 陈宁
-              </a>
-            </footer>
-          </blockquote>
+                <div>
 
-          <div class="page-reward">
-            <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-          </div>
+                </div>
 
-          <div class="post-footer">
-            <ul class="article-tag-list">
-              <li class="article-tag-list-item">
-                <a class="article-tag-list-link" href="/tags/js/">js</a>
-              </li>
-            </ul>
+                <div>
 
-            <div class="page-share-wrap">
-              <div class="page-share" id="pageShare">
-                <ul class="reset share-icons">
+                </div>
 
-                  <li>
-                    <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://peacecup.github.io/2017/06/05/javascript数据类型/&title=《JS typeof总结---6种数据类型》 — 长夜&pic=https://peacecup.github.io/img/avatar.jpg"
-                                                                                                    data-title="微博">
-                      <i class="icon icon-weibo"></i>
-                    </a>
-                  </li>
+                <footer class="post-footer">
 
-                  <li>
-                    <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-                      <i class="icon icon-weixin"></i>
-                    </a>
-                  </li>
+                  <div class="post-tags">
 
-                  <li>
-                    <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://peacecup.github.io/2017/06/05/javascript数据类型/&title=《JS typeof总结---6种数据类型》 — 长夜&source=打开新世界的大门"
-                                                                                                    data-title=" QQ">
-                      <i class="icon icon-qq"></i>
-                    </a>
-                  </li>
+                    <a href="/tags/js/" rel="tag"># js</a>
 
-                </ul>
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/06/02/axios笔记/" rel="next" title="axios随笔">
+                        <i class="fa fa-chevron-left"></i> axios随笔
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/06/07/fetch相关概念/" rel="prev" title="DOM新API fetch">
+                        DOM新API fetch
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style">
+                  <a class="jiathis_button_tsina"></a>
+                  <a class="jiathis_button_tqq"></a>
+                  <a class="jiathis_button_weixin"></a>
+                  <a class="jiathis_button_cqq"></a>
+                  <a class="jiathis_button_douban"></a>
+                  <a class="jiathis_button_renren"></a>
+                  <a class="jiathis_button_qzone"></a>
+                  <a class="jiathis_button_kaixin001"></a>
+                  <a class="jiathis_button_copy"></a>
+                  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                                                                                                  target="_blank"></a>
+                  <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript">
+                  var jiathis_config = {
+                    hideMore: false
+                  }
+
+                </script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
               </div>
-
-              <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-                <i class="icon icon-share-alt icon-lg"></i>
-              </a>
             </div>
 
           </div>
 
-          <div id="comment">
+          <div class="comments" id="comments">
+
+            <div id="disqus_thread">
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+              </noscript>
+            </div>
+
           </div>
 
         </div>
-        <nav class="post-nav flex-row flex-justify-between">
 
-          <div class="waves-block waves-effect prev">
-            <a href="/2017/06/07/fetch相关概念/" id="post-prev" class="post-nav-link">
-              <div class="tips">
-                <i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-              <h4 class="title">DOM新API fetch</h4>
-            </a>
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
           </div>
-
-          <div class="waves-block waves-effect next">
-            <a href="/2017/06/02/axios笔记/" id="post-next" class="post-nav-link">
-              <div class="tips">Next
-                <i class="icon icon-angle-right icon-lg icon-pl"></i>
-              </div>
-              <h4 class="title">axios随笔</h4>
-            </a>
-          </div>
-
-        </nav>
-
-      </article>
-
-      <div id="reward" class="page-modal reward-lay">
-        <a class="close" href="javascript:;">
-          <i class="icon icon-close"></i>
-        </a>
-        <h3 class="reward-title">
-          <i class="icon icon-quote-left"></i>
-          我们一起来让这个世界有趣一点
-          <i class="icon icon-quote-right"></i>
-        </h3>
-        <div class="reward-content">
-
-          <div class="reward-code">
-            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
-          </div>
-
-          <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/reward-wechat.jpg"
-                                                                                            data-alipay="/img/reward-alipay.jpg">
-            <div class="reward-toggle-ctrol">
-              <span class="reward-toggle-item wechat">微信</span>
-              <span class="reward-toggle-label"></span>
-              <span class="reward-toggle-item alipay">支付宝</span>
-            </div>
-          </label>
-
         </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="陈宁"
+                />
+                <p class="site-author-name" itemprop="name">陈宁</p>
+
+                <p class="site-description motion-element" itemprop="description">打开新世界的大门</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/peacecup" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-zhu-35-15-30" target="_blank" title="知乎">
+
+                    <i class="fa fa-fw fa-zhihu"></i>
+
+                    知乎
+                  </a>
+                </span>
+
+              </div>
+
+            </section>
+
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
+
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#前言">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          前言</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#js五种基本数据类型">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          js五种基本数据类型</span>
+                      </a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-4">
+                          <a class="nav-link" href="#1、Undefined">
+                            <span class="nav-number">2.1.</span>
+                            <span class="nav-text">
+                              1、Undefined</span>
+                          </a>
+                          <ol class="nav-child">
+                            <li class="nav-item nav-level-5">
+                              <a class="nav-link" href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend">
+                                <span class="nav-number">2.1.1.</span>
+                                <span class="nav-text">
+                                  在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</span>
+                              </a>
+                            </li>
+                            <li class="nav-item nav-level-5">
+                              <a class="nav-link" href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量">
+                                <span class="nav-number">2.1.2.</span>
+                                <span class="nav-text">
+                                  在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</span>
+                              </a>
+                            </li>
+                            <li class="nav-item nav-level-5">
+                              <a class="nav-link" href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在">
+                                <span class="nav-number">2.1.3.</span>
+                                <span class="nav-text">
+                                  因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</span>
+                              </a>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="nav-item nav-level-4">
+                          <a class="nav-link" href="#2、Null">
+                            <span class="nav-number">2.2.</span>
+                            <span class="nav-text">
+                              2、Null</span>
+                          </a>
+                          <ol class="nav-child">
+                            <li class="nav-item nav-level-5">
+                              <a class="nav-link" href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针">
+                                <span class="nav-number">2.2.1.</span>
+                                <span class="nav-text">
+                                  在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</span>
+                              </a>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="nav-item nav-level-4">
+                          <a class="nav-link" href="#3、Boolean">
+                            <span class="nav-number">2.3.</span>
+                            <span class="nav-text">
+                              3、Boolean</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-4">
+                          <a class="nav-link" href="#4、Number">
+                            <span class="nav-number">2.4.</span>
+                            <span class="nav-text">
+                              4、Number</span>
+                          </a>
+                        </li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+
+              </div>
+            </section>
+            <!--/noindex-->
+
+          </div>
+        </aside>
+
       </div>
+    </main>
 
-    </div>
-    <aside class="post-widget">
-      <nav class="post-toc-wrap" id="post-toc">
-        <h4>TOC</h4>
-        <ol class="post-toc">
-          <li class="post-toc-item post-toc-level-3">
-            <a class="post-toc-link" href="#前言">
-              <span class="post-toc-number">1.</span>
-              <span class="post-toc-text">
-                前言</span>
-            </a>
-          </li>
-          <li class="post-toc-item post-toc-level-3">
-            <a class="post-toc-link" href="#js五种基本数据类型">
-              <span class="post-toc-number">2.</span>
-              <span class="post-toc-text">
-                js五种基本数据类型</span>
-            </a>
-            <ol class="post-toc-child">
-              <li class="post-toc-item post-toc-level-4">
-                <a class="post-toc-link" href="#1、Undefined">
-                  <span class="post-toc-number">2.1.</span>
-                  <span class="post-toc-text">
-                    1、Undefined</span>
-                </a>
-                <ol class="post-toc-child">
-                  <li class="post-toc-item post-toc-level-5">
-                    <a class="post-toc-link" href="#在ECMAScript里，Undefiend只有一个值，即特殊的undefiend">
-                      <span class="post-toc-number">2.1.1.</span>
-                      <span class="post-toc-text">
-                        在ECMAScript里，Undefiend只有一个值，即特殊的undefiend</span>
-                    </a>
-                  </li>
-                  <li class="post-toc-item post-toc-level-5">
-                    <a class="post-toc-link" href="#在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量">
-                      <span class="post-toc-number">2.1.2.</span>
-                      <span class="post-toc-text">
-                        在js里只有一种变量是Undefiend类型，具有undefiend值，那就是未初始化变量</span>
-                    </a>
-                  </li>
-                  <li class="post-toc-item post-toc-level-5">
-                    <a class="post-toc-link" href="#因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在">
-                      <span class="post-toc-number">2.1.3.</span>
-                      <span class="post-toc-text">
-                        因此在定义变量的时候显示的初始化变量是有意义的，可以帮助判断变量是否存在</span>
-                    </a>
-                  </li>
-                </ol>
-              </li>
-              <li class="post-toc-item post-toc-level-4">
-                <a class="post-toc-link" href="#2、Null">
-                  <span class="post-toc-number">2.2.</span>
-                  <span class="post-toc-text">
-                    2、Null</span>
-                </a>
-                <ol class="post-toc-child">
-                  <li class="post-toc-item post-toc-level-5">
-                    <a class="post-toc-link" href="#在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针">
-                      <span class="post-toc-number">2.2.1.</span>
-                      <span class="post-toc-text">
-                        在ECMAScript里，Null是第二个只有一个值的数据类型，那就是null，null表示一个空的对象指针</span>
-                    </a>
-                  </li>
-                </ol>
-              </li>
-              <li class="post-toc-item post-toc-level-4">
-                <a class="post-toc-link" href="#3、Boolean">
-                  <span class="post-toc-number">2.3.</span>
-                  <span class="post-toc-text">
-                    3、Boolean</span>
-                </a>
-              </li>
-              <li class="post-toc-item post-toc-level-4">
-                <a class="post-toc-link" href="#4、Number">
-                  <span class="post-toc-number">2.4.</span>
-                  <span class="post-toc-text">
-                    4、Number</span>
-                </a>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </nav>
-    </aside>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
 
-    <footer class="footer">
-
-      <div class="top">
-
-        <p>
-          <span>Links：</span>
-
-          <span class="blogroll-item">
-            <a href="https://www.github.com" target="_blank">github</a>
+          &copy;
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
           </span>
+          <span class="author" itemprop="copyrightHolder">陈宁</span>
+        </div>
 
-          <span class="blogroll-item">
-            <a href="https://www.gitee.com" target="_blank">gitee</a>
-          </span>
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-          <span class="blogroll-item">
-            <a href="https://www.coding.net" target="_blank">coding</a>
-          </span>
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Mist
+          </a>
+        </div>
 
-        </p>
-
-      </div>
-
-      <div class="bottom">
-        <p>
-          <span>
-            陈宁 &copy; 2017
-          </span>
-
-          <span>
-            Power by
-            <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-            <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
-          </span>
-
-        </p>
       </div>
     </footer>
 
-  </main>
-  <div class="mask" id="mask"></div>
-  <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light">
-    <span class="icon icon-lg icon-chevron-up"></span>
-  </a>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
 
-  <div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
+    </div>
 
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://peacecup.github.io/2017/06/05/javascript数据类型/&title=《JS typeof总结---6种数据类型》 — 长夜&pic=https://peacecup.github.io/img/avatar.jpg"
-                                                                                        data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://peacecup.github.io/2017/06/05/javascript数据类型/&title=《JS typeof总结---6种数据类型》 — 长夜&source=打开新世界的大门"
-                                                                                        data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-
-    </ul>
   </div>
 
-  <div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;">
-      <i class="icon icon-close"></i>
-    </a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://peacecup.github.io/2017/06/05/javascript数据类型/"
-                                                                                    alt="微信分享二维码">
-  </div>
-
-  <!-- main-js -->
-  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/plugins/fastclick.js?v=1.0.7"></script>
-
-  <script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-
-  <script type="text/javascript" src="/js/method.js?v=1.0.7"></script>
-  <script type="text/javascript" src="/js/blog.js?v=1.0.7"></script>
-
-  <!-- third-party -->
-
-  <script type="text/javascript" src="/js/plugins/local_search.js?v=1.0.7"></script>
   <script type="text/javascript">
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
     }
-    var path = "/" + search_path;
-    searchFunc(path, "local-search-input", "local-search-result");
 
   </script>
 
-  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <script type="text/javascript" src="/js/plugins/valine.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script type="text/javascript" src="/js/plugins/leancloud_visitors.js?v=1.0.7"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  <!-- mathjax config similar to math.stackexchange -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes:
-    true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-    });
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+  <script id="dsq-count-scr" src="https://cn.disqus.com/count.js" async></script>
+
+  <script type="text/javascript">
+    var disqus_config = function() {
+      this.page.url = 'https://peacecup.github.io/2017/06/05/javascript数据类型/';
+      this.page.identifier = '2017/06/05/javascript数据类型/';
+      this.page.title = 'JS typeof总结---6种数据类型';
+    };
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://cn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+
   </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i
-    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
-                                                                                    ; } }); </script>
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
-      <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
 
 </body>
 
